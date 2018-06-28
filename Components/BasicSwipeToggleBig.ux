@@ -1,0 +1,32 @@
+<Panel ux:Class="BasicSwipeToggleBig" Width="80" Height="34" PrimaryColor="#fff" SecondaryColor="#125F63" Opacity="0.7" Sendable="{isOnVal}">
+	<bool ux:Property="Sendable" />
+	<float4 ux:Property="PrimaryColor" />
+	<float4 ux:Property="SecondaryColor" />
+	<float ux:Property="Opacity" />
+	<bool ux:Property="IsActive" />
+	
+	<SwipeGesture ux:Name="swipe" Length="46" Direction="Right" Type="Active" IsActive="{Property IsActive}" />
+	<SwipingAnimation Source="swipe">
+		<Move Target="handle" X="46" />
+		<Change handle.Color="{ReadProperty SecondaryColor}" />
+		<Change background.Color="{ReadProperty PrimaryColor}" />
+	</SwipingAnimation>
+
+	<Clicked>
+		<ToggleSwipeActive Target="swipe" />
+		<Set this.Sendable="{Property IsActive}" />
+		<Callback ux:Name="TheClick" Handler="{isOn}" />
+	</Clicked> 
+	
+	
+	<!-- <Text Value="{Property IsActive}#{Property Sendable}" Color="#000" Background="#FFFFFF56" /> 
+	<Text Value="{Property Sendable}" /> -->
+	
+
+	<Rectangle ux:Name="handle" Width="28" Margin="3" Alignment="Left" Color="{ReadProperty PrimaryColor}" CornerRadius="28">
+		<Shadow Size="1" Distance="1" Color="#0004" />
+		<fa_times Margin="-1,1,0,0" TextAlignment="Center" Color="#125F63" FontSize="18" Alignment="Center" />
+	</Rectangle>
+	
+	<Rectangle ux:Name="background" Layer="Background" Color="{ReadProperty SecondaryColor}" CornerRadius="28" Alignment="Default" Opacity="1" Margin="0, 0, 0, 0" Padding="0, 0, 0, 0" />
+</Panel>

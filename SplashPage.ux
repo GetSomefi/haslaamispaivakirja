@@ -1,0 +1,26 @@
+<Page ux:Class="SplashPage">
+	<Router ux:Dependency="router" />
+
+	<JavaScript File="SplashPage.js" />
+
+	<DockPanel ClipToBounds="true">
+
+		<Video Opacity="0.7" Layer="Background" IsLooping="true" File="Assets/retkelleoma.mp4" AutoPlay="true" StretchMode="UniformToFill">
+			<Blur Radius="3.75" />
+		</Video>
+
+		<generaltext.Text Opacity=".5" TextAlignment="Center" FontSize="12" Margin="15" Dock="Bottom">original video by Peter Virtanen</generaltext.Text>
+
+		<Grid RowCount="2">
+			<StackPanel>
+				<header.Text Alignment="HorizontalCenter" Margin="0,50,0,0" FontSize="40">The Mood</header.Text>
+				<generaltext.Text Alignment="HorizontalCenter" Opacity=".5">How are we feeling today?</generaltext.Text>
+			</StackPanel>
+			
+			<basicBtn.Button Text="Aloitetaan" FontSize="18" Margin="50,0" Alignment="VerticalCenter" Clicked="{goToFirstPage}" />
+		</Grid>
+	</DockPanel>
+
+
+
+</Page>

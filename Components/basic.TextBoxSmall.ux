@@ -1,0 +1,1 @@
+<TextBox ux:Class="basic.TextBoxSmall" Height="26" FontSize="14" TextColor="White" CaretColor="White"/>

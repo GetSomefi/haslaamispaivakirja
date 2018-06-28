@@ -1,0 +1,26 @@
+<Page ux:Class="SettingsPage">
+	<string ux:Key="Title" ux:Value="Settings" />
+	<Router ux:Dependency="router" />
+	<JavaScript File="SettingsPage.js" />
+
+	<Image Layer="Background" File="Assets/settings.jpg" StretchMode="UniformToFill" Background="#FFF" />
+
+	<FlyingDock title="{Page Title}" router="router"/>
+
+	<ScrollView Background="#8C89B0B2" Padding="0, 0, 0, 0">	
+
+		<StackPanel Margin="15, 60, 15, 0"><!--Start of main holder-->
+
+			<header.Text Value="Asetukset" Margin="0, 0, 0, 0" TextAlignment="Left" />
+
+			<StackPanel>
+				<basicBtn.Button BgColor="#DA4245" Margin="0, 15, 0, 15" Text="Tyhjennä" Clicked="{goToOldEntrys}" />
+			</StackPanel>
+
+		</StackPanel><!--End of main holder-->
+	
+	</ScrollView>
+
+
+
+</Page>

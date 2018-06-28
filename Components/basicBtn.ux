@@ -1,0 +1,15 @@
+<Panel ux:Class="basicBtn.Button" BgColor="#DA4245" Margin="15" Padding="15" FontSize="16">
+	<string ux:Property="Text" />
+	<string ux:Property="BgColor" />
+	<float ux:Property="FontSize" />
+
+	<Rectangle Layer="Background" Color="{ReadProperty BgColor}" CornerRadius="0">
+		<DropShadow Angle="90" Distance="1" Spread="0.2" Size="2" Color="#00000060" />
+	</Rectangle>
+
+	<generaltext.Text FontSize="{ReadProperty FontSize}" Value="{ReadProperty Text}" TextAlignment="Center" />
+
+	<WhilePressed>
+		<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+	</WhilePressed>
+</Panel>

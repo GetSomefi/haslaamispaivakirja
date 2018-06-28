@@ -1,0 +1,20 @@
+<App Background="#022328">
+	<iOS.StatusBarConfig Style="Light" />
+	<Android.StatusBarConfig Color="#022328" />
+
+	<!-- Declare the Icon font (place in ./fonts folder) -->
+    <Font File="./Assets/fonts/fontawesome-webfont.ttf" ux:Global="fa" />
+    <ux:Include File="./Components/fa_icons.ux" />
+
+	<ClientPanel>
+		<Router ux:Name="router" />
+		<Navigator ux:Name="mainNav" DefaultPath="splash">
+		
+			<SplashPage ux:Template="splash" router="router"/>
+			<FirstPage ux:Template="first" router="router"/>
+			<OldEntrysPage ux:Template="oldentrys" router="router"/>
+			<SettingsPage ux:Template="settings" router="router"/>
+		
+		</Navigator> 
+	</ClientPanel>
+</App>

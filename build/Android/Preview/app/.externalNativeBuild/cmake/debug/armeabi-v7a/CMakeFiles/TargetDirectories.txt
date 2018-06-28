@@ -1,0 +1,3 @@
+/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/build/Android/Preview/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/build/Android/Preview/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/build/Android/Preview/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/Haslaamispaivakirja.dir
