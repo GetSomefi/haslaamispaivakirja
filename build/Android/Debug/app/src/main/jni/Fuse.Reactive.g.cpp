@@ -94,7 +94,6 @@
 #include <Fuse.Reactive.LookUp.h>
 #include <Fuse.Reactive.Member.-80cd0e57.h>
 #include <Fuse.Reactive.Member.h>
-#include <Fuse.Reactive.Multiply.h>
 #include <Fuse.Reactive.NodeExp-869eb6a1.h>
 #include <Fuse.Reactive.NonNull.h>
 #include <Fuse.Reactive.NullCoalesce.h>
@@ -195,7 +194,7 @@
 #include <Uno.UX.Resource.h>
 #include <Uno.UX.Selector.h>
 #include <Uno.UX.Template.h>
-static uString* STRINGS[100];
+static uString* STRINGS[99];
 static uType* TYPES[48];
 
 namespace g{
@@ -801,14 +800,14 @@ void ComputeExpression::ctor_1(uArray* args, int32_t flags, uString* name)
     _name = name;
 
     if ((_flags & 1024) == 1024)
-        ::g::Fuse::Diagnostics::Deprecated(uString::Const("This constructor and use of the Is*Optional virtuals is deprecated. Pass the optionals as flags to the constructor, or specifiy Flags.None to avoid the message"), this, ::STRINGS[78/*"/usr/local/...*/], 262, ::STRINGS[71/*".ctor"*/]);
+        ::g::Fuse::Diagnostics::Deprecated(uString::Const("This constructor and use of the Is*Optional virtuals is deprecated. Pass the optionals as flags to the constructor, or specifiy Flags.None to avoid the message"), this, ::STRINGS[77/*"/usr/local/...*/], 262, ::STRINGS[70/*".ctor"*/]);
 
     if ((_flags & 2048) == 2048)
     {
         if (!uIs(this, ::TYPES[44/*Fuse.Reactive.UnaryOperator*/]) || (uPtr(args)->Length() != 1))
             U_THROW(::g::Uno::Exception::New2(uString::Const("DeprecatedVirtualUnary supported only on UnaryOperator with 1 argument")));
 
-        ::g::Fuse::Diagnostics::Deprecated(uString::Const("Overiding the UnaryOperator.OnNewOperand/OnLostData is deprecated. Implement `Compute` and call the other constructor, or pass Flags.None, or implement an `Expression` and `ExpressionListener` if you need the behavior (rare)."), this, ::STRINGS[78/*"/usr/local/...*/], 270, ::STRINGS[71/*".ctor"*/]);
+        ::g::Fuse::Diagnostics::Deprecated(uString::Const("Overiding the UnaryOperator.OnNewOperand/OnLostData is deprecated. Implement `Compute` and call the other constructor, or pass Flags.None, or implement an `Expression` and `ExpressionListener` if you need the behavior (rare)."), this, ::STRINGS[77/*"/usr/local/...*/], 270, ::STRINGS[70/*".ctor"*/]);
     }
 }
 
@@ -7803,77 +7802,6 @@ Member* Member::New1(::g::Fuse::Reactive::Expression* obj, uString* name)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/Operators.uno
-// ---------------------------------------------------------------------------
-
-// public sealed class Multiply :76
-// {
-static void Multiply_build(uType* type)
-{
-    ::STRINGS[59] = uString::Const("*");
-    type->SetDependencies(
-        ::g::Fuse::Marshal_typeof());
-    type->SetInterfaces(
-        ::g::Fuse::Reactive::IExpression_typeof(), offsetof(::g::Fuse::Reactive::BinaryOperator_type, interface0),
-        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Reactive::BinaryOperator_type, interface1));
-    type->SetFields(5);
-}
-
-::g::Fuse::Reactive::BinaryOperator_type* Multiply_typeof()
-{
-    static uSStrong< ::g::Fuse::Reactive::BinaryOperator_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Fuse::Reactive::InfixOperator_typeof();
-    options.FieldCount = 5;
-    options.InterfaceCount = 2;
-    options.DependencyCount = 1;
-    options.ObjectSize = sizeof(Multiply);
-    options.TypeSize = sizeof(::g::Fuse::Reactive::BinaryOperator_type);
-    type = (::g::Fuse::Reactive::BinaryOperator_type*)uClassType::New("Fuse.Reactive.Multiply", options);
-    type->fp_build_ = Multiply_build;
-    type->fp_TryCompute1 = (void(*)(::g::Fuse::Reactive::BinaryOperator*, uObject*, uObject*, uObject**, bool*))Multiply__TryCompute1_fn;
-    type->interface1.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Reactive::Expression__FuseISourceLocationget_SourceNearest_fn;
-    type->interface0.fp_Subscribe = (void(*)(uObject*, uObject*, uObject*, uObject**))::g::Fuse::Reactive::ComputeExpression__Subscribe_fn;
-    type->interface1.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Reactive::Expression__get_SourceLineNumber_fn;
-    type->interface1.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Reactive::Expression__get_SourceFileName_fn;
-    return type;
-}
-
-// public Multiply(Fuse.Reactive.Expression left, Fuse.Reactive.Expression right) :79
-void Multiply__ctor_6_fn(Multiply* __this, ::g::Fuse::Reactive::Expression* left, ::g::Fuse::Reactive::Expression* right)
-{
-    __this->ctor_6(left, right);
-}
-
-// public Multiply New(Fuse.Reactive.Expression left, Fuse.Reactive.Expression right) :79
-void Multiply__New1_fn(::g::Fuse::Reactive::Expression* left, ::g::Fuse::Reactive::Expression* right, Multiply** __retval)
-{
-    *__retval = Multiply::New1(left, right);
-}
-
-// protected override sealed bool TryCompute(object left, object right, object& result) :81
-void Multiply__TryCompute1_fn(Multiply* __this, uObject* left, uObject* right, uObject** result, bool* __retval)
-{
-    return *__retval = ::g::Fuse::Marshal::TryMultiply(left, right, result), void();
-}
-
-// public Multiply(Fuse.Reactive.Expression left, Fuse.Reactive.Expression right) [instance] :79
-void Multiply::ctor_6(::g::Fuse::Reactive::Expression* left, ::g::Fuse::Reactive::Expression* right)
-{
-    ctor_5(left, right, ::STRINGS[59/*"*"*/], 0);
-}
-
-// public Multiply New(Fuse.Reactive.Expression left, Fuse.Reactive.Expression right) [static] :79
-Multiply* Multiply::New1(::g::Fuse::Reactive::Expression* left, ::g::Fuse::Reactive::Expression* right)
-{
-    Multiply* obj1 = (Multiply*)uNew(Multiply_typeof());
-    obj1->ctor_6(left, right);
-    return obj1;
-}
-// }
-
 // /usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.9.0/Instantiator.uno
 // ---------------------------------------------------------------------------
 
@@ -7904,7 +7832,7 @@ uType* Instantiator__NoContextItem_typeof()
 // {
 static void NodeExpressionBinding_build(uType* type)
 {
-    ::STRINGS[60] = uString::Const("Invalid params");
+    ::STRINGS[59] = uString::Const("Invalid params");
     ::STRINGS[45] = uString::Const("The binding type does not support resource subscriptions");
     ::TYPES[24] = ::g::Uno::Action_typeof();
     ::TYPES[25] = ::g::Fuse::Reactive::IExpression_typeof();
@@ -7987,7 +7915,7 @@ void NodeExpressionBinding__SubscribeResource_fn(NodeExpressionBinding* __this, 
 void NodeExpressionBinding::ctor_(uObject* expr, ::g::Fuse::Node* node, uObject* listener)
 {
     if (((expr == NULL) || (node == NULL)) || (listener == NULL))
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[60/*"Invalid par...*/]));
+        U_THROW(::g::Uno::Exception::New2(::STRINGS[59/*"Invalid par...*/]));
 
     _expr = expr;
     _listener = listener;
@@ -8226,9 +8154,9 @@ InnerListener__ObservableSubscription* InnerListener__ObservableSubscription::Ne
 // {
 static void ObserverMap_build(uType* type)
 {
-    ::STRINGS[61] = uString::Const("An observable with write-back is expected");
-    ::STRINGS[62] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive/1.9.0/ObserverMap.uno");
-    ::STRINGS[63] = uString::Const("Attach");
+    ::STRINGS[60] = uString::Const("An observable with write-back is expected");
+    ::STRINGS[61] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive/1.9.0/ObserverMap.uno");
+    ::STRINGS[62] = uString::Const("Attach");
     ::TYPES[36] = ::g::Uno::Collections::List_typeof();
     ::TYPES[17] = ::g::Fuse::Reactive::IObservableArray_typeof();
     ::TYPES[21] = ::g::Fuse::Reactive::ISubscription_typeof();
@@ -8491,7 +8419,7 @@ void ObserverMap::Attach(uObject* src, uObject* slave)
         _subscription = uAs<uObject*>(_disposable, ::TYPES[21/*Fuse.Reactive.ISubscription*/]);
 
         if (_subscription == NULL)
-            ::g::Fuse::Diagnostics::InternalError(::STRINGS[61/*"An observab...*/], this, ::STRINGS[62/*"/usr/local/...*/], 72, ::STRINGS[63/*"Attach"*/]);
+            ::g::Fuse::Diagnostics::InternalError(::STRINGS[60/*"An observab...*/], this, ::STRINGS[61/*"/usr/local/...*/], 72, ::STRINGS[62/*"Attach"*/]);
     }
 
     ::g::Fuse::Reactive::IObserver::OnNewAll(uInterface((uObject*)this, ::TYPES[37/*Fuse.Reactive.IObserver*/]), src);
@@ -8899,7 +8827,7 @@ CapsObject__PropertySubscription* CapsObject__PropertySubscription::New1(::g::Fu
 static void QuaternaryOperator_build(uType* type)
 {
     ::STRINGS[1] = uString::Const(" No `TryCompute`, or a deprecated form, overriden. Migrate your code to override the one with `bool` return. ");
-    ::STRINGS[64] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/QuaternaryOperator.uno");
+    ::STRINGS[63] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/QuaternaryOperator.uno");
     ::STRINGS[3] = uString::Const("TryCompute");
     type->SetInterfaces(
         ::g::Fuse::Reactive::IExpression_typeof(), offsetof(::g::Fuse::Reactive::ComputeExpression_type, interface0),
@@ -9010,7 +8938,7 @@ bool QuaternaryOperator::IsThirdOptional()
 // protected bool TryCompute(object first, object second, object third, object fourth, object& result) [instance] :36
 bool QuaternaryOperator::TryCompute1(uObject* first, uObject* second, uObject* third, uObject* fourth, uObject** result)
 {
-    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[64/*"/usr/local/...*/], 38, ::STRINGS[3/*"TryCompute"*/]);
+    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[63/*"/usr/local/...*/], 38, ::STRINGS[3/*"TryCompute"*/]);
     *result = Compute(first, second, third, fourth);
     return true;
 }
@@ -9090,7 +9018,7 @@ void Resource::Key(uString* value)
 // {
 static void ResourceSubscription_build(uType* type)
 {
-    ::STRINGS[65] = uString::Const("{Resource ");
+    ::STRINGS[64] = uString::Const("{Resource ");
     ::STRINGS[36] = uString::Const("} not found in data context");
     ::TYPES[24] = ::g::Uno::Action_typeof();
     ::TYPES[1] = ::g::Uno::IDisposable_typeof();
@@ -9209,7 +9137,7 @@ void ResourceSubscription::OnChanged()
     if (uPtr(_origin)->TryGetResource(_key, uDelegate::New(::TYPES[40/*Uno.Predicate<object>*/], (void*)ResourceSubscription__Accept_fn, this), &resource))
         ::g::Fuse::Reactive::IListener::OnNewData(uInterface(uPtr(_listener), ::TYPES[13/*Fuse.Reactive.IListener*/]), _source, resource);
     else
-        _diag = ::g::Fuse::Diagnostics::ReportTemporalUserWarning(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[65/*"{Resource "*/], _key), ::STRINGS[36/*"} not found...*/]), _origin);
+        _diag = ::g::Fuse::Diagnostics::ReportTemporalUserWarning(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[64/*"{Resource "*/], _key), ::STRINGS[36/*"} not found...*/]), _origin);
 }
 
 // public ResourceSubscription New(Fuse.Reactive.IExpression source, Fuse.Node origin, string key, Fuse.Reactive.IListener listener, Uno.Type type) [static] :16
@@ -9445,9 +9373,9 @@ void Snapshot::Source(::g::Fuse::Reactive::Expression* value)
 // {
 static void VarArgFunction__Subscription_build(uType* type)
 {
-    ::STRINGS[66] = uString::Const("VarArgFunction.Subscription.ClearData() should be implemented");
-    ::STRINGS[67] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/VarArgFunction.uno");
-    ::STRINGS[68] = uString::Const("ClearData");
+    ::STRINGS[65] = uString::Const("VarArgFunction.Subscription.ClearData() should be implemented");
+    ::STRINGS[66] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/VarArgFunction.uno");
+    ::STRINGS[67] = uString::Const("ClearData");
     ::TYPES[41] = ::g::Uno::Collections::EnumerableExtensions_typeof()->MakeMethod(5/*ToArray<Fuse.Reactive.Expression>*/, ::g::Fuse::Reactive::Expression_typeof(), NULL);
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(VarArgFunction__Subscription_type, interface0),
@@ -9545,7 +9473,7 @@ void VarArgFunction__Subscription::ctor_2(::g::Fuse::Reactive::VarArgFunction* f
 // protected void ClearData() [instance] :67
 void VarArgFunction__Subscription::ClearData()
 {
-    ::g::Fuse::Diagnostics::UserError(::STRINGS[66/*"VarArgFunct...*/], this, ::STRINGS[67/*"/usr/local/...*/], 70, ::STRINGS[68/*"ClearData"*/], NULL);
+    ::g::Fuse::Diagnostics::UserError(::STRINGS[65/*"VarArgFunct...*/], this, ::STRINGS[66/*"/usr/local/...*/], 70, ::STRINGS[67/*"ClearData"*/], NULL);
 }
 // }
 
@@ -9556,9 +9484,9 @@ void VarArgFunction__Subscription::ClearData()
 // {
 static void WindowFunction__Subscription_build(uType* type)
 {
-    ::STRINGS[69] = uString::Const("No RootViewport found in this context");
-    ::STRINGS[70] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Panels/1.9.0/Window.uno");
-    ::STRINGS[71] = uString::Const(".ctor");
+    ::STRINGS[68] = uString::Const("No RootViewport found in this context");
+    ::STRINGS[69] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Panels/1.9.0/Window.uno");
+    ::STRINGS[70] = uString::Const(".ctor");
     ::TYPES[13] = ::g::Fuse::Reactive::IListener_typeof();
     type->SetDependencies(
         ::g::Fuse::Reactive::WindowCaps_typeof());
@@ -9620,7 +9548,7 @@ void WindowFunction__Subscription::ctor_(::g::Fuse::Reactive::WindowFunction* fu
     _rootViewport = rv;
 
     if (rv == NULL)
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[69/*"No RootView...*/], this, ::STRINGS[70/*"/usr/local/...*/], 57, ::STRINGS[71/*".ctor"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[68/*"No RootView...*/], this, ::STRINGS[69/*"/usr/local/...*/], 57, ::STRINGS[70/*".ctor"*/], NULL);
 }
 
 // public void Dispose() [instance] :69
@@ -9844,8 +9772,8 @@ PlatformFunction__Subscription* PlatformFunction__Subscription::New1(::g::Fuse::
 // {
 static void Parameter__Subscription_build(uType* type)
 {
-    ::STRINGS[72] = uString::Const("Failed to fetch parameter: ");
-    ::STRINGS[73] = uString::Const("Failed to parse parameter: ");
+    ::STRINGS[71] = uString::Const("Failed to fetch parameter: ");
+    ::STRINGS[72] = uString::Const("Failed to parse parameter: ");
     ::TYPES[1] = ::g::Uno::IDisposable_typeof();
     ::TYPES[13] = ::g::Fuse::Reactive::IListener_typeof();
     ::TYPES[19] = ::g::Uno::Exception_typeof();
@@ -9935,7 +9863,7 @@ void Parameter__Subscription__OnNewData_fn(Parameter__Subscription* __this, uObj
     catch (const uThrowable& __t)
     {
         ::g::Uno::Exception* e = __t.Exception;
-        __this->SetDiagnostic(::g::Uno::String::op_Addition2(::STRINGS[72/*"Failed to f...*/], uPtr(e)->Message()), __this->_parameter);
+        __this->SetDiagnostic(::g::Uno::String::op_Addition2(::STRINGS[71/*"Failed to f...*/], uPtr(e)->Message()), __this->_parameter);
         return;
     }
 
@@ -9985,7 +9913,7 @@ void Parameter__Subscription::OnParameterChanged(uObject* sender, ::g::Uno::Even
     catch (const uThrowable& __t)
     {
         ::g::Uno::Exception* e = __t.Exception;
-        SetDiagnostic(::g::Uno::String::op_Addition2(::STRINGS[73/*"Failed to p...*/], uPtr(e)->Message()), _parameter);
+        SetDiagnostic(::g::Uno::String::op_Addition2(::STRINGS[72/*"Failed to p...*/], uPtr(e)->Message()), _parameter);
         return;
     }
 
@@ -10268,7 +10196,7 @@ Property__Subscription* Property__Subscription::New1(::g::Fuse::Reactive::Proper
 static void Member__Subscription_build(uType* type)
 {
     ::STRINGS[23] = uString::Const("'");
-    ::STRINGS[74] = uString::Const("' does not contain property '");
+    ::STRINGS[73] = uString::Const("' does not contain property '");
     ::TYPES[1] = ::g::Uno::IDisposable_typeof();
     ::TYPES[13] = ::g::Fuse::Reactive::IListener_typeof();
     ::TYPES[23] = ::g::Fuse::Reactive::IPropertySubscription_typeof();
@@ -10386,7 +10314,7 @@ void Member__Subscription__OnNewData_fn(Member__Subscription* __this, uObject* s
     }
     else
     {
-        __this->SetDiagnostic(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[23/*"'"*/], ::g::Uno::Object::ToString(uPtr(uPtr(__this->_member)->BaseObject()))), ::STRINGS[74/*"' does not ...*/]), uPtr(__this->_member)->Name()), ::STRINGS[23/*"'"*/]), __this->_member);
+        __this->SetDiagnostic(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::g::Uno::String::op_Addition2(::STRINGS[23/*"'"*/], ::g::Uno::Object::ToString(uPtr(uPtr(__this->_member)->BaseObject()))), ::STRINGS[73/*"' does not ...*/]), uPtr(__this->_member)->Name()), ::STRINGS[23/*"'"*/]), __this->_member);
         ::g::Fuse::Reactive::IListener::OnLostData(uInterface(uPtr(__this->_listener), ::TYPES[13/*Fuse.Reactive.IListener*/]), (uObject*)__this->_member);
     }
 }
@@ -10426,11 +10354,11 @@ Member__Subscription* Member__Subscription::New1(::g::Fuse::Reactive::Member* me
 // {
 static void ComputeExpression__Subscription_build(uType* type)
 {
-    ::STRINGS[75] = uString::Const("Failed to compute value for (");
-    ::STRINGS[76] = uString::Const(",");
-    ::STRINGS[77] = uString::Const("undefined");
-    ::STRINGS[78] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/ExpressionListener.uno");
-    ::STRINGS[79] = uString::Const("OnArguments");
+    ::STRINGS[74] = uString::Const("Failed to compute value for (");
+    ::STRINGS[75] = uString::Const(",");
+    ::STRINGS[76] = uString::Const("undefined");
+    ::STRINGS[77] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/ExpressionListener.uno");
+    ::STRINGS[78] = uString::Const("OnArguments");
     ::TYPES[44] = ::g::Fuse::Reactive::UnaryOperator_typeof();
     type->SetInterfaces(
         ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Reactive::ExpressionListener_type, interface0),
@@ -10489,20 +10417,20 @@ void ComputeExpression__Subscription__OnArguments_fn(ComputeExpression__Subscrip
     {
         if (!((uPtr(__this->_expr)->_flags & 32) == 32))
         {
-            uString* msg = ::STRINGS[75/*"Failed to c...*/];
+            uString* msg = ::STRINGS[74/*"Failed to c...*/];
 
             for (int32_t i = 0; i < uPtr(args)->Length(); ++i)
             {
                 if (i > 0)
-                    msg = ::g::Uno::String::op_Addition2(msg, ::STRINGS[76/*","*/]);
+                    msg = ::g::Uno::String::op_Addition2(msg, ::STRINGS[75/*","*/]);
 
                 if (uPtr(uPtr(args)->Strong< ::g::Fuse::Reactive::Expression__Argument*>(i))->HasValue())
                     msg = ::g::Uno::String::op_Addition1(msg, uPtr(uPtr(args)->Strong< ::g::Fuse::Reactive::Expression__Argument*>(i))->Value());
                 else
-                    msg = ::g::Uno::String::op_Addition2(msg, ::STRINGS[77/*"undefined"*/]);
+                    msg = ::g::Uno::String::op_Addition2(msg, ::STRINGS[76/*"undefined"*/]);
             }
 
-            ::g::Fuse::Diagnostics::UserWarning(msg, __this->_expr, ::STRINGS[78/*"/usr/local/...*/], 366, ::STRINGS[79/*"OnArguments"*/]);
+            ::g::Fuse::Diagnostics::UserWarning(msg, __this->_expr, ::STRINGS[77/*"/usr/local/...*/], 366, ::STRINGS[78/*"OnArguments"*/]);
         }
 
         __this->OnClearData();
@@ -10585,7 +10513,7 @@ bool TemplateMatch::Matches(TemplateMatch b)
 static void TernaryOperator_build(uType* type)
 {
     ::STRINGS[1] = uString::Const(" No `TryCompute`, or a deprecated form, overriden. Migrate your code to override the one with `bool` return. ");
-    ::STRINGS[80] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/TernaryOperator.uno");
+    ::STRINGS[79] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/TernaryOperator.uno");
     ::STRINGS[3] = uString::Const("TryCompute");
     type->SetInterfaces(
         ::g::Fuse::Reactive::IExpression_typeof(), offsetof(::g::Fuse::Reactive::ComputeExpression_type, interface0),
@@ -10684,7 +10612,7 @@ bool TernaryOperator::IsThirdOptional()
 // protected bool TryCompute(object first, object second, object third, object& result) [instance] :34
 bool TernaryOperator::TryCompute1(uObject* first, uObject* second, uObject* third, uObject** result)
 {
-    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[80/*"/usr/local/...*/], 36, ::STRINGS[3/*"TryCompute"*/]);
+    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[79/*"/usr/local/...*/], 36, ::STRINGS[3/*"TryCompute"*/]);
     *result = Compute(first, second, third);
     return true;
 }
@@ -10697,9 +10625,9 @@ bool TernaryOperator::TryCompute1(uObject* first, uObject* second, uObject* thir
 // {
 static void UnaryOperator_build(uType* type)
 {
-    ::STRINGS[81] = uString::Const("Failed to compute value: ");
-    ::STRINGS[82] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/UnaryOperator.uno");
-    ::STRINGS[83] = uString::Const("OnNewOperand");
+    ::STRINGS[80] = uString::Const("Failed to compute value: ");
+    ::STRINGS[81] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Expressions/1.9.0/UnaryOperator.uno");
+    ::STRINGS[82] = uString::Const("OnNewOperand");
     ::STRINGS[1] = uString::Const(" No `TryCompute`, or a deprecated form, overriden. Migrate your code to override the one with `bool` return. ");
     ::STRINGS[3] = uString::Const("TryCompute");
     ::TYPES[13] = ::g::Fuse::Reactive::IListener_typeof();
@@ -10824,7 +10752,7 @@ void UnaryOperator::OnNewOperand(uObject* listener, uObject* operand)
         ::g::Fuse::Reactive::IListener::OnNewData(uInterface(uPtr(listener), ::TYPES[13/*Fuse.Reactive.IListener*/]), (uObject*)this, result);
     else
     {
-        ::g::Fuse::Diagnostics::UserWarning(::g::Uno::String::op_Addition1(::STRINGS[81/*"Failed to c...*/], operand), this, ::STRINGS[82/*"/usr/local/...*/], 55, ::STRINGS[83/*"OnNewOperand"*/]);
+        ::g::Fuse::Diagnostics::UserWarning(::g::Uno::String::op_Addition1(::STRINGS[80/*"Failed to c...*/], operand), this, ::STRINGS[81/*"/usr/local/...*/], 55, ::STRINGS[82/*"OnNewOperand"*/]);
         ::g::Fuse::Reactive::IListener::OnLostData(uInterface(uPtr(listener), ::TYPES[13/*Fuse.Reactive.IListener*/]), (uObject*)this);
     }
 }
@@ -10832,7 +10760,7 @@ void UnaryOperator::OnNewOperand(uObject* listener, uObject* operand)
 // protected bool TryCompute(object operand, object& result) [instance] :30
 bool UnaryOperator::TryCompute1(uObject* operand, uObject** result)
 {
-    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[82/*"/usr/local/...*/], 32, ::STRINGS[3/*"TryCompute"*/]);
+    ::g::Fuse::Diagnostics::Deprecated(::STRINGS[1/*" No `TryCom...*/], this, ::STRINGS[81/*"/usr/local/...*/], 32, ::STRINGS[3/*"TryCompute"*/]);
     *result = Compute(operand);
     return true;
 }
@@ -11242,7 +11170,7 @@ uString* VarArgFunction::FormatString(uString* funcName)
     for (int32_t i = 0; i < ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(Arguments()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Reactive::Expression_typeof(), NULL))); ++i)
     {
         if (i > 0)
-            q = ::g::Uno::String::op_Addition2(q, ::STRINGS[76/*","*/]);
+            q = ::g::Uno::String::op_Addition2(q, ::STRINGS[75/*","*/]);
 
         q = ::g::Uno::String::op_Addition2(q, ::g::Uno::Object::ToString(uPtr((::g::Uno::Collections::IList::get_Item_ex(uInterface(uPtr(Arguments()), ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Reactive::Expression_typeof(), NULL)), uCRef<int32_t>(i), &ret1), ret1))));
     }
@@ -11260,27 +11188,27 @@ uString* VarArgFunction::FormatString(uString* funcName)
 // static generated WindowCaps() :83
 static void WindowCaps__cctor__fn(uType* __type)
 {
-    WindowCaps::NameWidth_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[84/*"width"*/]);
-    WindowCaps::NameHeight_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[85/*"height"*/]);
-    WindowCaps::NameSize_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[86/*"size"*/]);
-    WindowCaps::NamePixelsPerPoint_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[87/*"pixelsPerPo...*/]);
-    WindowCaps::NamePixelsPerOSPoint_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[88/*"pixelsPerOS...*/]);
-    WindowCaps::NameSafeMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[89/*"safeMargins"*/]);
-    WindowCaps::NameDeviceMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[90/*"deviceMargins"*/]);
-    WindowCaps::NameStaticMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[91/*"staticMargins"*/]);
+    WindowCaps::NameWidth_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[83/*"width"*/]);
+    WindowCaps::NameHeight_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[84/*"height"*/]);
+    WindowCaps::NameSize_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[85/*"size"*/]);
+    WindowCaps::NamePixelsPerPoint_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[86/*"pixelsPerPo...*/]);
+    WindowCaps::NamePixelsPerOSPoint_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[87/*"pixelsPerOS...*/]);
+    WindowCaps::NameSafeMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[88/*"safeMargins"*/]);
+    WindowCaps::NameDeviceMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[89/*"deviceMargins"*/]);
+    WindowCaps::NameStaticMargins_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[90/*"staticMargins"*/]);
 }
 
 static void WindowCaps_build(uType* type)
 {
-    ::STRINGS[84] = uString::Const("width");
-    ::STRINGS[85] = uString::Const("height");
-    ::STRINGS[86] = uString::Const("size");
-    ::STRINGS[87] = uString::Const("pixelsPerPoint");
-    ::STRINGS[88] = uString::Const("pixelsPerOSPoint");
-    ::STRINGS[89] = uString::Const("safeMargins");
-    ::STRINGS[90] = uString::Const("deviceMargins");
-    ::STRINGS[91] = uString::Const("staticMargins");
-    ::STRINGS[92] = uString::Const("No RootViewport found");
+    ::STRINGS[83] = uString::Const("width");
+    ::STRINGS[84] = uString::Const("height");
+    ::STRINGS[85] = uString::Const("size");
+    ::STRINGS[86] = uString::Const("pixelsPerPoint");
+    ::STRINGS[87] = uString::Const("pixelsPerOSPoint");
+    ::STRINGS[88] = uString::Const("safeMargins");
+    ::STRINGS[89] = uString::Const("deviceMargins");
+    ::STRINGS[90] = uString::Const("staticMargins");
+    ::STRINGS[91] = uString::Const("No RootViewport found");
     ::TYPES[45] = ::g::Uno::Action1_typeof()->MakeType(::g::Uno::Float2_typeof(), NULL);
     ::TYPES[24] = ::g::Uno::Action_typeof();
     ::TYPES[46] = ::g::Fuse::Node_typeof()->MakeMethod(2/*GetNearestAncestorOfType<Fuse.RootViewport>*/, ::g::Fuse::RootViewport_typeof(), NULL);
@@ -11480,7 +11408,7 @@ WindowCaps* WindowCaps::AttachFrom(::g::Fuse::Node* node)
     ::g::Fuse::RootViewport* rv = (::g::Fuse::RootViewport*)uPtr(node)->GetNearestAncestorOfType(::TYPES[46/*Fuse.Node.GetNearestAncestorOfType<Fuse.RootViewport>*/]);
 
     if (rv == NULL)
-        U_THROW(::g::Uno::Exception::New2(::STRINGS[92/*"No RootView...*/]));
+        U_THROW(::g::Uno::Exception::New2(::STRINGS[91/*"No RootView...*/]));
 
     return WindowCaps::Attach(rv);
 }
@@ -11647,14 +11575,14 @@ WindowItem* WindowItem::New1()
 // {
 static void WindowList_build(uType* type)
 {
-    ::STRINGS[93] = uString::Const("Item insertion order invalid");
-    ::STRINGS[94] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.9.0/WindowList.uno");
-    ::STRINGS[95] = uString::Const("InsertedDataAt");
+    ::STRINGS[92] = uString::Const("Item insertion order invalid");
+    ::STRINGS[93] = uString::Const("/usr/local/share/uno/Packages/Fuse.Reactive.Bindings/1.9.0/WindowList.uno");
+    ::STRINGS[94] = uString::Const("InsertedDataAt");
     ::STRINGS[18] = uString::Const("error");
-    ::STRINGS[96] = uString::Const("Limit cannot be less than 0");
-    ::STRINGS[97] = uString::Const("set_Limit");
-    ::STRINGS[98] = uString::Const("Offset cannot be less than 0");
-    ::STRINGS[99] = uString::Const("set_Offset");
+    ::STRINGS[95] = uString::Const("Limit cannot be less than 0");
+    ::STRINGS[96] = uString::Const("set_Limit");
+    ::STRINGS[97] = uString::Const("Offset cannot be less than 0");
+    ::STRINGS[98] = uString::Const("set_Offset");
     ::TYPES[47] = ::g::Fuse::Internal::ObjectList_typeof();
     type->SetDependencies(
         ::g::Uno::Math_typeof());
@@ -11881,7 +11809,7 @@ void WindowList::InsertedDataAt(int32_t dataIndex)
 
     if ((windowIndex > uPtr(_windowItems)->Count()) || (windowIndex < 0))
     {
-        ::g::Fuse::Diagnostics::InternalError(::STRINGS[93/*"Item insert...*/], this, ::STRINGS[94/*"/usr/local/...*/], 245, ::STRINGS[95/*"InsertedDat...*/]);
+        ::g::Fuse::Diagnostics::InternalError(::STRINGS[92/*"Item insert...*/], this, ::STRINGS[93/*"/usr/local/...*/], 245, ::STRINGS[94/*"InsertedDat...*/]);
         return;
     }
 
@@ -11910,7 +11838,7 @@ void WindowList::Limit(int32_t value)
 
     if (value < 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[96/*"Limit canno...*/], this, ::STRINGS[94/*"/usr/local/...*/], 150, ::STRINGS[97/*"set_Limit"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[95/*"Limit canno...*/], this, ::STRINGS[93/*"/usr/local/...*/], 150, ::STRINGS[96/*"set_Limit"*/], NULL);
         value = 0;
     }
 
@@ -11933,7 +11861,7 @@ void WindowList::Offset(int32_t value)
 
     if (value < 0)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[98/*"Offset cann...*/], this, ::STRINGS[94/*"/usr/local/...*/], 108, ::STRINGS[99/*"set_Offset"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[97/*"Offset cann...*/], this, ::STRINGS[93/*"/usr/local/...*/], 108, ::STRINGS[98/*"set_Offset"*/], NULL);
         value = 0;
     }
 

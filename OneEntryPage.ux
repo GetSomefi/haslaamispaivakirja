@@ -2,7 +2,7 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="OneEntryPage.js" />
 
-	<Image Layer="Background" File="Assets/vuoristomaisema.jpg" StretchMode="PixelPrecise" Background="#FFF" />
+	<bgImage />
 
 	<DockPanel>
 		<Grid ColumnCount="3" Margin="0, 0, 0, 15" Dock="Top" Padding="0, 15, 0, 0">

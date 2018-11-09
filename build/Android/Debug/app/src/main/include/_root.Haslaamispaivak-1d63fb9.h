@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor :31
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor :21
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor_typeof();
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this);

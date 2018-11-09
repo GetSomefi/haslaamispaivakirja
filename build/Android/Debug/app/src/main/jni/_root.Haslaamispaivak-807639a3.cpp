@@ -16,9 +16,9 @@ static uType* TYPES[2];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor :51
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor :41
 // {
-// static generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() :51
+// static generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() :41
 static void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__cctor__fn(uType* __type)
 {
     Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton_ = Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::New1();
@@ -57,43 +57,43 @@ static void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_buil
     return type;
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() :51
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() :41
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this)
 {
     __this->ctor_1();
 }
 
-// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :57
+// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :47
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__GetAsObject_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this, ::g::Uno::UX::PropertyObject* obj, uObject** __retval)
 {
     return *__retval = uBox(::g::Uno::Float4_typeof(), uPtr(uCast< ::g::BasicSwipeToggleBig*>(obj, ::TYPES[0/*BasicSwipeToggleBig*/]))->SecondaryColor()), void();
 }
 
-// public override sealed Uno.UX.Selector get_Name() :54
+// public override sealed Uno.UX.Selector get_Name() :44
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__get_Name_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this, ::g::Uno::UX::Selector* __retval)
 {
     return *__retval = Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::_name_, void();
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor New() :51
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor New() :41
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__New1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor** __retval)
 {
     *__retval = Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::New1();
 }
 
-// public override sealed Uno.Type get_PropertyType() :56
+// public override sealed Uno.Type get_PropertyType() :46
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__get_PropertyType_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this, uType** __retval)
 {
     return *__retval = ::g::Uno::Float4_typeof(), void();
 }
 
-// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :58
+// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :48
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__SetAsObject_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this, ::g::Uno::UX::PropertyObject* obj, uObject* v, uObject* origin)
 {
     uPtr(uCast< ::g::BasicSwipeToggleBig*>(obj, ::TYPES[0/*BasicSwipeToggleBig*/]))->SetSecondaryColor(uUnbox< ::g::Uno::Float4>(::g::Uno::Float4_typeof(), v), origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :59
+// public override sealed bool get_SupportsOriginSetter() :49
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__get_SupportsOriginSetter_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* __this, bool* __retval)
 {
     return *__retval = true, void();
@@ -102,13 +102,13 @@ void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor__get_Suppor
 uSStrong< ::g::Uno::UX::PropertyAccessor*> Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton_;
 ::g::Uno::UX::Selector Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::_name_;
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() [instance] :51
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor() [instance] :41
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::ctor_1()
 {
     ctor_();
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor New() [static] :51
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor New() [static] :41
 Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::New1()
 {
     Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor* obj1 = (Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor*)uNew(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_typeof());

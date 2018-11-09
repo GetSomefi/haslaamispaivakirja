@@ -1,0 +1,49 @@
+<Panel ux:Class="listBtn.Button" BgColor="#FFF" SelectedBgColor="#8bc34a" Margin="0,3" Padding="10" FontSize="16">
+	<string ux:Property="Send" />
+	<string ux:Property="Text" />
+	<string ux:Property="DataKey" />
+	<string ux:Property="BgColor" />
+	<string ux:Property="SelectedBgColor" />
+	<float ux:Property="FontSize" />
+
+	<Rectangle ux:Name="btnBackground" Layer="Background" Color="{ReadProperty BgColor}" CornerRadius="0" Opacity="0.8">
+		<DropShadow Angle="90" Distance="1" Spread="0.2" Size="2" Color="#00000060" />
+	</Rectangle>
+
+	<fa_check ux:Name="checkIcon" Visibility="Hidden" Margin="5, 0, 10, 0" TextAlignment="Right" Color="#125F63" FontSize="18" Alignment="Default" Opacity="1" />
+
+	<generaltext.Text ux:Name="btnText" Color="#666" FontSize="{ReadProperty FontSize}" Value="{ReadProperty Text}" TextAlignment="Left" Padding="0, 0, 0, 0" Margin="0, 0, 35, 0" />
+
+	<Selectable Value="{Property DataKey}" />
+
+	<WhileSelected>
+		<DebugAction Message="While Selected!" />
+		<Change Target="btnBackground.Color" Value="{ReadProperty SelectedBgColor}" />
+		<Change Target="btnBackground.Opacity" Value="1" />
+		<Change Target="btnText.Color" Value="#FFF" />
+		<Scale Factor="1.01" Duration="0.08" Easing="QuadraticInOut" />
+
+		<Set this.Send="{Property DataKey}" />
+		<Set checkIcon.Visibility="Visible" />
+	</WhileSelected>
+	<Deselected>
+		<Scale Factor="1" Duration="0.08" Easing="QuadraticInOut" />
+
+		<Set this.Send="" />
+		<Set checkIcon.Visibility="Hidden" />
+	</Deselected>
+
+	<Tapped>
+    	<DebugAction Message="Tapped!" />
+    	<Change Duration=".08" Target="btnBackground.Color" Value="#FFF" />
+        <ToggleSelection />
+    </Tapped>
+
+    <!--
+	<WhilePressed>
+		<DebugAction Message="Pressed!" />
+		<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+		<Change Target="btnBackground.Color" Value="#FFF" />
+	</WhilePressed>
+	-->
+</Panel>

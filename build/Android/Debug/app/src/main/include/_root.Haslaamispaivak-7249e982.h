@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseElementsElement_Visibility_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseElementsElement_Visibility_Property :241
+// internal sealed class Haslaamispaivakirja_FuseElementsElement_Visibility_Property :533
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseElementsElement_Visibility_Property_typeof();
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__ctor_3_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, ::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector* name);

@@ -24,6 +24,11 @@ void DefinitionBase__get_IsImplied_fn(DefinitionBase* __this, bool* __retval);
 void DefinitionBase__get_Metric_fn(DefinitionBase* __this, int32_t* __retval);
 void DefinitionBase__set_Metric_fn(DefinitionBase* __this, int32_t* value);
 void DefinitionBase__OnChanged_fn(DefinitionBase* __this);
+void DefinitionBase__Parse_fn(uType* __type, uString* data, DefinitionBase** __retval);
+void DefinitionBase__Parse1_fn(uType* __type, uString* data, uObject* output);
+void DefinitionBase__Serialize_fn(DefinitionBase* __this, uString** __retval);
+void DefinitionBase__Serialize1_fn(uType* __type, uObject* columns, uString** __retval);
+void DefinitionBase__get_UsesDefault_fn(DefinitionBase* __this, bool* __retval);
 
 struct DefinitionBase : ::g::Uno::UX::PropertyObject
 {
@@ -47,6 +52,11 @@ struct DefinitionBase : ::g::Uno::UX::PropertyObject
     int32_t Metric();
     void Metric(int32_t value);
     void OnChanged();
+    uString* Serialize();
+    bool UsesDefault();
+    static DefinitionBase* Parse(uType* __type, uString* data);
+    static void Parse1(uType* __type, uString* data, uObject* output);
+    static uString* Serialize1(uType* __type, uObject* columns);
 };
 // }
 

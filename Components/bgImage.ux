@@ -1,0 +1,8 @@
+<Panel ux:Class="bgImage" Layer="Background" File="../Assets/vuoristomaisema.jpg" StretchMode="UniformToFill" Background="#FF2">
+	<FileSource ux:Property="File" />
+	<string ux:Property="StretchMode" />
+	<float4 ux:Property="Background" />
+	
+	<StackPanel Background="#8C89B0B2" />
+	<Image File="{ReadProperty File}" StretchMode="{ReadProperty StretchMode}" Background="{ReadProperty Background}" />
+</Panel>

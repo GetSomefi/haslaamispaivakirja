@@ -1,15 +1,22 @@
 // This file was generated based on '/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/.uno/ux15/SplashPage.g.uno'.
 // WARNING: Changes might be lost if you edit this file directly.
 
+#include <_root.Haslaamispaivak-35b71aea.h>
 #include <_root.Haslaamispaivak-a8299899.h>
 #include <_root.SplashPage.h>
 #include <basicBtn.Button.h>
+#include <Fuse.Animations.Animator.h>
+#include <Fuse.Animations.Change-1.h>
 #include <Fuse.Controls.DockPanel.h>
 #include <Fuse.Controls.Grid.h>
+#include <Fuse.Controls.Rectangle.h>
+#include <Fuse.Controls.Shape.h>
 #include <Fuse.Controls.StackPanel.h>
 #include <Fuse.Controls.TextAlignment.h>
 #include <Fuse.Controls.TextControl.h>
 #include <Fuse.Controls.Video.h>
+#include <Fuse.Drawing.Brush.h>
+#include <Fuse.Drawing.StaticSolidColor.h>
 #include <Fuse.Effects.Blur.h>
 #include <Fuse.Elements.Alignment.h>
 #include <Fuse.Elements.Element.h>
@@ -24,6 +31,8 @@
 #include <Fuse.Reactive.Expression.h>
 #include <Fuse.Reactive.IExpression.h>
 #include <Fuse.Reactive.JavaScript.h>
+#include <Fuse.Triggers.Progres-182f6b55.h>
+#include <Fuse.Triggers.Trigger.h>
 #include <generaltext.Text.h>
 #include <header.Text.h>
 #include <Uno.Bool.h>
@@ -36,34 +45,43 @@
 #include <Uno.UX.BundleFileSource.h>
 #include <Uno.UX.FileSource.h>
 #include <Uno.UX.NameTable.h>
-static uString* STRINGS[8];
-static uType* TYPES[5];
+#include <Uno.UX.Property1-1.h>
+#include <Uno.UX.Selector.h>
+#include <Uno.UX.Unit.h>
+static uString* STRINGS[10];
+static uType* TYPES[7];
 
 namespace g{
 
 // public partial sealed class SplashPage :2
 // {
-// static SplashPage() :11
+// static SplashPage() :14
 static void SplashPage__cctor_4_fn(uType* __type)
 {
-    SplashPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 2, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"temp_eb13"*/]);
+    SplashPage::__g_static_nametable1_ = uArray::Init<uString*>(::TYPES[0/*string[]*/], 3, ::STRINGS[0/*"router"*/], ::STRINGS[1/*"progressBar"*/], ::STRINGS[2/*"temp_eb7"*/]);
+    SplashPage::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[3/*"Width"*/]);
+    SplashPage::__selector1_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[1/*"progressBar"*/]);
 }
 
 static void SplashPage_build(uType* type)
 {
     ::STRINGS[0] = uString::Const("router");
-    ::STRINGS[1] = uString::Const("temp_eb13");
-    ::STRINGS[2] = uString::Const("goToFirstPage");
-    ::STRINGS[3] = uString::Const("SplashPage.ux");
-    ::STRINGS[4] = uString::Const("original video by Peter Virtanen");
-    ::STRINGS[5] = uString::Const("The Mood");
-    ::STRINGS[6] = uString::Const("How are we feeling today?");
-    ::STRINGS[7] = uString::Const("Aloitetaan");
+    ::STRINGS[1] = uString::Const("progressBar");
+    ::STRINGS[2] = uString::Const("temp_eb7");
+    ::STRINGS[3] = uString::Const("Width");
+    ::STRINGS[4] = uString::Const("goToFirstPage");
+    ::STRINGS[5] = uString::Const("SplashPage.ux");
+    ::STRINGS[6] = uString::Const("original video by Peter Virtanen");
+    ::STRINGS[7] = uString::Const("The Mood");
+    ::STRINGS[8] = uString::Const("How are we feeling today?");
+    ::STRINGS[9] = uString::Const("Aloitetaan");
     ::TYPES[0] = ::g::Uno::String_typeof()->Array();
-    ::TYPES[1] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
-    ::TYPES[2] = ::g::Fuse::Gestures::ClickedHandler_typeof();
-    ::TYPES[3] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
-    ::TYPES[4] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
+    ::TYPES[1] = ::g::Fuse::Animations::Change_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL);
+    ::TYPES[2] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
+    ::TYPES[3] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
+    ::TYPES[4] = ::g::Fuse::Gestures::ClickedHandler_typeof();
+    ::TYPES[5] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
+    ::TYPES[6] = ::g::Uno::Collections::ICollection_typeof()->MakeType(uObject_typeof(), NULL);
     type->SetDependencies(
         ::g::Haslaamispaivakirja_bundle_typeof());
     type->SetInterfaces(
@@ -72,13 +90,13 @@ static void SplashPage_build(uType* type)
         ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface2),
         ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface3),
         ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface4),
-        ::TYPES[3/*Uno.Collections.ICollection<Fuse.Binding>*/], offsetof(::g::Fuse::Controls::Panel_type, interface5),
+        ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/], offsetof(::g::Fuse::Controls::Panel_type, interface5),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface6),
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface7),
         ::g::Uno::UX::IPropertyListener_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface8),
         ::g::Fuse::ITemplateSource_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface9),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Visual_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface10),
-        ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface11),
+        ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/], offsetof(::g::Fuse::Controls::Panel_type, interface11),
         ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface12),
         ::g::Fuse::Triggers::Actions::IShow_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface13),
         ::g::Fuse::Triggers::Actions::IHide_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface14),
@@ -88,9 +106,13 @@ static void SplashPage_build(uType* type)
         ::g::Fuse::Drawing::ISurfaceDrawable_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface18));
     type->SetFields(121,
         ::g::Fuse::Navigation::Router_typeof(), offsetof(SplashPage, router), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(SplashPage, temp_eb13), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL), offsetof(SplashPage, progressBar_Width_inst), 0,
+        ::g::Fuse::Controls::Rectangle_typeof(), offsetof(SplashPage, progressBar), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(SplashPage, temp_eb7), 0,
         ::g::Uno::UX::NameTable_typeof(), offsetof(SplashPage, __g_nametable1), 0,
-        ::TYPES[0/*string[]*/], (uintptr_t)&SplashPage::__g_static_nametable1_, uFieldFlagsStatic);
+        ::TYPES[0/*string[]*/], (uintptr_t)&SplashPage::__g_static_nametable1_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SplashPage::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&SplashPage::__selector1_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* SplashPage_typeof()
@@ -100,7 +122,7 @@ static void SplashPage_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Page_typeof();
-    options.FieldCount = 125;
+    options.FieldCount = 129;
     options.InterfaceCount = 19;
     options.DependencyCount = 1;
     options.ObjectSize = sizeof(SplashPage);
@@ -151,27 +173,29 @@ static void SplashPage_build(uType* type)
     return type;
 }
 
-// public SplashPage(Fuse.Navigation.Router router) :15
+// public SplashPage(Fuse.Navigation.Router router) :18
 void SplashPage__ctor_8_fn(SplashPage* __this, ::g::Fuse::Navigation::Router* router1)
 {
     __this->ctor_8(router1);
 }
 
-// private void InitializeUX() :21
+// private void InitializeUX() :24
 void SplashPage__InitializeUX_fn(SplashPage* __this)
 {
     __this->InitializeUX();
 }
 
-// public SplashPage New(Fuse.Navigation.Router router) :15
+// public SplashPage New(Fuse.Navigation.Router router) :18
 void SplashPage__New5_fn(::g::Fuse::Navigation::Router* router1, SplashPage** __retval)
 {
     *__retval = SplashPage::New5(router1);
 }
 
 uSStrong<uArray*> SplashPage::__g_static_nametable1_;
+::g::Uno::UX::Selector SplashPage::__selector0_;
+::g::Uno::UX::Selector SplashPage::__selector1_;
 
-// public SplashPage(Fuse.Navigation.Router router) [instance] :15
+// public SplashPage(Fuse.Navigation.Router router) [instance] :18
 void SplashPage::ctor_8(::g::Fuse::Navigation::Router* router1)
 {
     ctor_7();
@@ -179,93 +203,113 @@ void SplashPage::ctor_8(::g::Fuse::Navigation::Router* router1)
     InitializeUX();
 }
 
-// private void InitializeUX() [instance] :21
+// private void InitializeUX() [instance] :24
 void SplashPage::InitializeUX()
 {
     __g_nametable1 = ::g::Uno::UX::NameTable::New1(NULL, SplashPage::__g_static_nametable1_);
-    ::g::Fuse::Reactive::Data* temp = ::g::Fuse::Reactive::Data::New1(::STRINGS[2/*"goToFirstPage"*/]);
+    progressBar = ::g::Fuse::Controls::Rectangle::New3();
+    progressBar_Width_inst = ::g::Haslaamispaivakirja_FuseElementsElement_Width_Property::New1(progressBar, SplashPage::__selector0_);
+    ::g::Fuse::Reactive::Data* temp = ::g::Fuse::Reactive::Data::New1(::STRINGS[4/*"goToFirstPage"*/]);
     ::g::Fuse::Reactive::JavaScript* temp1 = ::g::Fuse::Reactive::JavaScript::New2(__g_nametable1);
     ::g::Fuse::Controls::DockPanel* temp2 = ::g::Fuse::Controls::DockPanel::New4();
     ::g::Fuse::Controls::Video* temp3 = ::g::Fuse::Controls::Video::New4();
     ::g::Fuse::Effects::Blur* temp4 = ::g::Fuse::Effects::Blur::New2();
-    ::g::generaltext::Text* temp5 = ::g::generaltext::Text::New4();
-    ::g::Fuse::Controls::Grid* temp6 = ::g::Fuse::Controls::Grid::New4();
-    ::g::Fuse::Controls::StackPanel* temp7 = ::g::Fuse::Controls::StackPanel::New4();
-    ::g::header::Text* temp8 = ::g::header::Text::New4();
-    ::g::generaltext::Text* temp9 = ::g::generaltext::Text::New4();
-    ::g::basicBtn::Button* temp10 = ::g::basicBtn::Button::New4();
-    temp_eb13 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp);
+    ::g::Fuse::Triggers::ProgressAnimation* temp5 = ::g::Fuse::Triggers::ProgressAnimation::New2();
+    ::g::Fuse::Animations::Change* temp6 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[1/*Fuse.Animations.Change<Uno.UX.Size>*/], progressBar_Width_inst);
+    ::g::Fuse::Drawing::StaticSolidColor* temp7 = ::g::Fuse::Drawing::StaticSolidColor::New2(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
+    ::g::generaltext::Text* temp8 = ::g::generaltext::Text::New4();
+    ::g::Fuse::Controls::Grid* temp9 = ::g::Fuse::Controls::Grid::New4();
+    ::g::Fuse::Controls::StackPanel* temp10 = ::g::Fuse::Controls::StackPanel::New4();
+    ::g::header::Text* temp11 = ::g::header::Text::New4();
+    ::g::generaltext::Text* temp12 = ::g::generaltext::Text::New4();
+    ::g::basicBtn::Button* temp13 = ::g::basicBtn::Button::New4();
+    temp_eb7 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp);
     SourceLineNumber(1);
-    SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
+    SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
     temp1->LineNumber(4);
-    temp1->FileName(::STRINGS[3/*"SplashPage.ux"*/]);
+    temp1->FileName(::STRINGS[5/*"SplashPage.ux"*/]);
     temp1->SourceLineNumber(4);
-    temp1->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
+    temp1->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
     temp1->File(::g::Uno::UX::BundleFileSource::New1(::g::Haslaamispaivakirja_bundle::SplashPage53ac0018()));
     temp2->ClipToBounds(true);
     temp2->SourceLineNumber(6);
-    temp2->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp3);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp5);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp6);
+    temp2->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp3);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), progressBar);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp8);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp2->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp9);
     temp3->IsLooping(true);
     temp3->AutoPlay(true);
     temp3->StretchMode(6);
     temp3->Opacity(0.7f);
     temp3->Layer(1);
     temp3->SourceLineNumber(8);
-    temp3->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
+    temp3->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
     temp3->File(::g::Uno::UX::BundleFileSource::New1(::g::Haslaamispaivakirja_bundle::retkelleoma398023dd()));
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp4);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp4);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp5);
     temp4->Radius(3.75f);
     temp4->SourceLineNumber(9);
-    temp4->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    temp5->Value(::STRINGS[4/*"original vi...*/]);
-    temp5->FontSize(12.0f);
-    temp5->TextAlignment(1);
-    temp5->Margin(::g::Uno::Float4__New2(15.0f, 15.0f, 15.0f, 15.0f));
-    temp5->Opacity(0.5f);
-    temp5->SourceLineNumber(12);
-    temp5->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    ::g::Fuse::Controls::DockPanel::SetDock(temp5, 3);
-    temp6->RowCount(2);
-    temp6->SourceLineNumber(14);
-    temp6->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp6->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp7);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp6->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp10);
-    temp7->SourceLineNumber(15);
-    temp7->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp7->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp8);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp7->Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp9);
-    temp8->Value(::STRINGS[5/*"The Mood"*/]);
-    temp8->FontSize(40.0f);
-    temp8->Alignment(2);
-    temp8->Margin(::g::Uno::Float4__New2(0.0f, 50.0f, 0.0f, 0.0f));
-    temp8->SourceLineNumber(16);
-    temp8->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    temp9->Value(::STRINGS[6/*"How are we ...*/]);
-    temp9->Alignment(2);
-    temp9->Opacity(0.5f);
-    temp9->SourceLineNumber(17);
-    temp9->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    temp10->Text(::STRINGS[7/*"Aloitetaan"*/]);
-    temp10->FontSize(18.0f);
-    temp10->Alignment(8);
-    temp10->Margin(::g::Uno::Float4__New2(50.0f, 0.0f, 50.0f, 0.0f));
+    temp4->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    temp5->SourceLineNumber(10);
+    temp5->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp5->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp6);
+    ::g::Fuse::Animations::Change__set_Value_fn(temp6, uCRef(::g::Uno::UX::Size__New1(100.0f, 1)));
+    uPtr(progressBar)->Width(::g::Uno::UX::Size__New1(0.0f, 4));
+    uPtr(progressBar)->Height(::g::Uno::UX::Size__New1(1.0f, 1));
+    uPtr(progressBar)->Opacity(0.2f);
+    uPtr(progressBar)->Name(SplashPage::__selector1_);
+    uPtr(progressBar)->SourceLineNumber(15);
+    uPtr(progressBar)->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Fuse::Controls::DockPanel::SetDock(progressBar, 2);
+    uPtr(progressBar)->Fill(temp7);
+    temp8->Value(::STRINGS[6/*"original vi...*/]);
+    temp8->FontSize(12.0f);
+    temp8->TextAlignment(1);
+    temp8->Margin(::g::Uno::Float4__New2(15.0f, 15.0f, 15.0f, 15.0f));
+    temp8->Opacity(0.5f);
+    temp8->SourceLineNumber(17);
+    temp8->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Fuse::Controls::DockPanel::SetDock(temp8, 3);
+    temp9->RowCount(2);
+    temp9->SourceLineNumber(19);
+    temp9->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp9->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp10);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp9->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp13);
     temp10->SourceLineNumber(20);
-    temp10->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
-    ::g::Fuse::Gestures::Clicked::AddHandler(temp10, uDelegate::New(::TYPES[2/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb13)));
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp10->Bindings()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb13);
-    temp->SourceLineNumber(20);
-    temp->SourceFileName(::STRINGS[3/*"SplashPage.ux"*/]);
+    temp10->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp10->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp11);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp10->Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp12);
+    temp11->Value(::STRINGS[7/*"The Mood"*/]);
+    temp11->FontSize(40.0f);
+    temp11->Alignment(2);
+    temp11->Margin(::g::Uno::Float4__New2(0.0f, 50.0f, 0.0f, 0.0f));
+    temp11->SourceLineNumber(21);
+    temp11->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    temp12->Value(::STRINGS[8/*"How are we ...*/]);
+    temp12->Alignment(2);
+    temp12->Opacity(0.5f);
+    temp12->SourceLineNumber(22);
+    temp12->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    temp13->Text(::STRINGS[9/*"Aloitetaan"*/]);
+    temp13->FontSize(18.0f);
+    temp13->Alignment(8);
+    temp13->Margin(::g::Uno::Float4__New2(50.0f, 0.0f, 50.0f, 0.0f));
+    temp13->SourceLineNumber(25);
+    temp13->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
+    ::g::Fuse::Gestures::Clicked::AddHandler(temp13, uDelegate::New(::TYPES[4/*Fuse.Gestures.ClickedHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb7)));
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp13->Bindings()), ::TYPES[5/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb7);
+    temp->SourceLineNumber(25);
+    temp->SourceFileName(::STRINGS[5/*"SplashPage.ux"*/]);
     uPtr(__g_nametable1)->This(this);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[4/*Uno.Collections.ICollection<object>*/]), router);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[4/*Uno.Collections.ICollection<object>*/]), temp_eb13);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp1);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[1/*Uno.Collections.ICollection<Fuse.Node>*/]), temp2);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[6/*Uno.Collections.ICollection<object>*/]), router);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[6/*Uno.Collections.ICollection<object>*/]), progressBar);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(__g_nametable1)->Objects()), ::TYPES[6/*Uno.Collections.ICollection<object>*/]), temp_eb7);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp1);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Node>*/]), temp2);
 }
 
-// public SplashPage New(Fuse.Navigation.Router router) [static] :15
+// public SplashPage New(Fuse.Navigation.Router router) [static] :18
 SplashPage* SplashPage::New5(::g::Fuse::Navigation::Router* router1)
 {
     SplashPage* obj1 = (SplashPage*)uNew(SplashPage_typeof());

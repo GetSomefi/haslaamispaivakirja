@@ -18,12 +18,10 @@ namespace Android{
 // {
 ::g::Fuse::Controls::Native::Android::View_type* LeafView_typeof();
 void LeafView__ctor_7_fn(LeafView* __this, ::g::Java::Object* handle);
-void LeafView__ctor_8_fn(LeafView* __this, ::g::Java::Object* handle, bool* handlesInput);
 
 struct LeafView : ::g::Fuse::Controls::Native::Android::View
 {
     void ctor_7(::g::Java::Object* handle);
-    void ctor_8(::g::Java::Object* handle, bool handlesInput);
 };
 // }
 

@@ -1,11 +1,15 @@
 var Observable = require("FuseJS/Observable");
 var Storage = require("FuseJS/Storage");
-var SAVENAME = "localStorage.json";
+
+//var SAVENAME = "localStorage.json"; //sisältää testiä varten paljon tietoja
+var SAVENAME = "localStorage2.json"; //tämä on tyhjäämisen testaamista varten
 
 var listoofoldentrys = Observable();
 var listoofoldentrys2 = Observable();
 var listing = Observable();
 var dataText = Observable("Loading...");
+
+var listingOpacity = Observable(0);
 
 var labels = {
 	mita_kiusaus:"Joku kiusasi minua.",
@@ -60,20 +64,12 @@ var labels = {
 }
 
 function readEntry(key){
-	//console.log('reading entry');
-	//console.log(JSON.stringify(listoofoldentrys2)); 
-
-	//listing.value = "";
 	var splittedDate = key.split("_");
 	var reparedDate = splittedDate[1] + "." + splittedDate[2] + "." + splittedDate[3]
 	dataText.value = "Päiväkirja "+reparedDate+" haettu";
 	var obj = listoofoldentrys2;
 	if(obj.hasOwnProperty(key)){
-		//console.log('key on ', JSON.stringify(obj[key]));
-		
 		var obj2 = obj[key];
-		//listing.add(obj2);
-		//console.log('label',labels[key], "haettu", JSON.stringify(obj2));
 		for( var k in obj2 ){
 			for( var k2 in labels ){
 				if( k == k2  ){
@@ -96,32 +92,44 @@ function readEntry(key){
 }
 
 function openEntry(parameter){
-	console.log('pa',JSON.stringify(parameter)); 
-	console.log('clicked key', parameter.data.key );
-	readEntry(parameter.data.key);
+	console.log('-------------- pa',JSON.stringify(parameter)); 
+	console.log('clicked key', parameter.data.datakey );
+	readEntry(parameter.data.datakey);
+	listingOpacity.value = 1;
 }
 
+function readEntrys(){
+	console.log('--------------');
+	listingOpacity.value = 0;
 
-Storage.read(SAVENAME)
-.then(function(response) {
-	dataText.value = "Lista haettu";
-	console.log(response);
-	
-	listoofoldentrys2 = JSON.parse(response);
-	
-	var listoofoldentrys_ = JSON.parse(response);
+	Storage.read(SAVENAME)
+	.then(function(response) {
+		var updDate = new Date();
+		dataText.value = 
+			"Lista haettu (" +
+			updDate.getHours() + "." +  
+			updDate.getMinutes() + ":" + 
+			updDate.getSeconds() + ")";
+		console.log(response);
+		
+		listoofoldentrys2 = JSON.parse(response);
+		
+		var listoofoldentrys_ = JSON.parse(response);
 
-	for( var key in listoofoldentrys_ ){
-		listoofoldentrys.add({
-			key:key
-		});
-	}
-}, function(error) {
-    //For now, let's expect the error to be because of the file not being found.
-    dataText.value = "There is currently no local data stored";
-});
-
-
+		for( var key in listoofoldentrys_ ){
+			var dateLabel = key.split("_");
+			dateLabel = "Pvm. " + dateLabel[1] + "." + dateLabel[2] + "." + dateLabel[3];
+			listoofoldentrys.add({
+				datakey: key,
+				text:dateLabel
+			});
+		}
+		listoofoldentrys = Observable();
+	}, function(error) {
+	    //For now, let's expect the error to be because of the file not being found.
+	    dataText.value = "There is currently no local data stored";
+	});
+}
 
 module.exports = {
 	listoofoldentrys:listoofoldentrys,
@@ -129,5 +137,8 @@ module.exports = {
 	dataText:dataText,
 	openEntry:openEntry,
 	listing:listing,
-	labels:labels
+	labels:labels,
+
+	readEntrys:readEntrys,
+	listingOpacity:listingOpacity
 };

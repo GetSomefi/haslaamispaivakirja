@@ -941,18 +941,6 @@ static void SpringFunction_build(uType* type)
     return type;
 }
 
-// public SpringFunction(Fuse.Reactive.Expression value) :13
-void SpringFunction__ctor_1_fn(SpringFunction* __this, ::g::Fuse::Reactive::Expression* value)
-{
-    __this->ctor_1(value);
-}
-
-// public SpringFunction New(Fuse.Reactive.Expression value) :13
-void SpringFunction__New1_fn(::g::Fuse::Reactive::Expression* value, SpringFunction** __retval)
-{
-    *__retval = SpringFunction::New1(value);
-}
-
 // public override sealed Uno.IDisposable Subscribe(Fuse.Reactive.IContext context, Fuse.Reactive.IListener listener) :19
 void SpringFunction__Subscribe_fn(SpringFunction* __this, uObject* context, uObject* listener, uObject** __retval)
 {
@@ -971,13 +959,6 @@ void SpringFunction__set_Value_fn(SpringFunction* __this, ::g::Fuse::Reactive::E
     __this->Value(value);
 }
 
-// public SpringFunction(Fuse.Reactive.Expression value) [instance] :13
-void SpringFunction::ctor_1(::g::Fuse::Reactive::Expression* value)
-{
-    ctor_();
-    Value(value);
-}
-
 // public generated Fuse.Reactive.Expression get_Value() [instance] :10
 ::g::Fuse::Reactive::Expression* SpringFunction::Value()
 {
@@ -988,14 +969,6 @@ void SpringFunction::ctor_1(::g::Fuse::Reactive::Expression* value)
 void SpringFunction::Value(::g::Fuse::Reactive::Expression* value)
 {
     _Value = value;
-}
-
-// public SpringFunction New(Fuse.Reactive.Expression value) [static] :13
-SpringFunction* SpringFunction::New1(::g::Fuse::Reactive::Expression* value)
-{
-    SpringFunction* obj1 = (SpringFunction*)uNew(SpringFunction_typeof());
-    obj1->ctor_1(value);
-    return obj1;
 }
 // }
 

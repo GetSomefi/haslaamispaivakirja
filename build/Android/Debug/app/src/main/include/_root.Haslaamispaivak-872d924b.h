@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor;
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor :21
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor :11
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor_typeof();
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor* __this);

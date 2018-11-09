@@ -10,7 +10,7 @@ namespace g{struct OldEntrysPage__Template58;}
 
 namespace g{
 
-// public partial sealed class OldEntrysPage.Template58 :2057
+// public partial sealed class OldEntrysPage.Template58 :2066
 // {
 ::g::Uno::UX::Template_type* OldEntrysPage__Template58_typeof();
 void OldEntrysPage__Template58__ctor_1_fn(OldEntrysPage__Template58* __this, ::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance);

@@ -8154,12 +8154,6 @@ void Marshal__TryConvertTo_fn(uType* t, uObject* o, uObject** res, uObject* diag
     *__retval = Marshal::TryConvertTo(t, o, res, diagnosticSource);
 }
 
-// public static bool TryMultiply(object a, object b, object& result) :68
-void Marshal__TryMultiply_fn(uObject* a, uObject* b, uObject** result, bool* __retval)
-{
-    *__retval = Marshal::TryMultiply(a, b, result);
-}
-
 // private static bool TryOp(Fuse.Computer.TypeOp op, object a, object b, object& result) :47
 void Marshal__TryOp1_fn(int32_t* op, uObject* a, uObject* b, uObject** result, bool* __retval)
 {
@@ -8686,13 +8680,6 @@ bool Marshal::TryConvertTo(uType* t, uObject* o, uObject** res, uObject* diagnos
 
     *res = NULL;
     return false;
-}
-
-// public static bool TryMultiply(object a, object b, object& result) [static] :68
-bool Marshal::TryMultiply(uObject* a, uObject* b, uObject** result)
-{
-    Marshal_typeof()->Init();
-    return Marshal::TryOp1(2, a, b, result);
 }
 
 // private static bool TryOp(Fuse.Computer.TypeOp op, object a, object b, object& result) [static] :47

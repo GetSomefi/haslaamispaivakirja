@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseControlsShape_Color_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseControlsShape_Color_Property :182
+// internal sealed class Haslaamispaivakirja_FuseControlsShape_Color_Property :474
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsShape_Color_Property_typeof();
 void Haslaamispaivakirja_FuseControlsShape_Color_Property__ctor_3_fn(Haslaamispaivakirja_FuseControlsShape_Color_Property* __this, ::g::Fuse::Controls::Shape* obj, ::g::Uno::UX::Selector* name);

@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseTriggersWhileString_Value_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseTriggersWhileString_Value_Property :233
+// internal sealed class Haslaamispaivakirja_FuseTriggersWhileString_Value_Property :525
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersWhileString_Value_Property_typeof();
 void Haslaamispaivakirja_FuseTriggersWhileString_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseTriggersWhileString_Value_Property* __this, ::g::Fuse::Triggers::WhileString* obj, ::g::Uno::UX::Selector* name);

@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_basicBtnButton_Text_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_basicBtnButton_Text_Property :146
+// internal sealed class Haslaamispaivakirja_basicBtnButton_Text_Property :412
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicBtnButton_Text_Property_typeof();
 void Haslaamispaivakirja_basicBtnButton_Text_Property__ctor_3_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, ::g::basicBtn::Button* obj, ::g::Uno::UX::Selector* name);

@@ -812,6 +812,12 @@ void Focus__SetDelegator_fn(::g::Fuse::Visual* n, uDelegate* delegator)
     Focus::SetDelegator(n, delegator);
 }
 
+// public static void SetFocusDelegate(Fuse.Visual n, Fuse.Visual d) :260
+void Focus__SetFocusDelegate_fn(::g::Fuse::Visual* n, ::g::Fuse::Visual* d)
+{
+    Focus::SetFocusDelegate(n, d);
+}
+
 // public static void SetIsFocusable(Fuse.Visual n, bool focusable) :229
 void Focus__SetIsFocusable_fn(::g::Fuse::Visual* n, bool* focusable)
 {
@@ -1059,6 +1065,13 @@ void Focus::SetDelegator(::g::Fuse::Visual* n, uDelegate* delegator)
 {
     Focus_typeof()->Init();
     uPtr(uPtr(n)->Properties())->Set(Focus::_focusDelegatorHandle_, delegator);
+}
+
+// public static void SetFocusDelegate(Fuse.Visual n, Fuse.Visual d) [static] :260
+void Focus::SetFocusDelegate(::g::Fuse::Visual* n, ::g::Fuse::Visual* d)
+{
+    Focus_typeof()->Init();
+    uPtr(n)->_focusDelegate = d;
 }
 
 // public static void SetIsFocusable(Fuse.Visual n, bool focusable) [static] :229

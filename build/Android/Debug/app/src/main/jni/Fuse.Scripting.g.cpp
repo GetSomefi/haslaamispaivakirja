@@ -17,7 +17,6 @@
 #include <Fuse.Scripting.Dependency.h>
 #include <Fuse.Scripting.DependencyType.h>
 #include <Fuse.Scripting.Diagno-2903b551.h>
-#include <Fuse.Scripting.Double-14a48a40.h>
 #include <Fuse.Scripting.Error.h>
 #include <Fuse.Scripting.EventE-d4b465f0.h>
 #include <Fuse.Scripting.ExecutionThread.h>
@@ -1557,72 +1556,6 @@ DiagnosticSubject* DiagnosticSubject::New1()
 {
     DiagnosticSubject* obj1 = (DiagnosticSubject*)uNew(DiagnosticSubject_typeof());
     obj1->ctor_();
-    return obj1;
-}
-// }
-
-// /usr/local/share/uno/Packages/Fuse.Scripting/1.9.0/IScriptEvent.uno
-// -------------------------------------------------------------------
-
-// public sealed class DoubleChangedArgs :52
-// {
-static void DoubleChangedArgs_build(uType* type)
-{
-    ::STRINGS[2] = uString::Const("value");
-    ::TYPES[2] = ::g::Fuse::Scripting::IEventSerializer_typeof();
-    type->SetBase(::g::Uno::UX::ValueChangedArgs_typeof()->MakeType(::g::Uno::Double_typeof(), NULL));
-    type->SetInterfaces(
-        ::g::Fuse::Scripting::IScriptEvent_typeof(), offsetof(DoubleChangedArgs_type, interface0));
-    type->SetFields(1);
-}
-
-DoubleChangedArgs_type* DoubleChangedArgs_typeof()
-{
-    static uSStrong<DoubleChangedArgs_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Uno::UX::ValueChangedArgs_typeof();
-    options.FieldCount = 1;
-    options.InterfaceCount = 1;
-    options.ObjectSize = sizeof(DoubleChangedArgs);
-    options.TypeSize = sizeof(DoubleChangedArgs_type);
-    type = (DoubleChangedArgs_type*)uClassType::New("Fuse.Scripting.DoubleChangedArgs", options);
-    type->fp_build_ = DoubleChangedArgs_build;
-    type->interface0.fp_Serialize = (void(*)(uObject*, uObject*))DoubleChangedArgs__FuseScriptingIScriptEventSerialize_fn;
-    return type;
-}
-
-// public DoubleChangedArgs(double value) :54
-void DoubleChangedArgs__ctor_2_fn(DoubleChangedArgs* __this, double* value)
-{
-    __this->ctor_2(*value);
-}
-
-// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :58
-void DoubleChangedArgs__FuseScriptingIScriptEventSerialize_fn(DoubleChangedArgs* __this, uObject* s)
-{
-    double ret2;
-    ::g::Fuse::Scripting::IEventSerializer::AddDouble(uInterface(uPtr(s), ::TYPES[2/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[2/*"value"*/], (::g::Uno::UX::ValueChangedArgs__get_Value_fn(__this, &ret2), ret2));
-}
-
-// public DoubleChangedArgs New(double value) :54
-void DoubleChangedArgs__New3_fn(double* value, DoubleChangedArgs** __retval)
-{
-    *__retval = DoubleChangedArgs::New3(*value);
-}
-
-// public DoubleChangedArgs(double value) [instance] :54
-void DoubleChangedArgs::ctor_2(double value)
-{
-    ::g::Uno::UX::ValueChangedArgs__ctor_1_fn(this, uCRef(value));
-}
-
-// public DoubleChangedArgs New(double value) [static] :54
-DoubleChangedArgs* DoubleChangedArgs::New3(double value)
-{
-    DoubleChangedArgs* obj1 = (DoubleChangedArgs*)uNew(DoubleChangedArgs_typeof());
-    obj1->ctor_2(value);
     return obj1;
 }
 // }

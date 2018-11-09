@@ -14,11 +14,13 @@ namespace UX{
 // public sealed class Resource :68
 // {
 uType* Resource_typeof();
+void Resource__ctor__fn(Resource* __this, uString* key, uObject* value);
 void Resource__AddGlobalKeyListener_fn(uDelegate* listener);
 void Resource__GetGlobalKey_fn(uObject* obj, uString** __retval);
 void Resource__GetGlobalsOfType_fn(uType* __type, uObject** __retval);
 void Resource__get_Key_fn(Resource* __this, uString** __retval);
 void Resource__set_Key_fn(Resource* __this, uString* value);
+void Resource__New1_fn(uString* key, uObject* value, Resource** __retval);
 void Resource__RemoveGlobalKeyListener_fn(uDelegate* listener);
 void Resource__SetGlobalKey_fn(uObject* obj, uString* key);
 void Resource__TryFindGlobal_fn(uString* key, uDelegate* acceptor, uObject** res, bool* __retval);
@@ -34,6 +36,7 @@ struct Resource : uObject
     uStrong<uString*> _Key;
     uStrong<uObject*> _Value;
 
+    void ctor_(uString* key, uObject* value);
     uString* Key();
     void Key(uString* value);
     uObject* Value();
@@ -41,6 +44,7 @@ struct Resource : uObject
     static void AddGlobalKeyListener(uDelegate* listener);
     static uString* GetGlobalKey(uObject* obj);
     static uObject* GetGlobalsOfType(uType* __type);
+    static Resource* New1(uString* key, uObject* value);
     static void RemoveGlobalKeyListener(uDelegate* listener);
     static void SetGlobalKey(uObject* obj, uString* key);
     static bool TryFindGlobal(uString* key, uDelegate* acceptor, uObject** res);

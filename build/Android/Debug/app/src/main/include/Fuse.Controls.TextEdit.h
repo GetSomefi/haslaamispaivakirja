@@ -4,6 +4,7 @@
 #pragma once
 #include <Fuse.Animations.IResize.h>
 #include <Fuse.Binding.h>
+#include <Fuse.Controls.ITextEditControl.h>
 #include <Fuse.Controls.TextControl.h>
 #include <Fuse.IActualPlacement.h>
 #include <Fuse.INotifyUnrooted.h>
@@ -35,6 +36,7 @@ namespace Controls{
 // {
 struct TextEdit_type : ::g::Fuse::Controls::TextControl_type
 {
+    ::g::Fuse::Controls::ITextEditControl interface19;
     void(*fp_OnActionStyleChanged)(::g::Fuse::Controls::TextEdit*);
     void(*fp_OnAutoCapitalizationHintChanged)(::g::Fuse::Controls::TextEdit*);
     void(*fp_OnAutoCorrectHintChanged)(::g::Fuse::Controls::TextEdit*);

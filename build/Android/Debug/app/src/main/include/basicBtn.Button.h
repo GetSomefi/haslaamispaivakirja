@@ -20,6 +20,7 @@
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
+#include <Uno.Float4.h>
 #include <Uno.UX.IPropertyListener.h>
 namespace g{namespace basicBtn{struct Button;}}
 namespace g{namespace Uno{namespace UX{struct Property1;}}}
@@ -32,10 +33,16 @@ namespace basicBtn{
 // {
 ::g::Fuse::Controls::Panel_type* Button_typeof();
 void Button__ctor_7_fn(Button* __this);
+void Button__get_BgColor_fn(Button* __this, uString** __retval);
+void Button__set_BgColor_fn(Button* __this, uString* value);
+void Button__get_DataKey_fn(Button* __this, uString** __retval);
+void Button__set_DataKey_fn(Button* __this, uString* value);
 void Button__get_FontSize_fn(Button* __this, float* __retval);
 void Button__set_FontSize_fn(Button* __this, float* value);
 void Button__InitializeUX_fn(Button* __this);
 void Button__New4_fn(Button** __retval);
+void Button__SetBgColor_fn(Button* __this, uString* value, uObject* origin);
+void Button__SetDataKey_fn(Button* __this, uString* value, uObject* origin);
 void Button__SetFontSize_fn(Button* __this, float* value, uObject* origin);
 void Button__SetText_fn(Button* __this, uString* value, uObject* origin);
 void Button__get_Text_fn(Button* __this, uString** __retval);
@@ -44,18 +51,29 @@ void Button__set_Text_fn(Button* __this, uString* value);
 struct Button : ::g::Fuse::Controls::Panel
 {
     uStrong<uString*> _field_Text;
+    uStrong<uString*> _field_DataKey;
+    uStrong<uString*> _field_BgColor;
     float _field_FontSize;
-    uStrong< ::g::Uno::UX::Property1*> temp_FontSize_inst;
-    uStrong< ::g::Uno::UX::Property1*> temp_Value_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp_Color_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp1_FontSize_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp1_Value_inst;
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return Button_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;
     static ::g::Uno::UX::Selector& __selector1() { return Button_typeof()->Init(), __selector1_; }
+    static ::g::Uno::UX::Selector __selector2_;
+    static ::g::Uno::UX::Selector& __selector2() { return Button_typeof()->Init(), __selector2_; }
 
     void ctor_7();
+    uString* BgColor();
+    void BgColor(uString* value);
+    uString* DataKey();
+    void DataKey(uString* value);
     float FontSize();
     void FontSize(float value);
     void InitializeUX();
+    void SetBgColor(uString* value, uObject* origin);
+    void SetDataKey(uString* value, uObject* origin);
     void SetFontSize(float value, uObject* origin);
     void SetText(uString* value, uObject* origin);
     uString* Text();

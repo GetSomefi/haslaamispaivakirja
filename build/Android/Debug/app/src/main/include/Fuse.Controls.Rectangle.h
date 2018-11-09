@@ -37,7 +37,7 @@ namespace g{
 namespace Fuse{
 namespace Controls{
 
-// public partial sealed class Rectangle :8
+// public partial class Rectangle :8
 // {
 ::g::Fuse::Controls::Shape_type* Rectangle_typeof();
 void Rectangle__ctor_7_fn(Rectangle* __this);

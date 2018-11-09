@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property :216
+// internal sealed class Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property :508
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_typeof();
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* __this, ::g::Fuse::Triggers::Actions::Set* obj, ::g::Uno::UX::Selector* name);

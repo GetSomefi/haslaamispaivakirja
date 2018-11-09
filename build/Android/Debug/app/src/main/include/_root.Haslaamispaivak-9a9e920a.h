@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_basicBtn_Button_Text;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_Text :111
+// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_Text :181
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicBtn_Button_Text_typeof();
 void Haslaamispaivakirja_accessor_basicBtn_Button_Text__ctor_1_fn(Haslaamispaivakirja_accessor_basicBtn_Button_Text* __this);

@@ -1,21 +1,41 @@
 <Page ux:Class="SettingsPage">
 	<string ux:Key="Title" ux:Value="Settings" />
 	<Router ux:Dependency="router" />
-	<JavaScript File="SettingsPage.js" />
+	<JavaScript File="SettingsPage.js" /> 
 
-	<Image Layer="Background" File="Assets/settings.jpg" StretchMode="UniformToFill" Background="#FFF" />
+	<bgImage File="Assets/settings.jpg" />
 
-	<FlyingDock title="{Page Title}" router="router"/>
+	<FlyingDock title="{Page Title}" router="router" />
 
 	<ScrollView Background="#8C89B0B2" Padding="0, 0, 0, 0">	
 
 		<StackPanel Margin="15, 60, 15, 0"><!--Start of main holder-->
 
+			<header.Text Value="Päiväkirjat" Margin="0, 0, 0, 0" TextAlignment="Left" />
+
+			<basicBtn.Button Text="Näytä" Clicked="{goToOldEntrys}" BgColor="#125F63" Margin="0, 30, 0, 30" />
+
 			<header.Text Value="Asetukset" Margin="0, 0, 0, 0" TextAlignment="Left" />
 
-			<StackPanel>
-				<basicBtn.Button BgColor="#DA4245" Margin="0, 15, 0, 15" Text="Tyhjennä" Clicked="{goToOldEntrys}" />
-			</StackPanel>
+
+			<Panel Height="3" Margin="0, 30, 0, 8">
+			    <Rectangle Height="2">
+			        <SolidColor Color="#DA4245" />
+			    </Rectangle>
+			</Panel>
+			<basic.LabelText TextWrapping="Wrap" Color="#DA4245" TextAlignment="Center">VAARA-ALUE</basic.LabelText>
+			<Panel Height="3" Margin="0, 0, 0, 15">
+			    <Rectangle Height="2">
+			        <SolidColor Color="#DA4245" /> 
+			    </Rectangle>
+			</Panel>
+
+			<basic.LabelText TextWrapping="Wrap">Voit halutessasi tyhjentää kaikki tiedot tästä laitteesta painamalla alla olevaa nappia pitkään.</basic.LabelText>
+			<basic.LabelText Value="Tietojen tila: {dataExists}" TextWrapping="Wrap" />
+
+			<LongPressButton BackgroundColor="#DA4245" />
+
+			<basic.LabelText FontSize="15" Color="#FAFEFF" TextWrapping="Wrap" TextAlignment="Center" Margin="0, 5, 0, 0" Padding="0, 0, 0, 0" Alignment="Default">Tietoja ei voi palauttaa takaisin!</basic.LabelText> 
 
 		</StackPanel><!--End of main holder-->
 	

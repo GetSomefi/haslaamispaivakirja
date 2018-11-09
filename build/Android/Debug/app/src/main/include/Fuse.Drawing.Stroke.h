@@ -23,7 +23,6 @@ struct Stroke_type : uType
 };
 
 Stroke_type* Stroke_typeof();
-void Stroke__ctor_1_fn(Stroke* __this);
 void Stroke__Adjust_fn(Stroke* __this, float* w, float* ppi, float* __retval);
 void Stroke__get_Adjustment_fn(Stroke* __this, int32_t* __retval);
 void Stroke__set_Adjustment_fn(Stroke* __this, int32_t* value);
@@ -42,7 +41,6 @@ void Stroke__get_LineJoin_fn(Stroke* __this, int32_t* __retval);
 void Stroke__set_LineJoin_fn(Stroke* __this, int32_t* value);
 void Stroke__get_LineJoinMiterLimit_fn(Stroke* __this, float* __retval);
 void Stroke__set_LineJoinMiterLimit_fn(Stroke* __this, float* value);
-void Stroke__New2_fn(Stroke** __retval);
 void Stroke__OnPinned_fn(Stroke* __this);
 void Stroke__OnUnpinned_fn(Stroke* __this);
 void Stroke__Pin_fn(Stroke* __this);
@@ -85,7 +83,6 @@ struct Stroke : ::g::Uno::UX::PropertyObject
     float _lineJoinMiterLimit;
     int32_t _pinCount;
 
-    void ctor_1();
     float Adjust(float w, float ppi);
     int32_t Adjustment();
     void Adjustment(int32_t value);
@@ -112,7 +109,6 @@ struct Stroke : ::g::Uno::UX::PropertyObject
     void Unpin();
     float Width();
     void Width(float value);
-    static Stroke* New2();
 };
 // }
 

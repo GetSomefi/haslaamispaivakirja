@@ -23,6 +23,7 @@ namespace Triggers{
 // {
 ::g::Fuse::Triggers::Trigger_type* WhileTrigger_typeof();
 void WhileTrigger__ctor_5_fn(WhileTrigger* __this);
+void WhileTrigger__BypassSetActive_fn(WhileTrigger* __this, bool* on);
 void WhileTrigger__get_Invert_fn(WhileTrigger* __this, bool* __retval);
 void WhileTrigger__set_Invert_fn(WhileTrigger* __this, bool* value);
 void WhileTrigger__SetActive_fn(WhileTrigger* __this, bool* on);
@@ -32,6 +33,7 @@ struct WhileTrigger : ::g::Fuse::Triggers::Trigger
     bool _Invert;
 
     void ctor_5();
+    void BypassSetActive(bool on);
     bool Invert();
     void Invert(bool value);
     void SetActive(bool on);

@@ -3,20 +3,47 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="FirstPage.js" />
 
-	<Image Layer="Background" File="Assets/vuoristomaisema.jpg" StretchMode="PixelPrecise" Background="#FFF" />
+	<bgImage />
+	<!--
+	<Image Layer="Background" File="Assets/vuoristomaisema.jpg" StretchMode="UniformToFill" Background="#FFF" />
+	-->
 
-	<FlyingDock title="{Page Title}" router="router"/>
+	<FlyingDock title="{Page Title}" router="router" />
+	
+	<DockPanel>
+		<StackPanel ux:Name="SavedDock" Dock="Bottom" Background="#FFF" Padding="15" Margin="0, 0, 0, -80">
+			<!-- Tämä oli autosavea varten <Text Value="Talletettu" TextAlignment="Center" /> -->
+			<basicBtn.Button Text="Talleta" Clicked="{isOnButton}" BgColor="#125F63" Margin="0, 0, 0, 0" />
+		</StackPanel>
+	</DockPanel>
 
-	<ScrollView Background="#8C89B0B2" Padding="0, 0, 0, 0">	
+	<WhileTrue Value="{saved}">
+		<Move Target="SavedDock" Y="-80" Duration="1" Easing="BackOut" />
+		<!-- <Callback Handler="{changeSaved}" Delay="2" /> -->
+	</WhileTrue>
+
+	<ScrollView Padding="0, 0, 0, 0">	
 
 		<StackPanel Margin="15, 60, 15, 0"><!--Start of main holder-->
 
-			<basicBtn.Button Text="Katso vanhat" Clicked="{goToOldEntrys}" />
+			<!-- Siirretty asetuksiin
+			<basicBtn.Button Text="Katso vanhat" Clicked="{goToOldEntrys}" BgColor="#125F63" Margin="0, 30, 0, 30" />-->
 			
 			<header.Text Value="Millä tuulella tänään?" Margin="0, 0, 0, 0" TextAlignment="Left" />
 			<Text Margin="0, 0, 0, 30">Kerro hieman tämän päivän vihanhallinnastasi.</Text>
 
 			<StackPanel Margin="0, 0, 0, 30" Padding="0">
+
+			<!--
+				<StackPanel>
+					<basic.TitleText>Testialue</basic.TitleText>
+				</StackPanel>
+
+				<StackPanel>
+					<basic.TitleText Margin="0, 0, 0, 30">Testialue</basic.TitleText>
+				</StackPanel>
+			-->
+
 				<StackPanel>
 					<basic.TitleText>Mitä tapahtui?</basic.TitleText>
 				</StackPanel>
@@ -25,38 +52,39 @@
 					<Grid ColumnCount="1">
 						<StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="mita_kiusaus" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Joku kiusasi minua.</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Joku kiusasi minua.</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="mita_varkaus" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Joku otti jotain minulle kuuluvaa.</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Joku otti jotain minulle kuuluvaa.</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="mita_inho" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Joku teki jotain, mistä en pitänyt.</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Joku teki jotain, mistä en pitänyt.</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="mita_teinvaarin" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Tein jotain väärin.</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Tein jotain väärin.</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="mita_riitely" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Joku alkoi riidellä tai tapella kanssani.</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Joku alkoi riidellä tai tapella kanssani.</basic.LabelText>
 								</Grid>
 							</StackPanel>
-							<StackPanel Margin="0, 0, 0, 5">
+							<StackPanel ux:Name="mita_muuta_panel" IsFocusable="true" Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType1}" ux:Name="mita_muuta" PlaceholderText="Muuta" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+									<basic.TextBoxAction ux:Name="mita_muuta" Focus.Delegate="mita_muuta_panel" PlaceholderText="Muuta" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+
 								</Grid>
 							</StackPanel>
 
@@ -74,21 +102,21 @@
 					<Grid ColumnCount="1">
 						<StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="milloin_aamu" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Aamu</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Aamu</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="milloin_iltapaiva" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Iltapäivä</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Iltapäivä</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
-								<Grid ColumnCount="4">
+								<Grid ColumnCount="3">
 									<BasicSwipeToggleBig ux:Name="milloin_ilta" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Ilta</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Ilta</basic.LabelText>
 								</Grid>
 							</StackPanel>
 						</StackPanel>
@@ -102,42 +130,42 @@
 				</StackPanel>
 
 				<StackPanel>
-					<Grid ColumnCount="2">
+					<Grid ColumnCount="1">
 						<StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_koulu" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Luokassa/koulussa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_koulu" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Luokassa/koulussa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_asuntola" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Asuntolassa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_asuntola" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Asuntolassa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_liikuntasali" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Liikuntasalissa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_liikuntasali" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Liikuntasalissa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_oleskelutila" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Oleskelutiloissa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_oleskelutila" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Oleskelutiloissa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_wc" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">WC:ssä</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_wc" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">WC:ssä</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_kanslia" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Kansliassa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_kanslia" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kansliassa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 						</StackPanel>
@@ -145,37 +173,37 @@
 						<StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_ruokala" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Ruokalassa</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_ruokala" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Ruokalassa</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_ulkona" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Ulkona/pihalla</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_ulkona" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Ulkona/pihalla</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_kadulla" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Kadulla</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_kadulla" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kadulla</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_kaytavalla" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Käytävällä</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_kaytavalla" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Käytävällä</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="3">
-									<BasicSwipeToggle ux:Name="missa_toissa" PrimaryColor="White" />
-									<basic.LabelText ColumnSpan="2" Margin="5, 5, 0, 0">Töissä</basic.LabelText>
+									<BasicSwipeToggleBig ux:Name="missa_toissa" PrimaryColor="White" />
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Töissä</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType2}" ux:Name="missa_muualla" PlaceholderText="Muualla, missä?" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+									<basic.TextBoxAction ux:Name="missa_muualla" PlaceholderText="Muualla, missä?" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
 								</Grid>
 							</StackPanel>
 						</StackPanel>
@@ -217,7 +245,7 @@
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType3}" ux:Name="kuka_jokumuu" PlaceholderText="Joku muu" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+									<basic.TextBoxAction ux:Name="kuka_jokumuu" PlaceholderText="Joku muu" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
 								</Grid>
 							</StackPanel>
 						</StackPanel>
@@ -248,64 +276,69 @@
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_huusin" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Huusin</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Huusin</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_itkin" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Itkin</basic.LabelText>
+									<basic.LabelText  TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Itkin</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_kavelinpois" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Kävelin pois rauhallisesti</basic.LabelText>
+									<basic.LabelText  TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kävelin pois rauhallisesti</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_rikoinjotain" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Rikoin jotain</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Rikoin jotain</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_kerroinaiku" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Kerroin aikuiselle</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kerroin aikuiselle</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_kerroinkave" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Kerroin kaverille</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kerroin kaverille</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_envalittanut" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">En välittänyt asiasta</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">En välittänyt asiasta</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="mitateit_hoidinasianpuhumalla" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Hoidin asian puhumalla</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Hoidin asian puhumalla</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType6}" ux:Name="mitateit_vihanhallinanmenetelma" PlaceholderText="Käytin vihanhallinan menetelmää (mitä)" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+								<!--
+									<basic.TextBoxAction ux:Name="mitateit_vihanhallinanmenetelma" PlaceholderText="Käytin vihanhallinan menetelmää (mitä)" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+								-->
+								<StackPanel>
+									<textDropDown Value="Käytin vihanhallinan menetelmää (mitä)" Name="mitateit_vihanhallinanmenetelma" SendName="{entrystrSendName}" Send="{entrystr}" dropDownList="{listOfAnger}" />
+								</StackPanel>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType4}" ux:Name="mitateit_sosiaalinentaito" PlaceholderText="Käytin sosiaalista taitoa (mitä)" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+									<basic.TextBoxAction ux:Name="mitateit_sosiaalinentaito" PlaceholderText="Käytin sosiaalista taitoa (mitä)" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="1">
-									<basic.TextBoxAction ValueChanged="{onType5}" ux:Name="mitateit_jotainmuuta" PlaceholderText="Jotain muuta" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
+									<basic.TextBoxAction ux:Name="mitateit_jotainmuuta" PlaceholderText="Jotain muuta" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />
 								</Grid>
 							</StackPanel>		
 						</StackPanel>
@@ -324,35 +357,37 @@
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="viha_kihisinraivosta" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Kihisin raivosta</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Kihisin raivosta</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="viha_todellavihainen" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Todella vihainen</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Todella vihainen</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="viha_melkovihainen" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Melko vihainen</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Melko vihainen</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="viha_lievaviha" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Lievästi vihainen, mutta silti OK</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Lievästi vihainen, mutta silti OK</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="viha_enlainkaan" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">En lainkaan vihainen</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">En lainkaan vihainen</basic.LabelText>
 								</Grid>
 							</StackPanel>
+							<!--
 							<Rectangle X="spring({Property slider_viha.Value})*30% + 50%" Alignment="TopLeft" Width="32" Height="32" />
 							<Slider ux:Name="slider_viha" Minimum="-1" Maximum="1" />
+							-->
 						</StackPanel>
 					</Grid>
 				</StackPanel>
@@ -369,35 +404,37 @@
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="hallinta_1" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Huonosti</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Huonosti</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="hallinta_2" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">En kovin hyvin</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">En kovin hyvin</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="hallinta_3" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Melko hyvin</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Melko hyvin</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="hallinta_4" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Hyvin</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Hyvin</basic.LabelText>
 								</Grid>
 							</StackPanel>
 							<StackPanel Margin="0, 0, 0, 5">
 								<Grid ColumnCount="4">
 									<BasicSwipeToggleBig ux:Name="hallinta_5" PrimaryColor="White" />
-									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 5, 0, 0">Todella hienosti</basic.LabelText>
+									<basic.LabelText TextWrapping="Wrap" ColumnSpan="3" Margin="5, 0, 0, 0" Alignment="CenterLeft">Todella hienosti</basic.LabelText>
 								</Grid>
 							</StackPanel>
+							<!--
 							<Rectangle X="spring({Property slider_hallinta.Value})*30% + 50%" Alignment="TopLeft" Width="32" Height="32" />
 							<Slider ux:Name="slider_hallinta" Minimum="-1" Maximum="1" />
+							-->
 						</StackPanel>
 					</Grid>
 				</StackPanel>

@@ -1,5 +1,6 @@
 <Panel ux:Class="basicBtn.Button" BgColor="#DA4245" Margin="15" Padding="15" FontSize="16">
 	<string ux:Property="Text" />
+	<string ux:Property="DataKey" />
 	<string ux:Property="BgColor" />
 	<float ux:Property="FontSize" />
 

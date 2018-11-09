@@ -11,7 +11,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseElementsElement_Visibility_Property :241
+// internal sealed class Haslaamispaivakirja_FuseElementsElement_Visibility_Property :533
 // {
 static void Haslaamispaivakirja_FuseElementsElement_Visibility_Property_build(uType* type)
 {
@@ -40,51 +40,51 @@ static void Haslaamispaivakirja_FuseElementsElement_Visibility_Property_build(uT
     return type;
 }
 
-// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property(Fuse.Elements.Element obj, Uno.UX.Selector name) :244
+// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property(Fuse.Elements.Element obj, Uno.UX.Selector name) :536
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__ctor_3_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, ::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed Fuse.Elements.Visibility Get(Uno.UX.PropertyObject obj) :246
+// public override sealed Fuse.Elements.Visibility Get(Uno.UX.PropertyObject obj) :538
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__Get1_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, ::g::Uno::UX::PropertyObject* obj, int32_t* __retval)
 {
     return *__retval = uPtr(uCast< ::g::Fuse::Elements::Element*>(obj, ::TYPES[0/*Fuse.Elements.Element*/]))->Visibility(), void();
 }
 
-// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property New(Fuse.Elements.Element obj, Uno.UX.Selector name) :244
+// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property New(Fuse.Elements.Element obj, Uno.UX.Selector name) :536
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__New1_fn(::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseElementsElement_Visibility_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseElementsElement_Visibility_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :245
+// public override sealed Uno.UX.PropertyObject get_Object() :537
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__get_Object_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, Fuse.Elements.Visibility v, Uno.UX.IPropertyListener origin) :247
+// public override sealed void Set(Uno.UX.PropertyObject obj, Fuse.Elements.Visibility v, Uno.UX.IPropertyListener origin) :539
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__Set1_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, ::g::Uno::UX::PropertyObject* obj, int32_t* v, uObject* origin)
 {
     int32_t v_ = *v;
     uPtr(uCast< ::g::Fuse::Elements::Element*>(obj, ::TYPES[0/*Fuse.Elements.Element*/]))->SetVisibility(v_, origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :248
+// public override sealed bool get_SupportsOriginSetter() :540
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property__get_SupportsOriginSetter_fn(Haslaamispaivakirja_FuseElementsElement_Visibility_Property* __this, bool* __retval)
 {
     return *__retval = true, void();
 }
 
-// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property(Fuse.Elements.Element obj, Uno.UX.Selector name) [instance] :244
+// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property(Fuse.Elements.Element obj, Uno.UX.Selector name) [instance] :536
 void Haslaamispaivakirja_FuseElementsElement_Visibility_Property::ctor_3(::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property New(Fuse.Elements.Element obj, Uno.UX.Selector name) [static] :244
+// public Haslaamispaivakirja_FuseElementsElement_Visibility_Property New(Fuse.Elements.Element obj, Uno.UX.Selector name) [static] :536
 Haslaamispaivakirja_FuseElementsElement_Visibility_Property* Haslaamispaivakirja_FuseElementsElement_Visibility_Property::New1(::g::Fuse::Elements::Element* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseElementsElement_Visibility_Property* obj1 = (Haslaamispaivakirja_FuseElementsElement_Visibility_Property*)uNew(Haslaamispaivakirja_FuseElementsElement_Visibility_Property_typeof());

@@ -16,6 +16,8 @@ struct Haslaamispaivakirja_bundle : uObject
 {
     static uSStrong< ::g::Uno::IO::BundleFile*> FirstPage32a714a7_;
     static uSStrong< ::g::Uno::IO::BundleFile*>& FirstPage32a714a7() { return Haslaamispaivakirja_bundle_typeof()->Init(), FirstPage32a714a7_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> FlyingDockdbd892b5_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& FlyingDockdbd892b5() { return Haslaamispaivakirja_bundle_typeof()->Init(), FlyingDockdbd892b5_; }
     static uSStrong< ::g::Uno::IO::BundleFile*> fontawesomewebfontcf015a92_;
     static uSStrong< ::g::Uno::IO::BundleFile*>& fontawesomewebfontcf015a92() { return Haslaamispaivakirja_bundle_typeof()->Init(), fontawesomewebfontcf015a92_; }
     static uSStrong< ::g::Uno::IO::BundleFile*> OldEntrysPage3df5b649_;
@@ -24,6 +26,10 @@ struct Haslaamispaivakirja_bundle : uObject
     static uSStrong< ::g::Uno::IO::BundleFile*>& OneEntryPage0780757d() { return Haslaamispaivakirja_bundle_typeof()->Init(), OneEntryPage0780757d_; }
     static uSStrong< ::g::Uno::IO::BundleFile*> retkelleoma398023dd_;
     static uSStrong< ::g::Uno::IO::BundleFile*>& retkelleoma398023dd() { return Haslaamispaivakirja_bundle_typeof()->Init(), retkelleoma398023dd_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> settingsf4eda0eb_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& settingsf4eda0eb() { return Haslaamispaivakirja_bundle_typeof()->Init(), settingsf4eda0eb_; }
+    static uSStrong< ::g::Uno::IO::BundleFile*> SettingsPage02002bd6_;
+    static uSStrong< ::g::Uno::IO::BundleFile*>& SettingsPage02002bd6() { return Haslaamispaivakirja_bundle_typeof()->Init(), SettingsPage02002bd6_; }
     static uSStrong< ::g::Uno::IO::BundleFile*> SplashPage53ac0018_;
     static uSStrong< ::g::Uno::IO::BundleFile*>& SplashPage53ac0018() { return Haslaamispaivakirja_bundle_typeof()->Init(), SplashPage53ac0018_; }
     static uSStrong< ::g::Uno::IO::BundleFile*> vuoristomaisema84f6fc28_;

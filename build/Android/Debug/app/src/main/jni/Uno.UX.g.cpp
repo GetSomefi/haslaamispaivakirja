@@ -861,6 +861,12 @@ uType* Resource_typeof()
     return type;
 }
 
+// public Resource(string key, object value) :74
+void Resource__ctor__fn(Resource* __this, uString* key, uObject* value)
+{
+    __this->ctor_(key, value);
+}
+
 // public static void AddGlobalKeyListener(Uno.Action<string> listener) :88
 void Resource__AddGlobalKeyListener_fn(uDelegate* listener)
 {
@@ -889,6 +895,12 @@ void Resource__get_Key_fn(Resource* __this, uString** __retval)
 void Resource__set_Key_fn(Resource* __this, uString* value)
 {
     __this->Key(value);
+}
+
+// public Resource New(string key, object value) :74
+void Resource__New1_fn(uString* key, uObject* value, Resource** __retval)
+{
+    *__retval = Resource::New1(key, value);
 }
 
 // public static void RemoveGlobalKeyListener(Uno.Action<string> listener) :98
@@ -923,6 +935,13 @@ void Resource__set_Value_fn(Resource* __this, uObject* value)
 
 uSStrong< ::g::Uno::Collections::Dictionary*> Resource::_globals_;
 uSStrong< ::g::Uno::Collections::List*> Resource::_listeners_;
+
+// public Resource(string key, object value) [instance] :74
+void Resource::ctor_(uString* key, uObject* value)
+{
+    Key(key);
+    Value(value);
+}
 
 // public generated string get_Key() [instance] :70
 uString* Resource::Key()
@@ -1117,6 +1136,14 @@ uObject* Resource::GetGlobalsOfType(uType* __type)
     }
 
     return (uObject*)result;
+}
+
+// public Resource New(string key, object value) [static] :74
+Resource* Resource::New1(uString* key, uObject* value)
+{
+    Resource* obj5 = (Resource*)uNew(Resource_typeof());
+    obj5->ctor_(key, value);
+    return obj5;
 }
 
 // public static void RemoveGlobalKeyListener(Uno.Action<string> listener) [static] :98

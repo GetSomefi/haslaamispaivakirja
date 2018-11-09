@@ -2,34 +2,36 @@
 	<string ux:Property="title" />
 	<Router ux:Dependency="router" />
 	<JavaScript File="../Components/FlyingDock.js" />
-	<DockPanel>
-		<Grid ColumnCount="3" Margin="0, 0, 0, 15" Dock="Top" Padding="0, 15, 0, 0">
-
-			<StackPanel Margin="5,0">
-				<Rectangle ux:Name="home" HitTestMode="LocalBounds" Clicked="{goHome}" >
-					<fa_home Margin="10, 5, 5, 5" TextAlignment="Left" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
-				</Rectangle>
-				<Rectangle ux:Name="back" HitTestMode="LocalBounds" Clicked="{goBack}" Visibility="Collapsed">
-					<fa_chevron_left Margin="10, 5, 5, 5" TextAlignment="Left" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
-				</Rectangle>
-			</StackPanel>
-
-			<StackPanel Margin="5,0">
-				<header.Text Clicked="{goSplash}" TextAlignment="Center" Margin="0, 4, 0, 0" FontSize="20" Alignment="Default">The Mood</header.Text>
-			</StackPanel>
-
-			<StackPanel Margin="5,0">
-				<Rectangle ux:Name="settings" HitTestMode="LocalBounds" Clicked="{goSettings}">
-					<fa_cog Margin="5, 5, 10, 5" TextAlignment="Right" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
-				</Rectangle>
-			</StackPanel>
-
+	<DockPanel Dock="Top" Layer="Overlay" Alignment="Top">
+		<Rectangle Dock="Fill">
 			<LinearGradient>
 				<GradientStop Offset="0" Color="#00000059" />
 				<GradientStop Offset="1" Color="#00000000" />
 			</LinearGradient>
 
-		</Grid>
+			<Grid Margin="0, 0, 0, 15" Padding="0, 10, 0, 0" Columns="1*,4*,1*" DefaultRow="50" DefaultColumn="auto">
+				<StackPanel Margin="5,0">
+					<Rectangle ux:Name="home" HitTestMode="LocalBounds" Clicked="{goHome}">
+						<fa_home Margin="10, 5, 5, 5" TextAlignment="Left" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
+					</Rectangle>
+					<Rectangle ux:Name="back" HitTestMode="LocalBounds" Clicked="{goBack}" Visibility="Collapsed">
+						<fa_chevron_left Margin="10, 5, 5, 5" TextAlignment="Left" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
+					</Rectangle>
+				</StackPanel>
+
+				<StackPanel Margin="5,0">
+					<header.Text Clicked="{goSplash}" TextAlignment="Center" Margin="0, 4, 0, 0" FontSize="20" Alignment="Default">The Mood</header.Text>
+				</StackPanel>
+
+				<StackPanel Margin="5,0">
+					<Rectangle ux:Name="settings" HitTestMode="LocalBounds" Clicked="{goSettings}">
+						<fa_cog Margin="5, 5, 10, 5" TextAlignment="Right" Color="White" FontSize="18" Alignment="Default" Opacity="1" />
+					</Rectangle>
+				</StackPanel>
+			</Grid>
+		
+		</Rectangle>
+
 		<WhileString Value="{Property title}" Equals="Home">
 	        <Change home.Visibility="Collapsed" />
 	        <Change back.Visibility="Visible" />

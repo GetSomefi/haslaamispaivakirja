@@ -14,18 +14,25 @@
 #include <Fuse.Reactive.IObservableArray.h>
 #include <Fuse.Reactive.ISubscription.h>
 #include <Fuse.Reactive.VarArgFunction.h>
+#include <Fuse.Scripting.IEvent-434826af.h>
 #include <Fuse.Scripting.ScriptClass.h>
 #include <Fuse.Scripting.ScriptMember.h>
 #include <Fuse.Scripting.ScriptMethod1-1.h>
+#include <Fuse.Selection.Deselected.h>
 #include <Fuse.Selection.IsSele-42ba01d2.h>
 #include <Fuse.Selection.IsSele-aab5acda.h>
 #include <Fuse.Selection.Select-30798591.h>
+#include <Fuse.Selection.Select-383213fc.h>
 #include <Fuse.Selection.Select-94349afa.h>
 #include <Fuse.Selection.Selectable.h>
+#include <Fuse.Selection.Selected.h>
 #include <Fuse.Selection.Selection.h>
 #include <Fuse.Selection.Selection.How.h>
+#include <Fuse.Selection.SelectionEvent.h>
 #include <Fuse.Selection.SelectMode.h>
 #include <Fuse.Selection.ToggleSelection.h>
+#include <Fuse.Selection.WhileSelected.h>
+#include <Fuse.Triggers.Trigger.h>
 #include <Fuse.Visual.h>
 #include <Uno.Action.h>
 #include <Uno.Action1-1.h>
@@ -45,12 +52,105 @@
 #include <Uno.Type.h>
 #include <Uno.UX.PropertyObject.h>
 #include <Uno.UX.Selector.h>
-static uString* STRINGS[19];
-static uType* TYPES[8];
+static uString* STRINGS[22];
+static uType* TYPES[9];
 
 namespace g{
 namespace Fuse{
 namespace Selection{
+
+// /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selected.uno
+// ---------------------------------------------------------------
+
+// public sealed class Deselected :87
+// {
+static void Deselected_build(uType* type)
+{
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface8));
+    type->SetFields(42);
+}
+
+::g::Fuse::Selection::SelectionEvent_type* Deselected_typeof()
+{
+    static uSStrong< ::g::Fuse::Selection::SelectionEvent_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Selection::SelectionEvent_typeof();
+    options.FieldCount = 42;
+    options.InterfaceCount = 9;
+    options.ObjectSize = sizeof(Deselected);
+    options.TypeSize = sizeof(::g::Fuse::Selection::SelectionEvent_type);
+    type = (::g::Fuse::Selection::SelectionEvent_type*)uClassType::New("Fuse.Selection.Deselected", options);
+    type->fp_build_ = Deselected_build;
+    type->fp_ctor_ = (void*)Deselected__New2_fn;
+    type->fp_IsTriggered = (void(*)(::g::Fuse::Selection::SelectionEvent*, bool*, bool*))Deselected__IsTriggered_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// public generated Deselected() :87
+void Deselected__ctor_7_fn(Deselected* __this)
+{
+    __this->ctor_7();
+}
+
+// protected override sealed bool IsTriggered(bool on) :89
+void Deselected__IsTriggered_fn(Deselected* __this, bool* on, bool* __retval)
+{
+    bool on_ = *on;
+    return *__retval = !on_, void();
+}
+
+// public generated Deselected New() :87
+void Deselected__New2_fn(Deselected** __retval)
+{
+    *__retval = Deselected::New2();
+}
+
+// public generated Deselected() [instance] :87
+void Deselected::ctor_7()
+{
+    ctor_6();
+}
+
+// public generated Deselected New() [static] :87
+Deselected* Deselected::New2()
+{
+    Deselected* obj1 = (Deselected*)uNew(Deselected_typeof());
+    obj1->ctor_7();
+    return obj1;
+}
+// }
 
 // /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selection.uno
 // ----------------------------------------------------------------
@@ -498,6 +598,7 @@ static void Selectable_build(uType* type)
     options.TypeSize = sizeof(::g::Fuse::Node_type);
     type = (::g::Fuse::Node_type*)uClassType::New("Fuse.Selection.Selectable", options);
     type->fp_build_ = Selectable_build;
+    type->fp_ctor_ = (void*)Selectable__New2_fn;
     type->fp_cctor_ = Selectable__cctor_1_fn;
     type->fp_OnRooted = (void(*)(::g::Fuse::Node*))Selectable__OnRooted_fn;
     type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))Selectable__OnUnrooted_fn;
@@ -522,6 +623,12 @@ static void Selectable_build(uType* type)
     return type;
 }
 
+// public generated Selectable() :9
+void Selectable__ctor_3_fn(Selectable* __this)
+{
+    __this->ctor_3();
+}
+
 // private static void add(Fuse.Selection.Selectable s) :24
 void Selectable__add_fn(Selectable* s)
 {
@@ -532,6 +639,12 @@ void Selectable__add_fn(Selectable* s)
 void Selectable__Add1_fn(Selectable* __this)
 {
     __this->Add1();
+}
+
+// public generated Selectable New() :9
+void Selectable__New2_fn(Selectable** __retval)
+{
+    *__retval = Selectable::New2();
 }
 
 // protected override sealed void OnRooted() :35
@@ -588,6 +701,12 @@ void Selectable__set_Value_fn(Selectable* __this, uString* value)
 }
 
 ::g::Uno::UX::Selector Selectable::ValueName_;
+
+// public generated Selectable() [instance] :9
+void Selectable::ctor_3()
+{
+    ctor_2();
+}
 
 // public void Add() [instance] :78
 void Selectable::Add1()
@@ -653,6 +772,14 @@ void Selectable::add(Selectable* s)
     uPtr(s)->Add1();
 }
 
+// public generated Selectable New() [static] :9
+Selectable* Selectable::New2()
+{
+    Selectable* obj1 = (Selectable*)uNew(Selectable_typeof());
+    obj1->ctor_3();
+    return obj1;
+}
+
 // private static void remove(Fuse.Selection.Selectable s) [static] :36
 void Selectable::remove(Selectable* s)
 {
@@ -665,6 +792,72 @@ void Selectable::toggle(Selectable* s)
 {
     Selectable_typeof()->Init();
     uPtr(s)->Toggle();
+}
+// }
+
+// /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selected.uno
+// ---------------------------------------------------------------
+
+// public sealed class Selected :76
+// {
+static void Selected_build(uType* type)
+{
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Selection::SelectionEvent_type, interface8));
+    type->SetFields(42);
+}
+
+::g::Fuse::Selection::SelectionEvent_type* Selected_typeof()
+{
+    static uSStrong< ::g::Fuse::Selection::SelectionEvent_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Selection::SelectionEvent_typeof();
+    options.FieldCount = 42;
+    options.InterfaceCount = 9;
+    options.ObjectSize = sizeof(Selected);
+    options.TypeSize = sizeof(::g::Fuse::Selection::SelectionEvent_type);
+    type = (::g::Fuse::Selection::SelectionEvent_type*)uClassType::New("Fuse.Selection.Selected", options);
+    type->fp_build_ = Selected_build;
+    type->fp_IsTriggered = (void(*)(::g::Fuse::Selection::SelectionEvent*, bool*, bool*))Selected__IsTriggered_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// protected override sealed bool IsTriggered(bool on) :78
+void Selected__IsTriggered_fn(Selected* __this, bool* on, bool* __retval)
+{
+    bool on_ = *on;
+    return *__retval = on_, void();
 }
 // }
 
@@ -720,6 +913,7 @@ Selection_type* Selection_typeof()
     options.TypeSize = sizeof(Selection_type);
     type = (Selection_type*)uClassType::New("Fuse.Selection.Selection", options);
     type->fp_build_ = Selection_build;
+    type->fp_ctor_ = (void*)Selection__New2_fn;
     type->fp_cctor_ = Selection__cctor_1_fn;
     type->fp_OnRooted = (void(*)(::g::Fuse::Node*))Selection__OnRooted_fn;
     type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))Selection__OnUnrooted_fn;
@@ -750,6 +944,12 @@ Selection_type* Selection_typeof()
     type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
     type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
     return type;
+}
+
+// public generated Selection() :9
+void Selection__ctor_3_fn(Selection* __this)
+{
+    __this->ctor_3();
 }
 
 // private static void add(Fuse.Selection.Selection s, object[] args) :39
@@ -938,6 +1138,12 @@ void Selection__ModifyValue_fn(Selection* __this, uString* old, uString* nw)
     __this->ModifyValue(old, nw);
 }
 
+// public generated Selection New() :9
+void Selection__New2_fn(Selection** __retval)
+{
+    *__retval = Selection::New2();
+}
+
 // private void OnNewAll(Fuse.IArray values) :438
 void Selection__OnNewAll_fn(Selection* __this, uObject* values)
 {
@@ -1043,6 +1249,13 @@ void Selection__TryFindSelection_fn(::g::Fuse::Node* v, Selection** __retval)
 }
 
 ::g::Uno::UX::Selector Selection::ValueName_;
+
+// public generated Selection() [instance] :9
+void Selection::ctor_3()
+{
+    _values = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::String_typeof(), NULL)));
+    ctor_2();
+}
 
 // public void Add(Fuse.Selection.Selectable b) [instance] :192
 void Selection::Add1(::g::Fuse::Selection::Selectable* b)
@@ -1344,6 +1557,14 @@ void Selection::forceRemove(Selection* s, uArray* args)
     uPtr(s)->ForceRemove1((::g::Fuse::Marshal__ToType_fn(::g::Fuse::Marshal_typeof()->MakeMethod(0/*ToType<string>*/, ::g::Uno::String_typeof(), NULL), uPtr(args)->Strong<uObject*>(0), &ret6), ret6));
 }
 
+// public generated Selection New() [static] :9
+Selection* Selection::New2()
+{
+    Selection* obj1 = (Selection*)uNew(Selection_typeof());
+    obj1->ctor_3();
+    return obj1;
+}
+
 // private static void remove(Fuse.Selection.Selection s, object[] args) [static] :57
 void Selection::remove(Selection* s, uArray* args)
 {
@@ -1428,6 +1649,225 @@ Selection* Selection::TryFindSelection(::g::Fuse::Node* v)
 }
 // }
 
+// /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selected.uno
+// ---------------------------------------------------------------
+
+// public abstract class SelectionEvent :26
+// {
+static void SelectionEvent_build(uType* type)
+{
+    ::STRINGS[0] = uString::Const("Unable to locate a `Selectable` and `Selection`");
+    ::STRINGS[16] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selected.uno");
+    ::STRINGS[13] = uString::Const("OnRooted");
+    ::TYPES[0] = ::g::Uno::EventHandler_typeof();
+    type->SetBase(::g::Fuse::Triggers::PulseTrigger_typeof()->MakeType(::g::Fuse::Selection::SelectionEventArgs_typeof(), NULL));
+    type->SetDependencies(
+        ::g::Fuse::Selection::Selection_typeof());
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SelectionEvent_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(SelectionEvent_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(SelectionEvent_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(SelectionEvent_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(SelectionEvent_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SelectionEvent_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(SelectionEvent_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(SelectionEvent_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(SelectionEvent_type, interface8));
+    type->SetFields(39,
+        ::g::Fuse::Selection::Selectable_typeof(), offsetof(SelectionEvent, _selectable), 0,
+        ::g::Fuse::Selection::Selection_typeof(), offsetof(SelectionEvent, _selection), 0,
+        ::g::Uno::Bool_typeof(), offsetof(SelectionEvent, _selected), 0);
+}
+
+SelectionEvent_type* SelectionEvent_typeof()
+{
+    static uSStrong<SelectionEvent_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Triggers::PulseTrigger_typeof();
+    options.FieldCount = 42;
+    options.InterfaceCount = 9;
+    options.DependencyCount = 1;
+    options.ObjectSize = sizeof(SelectionEvent);
+    options.TypeSize = sizeof(SelectionEvent_type);
+    type = (SelectionEvent_type*)uClassType::New("Fuse.Selection.SelectionEvent", options);
+    type->fp_build_ = SelectionEvent_build;
+    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))SelectionEvent__OnRooted_fn;
+    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))SelectionEvent__OnUnrooted_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// internal SelectionEvent() :28
+void SelectionEvent__ctor_6_fn(SelectionEvent* __this)
+{
+    __this->ctor_6();
+}
+
+// protected override sealed void OnRooted() :35
+void SelectionEvent__OnRooted_fn(SelectionEvent* __this)
+{
+    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
+
+    if (!::g::Fuse::Selection::Selection::TryFindSelectable(__this->Parent(), &__this->_selectable, &__this->_selection))
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[0/*"Unable to l...*/], __this, ::STRINGS[16/*"/usr/local/...*/], 41, ::STRINGS[13/*"OnRooted"*/], NULL);
+        return;
+    }
+
+    uPtr(__this->_selection)->add_SelectionChanged(uDelegate::New(::TYPES[0/*Uno.EventHandler*/], (void*)SelectionEvent__OnSelectionChanged_fn, __this));
+    __this->_selected = uPtr(__this->_selection)->IsSelected(__this->_selectable);
+}
+
+// private void OnSelectionChanged(object s, object args) :59
+void SelectionEvent__OnSelectionChanged_fn(SelectionEvent* __this, uObject* s, uObject* args)
+{
+    __this->OnSelectionChanged(s, args);
+}
+
+// protected override sealed void OnUnrooted() :49
+void SelectionEvent__OnUnrooted_fn(SelectionEvent* __this)
+{
+    if (__this->_selection != NULL)
+        uPtr(__this->_selection)->remove_SelectionChanged(uDelegate::New(::TYPES[0/*Uno.EventHandler*/], (void*)SelectionEvent__OnSelectionChanged_fn, __this));
+
+    __this->_selection = NULL;
+    __this->_selectable = NULL;
+    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
+}
+
+// internal SelectionEvent() [instance] :28
+void SelectionEvent::ctor_6()
+{
+    ctor_5();
+}
+
+// private void OnSelectionChanged(object s, object args) [instance] :59
+void SelectionEvent::OnSelectionChanged(uObject* s, uObject* args)
+{
+    bool news = uPtr(_selection)->IsSelected(_selectable);
+
+    if (news == _selected)
+        return;
+
+    if (IsTriggered(news))
+        Pulse1(::g::Fuse::Selection::SelectionEventArgs::New2(uPtr(_selectable)->Value()));
+
+    _selected = news;
+}
+// }
+
+// /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selected.uno
+// ---------------------------------------------------------------
+
+// public sealed class SelectionEventArgs :8
+// {
+static void SelectionEventArgs_build(uType* type)
+{
+    ::STRINGS[17] = uString::Const("value");
+    ::TYPES[8] = ::g::Fuse::Scripting::IEventSerializer_typeof();
+    type->SetInterfaces(
+        ::g::Fuse::Scripting::IScriptEvent_typeof(), offsetof(SelectionEventArgs_type, interface0));
+    type->SetFields(0,
+        ::g::Uno::String_typeof(), offsetof(SelectionEventArgs, _Value), 0);
+}
+
+SelectionEventArgs_type* SelectionEventArgs_typeof()
+{
+    static uSStrong<SelectionEventArgs_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Uno::EventArgs_typeof();
+    options.FieldCount = 1;
+    options.InterfaceCount = 1;
+    options.ObjectSize = sizeof(SelectionEventArgs);
+    options.TypeSize = sizeof(SelectionEventArgs_type);
+    type = (SelectionEventArgs_type*)uClassType::New("Fuse.Selection.SelectionEventArgs", options);
+    type->fp_build_ = SelectionEventArgs_build;
+    type->interface0.fp_Serialize = (void(*)(uObject*, uObject*))SelectionEventArgs__FuseScriptingIScriptEventSerialize_fn;
+    return type;
+}
+
+// public SelectionEventArgs(string value) :15
+void SelectionEventArgs__ctor_1_fn(SelectionEventArgs* __this, uString* value)
+{
+    __this->ctor_1(value);
+}
+
+// private void Fuse.Scripting.IScriptEvent.Serialize(Fuse.Scripting.IEventSerializer s) :20
+void SelectionEventArgs__FuseScriptingIScriptEventSerialize_fn(SelectionEventArgs* __this, uObject* s)
+{
+    ::g::Fuse::Scripting::IEventSerializer::AddString(uInterface(uPtr(s), ::TYPES[8/*Fuse.Scripting.IEventSerializer*/]), ::STRINGS[17/*"value"*/], __this->Value());
+}
+
+// public SelectionEventArgs New(string value) :15
+void SelectionEventArgs__New2_fn(uString* value, SelectionEventArgs** __retval)
+{
+    *__retval = SelectionEventArgs::New2(value);
+}
+
+// public generated string get_Value() :13
+void SelectionEventArgs__get_Value_fn(SelectionEventArgs* __this, uString** __retval)
+{
+    *__retval = __this->Value();
+}
+
+// private generated void set_Value(string value) :13
+void SelectionEventArgs__set_Value_fn(SelectionEventArgs* __this, uString* value)
+{
+    __this->Value(value);
+}
+
+// public SelectionEventArgs(string value) [instance] :15
+void SelectionEventArgs::ctor_1(uString* value)
+{
+    ctor_();
+    Value(value);
+}
+
+// public generated string get_Value() [instance] :13
+uString* SelectionEventArgs::Value()
+{
+    return _Value;
+}
+
+// private generated void set_Value(string value) [instance] :13
+void SelectionEventArgs::Value(uString* value)
+{
+    _Value = value;
+}
+
+// public SelectionEventArgs New(string value) [static] :15
+SelectionEventArgs* SelectionEventArgs::New2(uString* value)
+{
+    SelectionEventArgs* obj1 = (SelectionEventArgs*)uNew(SelectionEventArgs_typeof());
+    obj1->ctor_1(value);
+    return obj1;
+}
+// }
+
 // /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/Selection.uno
 // ----------------------------------------------------------------
 
@@ -1469,9 +1909,9 @@ uEnumType* SelectMode_typeof()
 // {
 static void ToggleSelection_build(uType* type)
 {
-    ::STRINGS[16] = uString::Const("Unable to locate Selectable");
-    ::STRINGS[17] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.9.0/ToggleSelection.uno");
-    ::STRINGS[18] = uString::Const("Perform");
+    ::STRINGS[18] = uString::Const("Unable to locate Selectable");
+    ::STRINGS[19] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.9.0/ToggleSelection.uno");
+    ::STRINGS[20] = uString::Const("Perform");
     type->SetDependencies(
         ::g::Fuse::Selection::Selection_typeof());
     type->SetInterfaces(
@@ -1494,11 +1934,18 @@ static void ToggleSelection_build(uType* type)
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Selection.ToggleSelection", options);
     type->fp_build_ = ToggleSelection_build;
+    type->fp_ctor_ = (void*)ToggleSelection__New2_fn;
     type->fp_Perform = (void(*)(::g::Fuse::Triggers::Actions::TriggerAction*, ::g::Fuse::Node*))ToggleSelection__Perform_fn;
     type->interface0.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Triggers::Actions::TriggerAction__FuseISourceLocationget_SourceNearest_fn;
     type->interface0.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Triggers::Actions::TriggerAction__get_SourceLineNumber_fn;
     type->interface0.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Triggers::Actions::TriggerAction__get_SourceFileName_fn;
     return type;
+}
+
+// public generated ToggleSelection() :26
+void ToggleSelection__ctor_2_fn(ToggleSelection* __this)
+{
+    __this->ctor_2();
 }
 
 // public Fuse.Selection.SelectMode get_Mode() :36
@@ -1513,6 +1960,12 @@ void ToggleSelection__set_Mode_fn(ToggleSelection* __this, int32_t* value)
     __this->Mode(*value);
 }
 
+// public generated ToggleSelection New() :26
+void ToggleSelection__New2_fn(ToggleSelection** __retval)
+{
+    *__retval = ToggleSelection::New2();
+}
+
 // protected override sealed void Perform(Fuse.Node target) :40
 void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* target)
 {
@@ -1521,7 +1974,7 @@ void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* targe
 
     if (!::g::Fuse::Selection::Selection::TryFindSelectable(target, &selectable, &selection))
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[16/*"Unable to l...*/], __this, ::STRINGS[17/*"/usr/local/...*/], 46, ::STRINGS[18/*"Perform"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[18/*"Unable to l...*/], __this, ::STRINGS[19/*"/usr/local/...*/], 46, ::STRINGS[20/*"Perform"*/], NULL);
         return;
     }
 
@@ -1545,6 +1998,12 @@ void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* targe
     }
 }
 
+// public generated ToggleSelection() [instance] :26
+void ToggleSelection::ctor_2()
+{
+    ctor_1();
+}
+
 // public Fuse.Selection.SelectMode get_Mode() [instance] :36
 int32_t ToggleSelection::Mode()
 {
@@ -1555,6 +2014,161 @@ int32_t ToggleSelection::Mode()
 void ToggleSelection::Mode(int32_t value)
 {
     _mode = value;
+}
+
+// public generated ToggleSelection New() [static] :26
+ToggleSelection* ToggleSelection::New2()
+{
+    ToggleSelection* obj1 = (ToggleSelection*)uNew(ToggleSelection_typeof());
+    obj1->ctor_2();
+    return obj1;
+}
+// }
+
+// /usr/local/share/uno/Packages/Fuse.Selection/1.9.0/WhileSelected.uno
+// --------------------------------------------------------------------
+
+// public sealed class WhileSelected :17
+// {
+static void WhileSelected_build(uType* type)
+{
+    ::STRINGS[0] = uString::Const("Unable to locate a `Selectable` and `Selection`");
+    ::STRINGS[21] = uString::Const("/usr/local/share/uno/Packages/Fuse.Selection/1.9.0/WhileSelected.uno");
+    ::STRINGS[13] = uString::Const("OnRooted");
+    ::TYPES[0] = ::g::Uno::EventHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Selection::Selection_typeof());
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileSelected_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(WhileSelected_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(WhileSelected_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(WhileSelected_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(WhileSelected_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileSelected_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileSelected_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(WhileSelected_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(WhileSelected_type, interface8),
+        ::g::Uno::UX::IPropertyListener_typeof(), offsetof(WhileSelected_type, interface9));
+    type->SetFields(39,
+        ::g::Fuse::Selection::Selectable_typeof(), offsetof(WhileSelected, _selectable), 0,
+        ::g::Fuse::Selection::Selection_typeof(), offsetof(WhileSelected, _selection), 0);
+}
+
+WhileSelected_type* WhileSelected_typeof()
+{
+    static uSStrong<WhileSelected_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
+    options.FieldCount = 41;
+    options.InterfaceCount = 10;
+    options.DependencyCount = 1;
+    options.ObjectSize = sizeof(WhileSelected);
+    options.TypeSize = sizeof(WhileSelected_type);
+    type = (WhileSelected_type*)uClassType::New("Fuse.Selection.WhileSelected", options);
+    type->fp_build_ = WhileSelected_build;
+    type->fp_ctor_ = (void*)WhileSelected__New2_fn;
+    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))WhileSelected__OnRooted_fn;
+    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))WhileSelected__OnUnrooted_fn;
+    type->interface9.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))WhileSelected__UnoUXIPropertyListenerOnPropertyChanged_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// public generated WhileSelected() :17
+void WhileSelected__ctor_6_fn(WhileSelected* __this)
+{
+    __this->ctor_6();
+}
+
+// public generated WhileSelected New() :17
+void WhileSelected__New2_fn(WhileSelected** __retval)
+{
+    *__retval = WhileSelected::New2();
+}
+
+// protected override sealed void OnRooted() :22
+void WhileSelected__OnRooted_fn(WhileSelected* __this)
+{
+    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
+
+    if (!::g::Fuse::Selection::Selection::TryFindSelectable(__this->Parent(), &__this->_selectable, &__this->_selection))
+    {
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[0/*"Unable to l...*/], __this, ::STRINGS[21/*"/usr/local/...*/], 28, ::STRINGS[13/*"OnRooted"*/], NULL);
+        return;
+    }
+
+    __this->SetActive(uPtr(__this->_selection)->IsSelected(__this->_selectable));
+    uPtr(__this->_selection)->add_SelectionChanged(uDelegate::New(::TYPES[0/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
+    uPtr(__this->_selectable)->AddPropertyListener((uObject*)__this);
+}
+
+// private void OnSelectionChanged(object s, object args) :60
+void WhileSelected__OnSelectionChanged_fn(WhileSelected* __this, uObject* s, uObject* args)
+{
+    __this->OnSelectionChanged(s, args);
+}
+
+// protected override sealed void OnUnrooted() :37
+void WhileSelected__OnUnrooted_fn(WhileSelected* __this)
+{
+    if (__this->_selection != NULL)
+    {
+        uPtr(__this->_selection)->remove_SelectionChanged(uDelegate::New(::TYPES[0/*Uno.EventHandler*/], (void*)WhileSelected__OnSelectionChanged_fn, __this));
+        uPtr(__this->_selectable)->RemovePropertyListener((uObject*)__this);
+    }
+
+    __this->_selection = NULL;
+    __this->_selectable = NULL;
+    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
+}
+
+// private void Uno.UX.IPropertyListener.OnPropertyChanged(Uno.UX.PropertyObject obj, Uno.UX.Selector prop) :50
+void WhileSelected__UnoUXIPropertyListenerOnPropertyChanged_fn(WhileSelected* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::UX::Selector* prop)
+{
+    if (obj == __this->_selectable)
+        __this->BypassSetActive(uPtr(__this->_selection)->IsSelected(__this->_selectable));
+}
+
+// public generated WhileSelected() [instance] :17
+void WhileSelected::ctor_6()
+{
+    ctor_5();
+}
+
+// private void OnSelectionChanged(object s, object args) [instance] :60
+void WhileSelected::OnSelectionChanged(uObject* s, uObject* args)
+{
+    SetActive(uPtr(_selection)->IsSelected(_selectable));
+}
+
+// public generated WhileSelected New() [static] :17
+WhileSelected* WhileSelected::New2()
+{
+    WhileSelected* obj1 = (WhileSelected*)uNew(WhileSelected_typeof());
+    obj1->ctor_6();
+    return obj1;
 }
 // }
 

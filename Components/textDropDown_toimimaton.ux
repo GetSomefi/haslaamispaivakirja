@@ -1,0 +1,102 @@
+<Panel ux:Class="textDropDown_toimimaton" Send="{entrystr}">
+	<object ux:Property="dropDownList" />
+	<string ux:Property="Send" />
+
+	<JavaScript>
+		var Observable = require("FuseJS/Observable");
+		var DropDownVisible = Observable(false);
+		var selectThisOption = Observable();
+		var dropDownSelVal = Observable();
+
+		function dropDownTrigger(){
+			console.log('klikki');
+			selectedFunc(); 
+			if(DropDownVisible.value){
+				DropDownVisible.value = false;
+			}else{
+				DropDownVisible.value = true;
+			}
+		}
+
+		function selectedFunc(a) {
+			console.log('a --> ', a);
+			console.log('sele ', selectThisOption.value );  
+		}
+
+		module.exports = {
+			DropDownVisible:DropDownVisible,
+			dropDownTrigger:dropDownTrigger,
+			dropDownSelVal:dropDownSelVal
+		};
+	</JavaScript>
+	
+	<StackPanel>
+		<basic.TextBoxAction Value="{dropDownSelVal}" Clicked="{dropDownTrigger}" ux:Name="mitateit_vihanhallinanmenetelma" PlaceholderText="Käytin vihanhallinan menetelmää (mitä)" PlaceholderColor="#FFFFFFB2" Margin="0" />
+
+		<StackPanel ux:Name="DropDownShow" Visibility="Collapsed" Opacity="0.1">
+			<Text Margin="0, 5, 0, 5">Valitse</Text>
+			<StackPanel>
+				<Each Items="{Property this.dropDownList}">
+					<Selection />
+					<Panel ux:InnerClass="listBtnCode" ux:Name="listBtnCode" BgColor="#dad8ff" SelectedBgColor="#8bc34a" Margin="0,3" Padding="10" FontSize="16">
+						<string ux:Property="Text" />
+						<string ux:Property="DataKey" />
+						<string ux:Property="BgColor" />
+						<string ux:Property="SelectedBgColor" />
+						<float ux:Property="FontSize" />
+						<Text Margin="0, 5, 0, 5">Valitse</Text>
+						
+						<JavaScript>
+							console.log('dropDownSelVal ', dropDownSelVal); 
+						</JavaScript>
+
+						<Rectangle ux:Name="btnBackground" Layer="Background" Color="{ReadProperty listBtnCode.BgColor}" CornerRadius="0" Opacity="0.8">
+							<DropShadow Angle="90" Distance="1" Spread="0.2" Size="2" Color="#00000060" />
+						</Rectangle>
+
+						<generaltext.Text ux:Name="btnText" Color="#666" FontSize="{ReadProperty listBtnCode.FontSize}" Value="{ReadProperty listBtnCode.Text}" TextAlignment="Center" />
+
+						<Selectable Value="{Property listBtnCode.DataKey}" />
+
+						<WhileSelected>
+							<DebugAction Message="While Selected!" />
+							<Change Target="btnBackground.Color" Value="{ReadProperty listBtnCode.SelectedBgColor}" />
+							<Change Target="btnText.Color" Value="#FFF" />
+							<Scale Factor=".95" Duration="0.08" Easing="QuadraticInOut"/>
+
+							<Set mitateit_vihanhallinanmenetelma.Value="{Property listBtnCode.DataKey}" />
+						</WhileSelected>
+
+						<Tapped>
+					    	<DebugAction Message="Tapped!" />
+					    	<Change Duration=".08" Target="btnBackground.Color" Value="#FFF" />
+					        <ToggleSelection />
+					    </Tapped>
+
+						<Deselected>
+							<Scale Factor="1" Duration="0.08" Easing="QuadraticInOut"/>
+
+							<Set mitateit_vihanhallinanmenetelma.Value="" />
+						</Deselected>
+
+					    <!--
+						<WhilePressed>
+							<DebugAction Message="Pressed!" />
+							<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+							<Change Target="btnBackground.Color" Value="#FFF" />
+						</WhilePressed>
+						-->
+					</Panel>
+				</Each>
+			</StackPanel>
+
+			<WhileTrue Value="{DropDownVisible}">
+				<Change DropDownShow.Visibility="Visible" Delay="0" DelayBack="0.26" />
+				<Change DropDownShow.Opacity="1" Duration="0.36" />
+			</WhileTrue>
+		</StackPanel>		
+	</StackPanel>
+
+
+
+</Panel>

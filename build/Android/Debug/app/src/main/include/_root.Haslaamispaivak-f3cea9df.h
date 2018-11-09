@@ -11,7 +11,7 @@ namespace g{struct ListItem;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_ListItem_TheValue_Property :155
+// internal sealed class Haslaamispaivakirja_ListItem_TheValue_Property :439
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_ListItem_TheValue_Property_typeof();
 void Haslaamispaivakirja_ListItem_TheValue_Property__ctor_3_fn(Haslaamispaivakirja_ListItem_TheValue_Property* __this, ::g::ListItem* obj, ::g::Uno::UX::Selector* name);

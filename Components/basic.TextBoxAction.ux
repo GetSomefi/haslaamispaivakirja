@@ -1,0 +1,28 @@
+<!--
+Jotta totuus ei häviä
+
+1. Fusessa pitää tehdä Elementtiin atribuutti (tässä Send) joka on muuttaja (koodissa Observable)
+2. Jos halutaan string muotoinen atribuutti se pitää esitellä (string ux:Property="Send")
+3. Jos halutaan lähettää esim. Value tieto koodille pitää se "settaa" ensin tehtyyn atribuuttiin (tässä Sendiin)
+4. Jotta voidaan lähettää tieto eteenpäin se pitää triggaantua jostain (tässä TextInputActionTriggered [vastaa virtuaali Enteriä]). Kaikki triggerit https://fuseopen.com/docs/fuse/triggers/trigger.html
+5. Lähetys tapahtuu Callbackillä jonka Handler ottaa vastaan js-tiedostossa löytyvän funktion
+-->
+<TextInput ux:Class="basic.TextBoxAction" Send="{entrystr}" TextColor="White" CaretColor="White" Padding="10,10,0,10" ActionStyle="Go">
+	<SolidColor Color="#00000019" />
+	<string ux:Property="Send" />
+	<string ux:Property="DataKey" />
+
+	<TextInputActionTriggered>
+		<DebugAction Message="Typed and Enter!" />
+		<Set this.Send="{Property this.Value}" />
+		<Callback ux:Name="TheEnter" Handler="{isOnInput}" />
+	</TextInputActionTriggered>
+
+	<!-- Jos enteriä ei painetakkaan, niin lähetä silti eteenpäin-->
+	<WhileNotFocused>
+		<DebugAction Message="Lost Focus!" />
+		<Set this.Send="{Property this.Value}" />
+		<Callback ux:Name="TheNoFocus" Handler="{isOnInput}" />
+	</WhileNotFocused>
+
+</TextInput>

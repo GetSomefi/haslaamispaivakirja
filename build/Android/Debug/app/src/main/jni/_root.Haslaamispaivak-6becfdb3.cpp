@@ -10,7 +10,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property :250
+// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property :585
 // {
 static void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property_build(uType* type)
 {
@@ -38,45 +38,45 @@ static void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property_build(
     return type;
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :253
+// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :588
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property__ctor_3_fn(Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* __this, ::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed float Get(Uno.UX.PropertyObject obj) :255
+// public override sealed float Get(Uno.UX.PropertyObject obj) :590
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property__Get1_fn(Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* __this, ::g::Uno::UX::PropertyObject* obj, float* __retval)
 {
     return *__retval = uPtr(uCast< ::g::Fuse::Controls::TextControl*>(obj, ::TYPES[0/*Fuse.Controls.TextControl*/]))->FontSize(), void();
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :253
+// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :588
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property__New1_fn(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :254
+// public override sealed Uno.UX.PropertyObject get_Object() :589
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property__get_Object_fn(Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, float v, Uno.UX.IPropertyListener origin) :256
+// public override sealed void Set(Uno.UX.PropertyObject obj, float v, Uno.UX.IPropertyListener origin) :591
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property__Set1_fn(Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* __this, ::g::Uno::UX::PropertyObject* obj, float* v, uObject* origin)
 {
     float v_ = *v;
     uPtr(uCast< ::g::Fuse::Controls::TextControl*>(obj, ::TYPES[0/*Fuse.Controls.TextControl*/]))->FontSize(v_);
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [instance] :253
+// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [instance] :588
 void Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property::ctor_3(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [static] :253
+// public Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [static] :588
 Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property::New1(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property* obj1 = (Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property*)uNew(Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property_typeof());

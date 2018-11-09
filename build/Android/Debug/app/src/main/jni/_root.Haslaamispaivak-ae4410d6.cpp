@@ -9,7 +9,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property :224
+// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property :516
 // {
 static void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property_build(uType* type)
 {
@@ -38,26 +38,26 @@ static void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property_build(
     return type;
 }
 
-// public override sealed bool Get(Uno.UX.PropertyObject obj) :229
+// public override sealed bool Get(Uno.UX.PropertyObject obj) :521
 void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property__Get1_fn(Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* __retval)
 {
     return *__retval = uPtr(uCast< ::g::BasicSwipeToggleBigTest*>(obj, ::TYPES[0/*BasicSwipeToggleBigTest*/]))->Sendable(), void();
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :228
+// public override sealed Uno.UX.PropertyObject get_Object() :520
 void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property__get_Object_fn(Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :230
+// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :522
 void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property__Set1_fn(Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* v, uObject* origin)
 {
     bool v_ = *v;
     uPtr(uCast< ::g::BasicSwipeToggleBigTest*>(obj, ::TYPES[0/*BasicSwipeToggleBigTest*/]))->SetSendable(v_, origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :231
+// public override sealed bool get_SupportsOriginSetter() :523
 void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property__get_SupportsOriginSetter_fn(Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property* __this, bool* __retval)
 {
     return *__retval = true, void();

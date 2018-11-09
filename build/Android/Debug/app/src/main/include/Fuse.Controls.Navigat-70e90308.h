@@ -56,6 +56,8 @@ NavigationControl_type* NavigationControl_typeof();
 void NavigationControl__ctor_7_fn(NavigationControl* __this);
 void NavigationControl__get_Active_fn(NavigationControl* __this, ::g::Fuse::Visual** __retval);
 void NavigationControl__set_Active_fn(NavigationControl* __this, ::g::Fuse::Visual* value);
+void NavigationControl__add_ActivePageChanged_fn(NavigationControl* __this, uDelegate* value);
+void NavigationControl__remove_ActivePageChanged_fn(NavigationControl* __this, uDelegate* value);
 void NavigationControl__alterPath_fn(NavigationControl* nav, uArray* args, uString* opName, int32_t* gotoMode);
 void NavigationControl__get_AncestorPage_fn(NavigationControl* __this, ::g::Fuse::Visual** __retval);
 void NavigationControl__set_AncestorPage_fn(NavigationControl* __this, ::g::Fuse::Visual* value);
@@ -139,6 +141,8 @@ struct NavigationControl : ::g::Fuse::Controls::Panel
     void ctor_7();
     ::g::Fuse::Visual* Active();
     void Active(::g::Fuse::Visual* value);
+    void add_ActivePageChanged(uDelegate* value);
+    void remove_ActivePageChanged(uDelegate* value);
     ::g::Fuse::Visual* AncestorPage();
     void AncestorPage(::g::Fuse::Visual* value);
     ::g::Fuse::Navigation::RouterPage* AncestorRouterPage();

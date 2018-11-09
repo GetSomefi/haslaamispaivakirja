@@ -30,46 +30,110 @@ namespace g{uClassType* FuseEffects_bundle_typeof();}
 namespace g{uClassType* FuseElements_bundle_typeof();}
 namespace g{uClassType* FuseScriptingJavaScript_bundle_typeof();}
 namespace g{uClassType* UnoCore_bundle_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* basicDropDown__Template_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* basicDropDown__Template1_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* basicDropDown_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* BasicSwipeToggle_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* BasicSwipeToggleBig_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* BasicSwipeToggleBigTest_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* bgImage_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} ::g::Fuse::Controls::TextControl_type* fa_check_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} ::g::Fuse::Controls::TextControl_type* fa_chevron_left_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} ::g::Fuse::Controls::TextControl_type* fa_cog_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} ::g::Fuse::Controls::TextControl_type* fa_home_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} ::g::Fuse::Controls::TextControl_type* fa_times_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* FirstPage_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* FlyingDock_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_PlaceHolderColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_TextAlignment_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_Value_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicBtn_Button_BgColor_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicBtn_Button_FontSize_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicBtn_Button_Text_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicDropDown_dropDownList_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_Width_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_IsActive_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_PrimaryColor_typeof();}
 namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_SecondaryColor_typeof();}
-namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_Fuse_Controls_RangeControl_Value_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_bgImage_Background_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_bgImage_File_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_bgImage_StretchMode_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_FlyingDock_title_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_Fuse_Controls_TextInputControl_Value_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtn_Button_BgColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtn_Button_DataKey_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtn_Button_FontSize_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtn_Button_SelectedBgColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtn_Button_Text_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtnCode_BgColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtnCode_DataKey_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtnCode_FontSize_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtnCode_SelectedBgColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_listBtnCode_Text_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_LongPressButton_BackgroundColor_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_textDropDown_dropDownList_typeof();}
+namespace g{namespace Uno{namespace UX{struct PropertyAccessor_type;}} ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_textDropDown_toimimaton_dropDownList_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicBtnButton_DataKey_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicBtnButton_Text_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicDropDown_dropDownList_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicTextBoxAction_Send_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicTextBoxFakeDropDown_DataKey_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicTextBoxFakeDropDown_Send_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_basicTextBoxFakeDropDown_Value_Property_typeof();}
 namespace g{uClassType* Haslaamispaivakirja_bundle_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FlyingDock_title_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsControl_Background_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsImage_File_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsImage_StretchMode_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsShape_Color_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextControl_Color_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextControl_TextAlignment_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextControl_Value_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextInputControl_Value_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseElementsElement_Opacity_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseElementsElement_Visibility_Property_typeof();}
-namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseElementsElement_X_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseElementsElement_Width_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseReactiveEach_Items_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseSelectionSelectable_Value_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersActionsSetstring_Value_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersActionsTriggerAction_IsActive_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersWhileBool_Value_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseTriggersWhileString_Value_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_listBtnButton_DataKey_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_listBtnButton_Send_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_listBtnButton_Text_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_ListItem_RealLabel_Property_typeof();}
 namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_ListItem_TheValue_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_dropDownList_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_Name_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_Send_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_SendName_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimaton_dropDownList_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimaton_Send_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_BgColor_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_DataKey_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_FontSize_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_SelectedBgColor_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_Text_Property_typeof();}
+namespace g{namespace Uno{namespace UX{struct Property1_type;}} ::g::Uno::UX::Property1_type* Haslaamispaivakirja_textDropDown_Value_Property_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* ListItem_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* LongPressButton_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* MainView__Template_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* MainView__Template1_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* MainView__Template2_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* MainView__Template3_typeof();}
 namespace g{namespace Fuse{struct AppBase_type;} ::g::Fuse::AppBase_type* MainView_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* OldEntrysPage__Template_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* OldEntrysPage__Template1_typeof();}
@@ -131,7 +195,14 @@ namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Tem
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* OldEntrysPage__Template57_typeof();}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* OldEntrysPage__Template58_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* OldEntrysPage_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* SettingsPage_typeof();}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* SplashPage_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* textDropDown__Template_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* textDropDown__Template1_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* textDropDown_typeof();}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} ::g::Uno::UX::Template_type* textDropDown_toimimaton__Template_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* textDropDown_toimimaton__listBtnCode_typeof();}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} ::g::Fuse::Controls::Panel_type* textDropDown_toimimaton_typeof();}
 namespace g{namespace OpenGL{uClassType* GL_typeof();}}
 namespace g{namespace OpenGL{uEnumType* GLBlendEquation_typeof();}}
 namespace g{namespace OpenGL{uEnumType* GLBlendingFactor_typeof();}}
@@ -930,7 +1001,6 @@ namespace g{namespace Fuse{namespace Scripting{uType* NativePromise__ContextClos
 namespace g{namespace Fuse{namespace Scripting{uStructType* Dependency_typeof();}}}
 namespace g{namespace Fuse{namespace Scripting{uEnumType* DependencyType_typeof();}}}
 namespace g{namespace Fuse{namespace Scripting{uType* DiagnosticSubject_typeof();}}}
-namespace g{namespace Fuse{namespace Scripting{struct DoubleChangedArgs_type; DoubleChangedArgs_type* DoubleChangedArgs_typeof();}}}
 namespace g{namespace Fuse{namespace Scripting{uType* NativeEventEmitterModule__EmitClosure_typeof();}}}
 namespace g{namespace Uno{struct Exception_type;} namespace Fuse{namespace Scripting{::g::Uno::Exception_type* Error_typeof();}}}
 namespace g{namespace Fuse{namespace Scripting{uClassType* EventEmitterModule_typeof();}}}
@@ -1113,6 +1183,7 @@ namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{na
 namespace g{namespace Fuse{namespace Controls{uInterfaceType* IProxyHost_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uClassType* IProxyHostExtensions_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uInterfaceType* ISourceReceiver_typeof();}}}
+namespace g{namespace Fuse{namespace Controls{uInterfaceType* ITextEditControl_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uInterfaceType* ITextRenderer_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uInterfaceType* IWebView_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct JavaScriptCall_type; JavaScriptCall_type* JavaScriptCall_typeof();}}}
@@ -1151,7 +1222,6 @@ namespace g{namespace Fuse{namespace Controls{struct PathExpression_type; ::g::F
 namespace g{namespace Fuse{namespace Controls{struct PathExpression_type; ::g::Fuse::Controls::PathExpression_type* PathTangentAngleAtTime_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uStructType* Path__Positioning_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uStructType* Navigator__PrepareResult_typeof();}}}
-namespace g{namespace Fuse{namespace Controls{struct RangeControl_type; RangeControl_type* RangeControl_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct Shape_type; ::g::Fuse::Controls::Shape_type* Rectangle_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct Shape_type; ::g::Fuse::Controls::Shape_type* RegularPolygon_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uEnumType* RemoveType_typeof();}}}
@@ -1174,24 +1244,20 @@ namespace g{namespace Fuse{struct Node_type; namespace Controls{::g::Fuse::Node_
 namespace g{namespace Fuse{namespace Controls{uEnumType* Shadow__ShadowMode_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct Shape_type; Shape_type* Shape_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct SingleViewHost_type; SingleViewHost_type* SingleViewHost_typeof();}}}
-namespace g{namespace Fuse{namespace Controls{struct RangeControl_type; ::g::Fuse::Controls::RangeControl_type* Slider_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type; ::g::Fuse::Controls::Panel_type* StackPanel_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct Shape_type; ::g::Fuse::Controls::Shape_type* Star_typeof();}}}
-namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* TextControl__Template_typeof();}}}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* GraphicsView__Template_typeof();}}}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* ScrollView__Template_typeof();}}}
-namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* Slider__Template_typeof();}}}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* TextControl__Template_typeof();}}}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* GraphicsView__Template1_typeof();}}}
-namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* TextControl__Template1_typeof();}}}
-namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* Slider__Template1_typeof();}}}
 namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* ScrollView__Template1_typeof();}}}
-namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* Slider__Template2_typeof();}}}
+namespace g{namespace Uno{namespace UX{struct Template_type;}} namespace Fuse{namespace Controls{::g::Uno::UX::Template_type* TextControl__Template1_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type; ::g::Fuse::Controls::TextControl_type* Text_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uEnumType* TextAlignment_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type; TextControl_type* TextControl_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{struct TextEdit_type; TextEdit_type* TextEdit_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uType* TextEditRenderer_typeof();}}}
-namespace g{namespace Fuse{namespace Controls{struct TextInputControl_type; ::g::Fuse::Controls::TextInputControl_type* TextInput_typeof();}}}
+namespace g{namespace Fuse{namespace Controls{struct TextInput_type; TextInput_type* TextInput_typeof();}}}
 namespace g{namespace Fuse{struct VisualEventArgs_type; namespace Controls{::g::Fuse::VisualEventArgs_type* TextInputActionArgs_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uDelegateType* TextInputActionHandler_typeof();}}}
 namespace g{namespace Fuse{namespace Controls{uEnumType* TextInputActionStyle_typeof();}}}
@@ -1215,7 +1281,6 @@ namespace g{namespace Fuse{namespace Controls{namespace Native{struct ImageHandl
 namespace g{namespace Uno{namespace Threading{struct Future_type;}} namespace Fuse{namespace Controls{namespace Native{::g::Uno::Threading::Future_type* ImageLoader__ImageHandlePromise_typeof();}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{uClassType* ImageLoader_typeof();}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{uEnumType* ViewHandle__Invalidation_typeof();}}}}
-namespace g{namespace Fuse{namespace Controls{namespace Native{uInterfaceType* IRangeView_typeof();}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{uInterfaceType* IRangeViewHost_typeof();}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{uInterfaceType* IScrollView_typeof();}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{uInterfaceType* IScrollViewHost_typeof();}}}}
@@ -1243,7 +1308,7 @@ namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct View_type; ::g::Fuse::Controls::Native::Android::View_type* LeafView_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{uType* MotionEvent_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct ScrollView_type; ScrollView_type* ScrollView_typeof();}}}}}
-namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct Slider_type; Slider_type* Slider_typeof();}}}}}
+namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct View_type; ::g::Fuse::Controls::Native::Android::View_type* Slider_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{uClassType* SoftKeyboard_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct GraphicsViewBase_type; ::g::Fuse::Controls::Native::Android::GraphicsViewBase_type* SurfaceView_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{struct Switch_type; Switch_type* Switch_typeof();}}}}}
@@ -1257,7 +1322,6 @@ namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace Android{uType* ViewGroup_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace iOS{uType* GraphicsView_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace iOS{uType* ScrollView_typeof();}}}}}
-namespace g{namespace Fuse{namespace Controls{namespace Native{namespace iOS{struct Slider_type; Slider_type* Slider_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Native{namespace iOS{uType* TextView_typeof();}}}}}
 namespace g{namespace Fuse{namespace Controls{namespace Graphics{struct ControlVisual_type; ControlVisual_type* ControlVisual_typeof();}}}}
 namespace g{namespace Fuse{struct Visual_type; namespace Controls{namespace Graphics{::g::Fuse::Visual_type* Visual_typeof();}}}}
@@ -1427,7 +1491,6 @@ namespace g{namespace Fuse{namespace Reactive{struct JavaScript_type; JavaScript
 namespace g{namespace Fuse{namespace Reactive{struct Expression_type; ::g::Fuse::Reactive::Expression_type* LookUp_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct LookUp__LookUpSubscription_type; LookUp__LookUpSubscription_type* LookUp__LookUpSubscription_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct Expression_type; ::g::Fuse::Reactive::Expression_type* Member_typeof();}}}
-namespace g{namespace Fuse{namespace Reactive{struct BinaryOperator_type; ::g::Fuse::Reactive::BinaryOperator_type* Multiply_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{uType* Instantiator__NoContextItem_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct NodeExpressionBinding_type; NodeExpressionBinding_type* NodeExpressionBinding_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct ComputeExpression_type; ::g::Fuse::Reactive::ComputeExpression_type* NonNull_typeof();}}}
@@ -1619,6 +1682,7 @@ namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Tr
 namespace g{namespace Fuse{namespace Triggers{uEnumType* Timeline__State_typeof();}}}
 namespace g{namespace Fuse{struct Node_type; namespace Triggers{::g::Fuse::Node_type* StateGroup_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{uEnumType* StateTransition_typeof();}}}
+namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* TextInputActionTriggered_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct Timeline_type; Timeline_type* Timeline_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* Transition_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{uEnumType* TransitionDirection_typeof();}}}
@@ -1630,13 +1694,10 @@ namespace g{namespace Fuse{namespace Triggers{uEnumType* TriggerPlayState_typeof
 namespace g{namespace Fuse{namespace Triggers{uEnumType* BusyTask__Type_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileBool_type; WhileBool_type* WhileBool_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* WhileCompleted_typeof();}}}
-namespace g{namespace Fuse{namespace Triggers{struct WhileEnabledDisabledTrigger_type; ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type* WhileDisabled_typeof();}}}
-namespace g{namespace Fuse{namespace Triggers{struct WhileEnabledDisabledTrigger_type; ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type* WhileEnabled_typeof();}}}
-namespace g{namespace Fuse{namespace Triggers{struct WhileEnabledDisabledTrigger_type; WhileEnabledDisabledTrigger_type* WhileEnabledDisabledTrigger_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileBool_type; ::g::Fuse::Triggers::WhileBool_type* WhileFalse_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileValue_type; ::g::Fuse::Triggers::WhileValue_type* WhileFloat_typeof();}}}
-namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* WhileFocused_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileKeyboardVisible_type; WhileKeyboardVisible_type* WhileKeyboardVisible_typeof();}}}
+namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* WhileNotFocused_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* WhilePaused_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct Trigger_type; ::g::Fuse::Triggers::Trigger_type* WhilePlaying_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{struct WhileValue_type; ::g::Fuse::Triggers::WhileValue_type* WhileString_typeof();}}}
@@ -1774,7 +1835,6 @@ namespace g{namespace Fuse{namespace Gestures{uType* DegreeSpan_typeof();}}}
 namespace g{namespace Fuse{namespace Gestures{uEnumType* Edge_typeof();}}}
 namespace g{namespace Fuse{struct Node_type; namespace Gestures{::g::Fuse::Node_type* KeepFocusInView_typeof();}}}
 namespace g{namespace Fuse{struct Node_type; namespace Gestures{::g::Fuse::Node_type* KeepInViewCommon_typeof();}}}
-namespace g{namespace Fuse{namespace Gestures{struct LinearRangeBehavior_type; LinearRangeBehavior_type* LinearRangeBehavior_typeof();}}}
 namespace g{namespace Fuse{namespace Gestures{uEnumType* Scroller__MoveUserFlags_typeof();}}}
 namespace g{namespace Fuse{namespace Gestures{struct Scroller_type; Scroller_type* Scroller_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{namespace Actions{struct TriggerAction_type;}}} namespace Fuse{namespace Gestures{::g::Fuse::Triggers::Actions::TriggerAction_type* ScrollTo_typeof();}}}
@@ -1798,7 +1858,9 @@ namespace g{namespace Fuse{namespace Gestures{namespace Internal{uEnumType* Swip
 namespace g{namespace Fuse{namespace Gestures{namespace Internal{struct Swiper_type; Swiper_type* Swiper_typeof();}}}}
 namespace g{namespace Fuse{namespace Gestures{namespace Internal{struct SwipeRegion_type; SwipeRegion_type* SwipeRegion_typeof();}}}}
 namespace g{namespace Fuse{namespace Gestures{namespace Internal{uEnumType* SwipeRegionArea_typeof();}}}}
+namespace g{namespace Fuse{namespace Navigation{struct NavigationTrigger_type; ::g::Fuse::Navigation::NavigationTrigger_type* Activated_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct NavigationAnimation_type; ::g::Fuse::Navigation::NavigationAnimation_type* ActivatingAnimation_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uDelegateType* RoutePageProxy__ActiveChanged_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uDelegateType* ActivePageChangedHandler_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* AllowedNavigationDirections_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct RouteModificationCommand__ArgumentArrayAdapter_type; RouteModificationCommand__ArgumentArrayAdapter_type* RouteModificationCommand__ArgumentArrayAdapter_typeof();}}}
@@ -1806,6 +1868,7 @@ namespace g{namespace Fuse{namespace Navigation{uDelegateType* Router__BackAtRoo
 namespace g{namespace Fuse{namespace Navigation{uEnumType* BackButtonAction_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct BackForwardNavigationTriggerAction_type; BackForwardNavigationTriggerAction_type* BackForwardNavigationTriggerAction_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uDelegateType* ChildRouterPagesUpdated_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{struct NavigationTrigger_type; ::g::Fuse::Navigation::NavigationTrigger_type* Deactivated_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct NavigationAnimation_type; ::g::Fuse::Navigation::NavigationAnimation_type* DeactivatingAnimation_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* DynamicLinearNavigation__Desired_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct VisualNavigation_type; ::g::Fuse::Navigation::VisualNavigation_type* DirectNavigation_typeof();}}}
@@ -1834,6 +1897,7 @@ namespace g{namespace Fuse{namespace Navigation{uInterfaceType* IPagePropertyLis
 namespace g{namespace Fuse{namespace Navigation{uInterfaceType* IPageResourceBinding_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uInterfaceType* IRouterOutlet_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uInterfaceType* ISeekableNavigation_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uStructType* RoutePageProxy__Level_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct RouteModificationCommand_type; ::g::Fuse::Navigation::RouteModificationCommand_type* ModifyRouteCommand_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* ModifyRouteHow_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct NavigatedArgs_type; NavigatedArgs_type* NavigatedArgs_typeof();}}}
@@ -1853,6 +1917,7 @@ namespace g{namespace Fuse{namespace Navigation{struct NavigationPageProxy_type;
 namespace g{namespace Fuse{namespace Navigation{uStructType* NavigationPageState_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* NavigationState_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* StructuredNavigation__NavigationStructure_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{struct NavigationTrigger_type; NavigationTrigger_type* NavigationTrigger_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct NavigationTriggerAction_type; NavigationTriggerAction_type* NavigationTriggerAction_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct RouteModificationCommand__OuterSubscription_type; RouteModificationCommand__OuterSubscription_type* RouteModificationCommand__OuterSubscription_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* OutletType_typeof();}}}
@@ -1860,9 +1925,13 @@ namespace g{namespace Fuse{namespace Navigation{uType* PageData_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct Expression_type;}} namespace Fuse{namespace Navigation{::g::Fuse::Reactive::Expression_type* PageExpression_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct PageResourceBinding_type; PageResourceBinding_type* PageResourceBinding_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct ObserverMap_type;}} namespace Fuse{namespace Navigation{::g::Fuse::Reactive::ObserverMap_type* PagesMap_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uDelegateType* RoutePageProxy__ProgressUpdated_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct RouteModificationCommand_type; ::g::Fuse::Navigation::RouteModificationCommand_type* PushRouteCommand_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uType* Route_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct RouteModificationCommand_type; RouteModificationCommand_type* RouteModificationCommand_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uEnumType* RoutePagePath_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uType* RoutePageProxy_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{uEnumType* RoutePageTriggerWhen_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct Router_type; Router_type* Router_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{namespace Actions{struct TriggerAction_type;}}} namespace Fuse{namespace Navigation{::g::Fuse::Triggers::Actions::TriggerAction_type* RouterCancelNavigation_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* RouterGoBackBehavior_typeof();}}}
@@ -1876,8 +1945,8 @@ namespace g{namespace Fuse{namespace Navigation{uEnumType* RoutingResult_typeof(
 namespace g{namespace Fuse{namespace Navigation{uEnumType* SnapTo_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uDelegateType* NavigationPageProxy__StatusChangedHandler_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct StructuredNavigation_type; StructuredNavigation_type* StructuredNavigation_typeof();}}}
-namespace g{namespace Fuse{namespace Navigation{struct PageExpression__Subscription_type; PageExpression__Subscription_type* PageExpression__Subscription_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct FindRouter__Subscription_type; FindRouter__Subscription_type* FindRouter__Subscription_typeof();}}}
+namespace g{namespace Fuse{namespace Navigation{struct PageExpression__Subscription_type; PageExpression__Subscription_type* PageExpression__Subscription_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uEnumType* SwipeDirection_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{struct SwipeNavigate_type; SwipeNavigate_type* SwipeNavigate_typeof();}}}
 namespace g{namespace Fuse{namespace Navigation{uType* UpdateSeekArgs_typeof();}}}
@@ -1932,15 +2001,20 @@ namespace g{namespace Fuse{namespace FileSystem{uType* FileSystemOperations_type
 namespace g{namespace Fuse{namespace FileSystem{uType* Nothing_typeof();}}}
 namespace g{namespace Fuse{namespace FileSystem{uClassType* PathTools_typeof();}}}
 namespace g{namespace Fuse{namespace FileSystem{uClassType* UnifiedPaths_typeof();}}}
+namespace g{namespace Fuse{namespace Selection{struct SelectionEvent_type; ::g::Fuse::Selection::SelectionEvent_type* Deselected_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{uEnumType* Selection__How_typeof();}}}
 namespace g{namespace Fuse{namespace Reactive{struct Expression_type;}} namespace Fuse{namespace Selection{::g::Fuse::Reactive::Expression_type* IsSelectedFunction_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{struct Selection__ListWrapper_type; Selection__ListWrapper_type* Selection__ListWrapper_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{struct IsSelectedFunction__OuterSubscription_type; IsSelectedFunction__OuterSubscription_type* IsSelectedFunction__OuterSubscription_typeof();}}}
 namespace g{namespace Fuse{struct Node_type; namespace Selection{::g::Fuse::Node_type* Selectable_typeof();}}}
+namespace g{namespace Fuse{namespace Selection{struct SelectionEvent_type; ::g::Fuse::Selection::SelectionEvent_type* Selected_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{struct Selection_type; Selection_type* Selection_typeof();}}}
+namespace g{namespace Fuse{namespace Selection{struct SelectionEvent_type; SelectionEvent_type* SelectionEvent_typeof();}}}
+namespace g{namespace Fuse{namespace Selection{struct SelectionEventArgs_type; SelectionEventArgs_type* SelectionEventArgs_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{uEnumType* SelectionReplace_typeof();}}}
 namespace g{namespace Fuse{namespace Selection{uEnumType* SelectMode_typeof();}}}
 namespace g{namespace Fuse{namespace Triggers{namespace Actions{struct TriggerAction_type;}}} namespace Fuse{namespace Selection{::g::Fuse::Triggers::Actions::TriggerAction_type* ToggleSelection_typeof();}}}
+namespace g{namespace Fuse{namespace Selection{struct WhileSelected_type; WhileSelected_type* WhileSelected_typeof();}}}
 namespace g{namespace Fuse{namespace Storage{uClassType* ApplicationDir_typeof();}}}
 namespace g{namespace Fuse{namespace Storage{uType* ApplicationDir__ReadClosure_typeof();}}}
 namespace g{namespace Fuse{namespace Scripting{struct NativeModule_type;}} namespace Fuse{namespace Storage{::g::Fuse::Scripting::NativeModule_type* StorageModule_typeof();}}}
@@ -1979,10 +2053,12 @@ namespace g{namespace FuseJS{uType* Bundle__ReadClosure_typeof();}}
 namespace g{namespace Fuse{namespace Scripting{struct NativeModule_type;}} namespace FuseJS{::g::Fuse::Scripting::NativeModule_type* UserEvents_typeof();}}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} namespace generaltext{::g::Fuse::Controls::TextControl_type* Text_typeof();}}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} namespace basic{::g::Fuse::Controls::TextControl_type* LabelText_typeof();}}
-namespace g{namespace Fuse{namespace Controls{struct TextInputControl_type;}} namespace basic{::g::Fuse::Controls::TextInputControl_type* TextBoxAction_typeof();}}
+namespace g{namespace Fuse{namespace Controls{struct TextInput_type;}} namespace basic{::g::Fuse::Controls::TextInput_type* TextBoxAction_typeof();}}
+namespace g{namespace Fuse{namespace Controls{struct Shape_type;}} namespace basic{::g::Fuse::Controls::Shape_type* TextBoxFakeDropDown_typeof();}}
 namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} namespace basic{::g::Fuse::Controls::TextControl_type* TitleText_typeof();}}
-namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} namespace header{::g::Fuse::Controls::TextControl_type* Text_typeof();}}
 namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} namespace basicBtn{::g::Fuse::Controls::Panel_type* Button_typeof();}}
+namespace g{namespace Fuse{namespace Controls{struct TextControl_type;}} namespace header{::g::Fuse::Controls::TextControl_type* Text_typeof();}}
+namespace g{namespace Fuse{namespace Controls{struct Panel_type;}} namespace listBtn{::g::Fuse::Controls::Panel_type* Button_typeof();}}
 void uInitRtti(uType*(*factories[])());
 
 void uInitRtti()
@@ -2016,46 +2092,110 @@ void uInitRtti()
         (uType*(*)())&::g::FuseElements_bundle_typeof,
         (uType*(*)())&::g::FuseScriptingJavaScript_bundle_typeof,
         (uType*(*)())&::g::UnoCore_bundle_typeof,
+        (uType*(*)())&::g::basicDropDown__Template_typeof,
+        (uType*(*)())&::g::basicDropDown__Template1_typeof,
+        (uType*(*)())&::g::basicDropDown_typeof,
         (uType*(*)())&::g::BasicSwipeToggle_typeof,
         (uType*(*)())&::g::BasicSwipeToggleBig_typeof,
         (uType*(*)())&::g::BasicSwipeToggleBigTest_typeof,
+        (uType*(*)())&::g::bgImage_typeof,
+        (uType*(*)())&::g::fa_check_typeof,
         (uType*(*)())&::g::fa_chevron_left_typeof,
         (uType*(*)())&::g::fa_cog_typeof,
+        (uType*(*)())&::g::fa_home_typeof,
         (uType*(*)())&::g::fa_times_typeof,
         (uType*(*)())&::g::FirstPage_typeof,
+        (uType*(*)())&::g::FlyingDock_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_PlaceHolderColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_TextAlignment_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_basic_TextBoxFakeDropDown_Value_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_basicBtn_Button_BgColor_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_basicBtn_Button_FontSize_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_basicBtn_Button_Text_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_basicDropDown_dropDownList_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggle_SecondaryColor_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_Width_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_IsActive_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_PrimaryColor_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBigTest_SecondaryColor_typeof,
-        (uType*(*)())&::g::Haslaamispaivakirja_accessor_Fuse_Controls_RangeControl_Value_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_bgImage_Background_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_bgImage_File_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_bgImage_StretchMode_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_FlyingDock_title_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_Fuse_Controls_TextInputControl_Value_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtn_Button_BgColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtn_Button_DataKey_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtn_Button_FontSize_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtn_Button_SelectedBgColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtn_Button_Text_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtnCode_BgColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtnCode_DataKey_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtnCode_FontSize_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtnCode_SelectedBgColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_listBtnCode_Text_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_LongPressButton_BackgroundColor_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_textDropDown_dropDownList_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_accessor_textDropDown_toimimaton_dropDownList_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicBtnButton_DataKey_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_basicBtnButton_Text_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicDropDown_dropDownList_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicTextBoxAction_Send_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicTextBoxFakeDropDown_DataKey_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicTextBoxFakeDropDown_Send_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_basicTextBoxFakeDropDown_Value_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_bundle_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FlyingDock_title_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsControl_Background_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsImage_File_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsImage_StretchMode_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsShape_Color_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsTextControl_Color_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsTextControl_FontSize_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsTextControl_TextAlignment_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsTextControl_Value_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseControlsTextInputControl_Value_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseElementsElement_Opacity_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseElementsElement_Visibility_Property_typeof,
-        (uType*(*)())&::g::Haslaamispaivakirja_FuseElementsElement_X_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseElementsElement_Width_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseReactiveEach_Items_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseSelectionSelectable_Value_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseTriggersActionsSetstring_Value_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseTriggersActionsTriggerAction_IsActive_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_FuseTriggersWhileBool_Value_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_FuseTriggersWhileString_Value_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_listBtnButton_DataKey_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_listBtnButton_Send_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_listBtnButton_Text_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_ListItem_RealLabel_Property_typeof,
         (uType*(*)())&::g::Haslaamispaivakirja_ListItem_TheValue_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_dropDownList_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_Name_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_Send_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_SendName_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimaton_dropDownList_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimaton_Send_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_BgColor_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_DataKey_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_FontSize_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_SelectedBgColor_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_toimimatonlistBtnCode_Text_Property_typeof,
+        (uType*(*)())&::g::Haslaamispaivakirja_textDropDown_Value_Property_typeof,
         (uType*(*)())&::g::ListItem_typeof,
+        (uType*(*)())&::g::LongPressButton_typeof,
         (uType*(*)())&::g::MainView__Template_typeof,
         (uType*(*)())&::g::MainView__Template1_typeof,
         (uType*(*)())&::g::MainView__Template2_typeof,
+        (uType*(*)())&::g::MainView__Template3_typeof,
         (uType*(*)())&::g::MainView_typeof,
         (uType*(*)())&::g::OldEntrysPage__Template_typeof,
         (uType*(*)())&::g::OldEntrysPage__Template1_typeof,
@@ -2117,7 +2257,14 @@ void uInitRtti()
         (uType*(*)())&::g::OldEntrysPage__Template57_typeof,
         (uType*(*)())&::g::OldEntrysPage__Template58_typeof,
         (uType*(*)())&::g::OldEntrysPage_typeof,
+        (uType*(*)())&::g::SettingsPage_typeof,
         (uType*(*)())&::g::SplashPage_typeof,
+        (uType*(*)())&::g::textDropDown__Template_typeof,
+        (uType*(*)())&::g::textDropDown__Template1_typeof,
+        (uType*(*)())&::g::textDropDown_typeof,
+        (uType*(*)())&::g::textDropDown_toimimaton__Template_typeof,
+        (uType*(*)())&::g::textDropDown_toimimaton__listBtnCode_typeof,
+        (uType*(*)())&::g::textDropDown_toimimaton_typeof,
         (uType*(*)())&::g::OpenGL::GL_typeof,
         (uType*(*)())&::g::OpenGL::GLBlendEquation_typeof,
         (uType*(*)())&::g::OpenGL::GLBlendingFactor_typeof,
@@ -2916,7 +3063,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Scripting::Dependency_typeof,
         (uType*(*)())&::g::Fuse::Scripting::DependencyType_typeof,
         (uType*(*)())&::g::Fuse::Scripting::DiagnosticSubject_typeof,
-        (uType*(*)())&::g::Fuse::Scripting::DoubleChangedArgs_typeof,
         (uType*(*)())&::g::Fuse::Scripting::NativeEventEmitterModule__EmitClosure_typeof,
         (uType*(*)())&::g::Fuse::Scripting::Error_typeof,
         (uType*(*)())&::g::Fuse::Scripting::EventEmitterModule_typeof,
@@ -3099,6 +3245,7 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Controls::IProxyHost_typeof,
         (uType*(*)())&::g::Fuse::Controls::IProxyHostExtensions_typeof,
         (uType*(*)())&::g::Fuse::Controls::ISourceReceiver_typeof,
+        (uType*(*)())&::g::Fuse::Controls::ITextEditControl_typeof,
         (uType*(*)())&::g::Fuse::Controls::ITextRenderer_typeof,
         (uType*(*)())&::g::Fuse::Controls::IWebView_typeof,
         (uType*(*)())&::g::Fuse::Controls::JavaScriptCall_typeof,
@@ -3137,7 +3284,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Controls::PathTangentAngleAtTime_typeof,
         (uType*(*)())&::g::Fuse::Controls::Path__Positioning_typeof,
         (uType*(*)())&::g::Fuse::Controls::Navigator__PrepareResult_typeof,
-        (uType*(*)())&::g::Fuse::Controls::RangeControl_typeof,
         (uType*(*)())&::g::Fuse::Controls::Rectangle_typeof,
         (uType*(*)())&::g::Fuse::Controls::RegularPolygon_typeof,
         (uType*(*)())&::g::Fuse::Controls::RemoveType_typeof,
@@ -3160,18 +3306,14 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Controls::Shadow__ShadowMode_typeof,
         (uType*(*)())&::g::Fuse::Controls::Shape_typeof,
         (uType*(*)())&::g::Fuse::Controls::SingleViewHost_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Slider_typeof,
         (uType*(*)())&::g::Fuse::Controls::StackPanel_typeof,
         (uType*(*)())&::g::Fuse::Controls::Star_typeof,
-        (uType*(*)())&::g::Fuse::Controls::TextControl__Template_typeof,
         (uType*(*)())&::g::Fuse::Controls::GraphicsView__Template_typeof,
         (uType*(*)())&::g::Fuse::Controls::ScrollView__Template_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Slider__Template_typeof,
+        (uType*(*)())&::g::Fuse::Controls::TextControl__Template_typeof,
         (uType*(*)())&::g::Fuse::Controls::GraphicsView__Template1_typeof,
-        (uType*(*)())&::g::Fuse::Controls::TextControl__Template1_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Slider__Template1_typeof,
         (uType*(*)())&::g::Fuse::Controls::ScrollView__Template1_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Slider__Template2_typeof,
+        (uType*(*)())&::g::Fuse::Controls::TextControl__Template1_typeof,
         (uType*(*)())&::g::Fuse::Controls::Text_typeof,
         (uType*(*)())&::g::Fuse::Controls::TextAlignment_typeof,
         (uType*(*)())&::g::Fuse::Controls::TextControl_typeof,
@@ -3201,7 +3343,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Controls::Native::ImageLoader__ImageHandlePromise_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::ImageLoader_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::ViewHandle__Invalidation_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Native::IRangeView_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::IRangeViewHost_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::IScrollView_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::IScrollViewHost_typeof,
@@ -3243,7 +3384,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Controls::Native::Android::ViewGroup_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::iOS::GraphicsView_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::iOS::ScrollView_typeof,
-        (uType*(*)())&::g::Fuse::Controls::Native::iOS::Slider_typeof,
         (uType*(*)())&::g::Fuse::Controls::Native::iOS::TextView_typeof,
         (uType*(*)())&::g::Fuse::Controls::Graphics::ControlVisual_typeof,
         (uType*(*)())&::g::Fuse::Controls::Graphics::Visual_typeof,
@@ -3413,7 +3553,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Reactive::LookUp_typeof,
         (uType*(*)())&::g::Fuse::Reactive::LookUp__LookUpSubscription_typeof,
         (uType*(*)())&::g::Fuse::Reactive::Member_typeof,
-        (uType*(*)())&::g::Fuse::Reactive::Multiply_typeof,
         (uType*(*)())&::g::Fuse::Reactive::Instantiator__NoContextItem_typeof,
         (uType*(*)())&::g::Fuse::Reactive::NodeExpressionBinding_typeof,
         (uType*(*)())&::g::Fuse::Reactive::NonNull_typeof,
@@ -3605,6 +3744,7 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Triggers::Timeline__State_typeof,
         (uType*(*)())&::g::Fuse::Triggers::StateGroup_typeof,
         (uType*(*)())&::g::Fuse::Triggers::StateTransition_typeof,
+        (uType*(*)())&::g::Fuse::Triggers::TextInputActionTriggered_typeof,
         (uType*(*)())&::g::Fuse::Triggers::Timeline_typeof,
         (uType*(*)())&::g::Fuse::Triggers::Transition_typeof,
         (uType*(*)())&::g::Fuse::Triggers::TransitionDirection_typeof,
@@ -3616,13 +3756,10 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Triggers::BusyTask__Type_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileBool_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileCompleted_typeof,
-        (uType*(*)())&::g::Fuse::Triggers::WhileDisabled_typeof,
-        (uType*(*)())&::g::Fuse::Triggers::WhileEnabled_typeof,
-        (uType*(*)())&::g::Fuse::Triggers::WhileEnabledDisabledTrigger_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileFalse_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileFloat_typeof,
-        (uType*(*)())&::g::Fuse::Triggers::WhileFocused_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileKeyboardVisible_typeof,
+        (uType*(*)())&::g::Fuse::Triggers::WhileNotFocused_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhilePaused_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhilePlaying_typeof,
         (uType*(*)())&::g::Fuse::Triggers::WhileString_typeof,
@@ -3760,7 +3897,6 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Gestures::Edge_typeof,
         (uType*(*)())&::g::Fuse::Gestures::KeepFocusInView_typeof,
         (uType*(*)())&::g::Fuse::Gestures::KeepInViewCommon_typeof,
-        (uType*(*)())&::g::Fuse::Gestures::LinearRangeBehavior_typeof,
         (uType*(*)())&::g::Fuse::Gestures::Scroller__MoveUserFlags_typeof,
         (uType*(*)())&::g::Fuse::Gestures::Scroller_typeof,
         (uType*(*)())&::g::Fuse::Gestures::ScrollTo_typeof,
@@ -3784,7 +3920,9 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Gestures::Internal::Swiper_typeof,
         (uType*(*)())&::g::Fuse::Gestures::Internal::SwipeRegion_typeof,
         (uType*(*)())&::g::Fuse::Gestures::Internal::SwipeRegionArea_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::Activated_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ActivatingAnimation_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePageProxy__ActiveChanged_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ActivePageChangedHandler_typeof,
         (uType*(*)())&::g::Fuse::Navigation::AllowedNavigationDirections_typeof,
         (uType*(*)())&::g::Fuse::Navigation::RouteModificationCommand__ArgumentArrayAdapter_typeof,
@@ -3792,6 +3930,7 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Navigation::BackButtonAction_typeof,
         (uType*(*)())&::g::Fuse::Navigation::BackForwardNavigationTriggerAction_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ChildRouterPagesUpdated_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::Deactivated_typeof,
         (uType*(*)())&::g::Fuse::Navigation::DeactivatingAnimation_typeof,
         (uType*(*)())&::g::Fuse::Navigation::DynamicLinearNavigation__Desired_typeof,
         (uType*(*)())&::g::Fuse::Navigation::DirectNavigation_typeof,
@@ -3820,6 +3959,7 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Navigation::IPageResourceBinding_typeof,
         (uType*(*)())&::g::Fuse::Navigation::IRouterOutlet_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ISeekableNavigation_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePageProxy__Level_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ModifyRouteCommand_typeof,
         (uType*(*)())&::g::Fuse::Navigation::ModifyRouteHow_typeof,
         (uType*(*)())&::g::Fuse::Navigation::NavigatedArgs_typeof,
@@ -3839,6 +3979,7 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Navigation::NavigationPageState_typeof,
         (uType*(*)())&::g::Fuse::Navigation::NavigationState_typeof,
         (uType*(*)())&::g::Fuse::Navigation::StructuredNavigation__NavigationStructure_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::NavigationTrigger_typeof,
         (uType*(*)())&::g::Fuse::Navigation::NavigationTriggerAction_typeof,
         (uType*(*)())&::g::Fuse::Navigation::RouteModificationCommand__OuterSubscription_typeof,
         (uType*(*)())&::g::Fuse::Navigation::OutletType_typeof,
@@ -3846,9 +3987,13 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Navigation::PageExpression_typeof,
         (uType*(*)())&::g::Fuse::Navigation::PageResourceBinding_typeof,
         (uType*(*)())&::g::Fuse::Navigation::PagesMap_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePageProxy__ProgressUpdated_typeof,
         (uType*(*)())&::g::Fuse::Navigation::PushRouteCommand_typeof,
         (uType*(*)())&::g::Fuse::Navigation::Route_typeof,
         (uType*(*)())&::g::Fuse::Navigation::RouteModificationCommand_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePagePath_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePageProxy_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::RoutePageTriggerWhen_typeof,
         (uType*(*)())&::g::Fuse::Navigation::Router_typeof,
         (uType*(*)())&::g::Fuse::Navigation::RouterCancelNavigation_typeof,
         (uType*(*)())&::g::Fuse::Navigation::RouterGoBackBehavior_typeof,
@@ -3862,8 +4007,8 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::Navigation::SnapTo_typeof,
         (uType*(*)())&::g::Fuse::Navigation::NavigationPageProxy__StatusChangedHandler_typeof,
         (uType*(*)())&::g::Fuse::Navigation::StructuredNavigation_typeof,
-        (uType*(*)())&::g::Fuse::Navigation::PageExpression__Subscription_typeof,
         (uType*(*)())&::g::Fuse::Navigation::FindRouter__Subscription_typeof,
+        (uType*(*)())&::g::Fuse::Navigation::PageExpression__Subscription_typeof,
         (uType*(*)())&::g::Fuse::Navigation::SwipeDirection_typeof,
         (uType*(*)())&::g::Fuse::Navigation::SwipeNavigate_typeof,
         (uType*(*)())&::g::Fuse::Navigation::UpdateSeekArgs_typeof,
@@ -3918,15 +4063,20 @@ void uInitRtti()
         (uType*(*)())&::g::Fuse::FileSystem::Nothing_typeof,
         (uType*(*)())&::g::Fuse::FileSystem::PathTools_typeof,
         (uType*(*)())&::g::Fuse::FileSystem::UnifiedPaths_typeof,
+        (uType*(*)())&::g::Fuse::Selection::Deselected_typeof,
         (uType*(*)())&::g::Fuse::Selection::Selection__How_typeof,
         (uType*(*)())&::g::Fuse::Selection::IsSelectedFunction_typeof,
         (uType*(*)())&::g::Fuse::Selection::Selection__ListWrapper_typeof,
         (uType*(*)())&::g::Fuse::Selection::IsSelectedFunction__OuterSubscription_typeof,
         (uType*(*)())&::g::Fuse::Selection::Selectable_typeof,
+        (uType*(*)())&::g::Fuse::Selection::Selected_typeof,
         (uType*(*)())&::g::Fuse::Selection::Selection_typeof,
+        (uType*(*)())&::g::Fuse::Selection::SelectionEvent_typeof,
+        (uType*(*)())&::g::Fuse::Selection::SelectionEventArgs_typeof,
         (uType*(*)())&::g::Fuse::Selection::SelectionReplace_typeof,
         (uType*(*)())&::g::Fuse::Selection::SelectMode_typeof,
         (uType*(*)())&::g::Fuse::Selection::ToggleSelection_typeof,
+        (uType*(*)())&::g::Fuse::Selection::WhileSelected_typeof,
         (uType*(*)())&::g::Fuse::Storage::ApplicationDir_typeof,
         (uType*(*)())&::g::Fuse::Storage::ApplicationDir__ReadClosure_typeof,
         (uType*(*)())&::g::Fuse::Storage::StorageModule_typeof,
@@ -3966,9 +4116,11 @@ void uInitRtti()
         (uType*(*)())&::g::generaltext::Text_typeof,
         (uType*(*)())&::g::basic::LabelText_typeof,
         (uType*(*)())&::g::basic::TextBoxAction_typeof,
+        (uType*(*)())&::g::basic::TextBoxFakeDropDown_typeof,
         (uType*(*)())&::g::basic::TitleText_typeof,
-        (uType*(*)())&::g::header::Text_typeof,
         (uType*(*)())&::g::basicBtn::Button_typeof,
+        (uType*(*)())&::g::header::Text_typeof,
+        (uType*(*)())&::g::listBtn::Button_typeof,
         NULL
     };
 

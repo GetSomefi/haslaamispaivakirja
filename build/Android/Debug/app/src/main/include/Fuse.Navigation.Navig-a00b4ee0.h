@@ -22,6 +22,7 @@ NavigationPageProxy_type* NavigationPageProxy_typeof();
 void NavigationPageProxy__ctor__fn(NavigationPageProxy* __this);
 void NavigationPageProxy__Dispose_fn(NavigationPageProxy* __this);
 void NavigationPageProxy__Init_fn(NavigationPageProxy* __this, uDelegate* ready, uDelegate* unready, ::g::Fuse::Visual* source);
+void NavigationPageProxy__get_IsReady_fn(NavigationPageProxy* __this, bool* __retval);
 void NavigationPageProxy__get_Navigation_fn(NavigationPageProxy* __this, uObject** __retval);
 void NavigationPageProxy__New1_fn(NavigationPageProxy** __retval);
 void NavigationPageProxy__OnPageRootingCompleted_fn(NavigationPageProxy* __this);
@@ -43,6 +44,7 @@ struct NavigationPageProxy : uObject
     void ctor_();
     void Dispose();
     void Init(uDelegate* ready, uDelegate* unready, ::g::Fuse::Visual* source);
+    bool IsReady();
     uObject* Navigation();
     void OnPageRootingCompleted();
     ::g::Fuse::Visual* Page();

@@ -1,0 +1,43 @@
+<Panel ux:Class="basicDropDown">
+	<object ux:Property="dropDownList" />
+
+	<JavaScript>
+		var Observable = require("FuseJS/Observable");
+		var DropDownVisible = Observable(false);
+
+		function dropDownTrigger(){
+			console.log('klikki'); 
+			if(DropDownVisible.value){
+				DropDownVisible.value = false;
+			}else{
+				DropDownVisible.value = true;
+			}
+		}
+
+		module.exports = {
+			DropDownVisible:DropDownVisible,
+			dropDownTrigger:dropDownTrigger
+		};
+	</JavaScript>
+	
+	<StackPanel>
+		<basicBtn.Button Text="Valitse" Clicked="{dropDownTrigger}" BgColor="#125F63" Margin="0" />
+		<StackPanel ux:Name="DropDownShow" Visibility="Collapsed" Opacity="0.1">
+			<StackPanel>
+				<generaltext.Text>Valitse</generaltext.Text>
+				<Each Items="{Property this.dropDownList}">
+					<Selection />
+					<listBtn.Button FontSize="14" Clicked="{selectThisOption}" Text="{name}" DataKey="{key}" />
+				</Each>
+			</StackPanel>
+
+			<WhileTrue Value="{DropDownVisible}">
+				<Change DropDownShow.Visibility="Visible" Delay="0" DelayBack="0.26" />
+				<Change DropDownShow.Opacity="1" Duration="0.36" />
+			</WhileTrue>
+		</StackPanel>		
+	</StackPanel>
+
+
+
+</Panel>

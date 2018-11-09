@@ -21,9 +21,13 @@
 #include <Uno.Collections.IEnumerable-1.h>
 #include <Uno.Collections.IList-1.h>
 #include <Uno.UX.IPropertyListener.h>
+#include <Uno.UX.Size.h>
+namespace g{namespace Fuse{namespace Controls{struct Rectangle;}}}
 namespace g{namespace Fuse{namespace Navigation{struct Router;}}}
 namespace g{namespace Fuse{namespace Reactive{struct EventBinding;}}}
 namespace g{namespace Uno{namespace UX{struct NameTable;}}}
+namespace g{namespace Uno{namespace UX{struct Property1;}}}
+namespace g{namespace Uno{namespace UX{struct Selector;}}}
 namespace g{struct SplashPage;}
 
 namespace g{
@@ -38,10 +42,16 @@ void SplashPage__New5_fn(::g::Fuse::Navigation::Router* router1, SplashPage** __
 struct SplashPage : ::g::Fuse::Controls::Page
 {
     uStrong< ::g::Fuse::Navigation::Router*> router;
-    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb13;
+    uStrong< ::g::Uno::UX::Property1*> progressBar_Width_inst;
+    uStrong< ::g::Fuse::Controls::Rectangle*> progressBar;
+    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb7;
     uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
     static uSStrong<uArray*> __g_static_nametable1_;
     static uSStrong<uArray*>& __g_static_nametable1() { return SplashPage_typeof()->Init(), __g_static_nametable1_; }
+    static ::g::Uno::UX::Selector __selector0_;
+    static ::g::Uno::UX::Selector& __selector0() { return SplashPage_typeof()->Init(), __selector0_; }
+    static ::g::Uno::UX::Selector __selector1_;
+    static ::g::Uno::UX::Selector& __selector1() { return SplashPage_typeof()->Init(), __selector1_; }
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();

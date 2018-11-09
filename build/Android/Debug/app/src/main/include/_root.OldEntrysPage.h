@@ -40,10 +40,12 @@ void OldEntrysPage__New5_fn(::g::Fuse::Navigation::Router* router1, OldEntrysPag
 struct OldEntrysPage : ::g::Fuse::Controls::Page
 {
     uStrong< ::g::Fuse::Navigation::Router*> router;
-    uStrong< ::g::Uno::UX::Property1*> temp_Value_inst;
-    uStrong< ::g::Uno::UX::Property1*> temp1_Items_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp_title_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp1_Value_inst;
     uStrong< ::g::Uno::UX::Property1*> temp2_Items_inst;
-    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb8;
+    uStrong< ::g::Uno::UX::Property1*> temp3_Items_inst;
+    uStrong< ::g::Uno::UX::Property1*> temp4_Opacity_inst;
+    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb1;
     uStrong< ::g::Uno::UX::NameTable*> __g_nametable1;
     static uSStrong<uArray*> __g_static_nametable1_;
     static uSStrong<uArray*>& __g_static_nametable1() { return OldEntrysPage_typeof()->Init(), __g_static_nametable1_; }
@@ -51,6 +53,10 @@ struct OldEntrysPage : ::g::Fuse::Controls::Page
     static ::g::Uno::UX::Selector& __selector0() { return OldEntrysPage_typeof()->Init(), __selector0_; }
     static ::g::Uno::UX::Selector __selector1_;
     static ::g::Uno::UX::Selector& __selector1() { return OldEntrysPage_typeof()->Init(), __selector1_; }
+    static ::g::Uno::UX::Selector __selector2_;
+    static ::g::Uno::UX::Selector& __selector2() { return OldEntrysPage_typeof()->Init(), __selector2_; }
+    static ::g::Uno::UX::Selector __selector3_;
+    static ::g::Uno::UX::Selector& __selector3() { return OldEntrysPage_typeof()->Init(), __selector3_; }
 
     void ctor_8(::g::Fuse::Navigation::Router* router1);
     void InitializeUX();

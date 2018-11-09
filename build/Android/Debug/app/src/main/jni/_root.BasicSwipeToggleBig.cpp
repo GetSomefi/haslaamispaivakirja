@@ -5,8 +5,10 @@
 #include <_root.fa_times.h>
 #include <_root.Haslaamispaivak-11962fad.h>
 #include <_root.Haslaamispaivak-2263447d.h>
+#include <_root.Haslaamispaivak-35b71aea.h>
 #include <_root.Haslaamispaivak-5e60fd44.h>
 #include <_root.Haslaamispaivak-5fc8c6f7.h>
+#include <_root.Haslaamispaivak-6d39802e.h>
 #include <_root.Haslaamispaivak-7dc7b714.h>
 #include <_root.Haslaamispaivak-807639a3.h>
 #include <_root.Haslaamispaivak-91c83d22.h>
@@ -23,6 +25,7 @@
 #include <Fuse.Elements.Alignment.h>
 #include <Fuse.Elements.Element.h>
 #include <Fuse.Gestures.Clicked.h>
+#include <Fuse.Gestures.Swiped.h>
 #include <Fuse.Gestures.SwipeDirection.h>
 #include <Fuse.Gestures.SwipeGesture.h>
 #include <Fuse.Gestures.SwipeType.h>
@@ -41,6 +44,7 @@
 #include <Fuse.Translation.h>
 #include <Fuse.Triggers.Actions.Callback.h>
 #include <Fuse.Triggers.Actions.Set-1.h>
+#include <Fuse.Triggers.Actions-d8fdd070.h>
 #include <Fuse.Triggers.Actions-fcab7e57.h>
 #include <Fuse.Triggers.Trigger.h>
 #include <Fuse.VisualEventHandler.h>
@@ -54,25 +58,25 @@
 #include <Uno.UX.PropertyAccessor.h>
 #include <Uno.UX.PropertyObject.h>
 #include <Uno.UX.Selector.h>
-#include <Uno.UX.Size.h>
 #include <Uno.UX.Unit.h>
-static uString* STRINGS[13];
+static uString* STRINGS[16];
 static uType* TYPES[7];
 
 namespace g{
 
 // public partial sealed class BasicSwipeToggleBig :2
 // {
-// static BasicSwipeToggleBig() :91
+// static BasicSwipeToggleBig() :110
 static void BasicSwipeToggleBig__cctor_4_fn(uType* __type)
 {
     BasicSwipeToggleBig::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[0/*"IsActive"*/]);
     BasicSwipeToggleBig::__selector1_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[1/*"Color"*/]);
     BasicSwipeToggleBig::__selector2_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[2/*"Value"*/]);
     BasicSwipeToggleBig::__selector3_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[3/*"Sendable"*/]);
-    BasicSwipeToggleBig::__selector4_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[4/*"swipe"*/]);
-    BasicSwipeToggleBig::__selector5_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[5/*"handle"*/]);
-    BasicSwipeToggleBig::__selector6_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[6/*"background"*/]);
+    BasicSwipeToggleBig::__selector4_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[4/*"Width"*/]);
+    BasicSwipeToggleBig::__selector5_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[5/*"swipe"*/]);
+    BasicSwipeToggleBig::__selector6_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[6/*"handle"*/]);
+    BasicSwipeToggleBig::__selector7_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[7/*"background"*/]);
 }
 
 static void BasicSwipeToggleBig_build(uType* type)
@@ -81,15 +85,18 @@ static void BasicSwipeToggleBig_build(uType* type)
     ::STRINGS[1] = uString::Const("Color");
     ::STRINGS[2] = uString::Const("Value");
     ::STRINGS[3] = uString::Const("Sendable");
-    ::STRINGS[4] = uString::Const("swipe");
-    ::STRINGS[5] = uString::Const("handle");
-    ::STRINGS[6] = uString::Const("background");
-    ::STRINGS[7] = uString::Const("isOn");
-    ::STRINGS[8] = uString::Const("isOnVal");
-    ::STRINGS[9] = uString::Const("Components/BasicSwipeToggleBig.ux");
-    ::STRINGS[10] = uString::Const("Opacity");
-    ::STRINGS[11] = uString::Const("PrimaryColor");
-    ::STRINGS[12] = uString::Const("SecondaryColor");
+    ::STRINGS[4] = uString::Const("Width");
+    ::STRINGS[5] = uString::Const("swipe");
+    ::STRINGS[6] = uString::Const("handle");
+    ::STRINGS[7] = uString::Const("background");
+    ::STRINGS[8] = uString::Const("isOn");
+    ::STRINGS[9] = uString::Const("isOnVal");
+    ::STRINGS[10] = uString::Const("Components/BasicSwipeToggleBig.ux");
+    ::STRINGS[11] = uString::Const("Clicked!");
+    ::STRINGS[12] = uString::Const("Swiped!");
+    ::STRINGS[13] = uString::Const("Opacity");
+    ::STRINGS[14] = uString::Const("PrimaryColor");
+    ::STRINGS[15] = uString::Const("SecondaryColor");
     ::TYPES[0] = ::g::Fuse::Animations::Change_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL);
     ::TYPES[1] = ::g::Fuse::Triggers::Actions::Set_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL);
     ::TYPES[2] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL);
@@ -100,7 +107,8 @@ static void BasicSwipeToggleBig_build(uType* type)
     type->SetDependencies(
         ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive_typeof(),
         ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor_typeof(),
-        ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_typeof());
+        ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor_typeof(),
+        ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_Width_typeof());
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Controls::Panel_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Controls::Panel_type, interface1),
@@ -126,6 +134,7 @@ static void BasicSwipeToggleBig_build(uType* type)
         ::g::Uno::Float4_typeof(), offsetof(BasicSwipeToggleBig, _field_PrimaryColor), 0,
         ::g::Uno::Float4_typeof(), offsetof(BasicSwipeToggleBig, _field_SecondaryColor), 0,
         ::g::Uno::Float_typeof(), offsetof(BasicSwipeToggleBig, _field_Opacity), 0,
+        ::g::Uno::Float_typeof(), offsetof(BasicSwipeToggleBig, _field_Width), 0,
         ::g::Uno::Bool_typeof(), offsetof(BasicSwipeToggleBig, _field_IsActive), 0,
         ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), offsetof(BasicSwipeToggleBig, swipe_IsActive_inst), 0,
         ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(BasicSwipeToggleBig, handle_Color_inst), 0,
@@ -134,9 +143,13 @@ static void BasicSwipeToggleBig_build(uType* type)
         ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Float4_typeof(), NULL), offsetof(BasicSwipeToggleBig, temp1_Value_inst), 0,
         ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), offsetof(BasicSwipeToggleBig, this_Sendable_inst), 0,
         ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), offsetof(BasicSwipeToggleBig, temp2_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::Bool_typeof(), NULL), offsetof(BasicSwipeToggleBig, temp3_Value_inst), 0,
+        ::g::Uno::UX::Property1_typeof()->MakeType(::g::Uno::UX::Size_typeof(), NULL), offsetof(BasicSwipeToggleBig, background_Width_inst), 0,
         ::g::Fuse::Gestures::SwipeGesture_typeof(), offsetof(BasicSwipeToggleBig, swipe), 0,
         ::g::Fuse::Triggers::Actions::Callback_typeof(), offsetof(BasicSwipeToggleBig, TheClick), 0,
-        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BasicSwipeToggleBig, temp_eb15), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BasicSwipeToggleBig, temp_eb9), 0,
+        ::g::Fuse::Triggers::Actions::Callback_typeof(), offsetof(BasicSwipeToggleBig, TheSwipe), 0,
+        ::g::Fuse::Reactive::EventBinding_typeof(), offsetof(BasicSwipeToggleBig, temp_eb10), 0,
         ::g::Fuse::Controls::Rectangle_typeof(), offsetof(BasicSwipeToggleBig, handle), 0,
         ::g::Fuse::Controls::Rectangle_typeof(), offsetof(BasicSwipeToggleBig, background), 0,
         ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector0_, uFieldFlagsStatic,
@@ -145,7 +158,8 @@ static void BasicSwipeToggleBig_build(uType* type)
         ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector3_, uFieldFlagsStatic,
         ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector4_, uFieldFlagsStatic,
         ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector5_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector6_, uFieldFlagsStatic);
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector6_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&BasicSwipeToggleBig::__selector7_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::Controls::Panel_type* BasicSwipeToggleBig_typeof()
@@ -155,9 +169,9 @@ static void BasicSwipeToggleBig_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Panel_typeof();
-    options.FieldCount = 139;
+    options.FieldCount = 145;
     options.InterfaceCount = 19;
-    options.DependencyCount = 3;
+    options.DependencyCount = 4;
     options.ObjectSize = sizeof(BasicSwipeToggleBig);
     options.TypeSize = sizeof(::g::Fuse::Controls::Panel_type);
     type = (::g::Fuse::Controls::Panel_type*)uClassType::New("BasicSwipeToggleBig", options);
@@ -207,31 +221,31 @@ static void BasicSwipeToggleBig_build(uType* type)
     return type;
 }
 
-// public BasicSwipeToggleBig() :95
+// public BasicSwipeToggleBig() :114
 void BasicSwipeToggleBig__ctor_7_fn(BasicSwipeToggleBig* __this)
 {
     __this->ctor_7();
 }
 
-// private void InitializeUX() :99
+// private void InitializeUX() :118
 void BasicSwipeToggleBig__InitializeUX_fn(BasicSwipeToggleBig* __this)
 {
     __this->InitializeUX();
 }
 
-// public bool get_IsActive() :68
+// public bool get_IsActive() :83
 void BasicSwipeToggleBig__get_IsActive_fn(BasicSwipeToggleBig* __this, bool* __retval)
 {
     *__retval = __this->IsActive();
 }
 
-// public void set_IsActive(bool value) :69
+// public void set_IsActive(bool value) :84
 void BasicSwipeToggleBig__set_IsActive_fn(BasicSwipeToggleBig* __this, bool* value)
 {
     __this->IsActive(*value);
 }
 
-// public BasicSwipeToggleBig New() :95
+// public BasicSwipeToggleBig New() :114
 void BasicSwipeToggleBig__New4_fn(BasicSwipeToggleBig** __retval)
 {
     *__retval = BasicSwipeToggleBig::New4();
@@ -285,7 +299,7 @@ void BasicSwipeToggleBig__set_Sendable_fn(BasicSwipeToggleBig* __this, bool* val
     __this->Sendable(*value);
 }
 
-// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) :71
+// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) :86
 void BasicSwipeToggleBig__SetIsActive_fn(BasicSwipeToggleBig* __this, bool* value, uObject* origin)
 {
     __this->SetIsActive(*value, origin);
@@ -315,6 +329,24 @@ void BasicSwipeToggleBig__SetSendable_fn(BasicSwipeToggleBig* __this, bool* valu
     __this->SetSendable(*value, origin);
 }
 
+// public void SetWidth(float value, Uno.UX.IPropertyListener origin) :71
+void BasicSwipeToggleBig__SetWidth_fn(BasicSwipeToggleBig* __this, float* value, uObject* origin)
+{
+    __this->SetWidth(*value, origin);
+}
+
+// public float get_Width() :68
+void BasicSwipeToggleBig__get_Width1_fn(BasicSwipeToggleBig* __this, float* __retval)
+{
+    *__retval = __this->Width1();
+}
+
+// public void set_Width(float value) :69
+void BasicSwipeToggleBig__set_Width1_fn(BasicSwipeToggleBig* __this, float* value)
+{
+    __this->Width1(*value);
+}
+
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector0_;
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector1_;
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector2_;
@@ -322,172 +354,220 @@ void BasicSwipeToggleBig__SetSendable_fn(BasicSwipeToggleBig* __this, bool* valu
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector4_;
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector5_;
 ::g::Uno::UX::Selector BasicSwipeToggleBig::__selector6_;
+::g::Uno::UX::Selector BasicSwipeToggleBig::__selector7_;
 
-// public BasicSwipeToggleBig() [instance] :95
+// public BasicSwipeToggleBig() [instance] :114
 void BasicSwipeToggleBig::ctor_7()
 {
     ctor_6();
     InitializeUX();
 }
 
-// private void InitializeUX() [instance] :99
+// private void InitializeUX() [instance] :118
 void BasicSwipeToggleBig::InitializeUX()
 {
-    ::g::Fuse::Reactive::Constant* temp3 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Constant* temp4 = ::g::Fuse::Reactive::Constant::New1(this);
     swipe = ::g::Fuse::Gestures::SwipeGesture::New2();
     swipe_IsActive_inst = ::g::Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property::New1(swipe, BasicSwipeToggleBig::__selector0_);
-    ::g::Fuse::Reactive::Property* temp4 = ::g::Fuse::Reactive::Property::New1(temp3, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive::Singleton());
+    ::g::Fuse::Reactive::Property* temp5 = ::g::Fuse::Reactive::Property::New1(temp4, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive::Singleton());
     handle = ::g::Fuse::Controls::Rectangle::New3();
     handle_Color_inst = ::g::Haslaamispaivakirja_FuseControlsShape_Color_Property::New1(handle, BasicSwipeToggleBig::__selector1_);
-    ::g::Fuse::Reactive::Constant* temp5 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Constant* temp6 = ::g::Fuse::Reactive::Constant::New1(this);
     background = ::g::Fuse::Controls::Rectangle::New3();
     background_Color_inst = ::g::Haslaamispaivakirja_FuseControlsShape_Color_Property::New1(background, BasicSwipeToggleBig::__selector1_);
-    ::g::Fuse::Reactive::Constant* temp6 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Constant* temp7 = ::g::Fuse::Reactive::Constant::New1(this);
     ::g::Fuse::Animations::Change* temp = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[0/*Fuse.Animations.Change<float4>*/], handle_Color_inst);
     temp_Value_inst = ::g::Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property::New1(temp, BasicSwipeToggleBig::__selector2_);
-    ::g::Fuse::Reactive::Property* temp7 = ::g::Fuse::Reactive::Property::New1(temp5, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton());
+    ::g::Fuse::Reactive::Property* temp8 = ::g::Fuse::Reactive::Property::New1(temp6, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton());
     ::g::Fuse::Animations::Change* temp1 = (::g::Fuse::Animations::Change*)::g::Fuse::Animations::Change::New2(::TYPES[0/*Fuse.Animations.Change<float4>*/], background_Color_inst);
     temp1_Value_inst = ::g::Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property::New1(temp1, BasicSwipeToggleBig::__selector2_);
-    ::g::Fuse::Reactive::Property* temp8 = ::g::Fuse::Reactive::Property::New1(temp6, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor::Singleton());
+    ::g::Fuse::Reactive::Property* temp9 = ::g::Fuse::Reactive::Property::New1(temp7, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor::Singleton());
     this_Sendable_inst = ::g::Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property::New1(this, BasicSwipeToggleBig::__selector3_);
-    ::g::Fuse::Reactive::Constant* temp9 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Constant* temp10 = ::g::Fuse::Reactive::Constant::New1(this);
     ::g::Fuse::Triggers::Actions::Set* temp2 = (::g::Fuse::Triggers::Actions::Set*)::g::Fuse::Triggers::Actions::Set::New2(::TYPES[1/*Fuse.Triggers.Actions.Set<bool>*/], this_Sendable_inst);
     temp2_Value_inst = ::g::Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property::New1(temp2, BasicSwipeToggleBig::__selector2_);
-    ::g::Fuse::Reactive::Property* temp10 = ::g::Fuse::Reactive::Property::New1(temp9, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive::Singleton());
-    ::g::Fuse::Reactive::Data* temp11 = ::g::Fuse::Reactive::Data::New1(::STRINGS[7/*"isOn"*/]);
-    ::g::Fuse::Reactive::Constant* temp12 = ::g::Fuse::Reactive::Constant::New1(this);
-    ::g::Fuse::Reactive::Property* temp13 = ::g::Fuse::Reactive::Property::New1(temp12, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor::Singleton());
-    ::g::Fuse::Reactive::Constant* temp14 = ::g::Fuse::Reactive::Constant::New1(this);
-    ::g::Fuse::Reactive::Property* temp15 = ::g::Fuse::Reactive::Property::New1(temp14, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton());
-    ::g::Fuse::Reactive::Data* temp16 = ::g::Fuse::Reactive::Data::New1(::STRINGS[8/*"isOnVal"*/]);
-    ::g::Fuse::Reactive::DataBinding* temp17 = ::g::Fuse::Reactive::DataBinding::New1(swipe_IsActive_inst, (uObject*)temp4, 3);
-    ::g::Fuse::Gestures::SwipingAnimation* temp18 = ::g::Fuse::Gestures::SwipingAnimation::New2(swipe);
-    ::g::Fuse::Animations::Move* temp19 = ::g::Fuse::Animations::Move::New2();
-    ::g::Fuse::Reactive::DataBinding* temp20 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp7, 1);
-    ::g::Fuse::Reactive::DataBinding* temp21 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp8, 1);
-    ::g::Fuse::Gestures::Clicked* temp22 = ::g::Fuse::Gestures::Clicked::New2();
-    ::g::Fuse::Gestures::ToggleSwipeActive* temp23 = ::g::Fuse::Gestures::ToggleSwipeActive::New2();
+    ::g::Fuse::Reactive::Property* temp11 = ::g::Fuse::Reactive::Property::New1(temp10, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive::Singleton());
+    ::g::Fuse::Reactive::Data* temp12 = ::g::Fuse::Reactive::Data::New1(::STRINGS[8/*"isOn"*/]);
+    ::g::Fuse::Reactive::Constant* temp13 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Triggers::Actions::Set* temp3 = (::g::Fuse::Triggers::Actions::Set*)::g::Fuse::Triggers::Actions::Set::New2(::TYPES[1/*Fuse.Triggers.Actions.Set<bool>*/], this_Sendable_inst);
+    temp3_Value_inst = ::g::Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property::New1(temp3, BasicSwipeToggleBig::__selector2_);
+    ::g::Fuse::Reactive::Property* temp14 = ::g::Fuse::Reactive::Property::New1(temp13, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive::Singleton());
+    ::g::Fuse::Reactive::Data* temp15 = ::g::Fuse::Reactive::Data::New1(::STRINGS[8/*"isOn"*/]);
+    ::g::Fuse::Reactive::Constant* temp16 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Property* temp17 = ::g::Fuse::Reactive::Property::New1(temp16, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_PrimaryColor::Singleton());
+    ::g::Fuse::Reactive::Constant* temp18 = ::g::Fuse::Reactive::Constant::New1(this);
+    background_Width_inst = ::g::Haslaamispaivakirja_FuseElementsElement_Width_Property::New1(background, BasicSwipeToggleBig::__selector4_);
+    ::g::Fuse::Reactive::Property* temp19 = ::g::Fuse::Reactive::Property::New1(temp18, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_Width::Singleton());
+    ::g::Fuse::Reactive::Constant* temp20 = ::g::Fuse::Reactive::Constant::New1(this);
+    ::g::Fuse::Reactive::Property* temp21 = ::g::Fuse::Reactive::Property::New1(temp20, ::g::Haslaamispaivakirja_accessor_BasicSwipeToggleBig_SecondaryColor::Singleton());
+    ::g::Fuse::Reactive::Data* temp22 = ::g::Fuse::Reactive::Data::New1(::STRINGS[9/*"isOnVal"*/]);
+    ::g::Fuse::Reactive::DataBinding* temp23 = ::g::Fuse::Reactive::DataBinding::New1(swipe_IsActive_inst, (uObject*)temp5, 3);
+    ::g::Fuse::Gestures::SwipingAnimation* temp24 = ::g::Fuse::Gestures::SwipingAnimation::New2(swipe);
+    ::g::Fuse::Animations::Move* temp25 = ::g::Fuse::Animations::Move::New2();
+    ::g::Fuse::Reactive::DataBinding* temp26 = ::g::Fuse::Reactive::DataBinding::New1(temp_Value_inst, (uObject*)temp8, 1);
+    ::g::Fuse::Reactive::DataBinding* temp27 = ::g::Fuse::Reactive::DataBinding::New1(temp1_Value_inst, (uObject*)temp9, 1);
+    ::g::Fuse::Gestures::Clicked* temp28 = ::g::Fuse::Gestures::Clicked::New2();
+    ::g::Fuse::Triggers::Actions::DebugAction* temp29 = ::g::Fuse::Triggers::Actions::DebugAction::New2();
+    ::g::Fuse::Gestures::ToggleSwipeActive* temp30 = ::g::Fuse::Gestures::ToggleSwipeActive::New2();
     TheClick = ::g::Fuse::Triggers::Actions::Callback::New2();
-    ::g::Fuse::Reactive::DataBinding* temp24 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp10, 3);
-    temp_eb15 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp11);
-    ::g::Fuse::Controls::Shadow* temp25 = ::g::Fuse::Controls::Shadow::New2();
-    ::g::fa_times* temp26 = ::g::fa_times::New4();
-    ::g::Fuse::Reactive::DataBinding* temp27 = ::g::Fuse::Reactive::DataBinding::New1(handle_Color_inst, (uObject*)temp13, 1);
-    ::g::Fuse::Reactive::DataBinding* temp28 = ::g::Fuse::Reactive::DataBinding::New1(background_Color_inst, (uObject*)temp15, 1);
-    ::g::Fuse::Reactive::DataBinding* temp29 = ::g::Fuse::Reactive::DataBinding::New1(this_Sendable_inst, (uObject*)temp16, 3);
+    ::g::Fuse::Reactive::DataBinding* temp31 = ::g::Fuse::Reactive::DataBinding::New1(temp2_Value_inst, (uObject*)temp11, 3);
+    temp_eb9 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp12);
+    ::g::Fuse::Gestures::Swiped* temp32 = ::g::Fuse::Gestures::Swiped::New2(swipe);
+    ::g::Fuse::Triggers::Actions::DebugAction* temp33 = ::g::Fuse::Triggers::Actions::DebugAction::New2();
+    TheSwipe = ::g::Fuse::Triggers::Actions::Callback::New2();
+    ::g::Fuse::Reactive::DataBinding* temp34 = ::g::Fuse::Reactive::DataBinding::New1(temp3_Value_inst, (uObject*)temp14, 3);
+    temp_eb10 = ::g::Fuse::Reactive::EventBinding::New1((uObject*)temp15);
+    ::g::Fuse::Controls::Shadow* temp35 = ::g::Fuse::Controls::Shadow::New2();
+    ::g::fa_times* temp36 = ::g::fa_times::New4();
+    ::g::Fuse::Reactive::DataBinding* temp37 = ::g::Fuse::Reactive::DataBinding::New1(handle_Color_inst, (uObject*)temp17, 1);
+    ::g::Fuse::Reactive::DataBinding* temp38 = ::g::Fuse::Reactive::DataBinding::New1(background_Width_inst, (uObject*)temp19, 1);
+    ::g::Fuse::Reactive::DataBinding* temp39 = ::g::Fuse::Reactive::DataBinding::New1(background_Color_inst, (uObject*)temp21, 1);
+    ::g::Fuse::Reactive::DataBinding* temp40 = ::g::Fuse::Reactive::DataBinding::New1(this_Sendable_inst, (uObject*)temp22, 3);
     PrimaryColor(::g::Uno::Float4__New2(1.0f, 1.0f, 1.0f, 1.0f));
     SecondaryColor(::g::Uno::Float4__New2(0.07058824f, 0.372549f, 0.3882353f, 1.0f));
     Opacity1(0.7f);
-    Width(::g::Uno::UX::Size__New1(80.0f, 1));
+    Width1(80.0f);
     Height(::g::Uno::UX::Size__New1(34.0f, 1));
+    Alignment(1);
     SourceLineNumber(1);
-    SourceFileName(::STRINGS[9/*"Components/...*/]);
+    SourceFileName(::STRINGS[10/*"Components/...*/]);
     uPtr(swipe)->Type(1);
     uPtr(swipe)->Direction(2);
     uPtr(swipe)->Length(46.0f);
-    uPtr(swipe)->Name(BasicSwipeToggleBig::__selector4_);
-    uPtr(swipe)->SourceLineNumber(8);
-    uPtr(swipe)->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(swipe)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp17);
-    temp4->SourceLineNumber(8);
-    temp4->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp3->SourceLineNumber(8);
-    temp3->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp18->SourceLineNumber(9);
-    temp18->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp18->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp19);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp18->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp18->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp1);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp18->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp20);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp18->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp21);
-    temp19->X(46.0f);
-    temp19->Target(handle);
-    temp7->SourceLineNumber(11);
-    temp7->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp5->SourceLineNumber(11);
-    temp5->SourceFileName(::STRINGS[9/*"Components/...*/]);
+    uPtr(swipe)->Name(BasicSwipeToggleBig::__selector5_);
+    uPtr(swipe)->SourceLineNumber(9);
+    uPtr(swipe)->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(swipe)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp23);
+    temp5->SourceLineNumber(9);
+    temp5->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp4->SourceLineNumber(9);
+    temp4->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp24->SourceLineNumber(10);
+    temp24->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp24->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp25);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp24->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp24->Animators()), ::TYPES[3/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), temp1);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp24->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp26);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp24->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp27);
+    temp25->X(46.0f);
+    temp25->Target(handle);
     temp8->SourceLineNumber(12);
-    temp8->SourceFileName(::STRINGS[9/*"Components/...*/]);
+    temp8->SourceFileName(::STRINGS[10/*"Components/...*/]);
     temp6->SourceLineNumber(12);
-    temp6->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp22->SourceLineNumber(15);
-    temp22->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp22->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp23);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp22->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp2);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp22->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), TheClick);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp22->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp24);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp22->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb15);
-    temp23->SourceLineNumber(16);
-    temp23->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp23->Target(swipe);
-    temp2->SourceLineNumber(17);
-    temp2->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp10->SourceLineNumber(17);
-    temp10->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp9->SourceLineNumber(17);
-    temp9->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    uPtr(TheClick)->SourceLineNumber(18);
-    uPtr(TheClick)->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    uPtr(TheClick)->add_Handler(uDelegate::New(::TYPES[5/*Fuse.VisualEventHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb15)));
-    temp11->SourceLineNumber(18);
-    temp11->SourceFileName(::STRINGS[9/*"Components/...*/]);
+    temp6->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp9->SourceLineNumber(13);
+    temp9->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp7->SourceLineNumber(13);
+    temp7->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp28->SourceLineNumber(16);
+    temp28->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp29);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp30);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp2);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), TheClick);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp31);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp28->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb9);
+    temp29->Message(::STRINGS[11/*"Clicked!"*/]);
+    temp29->SourceLineNumber(17);
+    temp29->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp30->SourceLineNumber(18);
+    temp30->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp30->Target(swipe);
+    temp2->SourceLineNumber(19);
+    temp2->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp11->SourceLineNumber(19);
+    temp11->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp10->SourceLineNumber(19);
+    temp10->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    uPtr(TheClick)->SourceLineNumber(20);
+    uPtr(TheClick)->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    uPtr(TheClick)->add_Handler(uDelegate::New(::TYPES[5/*Fuse.VisualEventHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb9)));
+    temp12->SourceLineNumber(20);
+    temp12->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp32->SourceLineNumber(22);
+    temp32->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp32->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp33);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp32->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), temp3);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp32->Actions()), ::TYPES[4/*Uno.Collections.ICollection<Fuse.Triggers.Actions.TriggerAction>*/]), TheSwipe);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp32->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp34);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp32->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp_eb10);
+    temp33->Message(::STRINGS[12/*"Swiped!"*/]);
+    temp33->SourceLineNumber(23);
+    temp33->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp3->SourceLineNumber(24);
+    temp3->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp14->SourceLineNumber(24);
+    temp14->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp13->SourceLineNumber(24);
+    temp13->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    uPtr(TheSwipe)->SourceLineNumber(25);
+    uPtr(TheSwipe)->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    uPtr(TheSwipe)->add_Handler(uDelegate::New(::TYPES[5/*Fuse.VisualEventHandler*/], (void*)::g::Fuse::Reactive::EventBinding__OnEvent_fn, uPtr(temp_eb10)));
+    temp15->SourceLineNumber(25);
+    temp15->SourceFileName(::STRINGS[10/*"Components/...*/]);
     uPtr(handle)->CornerRadius(::g::Uno::Float4__New2(28.0f, 28.0f, 28.0f, 28.0f));
     uPtr(handle)->Width(::g::Uno::UX::Size__New1(28.0f, 1));
     uPtr(handle)->Alignment(1);
     uPtr(handle)->Margin(::g::Uno::Float4__New2(3.0f, 3.0f, 3.0f, 3.0f));
-    uPtr(handle)->Name(BasicSwipeToggleBig::__selector5_);
-    uPtr(handle)->SourceLineNumber(26);
-    uPtr(handle)->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp25);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp26);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp27);
-    temp25->Distance(1.0f);
-    temp25->Size(1.0f);
-    temp25->Color(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.2666667f));
-    temp25->SourceLineNumber(27);
-    temp25->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp26->FontSize(18.0f);
-    temp26->TextAlignment(1);
-    temp26->Color(::g::Uno::Float4__New2(0.07058824f, 0.372549f, 0.3882353f, 1.0f));
-    temp26->Alignment(10);
-    temp26->Margin(::g::Uno::Float4__New2(-1.0f, 1.0f, 0.0f, 0.0f));
-    temp26->SourceLineNumber(28);
-    temp26->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp13->SourceLineNumber(26);
-    temp13->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp12->SourceLineNumber(26);
-    temp12->SourceFileName(::STRINGS[9/*"Components/...*/]);
+    uPtr(handle)->Name(BasicSwipeToggleBig::__selector6_);
+    uPtr(handle)->SourceLineNumber(33);
+    uPtr(handle)->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp35);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp36);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(handle)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp37);
+    temp35->Distance(1.0f);
+    temp35->Size(1.0f);
+    temp35->Color(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.2666667f));
+    temp35->SourceLineNumber(34);
+    temp35->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp36->FontSize(18.0f);
+    temp36->TextAlignment(1);
+    temp36->Color(::g::Uno::Float4__New2(0.07058824f, 0.372549f, 0.3882353f, 1.0f));
+    temp36->Alignment(10);
+    temp36->Margin(::g::Uno::Float4__New2(-1.0f, 1.0f, 0.0f, 0.0f));
+    temp36->SourceLineNumber(35);
+    temp36->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp17->SourceLineNumber(33);
+    temp17->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp16->SourceLineNumber(33);
+    temp16->SourceFileName(::STRINGS[10/*"Components/...*/]);
     uPtr(background)->CornerRadius(::g::Uno::Float4__New2(28.0f, 28.0f, 28.0f, 28.0f));
-    uPtr(background)->Alignment(0);
+    uPtr(background)->Alignment(1);
     uPtr(background)->Margin(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
     uPtr(background)->Padding(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.0f));
     uPtr(background)->Opacity(1.0f);
     uPtr(background)->Layer(1);
-    uPtr(background)->Name(BasicSwipeToggleBig::__selector6_);
-    uPtr(background)->SourceLineNumber(31);
-    uPtr(background)->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(background)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp28);
-    temp15->SourceLineNumber(31);
-    temp15->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp14->SourceLineNumber(31);
-    temp14->SourceFileName(::STRINGS[9/*"Components/...*/]);
-    temp16->SourceLineNumber(1);
-    temp16->SourceFileName(::STRINGS[9/*"Components/...*/]);
+    uPtr(background)->Name(BasicSwipeToggleBig::__selector7_);
+    uPtr(background)->SourceLineNumber(38);
+    uPtr(background)->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(background)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp38);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(background)->Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp39);
+    temp19->SourceLineNumber(38);
+    temp19->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp18->SourceLineNumber(38);
+    temp18->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp21->SourceLineNumber(38);
+    temp21->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp20->SourceLineNumber(38);
+    temp20->SourceFileName(::STRINGS[10/*"Components/...*/]);
+    temp22->SourceLineNumber(1);
+    temp22->SourceFileName(::STRINGS[10/*"Components/...*/]);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), swipe);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp18);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp22);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp24);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp28);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), temp32);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), handle);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::TYPES[6/*Uno.Collections.ICollection<Fuse.Node>*/]), background);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp29);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Bindings()), ::TYPES[2/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp40);
 }
 
-// public bool get_IsActive() [instance] :68
+// public bool get_IsActive() [instance] :83
 bool BasicSwipeToggleBig::IsActive()
 {
     return _field_IsActive;
 }
 
-// public void set_IsActive(bool value) [instance] :69
+// public void set_IsActive(bool value) [instance] :84
 void BasicSwipeToggleBig::IsActive(bool value)
 {
     SetIsActive(value, NULL);
@@ -541,7 +621,7 @@ void BasicSwipeToggleBig::Sendable(bool value)
     SetSendable(value, NULL);
 }
 
-// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) [instance] :71
+// public void SetIsActive(bool value, Uno.UX.IPropertyListener origin) [instance] :86
 void BasicSwipeToggleBig::SetIsActive(bool value, uObject* origin)
 {
     if (value != _field_IsActive)
@@ -557,7 +637,7 @@ void BasicSwipeToggleBig::SetOpacity1(float value, uObject* origin)
     if (value != _field_Opacity)
     {
         _field_Opacity = value;
-        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[10/*"Opacity"*/]), origin);
+        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[13/*"Opacity"*/]), origin);
     }
 }
 
@@ -567,7 +647,7 @@ void BasicSwipeToggleBig::SetPrimaryColor(::g::Uno::Float4 value, uObject* origi
     if (::g::Uno::Float4__op_Inequality(value, _field_PrimaryColor))
     {
         _field_PrimaryColor = value;
-        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[11/*"PrimaryColor"*/]), origin);
+        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[14/*"PrimaryColor"*/]), origin);
     }
 }
 
@@ -577,7 +657,7 @@ void BasicSwipeToggleBig::SetSecondaryColor(::g::Uno::Float4 value, uObject* ori
     if (::g::Uno::Float4__op_Inequality(value, _field_SecondaryColor))
     {
         _field_SecondaryColor = value;
-        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[12/*"SecondaryCo...*/]), origin);
+        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[15/*"SecondaryCo...*/]), origin);
     }
 }
 
@@ -591,7 +671,29 @@ void BasicSwipeToggleBig::SetSendable(bool value, uObject* origin)
     }
 }
 
-// public BasicSwipeToggleBig New() [static] :95
+// public void SetWidth(float value, Uno.UX.IPropertyListener origin) [instance] :71
+void BasicSwipeToggleBig::SetWidth(float value, uObject* origin)
+{
+    if (value != _field_Width)
+    {
+        _field_Width = value;
+        OnPropertyChanged1(::g::Uno::UX::Selector__op_Implicit1(::STRINGS[4/*"Width"*/]), origin);
+    }
+}
+
+// public float get_Width() [instance] :68
+float BasicSwipeToggleBig::Width1()
+{
+    return _field_Width;
+}
+
+// public void set_Width(float value) [instance] :69
+void BasicSwipeToggleBig::Width1(float value)
+{
+    SetWidth(value, NULL);
+}
+
+// public BasicSwipeToggleBig New() [static] :114
 BasicSwipeToggleBig* BasicSwipeToggleBig::New4()
 {
     BasicSwipeToggleBig* obj1 = (BasicSwipeToggleBig*)uNew(BasicSwipeToggleBig_typeof());

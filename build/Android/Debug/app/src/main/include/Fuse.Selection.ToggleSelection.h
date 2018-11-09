@@ -14,16 +14,20 @@ namespace Selection{
 // public sealed class ToggleSelection :26
 // {
 ::g::Fuse::Triggers::Actions::TriggerAction_type* ToggleSelection_typeof();
+void ToggleSelection__ctor_2_fn(ToggleSelection* __this);
 void ToggleSelection__get_Mode_fn(ToggleSelection* __this, int32_t* __retval);
 void ToggleSelection__set_Mode_fn(ToggleSelection* __this, int32_t* value);
+void ToggleSelection__New2_fn(ToggleSelection** __retval);
 void ToggleSelection__Perform_fn(ToggleSelection* __this, ::g::Fuse::Node* target);
 
 struct ToggleSelection : ::g::Fuse::Triggers::Actions::TriggerAction
 {
     int32_t _mode;
 
+    void ctor_2();
     int32_t Mode();
     void Mode(int32_t value);
+    static ToggleSelection* New2();
 };
 // }
 

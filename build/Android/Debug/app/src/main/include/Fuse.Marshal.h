@@ -40,7 +40,6 @@ void Marshal__ToVector_fn(uObject* arr, uObject** __retval);
 void Marshal__TryAdd_fn(uObject* a, uObject* b, uObject** result, bool* __retval);
 void Marshal__TryConvertArrayToVector_fn(uObject* arg, uObject** __retval);
 void Marshal__TryConvertTo_fn(uType* t, uObject* o, uObject** res, uObject* diagnosticSource, bool* __retval);
-void Marshal__TryMultiply_fn(uObject* a, uObject* b, uObject** result, bool* __retval);
 void Marshal__TryOp1_fn(int32_t* op, uObject* a, uObject* b, uObject** result, bool* __retval);
 void Marshal__TryStringToSize_fn(uString* o, ::g::Uno::UX::Size* result, bool* __retval);
 void Marshal__TryStringToSize2_fn(uString* o, ::g::Uno::UX::Size2* result, int32_t* count, bool* __retval);
@@ -82,7 +81,6 @@ struct Marshal : uObject
     static bool TryAdd(uObject* a, uObject* b, uObject** result);
     static uObject* TryConvertArrayToVector(uObject* arg);
     static bool TryConvertTo(uType* t, uObject* o, uObject** res, uObject* diagnosticSource);
-    static bool TryMultiply(uObject* a, uObject* b, uObject** result);
     static bool TryOp1(int32_t op, uObject* a, uObject* b, uObject** result);
     static bool TryStringToSize(uString* o, ::g::Uno::UX::Size* result);
     static bool TryStringToSize2(uString* o, ::g::Uno::UX::Size2* result, int32_t* count);

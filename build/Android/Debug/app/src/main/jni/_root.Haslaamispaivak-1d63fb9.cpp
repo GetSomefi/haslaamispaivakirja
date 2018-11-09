@@ -16,9 +16,9 @@ static uType* TYPES[2];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor :31
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor :21
 // {
-// static generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() :31
+// static generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() :21
 static void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__cctor__fn(uType* __type)
 {
     Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::Singleton_ = Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::New1();
@@ -57,43 +57,43 @@ static void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor_build(uTy
     return type;
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() :31
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() :21
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this)
 {
     __this->ctor_1();
 }
 
-// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :37
+// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :27
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__GetAsObject_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this, ::g::Uno::UX::PropertyObject* obj, uObject** __retval)
 {
     return *__retval = uBox(::g::Uno::Float4_typeof(), uPtr(uCast< ::g::BasicSwipeToggle*>(obj, ::TYPES[0/*BasicSwipeToggle*/]))->PrimaryColor()), void();
 }
 
-// public override sealed Uno.UX.Selector get_Name() :34
+// public override sealed Uno.UX.Selector get_Name() :24
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__get_Name_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this, ::g::Uno::UX::Selector* __retval)
 {
     return *__retval = Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::_name_, void();
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor New() :31
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor New() :21
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__New1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor** __retval)
 {
     *__retval = Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::New1();
 }
 
-// public override sealed Uno.Type get_PropertyType() :36
+// public override sealed Uno.Type get_PropertyType() :26
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__get_PropertyType_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this, uType** __retval)
 {
     return *__retval = ::g::Uno::Float4_typeof(), void();
 }
 
-// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :38
+// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :28
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__SetAsObject_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this, ::g::Uno::UX::PropertyObject* obj, uObject* v, uObject* origin)
 {
     uPtr(uCast< ::g::BasicSwipeToggle*>(obj, ::TYPES[0/*BasicSwipeToggle*/]))->SetPrimaryColor(uUnbox< ::g::Uno::Float4>(::g::Uno::Float4_typeof(), v), origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :39
+// public override sealed bool get_SupportsOriginSetter() :29
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__get_SupportsOriginSetter_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* __this, bool* __retval)
 {
     return *__retval = true, void();
@@ -102,13 +102,13 @@ void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor__get_SupportsOri
 uSStrong< ::g::Uno::UX::PropertyAccessor*> Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::Singleton_;
 ::g::Uno::UX::Selector Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::_name_;
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() [instance] :31
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor() [instance] :21
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::ctor_1()
 {
     ctor_();
 }
 
-// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor New() [static] :31
+// public generated Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor New() [static] :21
 Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor::New1()
 {
     Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor* obj1 = (Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor*)uNew(Haslaamispaivakirja_accessor_BasicSwipeToggle_PrimaryColor_typeof());

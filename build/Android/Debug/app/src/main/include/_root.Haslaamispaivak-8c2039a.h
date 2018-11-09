@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseControlsTextControl_Value_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_Value_Property :121
+// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_Value_Property :395
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseControlsTextControl_Value_Property_typeof();
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, ::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector* name);

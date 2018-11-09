@@ -18,9 +18,9 @@ static uString* STRINGS[2];
 
 namespace g{
 
-// public partial sealed class OldEntrysPage.Template12 :426
+// public partial sealed class OldEntrysPage.Template12 :435
 // {
-// static Template12() :435
+// static Template12() :444
 static void OldEntrysPage__Template12__cctor__fn(uType* __type)
 {
 }
@@ -51,13 +51,13 @@ static void OldEntrysPage__Template12_build(uType* type)
     return type;
 }
 
-// public Template12(OldEntrysPage parent, OldEntrysPage parentInstance) :430
+// public Template12(OldEntrysPage parent, OldEntrysPage parentInstance) :439
 void OldEntrysPage__Template12__ctor_1_fn(OldEntrysPage__Template12* __this, ::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     __this->ctor_1(parent, parentInstance);
 }
 
-// public override sealed object New() :438
+// public override sealed object New() :447
 void OldEntrysPage__Template12__New1_fn(OldEntrysPage__Template12* __this, uObject** __retval)
 {
     ::g::Fuse::Controls::Text* __self1 = ::g::Fuse::Controls::Text::New3();
@@ -65,18 +65,18 @@ void OldEntrysPage__Template12__New1_fn(OldEntrysPage__Template12* __this, uObje
     __self1->Color(::g::Uno::Float4__New2(0.0f, 0.0f, 0.0f, 0.6666667f));
     __self1->Alignment(10);
     __self1->Margin(::g::Uno::Float4__New2(0.0f, 5.0f, 0.0f, 15.0f));
-    __self1->SourceLineNumber(62);
+    __self1->SourceLineNumber(50);
     __self1->SourceFileName(::STRINGS[1/*"OldEntrysPa...*/]);
     return *__retval = __self1, void();
 }
 
-// public Template12 New(OldEntrysPage parent, OldEntrysPage parentInstance) :430
+// public Template12 New(OldEntrysPage parent, OldEntrysPage parentInstance) :439
 void OldEntrysPage__Template12__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance, OldEntrysPage__Template12** __retval)
 {
     *__retval = OldEntrysPage__Template12::New2(parent, parentInstance);
 }
 
-// public Template12(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :430
+// public Template12(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :439
 void OldEntrysPage__Template12::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     ctor_(NULL, false);
@@ -84,7 +84,7 @@ void OldEntrysPage__Template12::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntry
     __parentInstance1 = parentInstance;
 }
 
-// public Template12 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :430
+// public Template12 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :439
 OldEntrysPage__Template12* OldEntrysPage__Template12::New2(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     OldEntrysPage__Template12* obj1 = (OldEntrysPage__Template12*)uNew(OldEntrysPage__Template12_typeof());

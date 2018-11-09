@@ -506,11 +506,18 @@ static void DebugAction_build(uType* type)
     options.TypeSize = sizeof(::g::Fuse::Triggers::Actions::TriggerAction_type);
     type = (::g::Fuse::Triggers::Actions::TriggerAction_type*)uClassType::New("Fuse.Triggers.Actions.DebugAction", options);
     type->fp_build_ = DebugAction_build;
+    type->fp_ctor_ = (void*)DebugAction__New2_fn;
     type->fp_Perform = (void(*)(::g::Fuse::Triggers::Actions::TriggerAction*, ::g::Fuse::Node*))DebugAction__Perform_fn;
     type->interface0.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Triggers::Actions::TriggerAction__FuseISourceLocationget_SourceNearest_fn;
     type->interface0.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Triggers::Actions::TriggerAction__get_SourceLineNumber_fn;
     type->interface0.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Triggers::Actions::TriggerAction__get_SourceFileName_fn;
     return type;
+}
+
+// public generated DebugAction() :20
+void DebugAction__ctor_2_fn(DebugAction* __this)
+{
+    __this->ctor_2();
 }
 
 // public generated string get_Message() :22
@@ -523,6 +530,12 @@ void DebugAction__get_Message_fn(DebugAction* __this, uString** __retval)
 void DebugAction__set_Message_fn(DebugAction* __this, uString* value)
 {
     __this->Message(value);
+}
+
+// public generated DebugAction New() :20
+void DebugAction__New2_fn(DebugAction** __retval)
+{
+    *__retval = DebugAction::New2();
 }
 
 // protected override sealed void Perform(Fuse.Node target) :36
@@ -566,6 +579,12 @@ void DebugAction__Perform_fn(DebugAction* __this, ::g::Fuse::Node* target)
     }
 }
 
+// public generated DebugAction() [instance] :20
+void DebugAction::ctor_2()
+{
+    ctor_1();
+}
+
 // public generated string get_Message() [instance] :22
 uString* DebugAction::Message()
 {
@@ -576,6 +595,14 @@ uString* DebugAction::Message()
 void DebugAction::Message(uString* value)
 {
     _Message = value;
+}
+
+// public generated DebugAction New() [static] :20
+DebugAction* DebugAction::New2()
+{
+    DebugAction* obj2 = (DebugAction*)uNew(DebugAction_typeof());
+    obj2->ctor_2();
+    return obj2;
 }
 // }
 

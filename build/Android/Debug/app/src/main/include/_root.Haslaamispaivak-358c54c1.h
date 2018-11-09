@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_basicBtn_Button_FontSize;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_FontSize :101
+// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_FontSize :171
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_basicBtn_Button_FontSize_typeof();
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__ctor_1_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this);

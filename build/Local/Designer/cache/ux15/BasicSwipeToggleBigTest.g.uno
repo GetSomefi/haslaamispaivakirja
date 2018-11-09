@@ -85,7 +85,7 @@ public partial class BasicSwipeToggleBigTest: Fuse.Controls.Panel
     global::Uno.UX.Property<bool> temp2_Value_inst;
     internal global::Fuse.Gestures.SwipeGesture swipe;
     internal global::Fuse.Triggers.Actions.Callback TheClick;
-    internal global::Fuse.Reactive.EventBinding temp_eb15;
+    internal global::Fuse.Reactive.EventBinding temp_eb11;
     internal global::Fuse.Controls.Rectangle handle;
     internal global::Fuse.Controls.Rectangle background;
     static BasicSwipeToggleBigTest()
@@ -133,7 +133,7 @@ public partial class BasicSwipeToggleBigTest: Fuse.Controls.Panel
         var temp22 = new global::Fuse.Gestures.Clicked();
         var temp23 = new global::Fuse.Gestures.ToggleSwipeActive();
         TheClick = new global::Fuse.Triggers.Actions.Callback();
-        temp_eb15 = new global::Fuse.Reactive.EventBinding(temp10);
+        temp_eb11 = new global::Fuse.Reactive.EventBinding(temp10);
         var temp24 = new global::Fuse.Reactive.DataBinding(temp2_Value_inst, temp11, Fuse.Reactive.BindingMode.Default);
         var temp25 = new global::Fuse.Controls.Shadow();
         var temp26 = new global::fa_times();
@@ -180,14 +180,14 @@ public partial class BasicSwipeToggleBigTest: Fuse.Controls.Panel
         temp22.Actions.Add(temp23);
         temp22.Actions.Add(TheClick);
         temp22.Actions.Add(temp2);
-        temp22.Bindings.Add(temp_eb15);
+        temp22.Bindings.Add(temp_eb11);
         temp22.Bindings.Add(temp24);
         temp23.SourceLineNumber = 16;
         temp23.SourceFileName = "Components/BasicSwipeToggleBigTest.ux";
         temp23.Target = swipe;
         TheClick.SourceLineNumber = 17;
         TheClick.SourceFileName = "Components/BasicSwipeToggleBigTest.ux";
-        TheClick.Handler += temp_eb15.OnEvent;
+        TheClick.Handler += temp_eb11.OnEvent;
         temp10.SourceLineNumber = 17;
         temp10.SourceFileName = "Components/BasicSwipeToggleBigTest.ux";
         temp2.SourceLineNumber = 18;

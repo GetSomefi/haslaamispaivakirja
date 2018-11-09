@@ -26,7 +26,6 @@
 #include <Fuse.Controls.Native.-d04e9e71.h>
 #include <Fuse.Controls.Native.-e502cdf1.h>
 #include <Fuse.Controls.Native.-e8015a54.h>
-#include <Fuse.Controls.Native.-fbe3e9f9.h>
 #include <Fuse.Controls.Native.ITextEdit.h>
 #include <Fuse.Controls.Native.ITextView.h>
 #include <Fuse.Controls.Native.IView.h>
@@ -674,21 +673,6 @@ uEnumType* ViewHandle__Invalidation_typeof()
         "OnInvalidateVisual", 1LL);
     return type;
 }
-
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.9.0/Interfaces.uno
-// -----------------------------------------------------------------------
-
-// public abstract interface IRangeView :55
-// {
-uInterfaceType* IRangeView_typeof()
-{
-    static uSStrong<uInterfaceType*> type;
-    if (type != NULL) return type;
-
-    type = uInterfaceType::New("Fuse.Controls.Native.IRangeView", 0, 0);
-    return type;
-}
-// }
 
 // /usr/local/share/uno/Packages/Fuse.Controls.Native/1.9.0/Interfaces.uno
 // -----------------------------------------------------------------------

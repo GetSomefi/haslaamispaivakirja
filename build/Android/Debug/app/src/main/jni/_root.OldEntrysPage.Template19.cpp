@@ -27,9 +27,9 @@ static uType* TYPES[1];
 
 namespace g{
 
-// public partial sealed class OldEntrysPage.Template19 :673
+// public partial sealed class OldEntrysPage.Template19 :682
 // {
-// static Template19() :684
+// static Template19() :693
 static void OldEntrysPage__Template19__cctor__fn(uType* __type)
 {
     OldEntrysPage__Template19::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[0/*"TheValue"*/]);
@@ -70,13 +70,13 @@ static void OldEntrysPage__Template19_build(uType* type)
     return type;
 }
 
-// public Template19(OldEntrysPage parent, OldEntrysPage parentInstance) :677
+// public Template19(OldEntrysPage parent, OldEntrysPage parentInstance) :686
 void OldEntrysPage__Template19__ctor_1_fn(OldEntrysPage__Template19* __this, ::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     __this->ctor_1(parent, parentInstance);
 }
 
-// public override sealed object New() :687
+// public override sealed object New() :696
 void OldEntrysPage__Template19__New1_fn(OldEntrysPage__Template19* __this, uObject** __retval)
 {
     ::g::ListItem* __self1 = ::g::ListItem::New4();
@@ -86,18 +86,18 @@ void OldEntrysPage__Template19__New1_fn(OldEntrysPage__Template19* __this, uObje
     ::g::Fuse::Reactive::Data* temp1 = ::g::Fuse::Reactive::Data::New1(::STRINGS[3/*"missa_ruoka...*/]);
     ::g::Fuse::Reactive::DataBinding* temp2 = ::g::Fuse::Reactive::DataBinding::New1(__this->__self_TheValue_inst1, (uObject*)temp, 3);
     ::g::Fuse::Reactive::DataBinding* temp3 = ::g::Fuse::Reactive::DataBinding::New1(__this->__self_RealLabel_inst1, (uObject*)temp1, 3);
-    __self1->SourceLineNumber(69);
+    __self1->SourceLineNumber(57);
     __self1->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
-    temp->SourceLineNumber(69);
+    temp->SourceLineNumber(57);
     temp->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
-    temp1->SourceLineNumber(69);
+    temp1->SourceLineNumber(57);
     temp1->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(__self1->Bindings()), ::TYPES[0/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp2);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(__self1->Bindings()), ::TYPES[0/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp3);
     return *__retval = __self1, void();
 }
 
-// public Template19 New(OldEntrysPage parent, OldEntrysPage parentInstance) :677
+// public Template19 New(OldEntrysPage parent, OldEntrysPage parentInstance) :686
 void OldEntrysPage__Template19__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance, OldEntrysPage__Template19** __retval)
 {
     *__retval = OldEntrysPage__Template19::New2(parent, parentInstance);
@@ -106,7 +106,7 @@ void OldEntrysPage__Template19__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntr
 ::g::Uno::UX::Selector OldEntrysPage__Template19::__selector0_;
 ::g::Uno::UX::Selector OldEntrysPage__Template19::__selector1_;
 
-// public Template19(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :677
+// public Template19(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :686
 void OldEntrysPage__Template19::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     ctor_(NULL, false);
@@ -114,7 +114,7 @@ void OldEntrysPage__Template19::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntry
     __parentInstance1 = parentInstance;
 }
 
-// public Template19 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :677
+// public Template19 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :686
 OldEntrysPage__Template19* OldEntrysPage__Template19::New2(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     OldEntrysPage__Template19* obj1 = (OldEntrysPage__Template19*)uNew(OldEntrysPage__Template19_typeof());

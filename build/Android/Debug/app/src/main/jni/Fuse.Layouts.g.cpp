@@ -40,6 +40,7 @@
 #include <Uno.Action.h>
 #include <Uno.Action1-1.h>
 #include <Uno.Bool.h>
+#include <Uno.Char.h>
 #include <Uno.Collections.ICollection-1.h>
 #include <Uno.Collections.IList-1.h>
 #include <Uno.Collections.IList-b56be992.h>
@@ -57,7 +58,7 @@
 #include <Uno.String.h>
 #include <Uno.Vector.h>
 static uString* STRINGS[7];
-static uType* TYPES[39];
+static uType* TYPES[45];
 
 namespace g{
 namespace Fuse{
@@ -760,6 +761,12 @@ static void DefinitionBase_build(uType* type)
 {
     type->SetDependencies(
         ::g::Uno::Math_typeof());
+    type->MethodTypes[2]->SetPrecalc(
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(type->MethodTypes[2]->U(0), NULL),
+        type->MakeMethod(1/*Parse<T>*/, type->MethodTypes[2]->U(0), NULL));
+    type->MethodTypes[3]->SetPrecalc(
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(type->MethodTypes[3]->U(0), NULL),
+        ::g::Uno::Collections::IList_typeof()->MakeType(type->MethodTypes[3]->U(0), NULL));
     type->SetFields(1,
         ::g::Uno::Float_typeof(), offsetof(DefinitionBase, _actualOffset), 0,
         DefinitionBase__CreationType_typeof(), offsetof(DefinitionBase, Creation), 0,
@@ -778,12 +785,15 @@ uType* DefinitionBase_typeof()
     uTypeOptions options;
     options.BaseDefinition = ::g::Uno::UX::PropertyObject_typeof();
     options.FieldCount = 8;
-    options.MethodTypeCount = 1;
+    options.MethodTypeCount = 4;
     options.DependencyCount = 1;
     options.ObjectSize = sizeof(DefinitionBase);
     options.TypeSize = sizeof(uType);
     type = uClassType::New("Fuse.Layouts.DefinitionBase", options);
     type->MethodTypes[0] = type->NewMethodType(1, 0,0);
+    type->MethodTypes[1] = type->NewMethodType(1, 0,0);
+    type->MethodTypes[2] = type->NewMethodType(1, 2,0);
+    type->MethodTypes[3] = type->NewMethodType(1, 2,0);
     type->fp_build_ = DefinitionBase_build;
     return type;
 }
@@ -858,6 +868,36 @@ void DefinitionBase__set_Metric_fn(DefinitionBase* __this, int32_t* value)
 void DefinitionBase__OnChanged_fn(DefinitionBase* __this)
 {
     __this->OnChanged();
+}
+
+// protected internal static T Parse<T>(string data) :121
+void DefinitionBase__Parse_fn(uType* __type, uString* data, DefinitionBase** __retval)
+{
+    *__retval = DefinitionBase::Parse(__type, data);
+}
+
+// protected internal static void Parse<T>(string data, Uno.Collections.IList<T> output) :111
+void DefinitionBase__Parse1_fn(uType* __type, uString* data, uObject* output)
+{
+    DefinitionBase::Parse1(__type, data, output);
+}
+
+// internal string Serialize() :163
+void DefinitionBase__Serialize_fn(DefinitionBase* __this, uString** __retval)
+{
+    *__retval = __this->Serialize();
+}
+
+// internal static string Serialize<T>(Uno.Collections.IList<T> columns) :174
+void DefinitionBase__Serialize1_fn(uType* __type, uObject* columns, uString** __retval)
+{
+    *__retval = DefinitionBase::Serialize1(__type, columns);
+}
+
+// internal bool get_UsesDefault() :73
+void DefinitionBase__get_UsesDefault_fn(DefinitionBase* __this, bool* __retval)
+{
+    *__retval = __this->UsesDefault();
 }
 
 // protected DefinitionBase() [instance] :26
@@ -943,6 +983,114 @@ void DefinitionBase::OnChanged()
 {
     if (::g::Uno::Delegate::op_Inequality(Changed1, NULL))
         uPtr(Changed1)->InvokeVoid();
+}
+
+// internal string Serialize() [instance] :163
+uString* DefinitionBase::Serialize()
+{
+    switch (Metric())
+    {
+        case 2:
+            return uString::Const("auto");
+        case 1:
+            return ::g::Uno::String::op_Addition(uBox(::g::Uno::Float_typeof(), Extent()), uString::Const("*"));
+        case 3:
+            return uString::Const("default");
+        default:
+            return ::g::Uno::Float::ToString(Extent(), ::g::Uno::Float_typeof());
+    }
+}
+
+// internal bool get_UsesDefault() [instance] :73
+bool DefinitionBase::UsesDefault()
+{
+    return (Creation == 2) || (Creation == 3);
+}
+
+// protected internal static T Parse<T>(string data) [static] :121
+DefinitionBase* DefinitionBase::Parse(uType* __type, uString* data)
+{
+    try
+    {
+        {
+            uString* t = ::g::Uno::String::ToLower(uPtr(::g::Uno::String::Trim(uPtr(data))));
+            DefinitionBase* n = (DefinitionBase*)__type->U(0)->New();
+            n->Creation = 1;
+
+            if ((uPtr(t)->Length() > 0) && (uPtr(t)->Item(uPtr(t)->Length() - 1) == '*'))
+            {
+                uString* k = ::g::Uno::String::Trim(uPtr(::g::Uno::String::Substring1(uPtr(t), 0, uPtr(t)->Length() - 1)));
+                uPtr(n)->Extent(::g::Uno::Float::Parse(k));
+                n->Metric(1);
+            }
+            else if (::g::Uno::String::op_Equality(t, uString::Const("auto")))
+            {
+                uPtr(n)->Extent(1.0f);
+                n->Metric(2);
+            }
+            else if (::g::Uno::String::op_Equality(t, uString::Const("default")))
+            {
+                uPtr(n)->Extent(1.0f);
+                n->Metric(3);
+            }
+            else
+            {
+                uPtr(n)->Extent(::g::Uno::Float::Parse(t));
+                n->Metric(0);
+            }
+
+            return n;
+        }
+    }
+
+    catch (const uThrowable& __t)
+    {
+        ::g::Uno::Exception* e = __t.Exception;
+        DefinitionBase* n1 = (DefinitionBase*)__type->U(0)->New();
+        n1->Extent(0.0f);
+        n1->Metric(0);
+        n1->Creation = 1;
+        return n1;
+    }
+}
+
+// protected internal static void Parse<T>(string data, Uno.Collections.IList<T> output) [static] :111
+void DefinitionBase::Parse1(uType* __type, uString* data, uObject* output)
+{
+    uType* __types[] = {
+        __type->Precalced(0/*Uno.Collections.ICollection<T>*/),
+        __type->Precalced(1/*Fuse.Layouts.DefinitionBase.Parse<T>*/),
+    };
+    ::g::Uno::Collections::ICollection::Clear(uInterface(uPtr(output), __types[0]));
+
+    if (::g::Uno::String::op_Equality(data, NULL))
+        return;
+
+    uArray* s = ::g::Uno::String::Split(uPtr(data), uArray::Init<int32_t>(::g::Uno::Char_typeof()->Array(), 1, ','));
+
+    for (int32_t i = 0; i < uPtr(s)->Length(); i++)
+        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(output), __types[0]), (DefinitionBase*)DefinitionBase::Parse(__types[1], uPtr(s)->Strong<uString*>(i)));
+}
+
+// internal static string Serialize<T>(Uno.Collections.IList<T> columns) [static] :174
+uString* DefinitionBase::Serialize1(uType* __type, uObject* columns)
+{
+    uType* __types[] = {
+        __type->Precalced(0/*Uno.Collections.ICollection<T>*/),
+        __type->Precalced(1/*Uno.Collections.IList<T>*/),
+    };
+    DefinitionBase* ret1;
+    uString* s = uString::Const("");
+
+    for (int32_t i = 0; i < ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(columns), __types[0])); i++)
+    {
+        if (i > 0)
+            s = ::g::Uno::String::op_Addition2(s, uString::Const(", "));
+
+        s = ::g::Uno::String::op_Addition2(s, uPtr((::g::Uno::Collections::IList::get_Item_ex(uInterface(uPtr(columns), __types[1]), uCRef<int32_t>(i), &ret1), ret1))->Serialize());
+    }
+
+    return s;
 }
 // }
 
@@ -1290,11 +1438,11 @@ static void GridLayout_build(uType* type)
     ::TYPES[8] = ::g::Uno::Action_typeof();
     ::TYPES[0] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
     ::TYPES[1] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Visual>*/, ::g::Fuse::Visual_typeof(), NULL);
-    ::TYPES[9] = type->MakeMethod(7/*UserCount<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
-    ::TYPES[10] = type->MakeMethod(7/*UserCount<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[9] = type->MakeMethod(8/*UserCount<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[10] = type->MakeMethod(8/*UserCount<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
     ::TYPES[11] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Uno::Int_typeof(), NULL);
-    ::TYPES[12] = type->MakeMethod(6/*TrimPad<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
-    ::TYPES[13] = type->MakeMethod(6/*TrimPad<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[12] = type->MakeMethod(7/*TrimPad<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[13] = type->MakeMethod(7/*TrimPad<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
     ::TYPES[14] = ::g::Uno::Collections::ICollection_typeof();
     ::TYPES[15] = ::g::Uno::Collections::IList_typeof();
     ::TYPES[16] = type->MakeMethod(4/*HasDefaultMetric<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
@@ -1313,8 +1461,14 @@ static void GridLayout_build(uType* type)
     ::TYPES[29] = ::g::Uno::Action1_typeof()->MakeType(::g::Fuse::Layouts::Column_typeof(), NULL);
     ::TYPES[30] = ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(::g::Fuse::Layouts::Column_typeof(), NULL);
     ::TYPES[31] = type->MakeMethod(5/*ModifyCount<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
-    ::TYPES[32] = ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(::g::Fuse::Layouts::Row_typeof(), NULL);
-    ::TYPES[33] = type->MakeMethod(5/*ModifyCount<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[32] = ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(3/*Serialize<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[33] = ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(2/*Parse<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[34] = ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(1/*Parse<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[35] = type->MakeMethod(6/*ModifyDefault<Fuse.Layouts.Column>*/, ::g::Fuse::Layouts::Column_typeof(), NULL);
+    ::TYPES[36] = ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(1/*Parse<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[37] = type->MakeMethod(6/*ModifyDefault<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[38] = ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(::g::Fuse::Layouts::Row_typeof(), NULL);
+    ::TYPES[39] = type->MakeMethod(5/*ModifyCount<Fuse.Layouts.Row>*/, ::g::Fuse::Layouts::Row_typeof(), NULL);
     type->SetDependencies(
         ::g::Fuse::Layouts::Layout_typeof(),
         ::g::Uno::Math_typeof());
@@ -1339,12 +1493,14 @@ static void GridLayout_build(uType* type)
         ::TYPES[27/*Uno.Collections.IListExtensions*/]->MakeMethod(0/*RemoveLast<T>*/, type->MethodTypes[5]->U(0), NULL),
         ::TYPES[15/*Uno.Collections.IList`1*/]->MakeType(type->MethodTypes[5]->U(0), NULL));
     type->MethodTypes[6]->SetPrecalc(
-        ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(type->MethodTypes[6]->U(0), NULL),
-        ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(0/*Copy<T>*/, type->MethodTypes[6]->U(0), NULL),
-        ::TYPES[15/*Uno.Collections.IList`1*/]->MakeType(type->MethodTypes[6]->U(0), NULL));
+        ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(0/*Copy<T>*/, type->MethodTypes[6]->U(0), NULL));
     type->MethodTypes[7]->SetPrecalc(
         ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(type->MethodTypes[7]->U(0), NULL),
+        ::TYPES[26/*Fuse.Layouts.DefinitionBase*/]->MakeMethod(0/*Copy<T>*/, type->MethodTypes[7]->U(0), NULL),
         ::TYPES[15/*Uno.Collections.IList`1*/]->MakeType(type->MethodTypes[7]->U(0), NULL));
+    type->MethodTypes[8]->SetPrecalc(
+        ::TYPES[14/*Uno.Collections.ICollection`1*/]->MakeType(type->MethodTypes[8]->U(0), NULL),
+        ::TYPES[15/*Uno.Collections.IList`1*/]->MakeType(type->MethodTypes[8]->U(0), NULL));
     type->SetInterfaces(
         ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Layouts::Layout_type, interface0));
     type->SetFields(4,
@@ -1375,7 +1531,7 @@ static void GridLayout_build(uType* type)
     options.BaseDefinition = ::g::Fuse::Layouts::Layout_typeof();
     options.FieldCount = 20;
     options.InterfaceCount = 1;
-    options.MethodTypeCount = 8;
+    options.MethodTypeCount = 9;
     options.DependencyCount = 2;
     options.ObjectSize = sizeof(GridLayout);
     options.TypeSize = sizeof(::g::Fuse::Layouts::Layout_type);
@@ -1386,8 +1542,9 @@ static void GridLayout_build(uType* type)
     type->MethodTypes[3] = type->NewMethodType(1, 2,0);
     type->MethodTypes[4] = type->NewMethodType(1, 2,0);
     type->MethodTypes[5] = type->NewMethodType(1, 4,0);
-    type->MethodTypes[6] = type->NewMethodType(1, 3,0);
-    type->MethodTypes[7] = type->NewMethodType(1, 2,0);
+    type->MethodTypes[6] = type->NewMethodType(1, 1,0);
+    type->MethodTypes[7] = type->NewMethodType(1, 3,0);
+    type->MethodTypes[8] = type->NewMethodType(1, 2,0);
     type->fp_build_ = GridLayout_build;
     type->fp_ctor_ = (void*)GridLayout__New2_fn;
     type->fp_cctor_ = GridLayout__cctor_1_fn;
@@ -1592,6 +1749,18 @@ void GridLayout__get_ColumnList_fn(GridLayout* __this, uObject** __retval)
     *__retval = __this->ColumnList();
 }
 
+// public string get_Columns() :378
+void GridLayout__get_Columns_fn(GridLayout* __this, uString** __retval)
+{
+    *__retval = __this->Columns();
+}
+
+// public void set_Columns(string value) :379
+void GridLayout__set_Columns_fn(GridLayout* __this, uString* value)
+{
+    __this->Columns(value);
+}
+
 // public Fuse.Elements.Alignment get_ContentAlignment() :435
 void GridLayout__get_ContentAlignment_fn(GridLayout* __this, int32_t* __retval)
 {
@@ -1602,6 +1771,30 @@ void GridLayout__get_ContentAlignment_fn(GridLayout* __this, int32_t* __retval)
 void GridLayout__set_ContentAlignment_fn(GridLayout* __this, int32_t* value)
 {
     __this->ContentAlignment(*value);
+}
+
+// public string get_DefaultColumn() :390
+void GridLayout__get_DefaultColumn_fn(GridLayout* __this, uString** __retval)
+{
+    *__retval = __this->DefaultColumn();
+}
+
+// public void set_DefaultColumn(string value) :391
+void GridLayout__set_DefaultColumn_fn(GridLayout* __this, uString* value)
+{
+    __this->DefaultColumn(value);
+}
+
+// public string get_DefaultRow() :302
+void GridLayout__get_DefaultRow_fn(GridLayout* __this, uString** __retval)
+{
+    *__retval = __this->DefaultRow();
+}
+
+// public void set_DefaultRow(string value) :303
+void GridLayout__set_DefaultRow_fn(GridLayout* __this, uString* value)
+{
+    __this->DefaultRow(value);
 }
 
 // private void DefinitionAdded(Fuse.Layouts.DefinitionBase r) :685
@@ -1729,6 +1922,12 @@ void GridLayout__Measure_fn(GridLayout* __this, ::g::Fuse::Visual* container, ::
 void GridLayout__ModifyCount_fn(GridLayout* __this, uType* __type, uObject* list, int32_t* count, ::g::Fuse::Layouts::DefinitionBase* primordial)
 {
     __this->ModifyCount(__type, list, *count, primordial);
+}
+
+// private void ModifyDefault<T>(Uno.Collections.RootableList<T> list, T primordial) :310
+void GridLayout__ModifyDefault_fn(GridLayout* __this, uType* __type, ::g::Uno::Collections::RootableList* list, ::g::Fuse::Layouts::DefinitionBase* primordial)
+{
+    __this->ModifyDefault(__type, list, primordial);
 }
 
 // public generated GridLayout New() :269
@@ -2138,6 +2337,19 @@ uObject* GridLayout::ColumnList()
     return (uObject*)_columns;
 }
 
+// public string get_Columns() [instance] :378
+uString* GridLayout::Columns()
+{
+    return ::g::Fuse::Layouts::DefinitionBase::Serialize1(::TYPES[32/*Fuse.Layouts.DefinitionBase.Serialize<Fuse.Layouts.Column>*/], ColumnList());
+}
+
+// public void set_Columns(string value) [instance] :379
+void GridLayout::Columns(uString* value)
+{
+    ::g::Fuse::Layouts::DefinitionBase::Parse1(::TYPES[33/*Fuse.Layouts.DefinitionBase.Parse<Fuse.Layouts.Column>*/], value, ColumnList());
+    Changed();
+}
+
 // public Fuse.Elements.Alignment get_ContentAlignment() [instance] :435
 int32_t GridLayout::ContentAlignment()
 {
@@ -2152,6 +2364,32 @@ void GridLayout::ContentAlignment(int32_t value)
         _contentAlignment = value;
         Changed();
     }
+}
+
+// public string get_DefaultColumn() [instance] :390
+uString* GridLayout::DefaultColumn()
+{
+    return uPtr(_defaultColumn)->Serialize();
+}
+
+// public void set_DefaultColumn(string value) [instance] :391
+void GridLayout::DefaultColumn(uString* value)
+{
+    _defaultColumn = ((::g::Fuse::Layouts::Column*)::g::Fuse::Layouts::DefinitionBase::Parse(::TYPES[34/*Fuse.Layouts.DefinitionBase.Parse<Fuse.Layouts.Column>*/], value));
+    ModifyDefault(::TYPES[35/*Fuse.Layouts.GridLayout.ModifyDefault<Fuse.Layouts.Column>*/], _columns, _defaultColumn);
+}
+
+// public string get_DefaultRow() [instance] :302
+uString* GridLayout::DefaultRow()
+{
+    return uPtr(_defaultRow)->Serialize();
+}
+
+// public void set_DefaultRow(string value) [instance] :303
+void GridLayout::DefaultRow(uString* value)
+{
+    _defaultRow = ((::g::Fuse::Layouts::Row*)::g::Fuse::Layouts::DefinitionBase::Parse(::TYPES[36/*Fuse.Layouts.DefinitionBase.Parse<Fuse.Layouts.Row>*/], value));
+    ModifyDefault(::TYPES[37/*Fuse.Layouts.GridLayout.ModifyDefault<Fuse.Layouts.Row>*/], _rows, _defaultRow);
 }
 
 // private void DefinitionAdded(Fuse.Layouts.DefinitionBase r) [instance] :685
@@ -2420,6 +2658,26 @@ void GridLayout::ModifyCount(uType* __type, uObject* list, int32_t count, ::g::F
     Changed();
 }
 
+// private void ModifyDefault<T>(Uno.Collections.RootableList<T> list, T primordial) [instance] :310
+void GridLayout::ModifyDefault(uType* __type, ::g::Uno::Collections::RootableList* list, ::g::Fuse::Layouts::DefinitionBase* primordial)
+{
+    uType* __types[] = {
+        __type->Precalced(0/*Fuse.Layouts.DefinitionBase.Copy<T>*/),
+    };
+    ::g::Fuse::Layouts::DefinitionBase* ret20;
+    ::g::Fuse::Layouts::DefinitionBase* ret21;
+
+    for (int32_t i = 0; i < uPtr(list)->Count(); ++i)
+        if (uPtr((::g::Uno::Collections::RootableList__get_Item_fn(uPtr(list), uCRef<int32_t>(i), &ret20), ret20))->UsesDefault())
+        {
+            ::g::Fuse::Layouts::DefinitionBase* n = (::g::Fuse::Layouts::DefinitionBase*)__type->U(0)->New();
+            n->Copy(__types[0], primordial, uPtr((::g::Uno::Collections::RootableList__get_Item_fn(uPtr(list), uCRef<int32_t>(i), &ret21), ret21))->Creation);
+            ::g::Uno::Collections::RootableList__ReplaceAt_fn(list, uCRef<int32_t>(i), n);
+        }
+
+    Changed();
+}
+
 // private bool RemoveListener(Fuse.Layouts.DefinitionBase item) [instance] :705
 bool GridLayout::RemoveListener(::g::Fuse::Layouts::DefinitionBase* item)
 {
@@ -2433,13 +2691,13 @@ bool GridLayout::RemoveListener(::g::Fuse::Layouts::DefinitionBase* item)
 // public int get_RowCount() [instance] :326
 int32_t GridLayout::RowCount()
 {
-    return ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(RowList()), ::TYPES[32/*Uno.Collections.ICollection<Fuse.Layouts.Row>*/]));
+    return ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(RowList()), ::TYPES[38/*Uno.Collections.ICollection<Fuse.Layouts.Row>*/]));
 }
 
 // public void set_RowCount(int value) [instance] :327
 void GridLayout::RowCount(int32_t value)
 {
-    ModifyCount(::TYPES[33/*Fuse.Layouts.GridLayout.ModifyCount<Fuse.Layouts.Row>*/], (uObject*)_rows, value, _defaultRow);
+    ModifyCount(::TYPES[39/*Fuse.Layouts.GridLayout.ModifyCount<Fuse.Layouts.Row>*/], (uObject*)_rows, value, _defaultRow);
 }
 
 // public Uno.Collections.IList<Fuse.Layouts.Row> get_RowList() [instance] :272
@@ -2572,10 +2830,10 @@ static void Layout_build(uType* type)
     ::STRINGS[5] = uString::Const("Only a single container is supported for Layout");
     ::STRINGS[6] = uString::Const("Removing an invalid container from Layout");
     ::TYPES[4] = ::g::Fuse::Visual_typeof();
-    ::TYPES[34] = ::g::Fuse::Elements::Element_typeof();
-    ::TYPES[35] = ::g::Fuse::ISourceLocation_typeof();
+    ::TYPES[40] = ::g::Fuse::Elements::Element_typeof();
+    ::TYPES[41] = ::g::Fuse::ISourceLocation_typeof();
     type->SetInterfaces(
-        ::TYPES[35/*Fuse.ISourceLocation*/], offsetof(Layout_type, interface0));
+        ::TYPES[41/*Fuse.ISourceLocation*/], offsetof(Layout_type, interface0));
     type->SetFields(1,
         ::g::Fuse::Controls::LayoutControl_typeof(), offsetof(Layout, Container), 0,
         ::g::Uno::String_typeof(), offsetof(Layout, _SourceFileName), 0,
@@ -2637,7 +2895,7 @@ void Layout__FuseISourceLocationget_SourceNearest_fn(Layout* __this, uObject** _
         return *__retval = (uObject*)__this, void();
 
     if (__this->Container != NULL)
-        return *__retval = ::g::Fuse::ISourceLocation::SourceNearest(uInterface(uPtr((uObject*)__this->Container), ::TYPES[35/*Fuse.ISourceLocation*/])), void();
+        return *__retval = ::g::Fuse::ISourceLocation::SourceNearest(uInterface(uPtr((uObject*)__this->Container), ::TYPES[41/*Fuse.ISourceLocation*/])), void();
 
     return *__retval = NULL, void();
 }
@@ -2775,7 +3033,7 @@ bool Layout::ArrangeMarginBoxSpecial(::g::Fuse::Node* n, ::g::Uno::Float4 paddin
 
     if (lr == 3)
     {
-        ::g::Fuse::Elements::Element* elm = uAs< ::g::Fuse::Elements::Element*>(e, ::TYPES[34/*Fuse.Elements.Element*/]);
+        ::g::Fuse::Elements::Element* elm = uAs< ::g::Fuse::Elements::Element*>(e, ::TYPES[40/*Fuse.Elements.Element*/]);
 
         if (e != NULL)
             uPtr(elm)->RequestLayout();
@@ -3439,10 +3697,10 @@ uEnumType* StackLayoutMode_typeof()
 // {
 static void WrapLayout_build(uType* type)
 {
-    ::TYPES[36] = ::g::Uno::Float4_typeof()->Array();
-    ::TYPES[37] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
+    ::TYPES[42] = ::g::Uno::Float4_typeof()->Array();
+    ::TYPES[43] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
     ::TYPES[2] = ::g::Uno::Float_typeof()->Array();
-    ::TYPES[38] = ::g::Uno::Int_typeof()->Array();
+    ::TYPES[44] = ::g::Uno::Int_typeof()->Array();
     ::TYPES[3] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Node>*/, ::g::Fuse::Node_typeof(), NULL);
     ::TYPES[5] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Node>*/, ::g::Fuse::Node_typeof(), NULL);
     ::TYPES[4] = ::g::Fuse::Visual_typeof();
@@ -3591,10 +3849,10 @@ void WrapLayout__set_RowAlignment_fn(WrapLayout* __this, int32_t* value)
     if (_hasItemHeight)
         clp.SetY(ItemHeight());
 
-    uArray* placements = uArray::New(::TYPES[36/*float4[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(uPtr(container)->Children()), ::TYPES[37/*Uno.Collections.ICollection<Fuse.Node>*/])));
-    uArray* minorSizes = uArray::New(::TYPES[2/*float[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[37/*Uno.Collections.ICollection<Fuse.Node>*/])));
-    uArray* elementOnRow = uArray::New(::TYPES[38/*int[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[37/*Uno.Collections.ICollection<Fuse.Node>*/])));
-    uArray* majorRest = uArray::New(::TYPES[2/*float[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[37/*Uno.Collections.ICollection<Fuse.Node>*/])));
+    uArray* placements = uArray::New(::TYPES[42/*float4[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(uPtr(container)->Children()), ::TYPES[43/*Uno.Collections.ICollection<Fuse.Node>*/])));
+    uArray* minorSizes = uArray::New(::TYPES[2/*float[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[43/*Uno.Collections.ICollection<Fuse.Node>*/])));
+    uArray* elementOnRow = uArray::New(::TYPES[44/*int[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[43/*Uno.Collections.ICollection<Fuse.Node>*/])));
+    uArray* majorRest = uArray::New(::TYPES[2/*float[]*/], ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[43/*Uno.Collections.ICollection<Fuse.Node>*/])));
     int32_t majorStart = 0;
     int32_t currentRow = 0;
     int32_t i = 0;
@@ -3634,7 +3892,7 @@ void WrapLayout__set_RowAlignment_fn(WrapLayout* __this, int32_t* value)
         uPtr(majorRest)->Item<float>(currentRow) = majorAvail - majorUsed;
     }
 
-    for (int32_t j1 = majorStart; j1 < ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[37/*Uno.Collections.ICollection<Fuse.Node>*/])); ++j1)
+    for (int32_t j1 = majorStart; j1 < ::g::Uno::Collections::ICollection::Count(uInterface(uPtr(container->Children()), ::TYPES[43/*Uno.Collections.ICollection<Fuse.Node>*/])); ++j1)
         uPtr(minorSizes)->Item<float>(j1) = minorMaxSize;
 
     majorMaxUsed = ::g::Uno::Math::Max1(majorMaxUsed, majorUsed);

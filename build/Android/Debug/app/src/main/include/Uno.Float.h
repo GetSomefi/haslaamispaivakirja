@@ -16,6 +16,7 @@ void Float__IsInfinity_fn(float* f, bool* __retval);
 void Float__IsNaN_fn(float* f, bool* __retval);
 void Float__IsNegativeInfinity_fn(float* f, bool* __retval);
 void Float__IsPositiveInfinity_fn(float* f, bool* __retval);
+void Float__Parse_fn(uString* str, float* __retval);
 void Float__ToString_fn(float* __this, uType* __type, uString** __retval);
 void Float__TryParse_fn(uString* str, float* result, bool* __retval);
 
@@ -28,6 +29,7 @@ struct Float
     static bool IsNaN(float f);
     static bool IsNegativeInfinity(float f);
     static bool IsPositiveInfinity(float f);
+    static float Parse(uString* str);
     static bool TryParse(uString* str, float* result);
 };
 // }

@@ -38,6 +38,7 @@ void Focus__Predict_fn(int32_t* direction, ::g::Fuse::Visual** __retval);
 void Focus__Release_fn();
 void Focus__ReleaseFrom_fn(::g::Fuse::Visual* n);
 void Focus__SetDelegator_fn(::g::Fuse::Visual* n, uDelegate* delegator);
+void Focus__SetFocusDelegate_fn(::g::Fuse::Visual* n, ::g::Fuse::Visual* d);
 void Focus__SetIsFocusable_fn(::g::Fuse::Visual* n, bool* focusable);
 
 struct Focus : uObject
@@ -69,6 +70,7 @@ struct Focus : uObject
     static void Release();
     static void ReleaseFrom(::g::Fuse::Visual* n);
     static void SetDelegator(::g::Fuse::Visual* n, uDelegate* delegator);
+    static void SetFocusDelegate(::g::Fuse::Visual* n, ::g::Fuse::Visual* d);
     static void SetIsFocusable(::g::Fuse::Visual* n, bool focusable);
     static ::g::Fuse::Visual* FocusedVisual();
     static ::g::Fuse::VisualEvent* Gained();

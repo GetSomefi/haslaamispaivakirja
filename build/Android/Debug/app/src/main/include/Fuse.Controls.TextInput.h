@@ -4,6 +4,7 @@
 #pragma once
 #include <Fuse.Animations.IResize.h>
 #include <Fuse.Binding.h>
+#include <Fuse.Controls.ITextEditControl.h>
 #include <Fuse.Controls.TextInputControl.h>
 #include <Fuse.IActualPlacement.h>
 #include <Fuse.INotifyUnrooted.h>
@@ -32,10 +33,17 @@ namespace Controls{
 
 // public class TextInput :98
 // {
-::g::Fuse::Controls::TextInputControl_type* TextInput_typeof();
+struct TextInput_type : ::g::Fuse::Controls::TextInputControl_type
+{
+    ::g::Fuse::Controls::ITextEditControl interface19;
+};
+
+TextInput_type* TextInput_typeof();
 void TextInput__ctor_7_fn(TextInput* __this);
 void TextInput__get_ActionStyle_fn(TextInput* __this, int32_t* __retval);
 void TextInput__set_ActionStyle_fn(TextInput* __this, int32_t* value);
+void TextInput__add_ActionTriggered_fn(TextInput* __this, uDelegate* value);
+void TextInput__remove_ActionTriggered_fn(TextInput* __this, uDelegate* value);
 void TextInput__Create_fn(::g::Fuse::Controls::TextEdit** __retval);
 void TextInput__get_PlaceholderColor_fn(TextInput* __this, ::g::Uno::Float4* __retval);
 void TextInput__set_PlaceholderColor_fn(TextInput* __this, ::g::Uno::Float4* value);
@@ -47,6 +55,8 @@ struct TextInput : ::g::Fuse::Controls::TextInputControl
     void ctor_7();
     int32_t ActionStyle();
     void ActionStyle(int32_t value);
+    void add_ActionTriggered(uDelegate* value);
+    void remove_ActionTriggered(uDelegate* value);
     ::g::Uno::Float4 PlaceholderColor();
     void PlaceholderColor(::g::Uno::Float4 value);
     uString* PlaceholderText();

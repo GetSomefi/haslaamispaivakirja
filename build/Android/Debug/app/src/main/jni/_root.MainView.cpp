@@ -6,6 +6,7 @@
 #include <_root.MainView.Template.h>
 #include <_root.MainView.Template1.h>
 #include <_root.MainView.Template2.h>
+#include <_root.MainView.Template3.h>
 #include <Fuse.Android.StatusBarConfig.h>
 #include <Fuse.Animations.Easing.h>
 #include <Fuse.Animations.IResizeMode.h>
@@ -72,7 +73,7 @@ namespace g{
 
 // public partial sealed class MainView :2
 // {
-// static MainView() :92
+// static MainView() :116
 static void MainView__cctor_1_fn(uType* __type)
 {
     ::g::Uno::UX::Resource_typeof()->Init();
@@ -92,6 +93,7 @@ static void MainView__cctor_1_fn(uType* __type)
     ::g::Fuse::ScalingModes_typeof()->Init();
     ::g::Haslaamispaivakirja_bundle_typeof()->Init();
     MainView::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(uString::Const("router"));
+    MainView::__selector1_ = ::g::Uno::UX::Selector__op_Implicit1(uString::Const("mainNav"));
     ::g::Uno::UX::Resource::SetGlobalKey(::g::Fuse::Reactive::DeviceCaps::Device(), uString::Const("Device"));
     ::g::Uno::UX::Resource::SetGlobalKey(::g::Fuse::Animations::Easing::Linear(), uString::Const("Linear"));
     ::g::Uno::UX::Resource::SetGlobalKey(::g::Fuse::Animations::Easing::QuadraticIn(), uString::Const("QuadraticIn"));
@@ -211,6 +213,7 @@ static void MainView_build(uType* type)
         ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::AppBase_type, interface0));
     type->SetFields(7,
         ::g::Fuse::Navigation::Router_typeof(), offsetof(MainView, router), 0,
+        ::g::Fuse::Controls::Navigator_typeof(), offsetof(MainView, mainNav), 0,
         ::g::Fuse::Reactive::FuseJS::DiagnosticsImplModule_typeof(), offsetof(MainView, FuseReactiveFuseJSDiagnosticsImplModule), 0,
         ::g::Fuse::Reactive::FuseJS::Http_typeof(), offsetof(MainView, FuseReactiveFuseJSHttp), 0,
         ::g::Fuse::Reactive::FuseJS::TimerModule_typeof(), offsetof(MainView, FuseReactiveFuseJSTimerModule), 0,
@@ -229,7 +232,8 @@ static void MainView_build(uType* type)
         ::g::FuseJS::FileReaderImpl_typeof(), offsetof(MainView, FuseJSFileReaderImpl), 0,
         ::g::FuseJS::UserEvents_typeof(), offsetof(MainView, FuseJSUserEvents), 0,
         ::g::Fuse::Font_typeof(), (uintptr_t)&MainView::fa_, uFieldFlagsStatic,
-        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&MainView::__selector0_, uFieldFlagsStatic);
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&MainView::__selector0_, uFieldFlagsStatic,
+        ::g::Uno::UX::Selector_typeof(), (uintptr_t)&MainView::__selector1_, uFieldFlagsStatic);
 }
 
 ::g::Fuse::AppBase_type* MainView_typeof()
@@ -239,7 +243,7 @@ static void MainView_build(uType* type)
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::App_typeof();
-    options.FieldCount = 27;
+    options.FieldCount = 29;
     options.InterfaceCount = 1;
     options.ObjectSize = sizeof(MainView);
     options.TypeSize = sizeof(::g::Fuse::AppBase_type);
@@ -251,19 +255,19 @@ static void MainView_build(uType* type)
     return type;
 }
 
-// public MainView() :207
+// public MainView() :231
 void MainView__ctor_4_fn(MainView* __this)
 {
     __this->ctor_4();
 }
 
-// private void InitializeUX() :211
+// private void InitializeUX() :235
 void MainView__InitializeUX_fn(MainView* __this)
 {
     __this->InitializeUX();
 }
 
-// public MainView New() :207
+// public MainView New() :231
 void MainView__New1_fn(MainView** __retval)
 {
     *__retval = MainView::New1();
@@ -271,15 +275,16 @@ void MainView__New1_fn(MainView** __retval)
 
 uSStrong< ::g::Fuse::Font*> MainView::fa_;
 ::g::Uno::UX::Selector MainView::__selector0_;
+::g::Uno::UX::Selector MainView::__selector1_;
 
-// public MainView() [instance] :207
+// public MainView() [instance] :231
 void MainView::ctor_4()
 {
     ctor_3();
     InitializeUX();
 }
 
-// private void InitializeUX() [instance] :211
+// private void InitializeUX() [instance] :235
 void MainView::InitializeUX()
 {
     FuseReactiveFuseJSDiagnosticsImplModule = ::g::Fuse::Reactive::FuseJS::DiagnosticsImplModule::New2();
@@ -304,10 +309,11 @@ void MainView::InitializeUX()
     ::g::Fuse::Controls::Panel* temp2 = ::g::Fuse::Controls::Panel::New3();
     ::g::Fuse::Controls::ClientPanel* temp3 = ::g::Fuse::Controls::ClientPanel::New5();
     router = ::g::Fuse::Navigation::Router::New2();
-    ::g::Fuse::Controls::Navigator* temp4 = ::g::Fuse::Controls::Navigator::New4();
+    mainNav = ::g::Fuse::Controls::Navigator::New4();
     MainView__Template* splash = MainView__Template::New2(this, this);
     MainView__Template1* first = MainView__Template1::New2(this, this);
     MainView__Template2* oldentrys = MainView__Template2::New2(this, this);
+    MainView__Template3* settings = MainView__Template3::New2(this, this);
     Background(::g::Uno::Float4__New2(0.007843138f, 0.1372549f, 0.1568628f, 1.0f));
     temp->Style(1);
     temp->SourceLineNumber(2);
@@ -320,23 +326,25 @@ void MainView::InitializeUX()
     temp3->SourceLineNumber(9);
     temp3->SourceFileName(uString::Const("MainView.ux"));
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), router);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), temp4);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp3->Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), mainNav);
     uPtr(router)->Name(MainView::__selector0_);
     uPtr(router)->SourceLineNumber(10);
     uPtr(router)->SourceFileName(uString::Const("MainView.ux"));
-    temp4->DefaultPath(uString::Const("splash"));
-    temp4->SourceLineNumber(11);
-    temp4->SourceFileName(uString::Const("MainView.ux"));
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp4->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), splash);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp4->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), first);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(temp4->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), oldentrys);
+    uPtr(mainNav)->DefaultPath(uString::Const("splash"));
+    uPtr(mainNav)->Name(MainView::__selector1_);
+    uPtr(mainNav)->SourceLineNumber(11);
+    uPtr(mainNav)->SourceFileName(uString::Const("MainView.ux"));
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(mainNav)->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), splash);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(mainNav)->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), first);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(mainNav)->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), oldentrys);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(mainNav)->Templates()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Uno::UX::Template_typeof(), NULL)), settings);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), temp);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), temp1);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), temp2);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Children()), ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL)), temp3);
 }
 
-// public MainView New() [static] :207
+// public MainView New() [static] :231
 MainView* MainView::New1()
 {
     MainView* obj1 = (MainView*)uNew(MainView_typeof());

@@ -2,11 +2,14 @@
 public partial class SplashPage: Fuse.Controls.Page
 {
     readonly Fuse.Navigation.Router router;
-    internal global::Fuse.Reactive.EventBinding temp_eb11;
+    global::Uno.UX.Property<Uno.UX.Size> progressBar_Width_inst;
+    internal global::Fuse.Controls.Rectangle progressBar;
+    internal global::Fuse.Reactive.EventBinding temp_eb7;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
         "router",
-        "temp_eb11"
+        "progressBar",
+        "temp_eb7"
     };
     static SplashPage()
     {
@@ -21,18 +24,23 @@ public partial class SplashPage: Fuse.Controls.Page
     void InitializeUX()
     {
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);
+        progressBar = new global::Fuse.Controls.Rectangle();
+        progressBar_Width_inst = new Haslaamispaivakirja_FuseElementsElement_Width_Property(progressBar, __selector0);
         var temp = new global::Fuse.Reactive.Data("goToFirstPage");
         var temp1 = new global::Fuse.Reactive.JavaScript(__g_nametable);
         var temp2 = new global::Fuse.Controls.DockPanel();
         var temp3 = new global::Fuse.Controls.Video();
         var temp4 = new global::Fuse.Effects.Blur();
-        var temp5 = new global::generaltext.Text();
-        var temp6 = new global::Fuse.Controls.Grid();
-        var temp7 = new global::Fuse.Controls.StackPanel();
-        var temp8 = new global::header.Text();
-        var temp9 = new global::generaltext.Text();
-        var temp10 = new global::basicBtn.Button();
-        temp_eb11 = new global::Fuse.Reactive.EventBinding(temp);
+        var temp5 = new global::Fuse.Triggers.ProgressAnimation();
+        var temp6 = new global::Fuse.Animations.Change<Uno.UX.Size>(progressBar_Width_inst);
+        var temp7 = new global::Fuse.Drawing.StaticSolidColor(float4(1f, 1f, 1f, 1f));
+        var temp8 = new global::generaltext.Text();
+        var temp9 = new global::Fuse.Controls.Grid();
+        var temp10 = new global::Fuse.Controls.StackPanel();
+        var temp11 = new global::header.Text();
+        var temp12 = new global::generaltext.Text();
+        var temp13 = new global::basicBtn.Button();
+        temp_eb7 = new global::Fuse.Reactive.EventBinding(temp);
         this.SourceLineNumber = 1;
         this.SourceFileName = "SplashPage.ux";
         temp1.LineNumber = 4;
@@ -44,8 +52,9 @@ public partial class SplashPage: Fuse.Controls.Page
         temp2.SourceLineNumber = 6;
         temp2.SourceFileName = "SplashPage.ux";
         temp2.Children.Add(temp3);
-        temp2.Children.Add(temp5);
-        temp2.Children.Add(temp6);
+        temp2.Children.Add(progressBar);
+        temp2.Children.Add(temp8);
+        temp2.Children.Add(temp9);
         temp3.IsLooping = true;
         temp3.AutoPlay = true;
         temp3.StretchMode = Fuse.Elements.StretchMode.UniformToFill;
@@ -55,51 +64,67 @@ public partial class SplashPage: Fuse.Controls.Page
         temp3.SourceFileName = "SplashPage.ux";
         temp3.File = new global::Uno.UX.BundleFileSource(import("../../../../../Assets/retkelleoma.mp4"));
         temp3.Children.Add(temp4);
+        temp3.Children.Add(temp5);
         temp4.Radius = 3.75f;
         temp4.SourceLineNumber = 9;
         temp4.SourceFileName = "SplashPage.ux";
-        temp5.Value = "original video by Peter Virtanen";
-        temp5.FontSize = 12f;
-        temp5.TextAlignment = Fuse.Controls.TextAlignment.Center;
-        temp5.Margin = float4(15f, 15f, 15f, 15f);
-        temp5.Opacity = 0.5f;
-        temp5.SourceLineNumber = 12;
+        temp5.SourceLineNumber = 10;
         temp5.SourceFileName = "SplashPage.ux";
-        global::Fuse.Controls.DockPanel.SetDock(temp5, Fuse.Layouts.Dock.Bottom);
-        temp6.RowCount = 2;
-        temp6.SourceLineNumber = 14;
-        temp6.SourceFileName = "SplashPage.ux";
-        temp6.Children.Add(temp7);
-        temp6.Children.Add(temp10);
-        temp7.SourceLineNumber = 15;
-        temp7.SourceFileName = "SplashPage.ux";
-        temp7.Children.Add(temp8);
-        temp7.Children.Add(temp9);
-        temp8.Value = "The Mood";
-        temp8.FontSize = 40f;
-        temp8.Alignment = Fuse.Elements.Alignment.HorizontalCenter;
-        temp8.Margin = float4(0f, 50f, 0f, 0f);
-        temp8.SourceLineNumber = 16;
+        temp5.Animators.Add(temp6);
+        temp6.Value = new Uno.UX.Size(100f, Uno.UX.Unit.Unspecified);
+        progressBar.Width = new Uno.UX.Size(0f, Uno.UX.Unit.Percent);
+        progressBar.Height = new Uno.UX.Size(1f, Uno.UX.Unit.Unspecified);
+        progressBar.Opacity = 0.2f;
+        progressBar.Name = __selector1;
+        progressBar.SourceLineNumber = 15;
+        progressBar.SourceFileName = "SplashPage.ux";
+        global::Fuse.Controls.DockPanel.SetDock(progressBar, Fuse.Layouts.Dock.Top);
+        progressBar.Fill = temp7;
+        temp8.Value = "original video by Peter Virtanen";
+        temp8.FontSize = 12f;
+        temp8.TextAlignment = Fuse.Controls.TextAlignment.Center;
+        temp8.Margin = float4(15f, 15f, 15f, 15f);
+        temp8.Opacity = 0.5f;
+        temp8.SourceLineNumber = 17;
         temp8.SourceFileName = "SplashPage.ux";
-        temp9.Value = "How are we feeling today?";
-        temp9.Alignment = Fuse.Elements.Alignment.HorizontalCenter;
-        temp9.Opacity = 0.5f;
-        temp9.SourceLineNumber = 17;
+        global::Fuse.Controls.DockPanel.SetDock(temp8, Fuse.Layouts.Dock.Bottom);
+        temp9.RowCount = 2;
+        temp9.SourceLineNumber = 19;
         temp9.SourceFileName = "SplashPage.ux";
-        temp10.Text = "Aloitetaan";
-        temp10.FontSize = 18f;
-        temp10.Alignment = Fuse.Elements.Alignment.VerticalCenter;
-        temp10.Margin = float4(50f, 0f, 50f, 0f);
+        temp9.Children.Add(temp10);
+        temp9.Children.Add(temp13);
         temp10.SourceLineNumber = 20;
         temp10.SourceFileName = "SplashPage.ux";
-        global::Fuse.Gestures.Clicked.AddHandler(temp10, temp_eb11.OnEvent);
-        temp10.Bindings.Add(temp_eb11);
-        temp.SourceLineNumber = 20;
+        temp10.Children.Add(temp11);
+        temp10.Children.Add(temp12);
+        temp11.Value = "The Mood";
+        temp11.FontSize = 40f;
+        temp11.Alignment = Fuse.Elements.Alignment.HorizontalCenter;
+        temp11.Margin = float4(0f, 50f, 0f, 0f);
+        temp11.SourceLineNumber = 21;
+        temp11.SourceFileName = "SplashPage.ux";
+        temp12.Value = "How are we feeling today?";
+        temp12.Alignment = Fuse.Elements.Alignment.HorizontalCenter;
+        temp12.Opacity = 0.5f;
+        temp12.SourceLineNumber = 22;
+        temp12.SourceFileName = "SplashPage.ux";
+        temp13.Text = "Aloitetaan";
+        temp13.FontSize = 18f;
+        temp13.Alignment = Fuse.Elements.Alignment.VerticalCenter;
+        temp13.Margin = float4(50f, 0f, 50f, 0f);
+        temp13.SourceLineNumber = 25;
+        temp13.SourceFileName = "SplashPage.ux";
+        global::Fuse.Gestures.Clicked.AddHandler(temp13, temp_eb7.OnEvent);
+        temp13.Bindings.Add(temp_eb7);
+        temp.SourceLineNumber = 25;
         temp.SourceFileName = "SplashPage.ux";
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router);
-        __g_nametable.Objects.Add(temp_eb11);
+        __g_nametable.Objects.Add(progressBar);
+        __g_nametable.Objects.Add(temp_eb7);
         this.Children.Add(temp1);
         this.Children.Add(temp2);
     }
+    static global::Uno.UX.Selector __selector0 = "Width";
+    static global::Uno.UX.Selector __selector1 = "progressBar";
 }

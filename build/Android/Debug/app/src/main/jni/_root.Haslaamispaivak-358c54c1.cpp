@@ -16,9 +16,9 @@ static uType* TYPES[2];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_FontSize :101
+// internal sealed class Haslaamispaivakirja_accessor_basicBtn_Button_FontSize :171
 // {
-// static generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() :101
+// static generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() :171
 static void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__cctor__fn(uType* __type)
 {
     Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::Singleton_ = Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::New1();
@@ -57,43 +57,43 @@ static void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize_build(uType* t
     return type;
 }
 
-// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() :101
+// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() :171
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__ctor_1_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this)
 {
     __this->ctor_1();
 }
 
-// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :107
+// public override sealed object GetAsObject(Uno.UX.PropertyObject obj) :177
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__GetAsObject_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this, ::g::Uno::UX::PropertyObject* obj, uObject** __retval)
 {
     return *__retval = uBox(::g::Uno::Float_typeof(), uPtr(uCast< ::g::basicBtn::Button*>(obj, ::TYPES[0/*basicBtn.Button*/]))->FontSize()), void();
 }
 
-// public override sealed Uno.UX.Selector get_Name() :104
+// public override sealed Uno.UX.Selector get_Name() :174
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__get_Name_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this, ::g::Uno::UX::Selector* __retval)
 {
     return *__retval = Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::_name_, void();
 }
 
-// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize New() :101
+// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize New() :171
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__New1_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize** __retval)
 {
     *__retval = Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::New1();
 }
 
-// public override sealed Uno.Type get_PropertyType() :106
+// public override sealed Uno.Type get_PropertyType() :176
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__get_PropertyType_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this, uType** __retval)
 {
     return *__retval = ::g::Uno::Float_typeof(), void();
 }
 
-// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :108
+// public override sealed void SetAsObject(Uno.UX.PropertyObject obj, object v, Uno.UX.IPropertyListener origin) :178
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__SetAsObject_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this, ::g::Uno::UX::PropertyObject* obj, uObject* v, uObject* origin)
 {
     uPtr(uCast< ::g::basicBtn::Button*>(obj, ::TYPES[0/*basicBtn.Button*/]))->SetFontSize(uUnbox<float>(::g::Uno::Float_typeof(), v), origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :109
+// public override sealed bool get_SupportsOriginSetter() :179
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__get_SupportsOriginSetter_fn(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* __this, bool* __retval)
 {
     return *__retval = true, void();
@@ -102,13 +102,13 @@ void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize__get_SupportsOriginSe
 uSStrong< ::g::Uno::UX::PropertyAccessor*> Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::Singleton_;
 ::g::Uno::UX::Selector Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::_name_;
 
-// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() [instance] :101
+// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize() [instance] :171
 void Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::ctor_1()
 {
     ctor_();
 }
 
-// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize New() [static] :101
+// public generated Haslaamispaivakirja_accessor_basicBtn_Button_FontSize New() [static] :171
 Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* Haslaamispaivakirja_accessor_basicBtn_Button_FontSize::New1()
 {
     Haslaamispaivakirja_accessor_basicBtn_Button_FontSize* obj1 = (Haslaamispaivakirja_accessor_basicBtn_Button_FontSize*)uNew(Haslaamispaivakirja_accessor_basicBtn_Button_FontSize_typeof());

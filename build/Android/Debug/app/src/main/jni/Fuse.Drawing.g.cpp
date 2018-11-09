@@ -5070,16 +5070,9 @@ Stroke_type* Stroke_typeof()
     options.TypeSize = sizeof(Stroke_type);
     type = (Stroke_type*)uClassType::New("Fuse.Drawing.Stroke", options);
     type->fp_build_ = Stroke_build;
-    type->fp_ctor_ = (void*)Stroke__New2_fn;
     type->fp_cctor_ = Stroke__cctor__fn;
     type->interface0.fp_OnPropertyChanged = (void(*)(uObject*, ::g::Uno::UX::PropertyObject*, ::g::Uno::UX::Selector*))Stroke__UnoUXIPropertyListenerOnPropertyChanged_fn;
     return type;
-}
-
-// public Stroke() :252
-void Stroke__ctor_1_fn(Stroke* __this)
-{
-    __this->ctor_1();
 }
 
 // private float Adjust(float w, float ppi) :200
@@ -5190,12 +5183,6 @@ void Stroke__set_LineJoinMiterLimit_fn(Stroke* __this, float* value)
     __this->LineJoinMiterLimit(*value);
 }
 
-// public Stroke New() :252
-void Stroke__New2_fn(Stroke** __retval)
-{
-    *__retval = Stroke::New2();
-}
-
 // protected void OnPinned() :279
 void Stroke__OnPinned_fn(Stroke* __this)
 {
@@ -5261,16 +5248,6 @@ void Stroke__set_Width_fn(Stroke* __this, float* value)
 ::g::Uno::UX::Selector Stroke::_lineCapName_;
 ::g::Uno::UX::Selector Stroke::_lineJoinName_;
 ::g::Uno::UX::Selector Stroke::_lineJoinMiterLimitName_;
-
-// public Stroke() [instance] :252
-void Stroke::ctor_1()
-{
-    _width = 1.0f;
-    _adjustment = 2;
-    _alignment = 1;
-    _lineJoinMiterLimit = 1.0f;
-    ctor_();
-}
 
 // private float Adjust(float w, float ppi) [instance] :200
 float Stroke::Adjust(float w, float ppi)
@@ -5545,14 +5522,6 @@ void Stroke::Width(float value)
 {
     _width = value;
     OnPropertyChanged(Stroke::_widthName_);
-}
-
-// public Stroke New() [static] :252
-Stroke* Stroke::New2()
-{
-    Stroke* obj1 = (Stroke*)uNew(Stroke_typeof());
-    obj1->ctor_1();
-    return obj1;
 }
 // }
 

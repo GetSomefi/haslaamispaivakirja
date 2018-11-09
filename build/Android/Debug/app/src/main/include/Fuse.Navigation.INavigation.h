@@ -18,6 +18,8 @@ uInterfaceType* INavigation_typeof();
 struct INavigation
 {
     void(*fp_get_ActivePage)(uObject*, ::g::Fuse::Visual**);
+    void(*fp_add_ActivePageChanged)(uObject*, uDelegate*);
+    void(*fp_remove_ActivePageChanged)(uObject*, uDelegate*);
     void(*fp_GetPageState)(uObject*, ::g::Fuse::Visual*, ::g::Fuse::Navigation::NavigationPageState*);
     void(*fp_Goto)(uObject*, ::g::Fuse::Visual*, int32_t*);
     void(*fp_add_Navigated)(uObject*, uDelegate*);
@@ -29,6 +31,8 @@ struct INavigation
     void(*fp_remove_StateChanged)(uObject*, uDelegate*);
     void(*fp_Toggle)(uObject*, ::g::Fuse::Visual*);
     static ::g::Fuse::Visual* ActivePage(const uInterface& __this) { ::g::Fuse::Visual* __retval; return __this.VTable<INavigation>()->fp_get_ActivePage(__this, &__retval), __retval; }
+    static void add_ActivePageChanged(const uInterface& __this, uDelegate* value) { __this.VTable<INavigation>()->fp_add_ActivePageChanged(__this, value); }
+    static void remove_ActivePageChanged(const uInterface& __this, uDelegate* value) { __this.VTable<INavigation>()->fp_remove_ActivePageChanged(__this, value); }
     static ::g::Fuse::Navigation::NavigationPageState GetPageState(const uInterface& __this, ::g::Fuse::Visual* page);
     static void Goto(const uInterface& __this, ::g::Fuse::Visual* node, int32_t mode) { __this.VTable<INavigation>()->fp_Goto(__this, node, &mode); }
     static void add_Navigated(const uInterface& __this, uDelegate* value) { __this.VTable<INavigation>()->fp_add_Navigated(__this, value); }

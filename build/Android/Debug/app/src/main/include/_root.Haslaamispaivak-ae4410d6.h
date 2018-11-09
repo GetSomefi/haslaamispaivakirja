@@ -10,7 +10,7 @@ namespace g{struct Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property :224
+// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property :516
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property_typeof();
 void Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property__Get1_fn(Haslaamispaivakirja_BasicSwipeToggleBigTest_Sendable_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* __retval);

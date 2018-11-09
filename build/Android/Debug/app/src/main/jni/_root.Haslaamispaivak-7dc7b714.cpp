@@ -10,7 +10,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property :216
+// internal sealed class Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property :508
 // {
 static void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_build(uType* type)
 {
@@ -38,46 +38,46 @@ static void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_build(
     return type;
 }
 
-// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) :219
+// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) :511
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* __this, ::g::Fuse::Triggers::Actions::Set* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed bool Get(Uno.UX.PropertyObject obj) :221
+// public override sealed bool Get(Uno.UX.PropertyObject obj) :513
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__Get1_fn(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* __retval)
 {
     bool ret2;
     return *__retval = (::g::Fuse::Triggers::Actions::Set__get_Value_fn(uPtr(uCast< ::g::Fuse::Triggers::Actions::Set*>(obj, ::TYPES[0/*Fuse.Triggers.Actions.Set<bool>*/])), &ret2), ret2), void();
 }
 
-// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property New(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) :219
+// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property New(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) :511
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__New1_fn(::g::Fuse::Triggers::Actions::Set* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :220
+// public override sealed Uno.UX.PropertyObject get_Object() :512
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__get_Object_fn(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :222
+// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :514
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property__Set1_fn(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* v, uObject* origin)
 {
     bool v_ = *v;
     ::g::Fuse::Triggers::Actions::Set__set_Value_fn(uPtr(uCast< ::g::Fuse::Triggers::Actions::Set*>(obj, ::TYPES[0/*Fuse.Triggers.Actions.Set<bool>*/])), uCRef(v_));
 }
 
-// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) [instance] :219
+// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) [instance] :511
 void Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property::ctor_3(::g::Fuse::Triggers::Actions::Set* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property New(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) [static] :219
+// public Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property New(Fuse.Triggers.Actions.Set<bool> obj, Uno.UX.Selector name) [static] :511
 Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property::New1(::g::Fuse::Triggers::Actions::Set* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property* obj1 = (Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property*)uNew(Haslaamispaivakirja_FuseTriggersActionsSetbool_Value_Property_typeof());

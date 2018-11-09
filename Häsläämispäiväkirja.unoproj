@@ -7,5 +7,16 @@
   "Includes": [
     "*",
     "*.json"
-  ]
+  ],	
+	"Android": {
+		"Icons": {
+			"LDPI": "Assets/icons/icon-ldpi-36x36.png",
+			"MDPI": "Assets/icons/icon-mdpi-48x48.png",
+			"HDPI": "Assets/icons/icon-hdpi-72x72.png",
+			"XHDPI": "Assets/icons/icon-xhdpi-96x96.png",
+			"XXHDPI": "Assets/icons/icon-xxhdpi-144x144.png",
+			"XXXHDPI": "Assets/icons/icon-xxxhdpi-192x192.png"
+		}
+	}
+	
 }

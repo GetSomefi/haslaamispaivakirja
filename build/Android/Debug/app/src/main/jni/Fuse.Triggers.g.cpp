@@ -13,6 +13,7 @@
 #include <Fuse.Animations.Trigg-21dd249.h>
 #include <Fuse.Animations.Trigg-75f4f270.h>
 #include <Fuse.Animations.Trigg-96b74ffc.h>
+#include <Fuse.Controls.ITextEditControl.h>
 #include <Fuse.Controls.Navigat-2fbffbd2.h>
 #include <Fuse.Controls.Navigat-340a5907.h>
 #include <Fuse.Controls.Navigat-4da4086.h>
@@ -20,6 +21,9 @@
 #include <Fuse.Controls.Navigator.h>
 #include <Fuse.Controls.ScrollP-640a7167.h>
 #include <Fuse.Controls.ScrollViewBase.h>
+#include <Fuse.Controls.TextInp-90db19ac.h>
+#include <Fuse.Controls.TextInp-e41606bc.h>
+#include <Fuse.Controls.TextInp-fdd74153.h>
 #include <Fuse.Diagnostics.h>
 #include <Fuse.Elements.Element.h>
 #include <Fuse.Input.Focus.h>
@@ -102,6 +106,7 @@
 #include <Fuse.Triggers.StateGr-10cf9727.h>
 #include <Fuse.Triggers.StateGroup.h>
 #include <Fuse.Triggers.StateTransition.h>
+#include <Fuse.Triggers.TextInp-5cd41058.h>
 #include <Fuse.Triggers.Timeline.h>
 #include <Fuse.Triggers.Timeline.State.h>
 #include <Fuse.Triggers.Transit-122edce0.h>
@@ -114,15 +119,12 @@
 #include <Fuse.Triggers.TriggerPlayState.h>
 #include <Fuse.Triggers.WhileBool.h>
 #include <Fuse.Triggers.WhileCompleted.h>
-#include <Fuse.Triggers.WhileDisabled.h>
-#include <Fuse.Triggers.WhileEnabled.h>
-#include <Fuse.Triggers.WhileEn-fb4c6c6e.h>
 #include <Fuse.Triggers.WhileFalse.h>
 #include <Fuse.Triggers.WhileFloat.h>
 #include <Fuse.Triggers.WhileFloat.Range.h>
-#include <Fuse.Triggers.WhileFocused.h>
 #include <Fuse.Triggers.WhileKe-99bafeca.h>
 #include <Fuse.Triggers.WhileKe-9ea3ef4d.h>
+#include <Fuse.Triggers.WhileNotFocused.h>
 #include <Fuse.Triggers.WhilePaused.h>
 #include <Fuse.Triggers.WhilePlaying.h>
 #include <Fuse.Triggers.WhileString.h>
@@ -168,8 +170,8 @@
 #include <Uno.UX.Selector.h>
 #include <Uno.UX.ValueChangedArgs-1.h>
 #include <Uno.UX.ValueChangedHandler-1.h>
-static uString* STRINGS[35];
-static uType* TYPES[44];
+static uString* STRINGS[37];
+static uType* TYPES[46];
 
 namespace g{
 namespace Fuse{
@@ -2577,6 +2579,12 @@ static void PulseTrigger_build(uType* type)
     return type;
 }
 
+// protected generated PulseTrigger() :10
+void PulseTrigger__ctor_5_fn(PulseTrigger* __this)
+{
+    __this->ctor_5();
+}
+
 // public generated void add_Handler(Fuse.Triggers.PulseTrigger<ArgsT>.PulseHandler value) :18
 void PulseTrigger__add_Handler_fn(PulseTrigger* __this, uDelegate* value)
 {
@@ -2593,6 +2601,12 @@ void PulseTrigger__remove_Handler_fn(PulseTrigger* __this, uDelegate* value)
 void PulseTrigger__Pulse1_fn(PulseTrigger* __this, ::g::Uno::EventArgs* args)
 {
     __this->Pulse1(args);
+}
+
+// protected generated PulseTrigger() [instance] :10
+void PulseTrigger::ctor_5()
+{
+    ctor_4();
 }
 
 // public generated void add_Handler(Fuse.Triggers.PulseTrigger<ArgsT>.PulseHandler value) [instance] :18
@@ -4085,6 +4099,163 @@ uEnumType* StateTransition_typeof()
     return type;
 }
 
+// /usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.9.0/Triggers/TextInputActionTriggered.uno
+// --------------------------------------------------------------------------------------------------
+
+// public sealed class TextInputActionTriggered :20
+// {
+static void TextInputActionTriggered_build(uType* type)
+{
+    ::STRINGS[28] = uString::Const("TextInputActionTriggered must be a child of an ITextEdit");
+    ::STRINGS[29] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Primitives/1.9.0/Triggers/TextInputActionTriggered.uno");
+    ::STRINGS[23] = uString::Const("OnRooted");
+    ::TYPES[24] = ::g::Fuse::Controls::ITextEditControl_typeof();
+    ::TYPES[25] = ::g::Fuse::Controls::TextInputActionHandler_typeof();
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface8));
+    type->SetFields(38,
+        ::g::Fuse::Controls::TextInputActionType_typeof(), offsetof(TextInputActionTriggered, _type), 0,
+        ::TYPES[24/*Fuse.Controls.ITextEditControl*/], offsetof(TextInputActionTriggered, _textEdit), 0);
+}
+
+::g::Fuse::Triggers::Trigger_type* TextInputActionTriggered_typeof()
+{
+    static uSStrong< ::g::Fuse::Triggers::Trigger_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Triggers::Trigger_typeof();
+    options.FieldCount = 40;
+    options.InterfaceCount = 9;
+    options.ObjectSize = sizeof(TextInputActionTriggered);
+    options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
+    type = (::g::Fuse::Triggers::Trigger_type*)uClassType::New("Fuse.Triggers.TextInputActionTriggered", options);
+    type->fp_build_ = TextInputActionTriggered_build;
+    type->fp_ctor_ = (void*)TextInputActionTriggered__New2_fn;
+    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))TextInputActionTriggered__OnRooted_fn;
+    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))TextInputActionTriggered__OnUnrooted_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// public generated TextInputActionTriggered() :20
+void TextInputActionTriggered__ctor_5_fn(TextInputActionTriggered* __this)
+{
+    __this->ctor_5();
+}
+
+// public generated TextInputActionTriggered New() :20
+void TextInputActionTriggered__New2_fn(TextInputActionTriggered** __retval)
+{
+    *__retval = TextInputActionTriggered::New2();
+}
+
+// private void OnActionTriggered(object s, Fuse.Controls.TextInputActionArgs args) :57
+void TextInputActionTriggered__OnActionTriggered_fn(TextInputActionTriggered* __this, uObject* s, ::g::Fuse::Controls::TextInputActionArgs* args)
+{
+    __this->OnActionTriggered(s, args);
+}
+
+// protected override sealed void OnRooted() :33
+void TextInputActionTriggered__OnRooted_fn(TextInputActionTriggered* __this)
+{
+    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
+    __this->_textEdit = uAs<uObject*>(__this->Parent(), ::TYPES[24/*Fuse.Controls.ITextEditControl*/]);
+
+    if (__this->_textEdit == NULL)
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[28/*"TextInputAc...*/], __this, ::STRINGS[29/*"/usr/local/...*/], 39, ::STRINGS[23/*"OnRooted"*/], NULL);
+    else
+        ::g::Fuse::Controls::ITextEditControl::add_ActionTriggered(uInterface(uPtr(__this->_textEdit), ::TYPES[24/*Fuse.Controls.ITextEditControl*/]), uDelegate::New(::TYPES[25/*Fuse.Controls.TextInputActionHandler*/], (void*)TextInputActionTriggered__OnActionTriggered_fn, __this));
+}
+
+// protected override sealed void OnUnrooted() :47
+void TextInputActionTriggered__OnUnrooted_fn(TextInputActionTriggered* __this)
+{
+    if (__this->_textEdit != NULL)
+    {
+        ::g::Fuse::Controls::ITextEditControl::remove_ActionTriggered(uInterface(uPtr(__this->_textEdit), ::TYPES[24/*Fuse.Controls.ITextEditControl*/]), uDelegate::New(::TYPES[25/*Fuse.Controls.TextInputActionHandler*/], (void*)TextInputActionTriggered__OnActionTriggered_fn, __this));
+        __this->_textEdit = NULL;
+    }
+
+    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
+}
+
+// public Fuse.Controls.TextInputActionType get_Type() :28
+void TextInputActionTriggered__get_Type_fn(TextInputActionTriggered* __this, int32_t* __retval)
+{
+    *__retval = __this->Type();
+}
+
+// public void set_Type(Fuse.Controls.TextInputActionType value) :29
+void TextInputActionTriggered__set_Type_fn(TextInputActionTriggered* __this, int32_t* value)
+{
+    __this->Type(*value);
+}
+
+// public generated TextInputActionTriggered() [instance] :20
+void TextInputActionTriggered::ctor_5()
+{
+    ctor_4();
+}
+
+// private void OnActionTriggered(object s, Fuse.Controls.TextInputActionArgs args) [instance] :57
+void TextInputActionTriggered::OnActionTriggered(uObject* s, ::g::Fuse::Controls::TextInputActionArgs* args)
+{
+    if (uPtr(args)->Type() != Type())
+        return;
+
+    Pulse();
+}
+
+// public Fuse.Controls.TextInputActionType get_Type() [instance] :28
+int32_t TextInputActionTriggered::Type()
+{
+    return _type;
+}
+
+// public void set_Type(Fuse.Controls.TextInputActionType value) [instance] :29
+void TextInputActionTriggered::Type(int32_t value)
+{
+    _type = value;
+}
+
+// public generated TextInputActionTriggered New() [static] :20
+TextInputActionTriggered* TextInputActionTriggered::New2()
+{
+    TextInputActionTriggered* obj1 = (TextInputActionTriggered*)uNew(TextInputActionTriggered_typeof());
+    obj1->ctor_5();
+    return obj1;
+}
+// }
+
 // /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/Timeline.uno
 // --------------------------------------------------------------
 
@@ -4585,11 +4756,11 @@ void Timeline::stop(Timeline* n)
 // {
 static void Transition_build(uType* type)
 {
-    ::TYPES[24] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
-    ::TYPES[25] = ::g::Fuse::Navigation::INavigation_typeof();
+    ::TYPES[26] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Animations::Animator_typeof(), NULL);
+    ::TYPES[27] = ::g::Fuse::Navigation::INavigation_typeof();
     ::TYPES[8] = ::g::Uno::Action_typeof();
-    ::TYPES[26] = ::g::Fuse::Navigation::NavigationHandler_typeof();
-    ::TYPES[27] = ::g::Fuse::Internal::MiniList_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
+    ::TYPES[28] = ::g::Fuse::Navigation::NavigationHandler_typeof();
+    ::TYPES[29] = ::g::Fuse::Internal::MiniList_typeof()->MakeType(::g::Uno::String_typeof(), NULL);
     type->SetDependencies(
         ::g::Fuse::Animations::Easing_typeof(),
         ::g::Uno::Math_typeof(),
@@ -4607,8 +4778,8 @@ static void Transition_build(uType* type)
         ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7),
         ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface8));
     type->SetFields(38,
-        ::TYPES[27/*Fuse.Internal.MiniList<string>*/], offsetof(Transition, _to), 0,
-        ::TYPES[27/*Fuse.Internal.MiniList<string>*/], offsetof(Transition, _from), 0,
+        ::TYPES[29/*Fuse.Internal.MiniList<string>*/], offsetof(Transition, _to), 0,
+        ::TYPES[29/*Fuse.Internal.MiniList<string>*/], offsetof(Transition, _from), 0,
         ::g::Fuse::Triggers::TransitionDirection_typeof(), offsetof(Transition, _direction), 0,
         ::g::Uno::Bool_typeof(), offsetof(Transition, _autoRelease), 0,
         ::g::Fuse::Triggers::TransitionMode_typeof(), offsetof(Transition, _mode), 0,
@@ -4752,7 +4923,7 @@ void Transition__OnRooted_fn(Transition* __this)
     {
         __this->AddUseTransition();
         uPtr(uPtr(__this->_group)->Navigator())->SetTransitionState(__this, false);
-        uPtr(uPtr(__this->_group)->Navigator())->add_PageProgressChanged(uDelegate::New(::TYPES[26/*Fuse.Navigation.NavigationHandler*/], (void*)Transition__OnPageProgressChanged_fn, __this));
+        uPtr(uPtr(__this->_group)->Navigator())->add_PageProgressChanged(uDelegate::New(::TYPES[28/*Fuse.Navigation.NavigationHandler*/], (void*)Transition__OnPageProgressChanged_fn, __this));
     }
 }
 
@@ -4762,11 +4933,11 @@ void Transition__OnUnrooted_fn(Transition* __this)
     bool ret2;
 
     if (__this->_useAnimator != NULL)
-        ::g::Uno::Collections::ICollection::Remove_ex(uInterface(uPtr(__this->Animators()), ::TYPES[24/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), __this->_useAnimator, &ret2);
+        ::g::Uno::Collections::ICollection::Remove_ex(uInterface(uPtr(__this->Animators()), ::TYPES[26/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), __this->_useAnimator, &ret2);
 
     if (__this->_group != NULL)
     {
-        uPtr(uPtr(__this->_group)->Navigator())->remove_PageProgressChanged(uDelegate::New(::TYPES[26/*Fuse.Navigation.NavigationHandler*/], (void*)Transition__OnPageProgressChanged_fn, __this));
+        uPtr(uPtr(__this->_group)->Navigator())->remove_PageProgressChanged(uDelegate::New(::TYPES[28/*Fuse.Navigation.NavigationHandler*/], (void*)Transition__OnPageProgressChanged_fn, __this));
         uPtr(uPtr(__this->_group)->Navigator())->SetTransitionState(__this, false);
         uPtr(__this->_group)->Unroot(__this);
     }
@@ -4844,7 +5015,7 @@ void Transition::AddUseTransition()
     }
 
     if (_useAnimator != NULL)
-        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Animators()), ::TYPES[24/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), _useAnimator);
+        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Animators()), ::TYPES[26/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), _useAnimator);
 }
 
 // public bool get_AutoRelease() [instance] :266
@@ -4896,7 +5067,7 @@ void Transition::OnPageProgressChanged(uObject* sender, ::g::Fuse::Navigation::N
         return;
     }
 
-    ::g::Fuse::Navigation::NavigationPageState ps = ::g::Fuse::Navigation::INavigation::GetPageState(uInterface(uPtr(uAs<uObject*>(uPtr(_group)->Navigator(), ::TYPES[25/*Fuse.Navigation.INavigation*/])), ::TYPES[25/*Fuse.Navigation.INavigation*/]), uPtr(_group)->Page());
+    ::g::Fuse::Navigation::NavigationPageState ps = ::g::Fuse::Navigation::INavigation::GetPageState(uInterface(uPtr(uAs<uObject*>(uPtr(_group)->Navigator(), ::TYPES[27/*Fuse.Navigation.INavigation*/])), ::TYPES[27/*Fuse.Navigation.INavigation*/]), uPtr(_group)->Page());
     int32_t d = (::g::Uno::Math::Abs1(ps.PreviousProgress) < ::g::Uno::Math::Abs1(ps.Progress)) ? 0 : 1;
     float p = ::g::Uno::Math::Abs1(ps.Progress);
 
@@ -4995,17 +5166,17 @@ int32_t Transition::Priority(bool isActive, bool isBackward, uString* newPath, u
             return -1;
     }
 
-    if (_to.Count(::TYPES[27/*Fuse.Internal.MiniList<string>*/]) > 0)
+    if (_to.Count(::TYPES[29/*Fuse.Internal.MiniList<string>*/]) > 0)
     {
-        if (!normActive && _to.Contains(::TYPES[27/*Fuse.Internal.MiniList<string>*/], toPath))
+        if (!normActive && _to.Contains(::TYPES[29/*Fuse.Internal.MiniList<string>*/], toPath))
             return priority + 20;
 
         return -1;
     }
 
-    if (_from.Count(::TYPES[27/*Fuse.Internal.MiniList<string>*/]) > 0)
+    if (_from.Count(::TYPES[29/*Fuse.Internal.MiniList<string>*/]) > 0)
     {
-        if (normActive && _from.Contains(::TYPES[27/*Fuse.Internal.MiniList<string>*/], fromPath))
+        if (normActive && _from.Contains(::TYPES[29/*Fuse.Internal.MiniList<string>*/], fromPath))
             return priority + 10;
 
         return -1;
@@ -5087,27 +5258,27 @@ uEnumType* TransitionDirection_typeof()
 // static generated TransitionGroup() :11
 static void TransitionGroup__cctor__fn(uType* __type)
 {
-    TransitionGroup::_groupMap_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[28/*Uno.Collections.Dictionary<Fuse.Node, Fuse.Triggers.TransitionGroup>*/]));
+    TransitionGroup::_groupMap_ = ((::g::Uno::Collections::Dictionary*)::g::Uno::Collections::Dictionary::New1(::TYPES[30/*Uno.Collections.Dictionary<Fuse.Node, Fuse.Triggers.TransitionGroup>*/]));
 }
 
 static void TransitionGroup_build(uType* type)
 {
-    ::STRINGS[28] = uString::Const("Transition must have a Navigator ancestor");
-    ::STRINGS[29] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.9.0/Transition.uno");
-    ::STRINGS[30] = uString::Const("Root");
-    ::STRINGS[31] = uString::Const("Transition must have a Visual parent");
-    ::TYPES[28] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Fuse::Node_typeof(), type, NULL);
-    ::TYPES[29] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Fuse::Triggers::Transition_typeof(), NULL);
-    ::TYPES[30] = ::g::Fuse::Controls::NavigationSwitchedHandler_typeof();
-    ::TYPES[31] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
-    ::TYPES[32] = ::g::Fuse::Controls::Navigator_typeof();
+    ::STRINGS[30] = uString::Const("Transition must have a Navigator ancestor");
+    ::STRINGS[31] = uString::Const("/usr/local/share/uno/Packages/Fuse.Controls.Navigation/1.9.0/Transition.uno");
+    ::STRINGS[32] = uString::Const("Root");
+    ::STRINGS[33] = uString::Const("Transition must have a Visual parent");
+    ::TYPES[30] = ::g::Uno::Collections::Dictionary_typeof()->MakeType(::g::Fuse::Node_typeof(), type, NULL);
+    ::TYPES[31] = ::g::Uno::Collections::List_typeof()->MakeType(::g::Fuse::Triggers::Transition_typeof(), NULL);
+    ::TYPES[32] = ::g::Fuse::Controls::NavigationSwitchedHandler_typeof();
+    ::TYPES[33] = ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Node_typeof(), NULL);
+    ::TYPES[34] = ::g::Fuse::Controls::Navigator_typeof();
     ::TYPES[4] = ::g::Fuse::Visual_typeof();
     type->SetFields(0,
-        ::TYPES[32/*Fuse.Controls.Navigator*/], offsetof(TransitionGroup, _navigator), 0,
+        ::TYPES[34/*Fuse.Controls.Navigator*/], offsetof(TransitionGroup, _navigator), 0,
         ::TYPES[4/*Fuse.Visual*/], offsetof(TransitionGroup, _parent), 0,
-        ::TYPES[29/*Uno.Collections.List<Fuse.Triggers.Transition>*/], offsetof(TransitionGroup, _states), 0,
+        ::TYPES[31/*Uno.Collections.List<Fuse.Triggers.Transition>*/], offsetof(TransitionGroup, _states), 0,
         ::g::Fuse::Triggers::Transition_typeof(), offsetof(TransitionGroup, _selected), 0,
-        ::TYPES[28/*Uno.Collections.Dictionary<Fuse.Node, Fuse.Triggers.TransitionGroup>*/], (uintptr_t)&TransitionGroup::_groupMap_, uFieldFlagsStatic);
+        ::TYPES[30/*Uno.Collections.Dictionary<Fuse.Node, Fuse.Triggers.TransitionGroup>*/], (uintptr_t)&TransitionGroup::_groupMap_, uFieldFlagsStatic);
 }
 
 uType* TransitionGroup_typeof()
@@ -5196,10 +5367,10 @@ uSStrong< ::g::Uno::Collections::Dictionary*> TransitionGroup::_groupMap_;
 // public TransitionGroup(Fuse.Controls.Navigator navigator, Fuse.Visual parent) [instance] :50
 void TransitionGroup::ctor_(::g::Fuse::Controls::Navigator* navigator, ::g::Fuse::Visual* parent)
 {
-    _states = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[29/*Uno.Collections.List<Fuse.Triggers.Transition>*/]));
+    _states = ((::g::Uno::Collections::List*)::g::Uno::Collections::List::New1(::TYPES[31/*Uno.Collections.List<Fuse.Triggers.Transition>*/]));
     _parent = parent;
     _navigator = navigator;
-    uPtr(_navigator)->add_Switched(uDelegate::New(::TYPES[30/*Fuse.Controls.NavigationSwitchedHandler*/], (void*)TransitionGroup__OnSwitched_fn, this));
+    uPtr(_navigator)->add_Switched(uDelegate::New(::TYPES[32/*Fuse.Controls.NavigationSwitchedHandler*/], (void*)TransitionGroup__OnSwitched_fn, this));
 }
 
 // public void Add(Fuse.Triggers.Transition t) [instance] :72
@@ -5211,7 +5382,7 @@ void TransitionGroup::Add(::g::Fuse::Triggers::Transition* t)
 // private void Cleanup() [instance] :66
 void TransitionGroup::Cleanup()
 {
-    uPtr(_navigator)->remove_Switched(uDelegate::New(::TYPES[30/*Fuse.Controls.NavigationSwitchedHandler*/], (void*)TransitionGroup__OnSwitched_fn, this));
+    uPtr(_navigator)->remove_Switched(uDelegate::New(::TYPES[32/*Fuse.Controls.NavigationSwitchedHandler*/], (void*)TransitionGroup__OnSwitched_fn, this));
 }
 
 // public Fuse.Controls.Navigator get_Navigator() [instance] :57
@@ -5255,7 +5426,7 @@ void TransitionGroup::OnSwitched(uObject* sender, ::g::Fuse::Controls::Navigator
         ::g::Fuse::Triggers::Transition* trans = ::g::Fuse::Triggers::Transition::New2();
         trans->UseTransition(0);
         trans->Direction(forward ? 1 : 2);
-        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(_parent)->Children()), ::TYPES[31/*Uno.Collections.ICollection<Fuse.Node>*/]), trans);
+        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(_parent)->Children()), ::TYPES[33/*Uno.Collections.ICollection<Fuse.Node>*/]), trans);
         selectTrans = trans;
     }
 
@@ -5318,13 +5489,13 @@ TransitionGroup* TransitionGroup::Root(::g::Fuse::Triggers::Transition* t)
 
     while ((q != NULL) && (nav == NULL))
     {
-        nav = uAs< ::g::Fuse::Controls::Navigator*>(q, ::TYPES[32/*Fuse.Controls.Navigator*/]);
+        nav = uAs< ::g::Fuse::Controls::Navigator*>(q, ::TYPES[34/*Fuse.Controls.Navigator*/]);
         q = uPtr(q)->ContextParent();
     }
 
     if (nav == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[28/*"Transition ...*/], t, ::STRINGS[29/*"/usr/local/...*/], 26, ::STRINGS[30/*"Root"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[30/*"Transition ...*/], t, ::STRINGS[31/*"/usr/local/...*/], 26, ::STRINGS[32/*"Root"*/], NULL);
         return NULL;
     }
 
@@ -5332,7 +5503,7 @@ TransitionGroup* TransitionGroup::Root(::g::Fuse::Triggers::Transition* t)
 
     if (vis == NULL)
     {
-        ::g::Fuse::Diagnostics::UserError(::STRINGS[31/*"Transition ...*/], t, ::STRINGS[29/*"/usr/local/...*/], 33, ::STRINGS[30/*"Root"*/], NULL);
+        ::g::Fuse::Diagnostics::UserError(::STRINGS[33/*"Transition ...*/], t, ::STRINGS[31/*"/usr/local/...*/], 33, ::STRINGS[32/*"Root"*/], NULL);
         return NULL;
     }
 
@@ -6037,13 +6208,13 @@ void Trigger::EnsureAnimationLength()
     ::g::Fuse::Animations::Nothing* n = ::g::Fuse::Animations::Nothing::New2();
     n->Delay(actFore);
     n->DelayBack(actBack);
-    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Animators()), ::TYPES[24/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), n);
+    ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(Animators()), ::TYPES[26/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), n);
 
     if (HasBackwardAnimation())
     {
         n = ::g::Fuse::Animations::Nothing::New2();
         n->Delay(actBack);
-        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(BackwardAnimation())->Animators()), ::TYPES[24/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), n);
+        ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(uPtr(BackwardAnimation())->Animators()), ::TYPES[26/*Uno.Collections.ICollection<Fuse.Animations.Animator>*/]), n);
     }
 }
 
@@ -6484,9 +6655,9 @@ static void WhileCompleted__cctor_2_fn(uType* __type)
 
 static void WhileCompleted_build(uType* type)
 {
-    ::TYPES[33] = ::g::Uno::Bool_typeof();
-    ::TYPES[34] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhileCompleted>*/, type, NULL);
-    ::TYPES[35] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhileCompleted>*/, type, NULL);
+    ::TYPES[35] = ::g::Uno::Bool_typeof();
+    ::TYPES[36] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhileCompleted>*/, type, NULL);
+    ::TYPES[37] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhileCompleted>*/, type, NULL);
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -6567,10 +6738,10 @@ bool WhileCompleted::IsCompleted(::g::Fuse::Visual* n)
     WhileCompleted_typeof()->Init();
     uObject* v = uPtr(uPtr(n)->Properties())->Get(WhileCompleted::_whileCompletedProp_);
 
-    if (!uIs(v, ::TYPES[33/*bool*/]))
+    if (!uIs(v, ::TYPES[35/*bool*/]))
         return false;
 
-    return uUnbox<bool>(::TYPES[33/*bool*/], v);
+    return uUnbox<bool>(::TYPES[35/*bool*/], v);
 }
 
 // public static void SetState(Fuse.Visual n, bool paused) [static] :98
@@ -6581,269 +6752,12 @@ void WhileCompleted::SetState(::g::Fuse::Visual* n, bool paused)
 
     if (v != paused)
     {
-        uPtr(uPtr(n)->Properties())->Set(WhileCompleted::_whileCompletedProp_, uBox(::TYPES[33/*bool*/], paused));
+        uPtr(uPtr(n)->Properties())->Set(WhileCompleted::_whileCompletedProp_, uBox(::TYPES[35/*bool*/], paused));
 
-        for (WhileCompleted* wl = (WhileCompleted*)n->FirstChild(::TYPES[34/*Fuse.Visual.FirstChild<Fuse.Triggers.WhileCompleted>*/]); wl != NULL; wl = (WhileCompleted*)uPtr(wl)->NextSibling(::TYPES[35/*Fuse.Node.NextSibling<Fuse.Triggers.WhileCompleted>*/]))
+        for (WhileCompleted* wl = (WhileCompleted*)n->FirstChild(::TYPES[36/*Fuse.Visual.FirstChild<Fuse.Triggers.WhileCompleted>*/]); wl != NULL; wl = (WhileCompleted*)uPtr(wl)->NextSibling(::TYPES[37/*Fuse.Node.NextSibling<Fuse.Triggers.WhileCompleted>*/]))
             if (uPtr(wl)->IsRootingCompleted())
                 uPtr(wl)->SetActive(paused);
     }
-}
-// }
-
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/Disabled.uno
-// --------------------------------------------------------------
-
-// public sealed class WhileDisabled :39
-// {
-static void WhileDisabled_build(uType* type)
-{
-    type->SetInterfaces(
-        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface0),
-        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface1),
-        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface2),
-        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface3),
-        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface4),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface5),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface6),
-        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface7),
-        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface8));
-    type->SetFields(39);
-}
-
-::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type* WhileDisabled_typeof()
-{
-    static uSStrong< ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_typeof();
-    options.FieldCount = 39;
-    options.InterfaceCount = 9;
-    options.ObjectSize = sizeof(WhileDisabled);
-    options.TypeSize = sizeof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type);
-    type = (::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type*)uClassType::New("Fuse.Triggers.WhileDisabled", options);
-    type->fp_build_ = WhileDisabled_build;
-    type->fp_ctor_ = (void*)WhileDisabled__New2_fn;
-    type->fp_get_IsActive = (void(*)(::g::Fuse::Triggers::WhileEnabledDisabledTrigger*, bool*))WhileDisabled__get_IsActive_fn;
-    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
-    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
-    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
-    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
-    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
-    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
-    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
-    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
-    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
-    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
-    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
-    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
-    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
-    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
-    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
-    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
-    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
-    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
-    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
-    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
-    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
-    return type;
-}
-
-// public generated WhileDisabled() :39
-void WhileDisabled__ctor_7_fn(WhileDisabled* __this)
-{
-    __this->ctor_7();
-}
-
-// protected override sealed bool get_IsActive() :43
-void WhileDisabled__get_IsActive_fn(WhileDisabled* __this, bool* __retval)
-{
-    return *__retval = (__this->Parent() != NULL) ? !uPtr(__this->Parent())->IsContextEnabled() : false, void();
-}
-
-// public generated WhileDisabled New() :39
-void WhileDisabled__New2_fn(WhileDisabled** __retval)
-{
-    *__retval = WhileDisabled::New2();
-}
-
-// public generated WhileDisabled() [instance] :39
-void WhileDisabled::ctor_7()
-{
-    ctor_6();
-}
-
-// public generated WhileDisabled New() [static] :39
-WhileDisabled* WhileDisabled::New2()
-{
-    WhileDisabled* obj1 = (WhileDisabled*)uNew(WhileDisabled_typeof());
-    obj1->ctor_7();
-    return obj1;
-}
-// }
-
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/Disabled.uno
-// --------------------------------------------------------------
-
-// public sealed class WhileEnabled :64
-// {
-static void WhileEnabled_build(uType* type)
-{
-    type->SetInterfaces(
-        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface0),
-        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface1),
-        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface2),
-        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface3),
-        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface4),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface5),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface6),
-        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface7),
-        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type, interface8));
-    type->SetFields(39);
-}
-
-::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type* WhileEnabled_typeof()
-{
-    static uSStrong< ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Fuse::Triggers::WhileEnabledDisabledTrigger_typeof();
-    options.FieldCount = 39;
-    options.InterfaceCount = 9;
-    options.ObjectSize = sizeof(WhileEnabled);
-    options.TypeSize = sizeof(::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type);
-    type = (::g::Fuse::Triggers::WhileEnabledDisabledTrigger_type*)uClassType::New("Fuse.Triggers.WhileEnabled", options);
-    type->fp_build_ = WhileEnabled_build;
-    type->fp_get_IsActive = (void(*)(::g::Fuse::Triggers::WhileEnabledDisabledTrigger*, bool*))WhileEnabled__get_IsActive_fn;
-    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
-    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
-    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
-    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
-    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
-    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
-    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
-    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
-    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
-    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
-    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
-    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
-    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
-    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
-    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
-    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
-    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
-    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
-    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
-    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
-    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
-    return type;
-}
-
-// protected override sealed bool get_IsActive() :68
-void WhileEnabled__get_IsActive_fn(WhileEnabled* __this, bool* __retval)
-{
-    return *__retval = (__this->Parent() != NULL) ? uPtr(__this->Parent())->IsContextEnabled() : true, void();
-}
-// }
-
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/Disabled.uno
-// --------------------------------------------------------------
-
-// public abstract class WhileEnabledDisabledTrigger :8
-// {
-static void WhileEnabledDisabledTrigger_build(uType* type)
-{
-    ::TYPES[5] = ::g::Uno::EventHandler_typeof();
-    type->SetInterfaces(
-        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileEnabledDisabledTrigger_type, interface0),
-        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface1),
-        ::g::Fuse::IProperties_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface2),
-        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface3),
-        ::g::Fuse::ISourceLocation_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface4),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileEnabledDisabledTrigger_type, interface5),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(WhileEnabledDisabledTrigger_type, interface6),
-        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface7),
-        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(WhileEnabledDisabledTrigger_type, interface8));
-    type->SetFields(39);
-}
-
-WhileEnabledDisabledTrigger_type* WhileEnabledDisabledTrigger_typeof()
-{
-    static uSStrong<WhileEnabledDisabledTrigger_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
-    options.FieldCount = 39;
-    options.InterfaceCount = 9;
-    options.ObjectSize = sizeof(WhileEnabledDisabledTrigger);
-    options.TypeSize = sizeof(WhileEnabledDisabledTrigger_type);
-    type = (WhileEnabledDisabledTrigger_type*)uClassType::New("Fuse.Triggers.WhileEnabledDisabledTrigger", options);
-    type->fp_build_ = WhileEnabledDisabledTrigger_build;
-    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))WhileEnabledDisabledTrigger__OnRooted_fn;
-    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))WhileEnabledDisabledTrigger__OnUnrooted_fn;
-    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
-    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
-    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
-    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
-    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
-    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
-    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
-    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
-    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
-    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
-    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
-    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
-    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
-    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
-    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
-    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
-    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
-    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
-    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
-    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
-    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
-    return type;
-}
-
-// internal WhileEnabledDisabledTrigger() :10
-void WhileEnabledDisabledTrigger__ctor_6_fn(WhileEnabledDisabledTrigger* __this)
-{
-    __this->ctor_6();
-}
-
-// private void OnIsContextEnabledChanged(object sender, Uno.EventArgs args) :28
-void WhileEnabledDisabledTrigger__OnIsContextEnabledChanged_fn(WhileEnabledDisabledTrigger* __this, uObject* sender, ::g::Uno::EventArgs* args)
-{
-    __this->OnIsContextEnabledChanged(sender, args);
-}
-
-// protected override sealed void OnRooted() :14
-void WhileEnabledDisabledTrigger__OnRooted_fn(WhileEnabledDisabledTrigger* __this)
-{
-    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
-    uPtr(__this->Parent())->add_IsContextEnabledChanged(uDelegate::New(::TYPES[5/*Uno.EventHandler*/], (void*)WhileEnabledDisabledTrigger__OnIsContextEnabledChanged_fn, __this));
-    __this->SetActive(__this->IsActive());
-}
-
-// protected override sealed void OnUnrooted() :22
-void WhileEnabledDisabledTrigger__OnUnrooted_fn(WhileEnabledDisabledTrigger* __this)
-{
-    uPtr(__this->Parent())->remove_IsContextEnabledChanged(uDelegate::New(::TYPES[5/*Uno.EventHandler*/], (void*)WhileEnabledDisabledTrigger__OnIsContextEnabledChanged_fn, __this));
-    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
-}
-
-// internal WhileEnabledDisabledTrigger() [instance] :10
-void WhileEnabledDisabledTrigger::ctor_6()
-{
-    ctor_5();
-}
-
-// private void OnIsContextEnabledChanged(object sender, Uno.EventArgs args) [instance] :28
-void WhileEnabledDisabledTrigger::OnIsContextEnabledChanged(uObject* sender, ::g::Uno::EventArgs* args)
-{
-    SetActive(IsActive());
 }
 // }
 
@@ -7024,139 +6938,6 @@ void WhileFloat::Value1(float value)
 }
 // }
 
-// /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/WhileFocused.uno
-// ------------------------------------------------------------------
-
-// public sealed class WhileFocused :9
-// {
-static void WhileFocused_build(uType* type)
-{
-    ::TYPES[36] = ::g::Fuse::Input::FocusGainedHandler_typeof();
-    ::TYPES[37] = ::g::Fuse::Input::FocusLostHandler_typeof();
-    type->SetDependencies(
-        ::g::Fuse::Input::Focus_typeof());
-    type->SetInterfaces(
-        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
-        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
-        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface2),
-        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface3),
-        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface4),
-        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
-        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
-        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7),
-        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface8));
-    type->SetFields(39);
-}
-
-::g::Fuse::Triggers::Trigger_type* WhileFocused_typeof()
-{
-    static uSStrong< ::g::Fuse::Triggers::Trigger_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
-    options.FieldCount = 39;
-    options.InterfaceCount = 9;
-    options.DependencyCount = 1;
-    options.ObjectSize = sizeof(WhileFocused);
-    options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
-    type = (::g::Fuse::Triggers::Trigger_type*)uClassType::New("Fuse.Triggers.WhileFocused", options);
-    type->fp_build_ = WhileFocused_build;
-    type->fp_ctor_ = (void*)WhileFocused__New2_fn;
-    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))WhileFocused__OnRooted_fn;
-    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))WhileFocused__OnUnrooted_fn;
-    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
-    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
-    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
-    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
-    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
-    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
-    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
-    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
-    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
-    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
-    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
-    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
-    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
-    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
-    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
-    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
-    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
-    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
-    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
-    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
-    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
-    return type;
-}
-
-// public generated WhileFocused() :9
-void WhileFocused__ctor_6_fn(WhileFocused* __this)
-{
-    __this->ctor_6();
-}
-
-// public generated WhileFocused New() :9
-void WhileFocused__New2_fn(WhileFocused** __retval)
-{
-    *__retval = WhileFocused::New2();
-}
-
-// private void OnGotFocus(object sender, Uno.EventArgs args) :26
-void WhileFocused__OnGotFocus_fn(WhileFocused* __this, uObject* sender, ::g::Uno::EventArgs* args)
-{
-    __this->OnGotFocus(sender, args);
-}
-
-// private void OnLostFocus(object sender, Uno.EventArgs args) :31
-void WhileFocused__OnLostFocus_fn(WhileFocused* __this, uObject* sender, ::g::Uno::EventArgs* args)
-{
-    __this->OnLostFocus(sender, args);
-}
-
-// protected override sealed void OnRooted() :11
-void WhileFocused__OnRooted_fn(WhileFocused* __this)
-{
-    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
-    ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Focus::Gained()), __this->Parent(), uDelegate::New(::TYPES[36/*Fuse.Input.FocusGainedHandler*/], (void*)WhileFocused__OnGotFocus_fn, __this));
-    ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Focus::Lost()), __this->Parent(), uDelegate::New(::TYPES[37/*Fuse.Input.FocusLostHandler*/], (void*)WhileFocused__OnLostFocus_fn, __this));
-    __this->SetActive(::g::Fuse::Input::Focus::FocusedVisual() == __this->Parent());
-}
-
-// protected override sealed void OnUnrooted() :19
-void WhileFocused__OnUnrooted_fn(WhileFocused* __this)
-{
-    ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Focus::Gained()), __this->Parent(), uDelegate::New(::TYPES[36/*Fuse.Input.FocusGainedHandler*/], (void*)WhileFocused__OnGotFocus_fn, __this));
-    ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Focus::Lost()), __this->Parent(), uDelegate::New(::TYPES[37/*Fuse.Input.FocusLostHandler*/], (void*)WhileFocused__OnLostFocus_fn, __this));
-    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
-}
-
-// public generated WhileFocused() [instance] :9
-void WhileFocused::ctor_6()
-{
-    ctor_5();
-}
-
-// private void OnGotFocus(object sender, Uno.EventArgs args) [instance] :26
-void WhileFocused::OnGotFocus(uObject* sender, ::g::Uno::EventArgs* args)
-{
-    SetActive(true);
-}
-
-// private void OnLostFocus(object sender, Uno.EventArgs args) [instance] :31
-void WhileFocused::OnLostFocus(uObject* sender, ::g::Uno::EventArgs* args)
-{
-    SetActive(false);
-}
-
-// public generated WhileFocused New() [static] :9
-WhileFocused* WhileFocused::New2()
-{
-    WhileFocused* obj1 = (WhileFocused*)uNew(WhileFocused_typeof());
-    obj1->ctor_6();
-    return obj1;
-}
-// }
-
 // /usr/local/share/uno/Packages/Fuse.Controls.Panels/1.9.0/WhileKeyboardVisible.uno
 // ---------------------------------------------------------------------------------
 
@@ -7284,6 +7065,139 @@ void WhileKeyboardVisible::CheckActivation()
 }
 // }
 
+// /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/WhileFocused.uno
+// ------------------------------------------------------------------
+
+// public sealed class WhileNotFocused :42
+// {
+static void WhileNotFocused_build(uType* type)
+{
+    ::TYPES[38] = ::g::Fuse::Input::FocusGainedHandler_typeof();
+    ::TYPES[39] = ::g::Fuse::Input::FocusLostHandler_typeof();
+    type->SetDependencies(
+        ::g::Fuse::Input::Focus_typeof());
+    type->SetInterfaces(
+        ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
+        ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
+        ::g::Fuse::IProperties_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface2),
+        ::g::Fuse::INotifyUnrooted_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface3),
+        ::g::Fuse::ISourceLocation_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface4),
+        ::g::Uno::Collections::ICollection_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface5),
+        ::g::Uno::Collections::IEnumerable_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface6),
+        ::g::Fuse::Animations::IUnwrappedPlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface7),
+        ::g::Fuse::Animations::IBasePlayerFeedback_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface8));
+    type->SetFields(39);
+}
+
+::g::Fuse::Triggers::Trigger_type* WhileNotFocused_typeof()
+{
+    static uSStrong< ::g::Fuse::Triggers::Trigger_type*> type;
+    if (type != NULL) return type;
+
+    uTypeOptions options;
+    options.BaseDefinition = ::g::Fuse::Triggers::WhileTrigger_typeof();
+    options.FieldCount = 39;
+    options.InterfaceCount = 9;
+    options.DependencyCount = 1;
+    options.ObjectSize = sizeof(WhileNotFocused);
+    options.TypeSize = sizeof(::g::Fuse::Triggers::Trigger_type);
+    type = (::g::Fuse::Triggers::Trigger_type*)uClassType::New("Fuse.Triggers.WhileNotFocused", options);
+    type->fp_build_ = WhileNotFocused_build;
+    type->fp_ctor_ = (void*)WhileNotFocused__New2_fn;
+    type->fp_OnRooted = (void(*)(::g::Fuse::Node*))WhileNotFocused__OnRooted_fn;
+    type->fp_OnUnrooted = (void(*)(::g::Fuse::Node*))WhileNotFocused__OnUnrooted_fn;
+    type->interface8.fp_OnPlaybackDone = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnPlaybackDone_fn;
+    type->interface8.fp_OnStable = (void(*)(uObject*, uObject*))::g::Fuse::Triggers::Trigger__FuseAnimationsIBasePlayerFeedbackOnStable_fn;
+    type->interface7.fp_OnProgressUpdated = (void(*)(uObject*, uObject*, double*, double*, int32_t*))::g::Fuse::Triggers::Trigger__FuseAnimationsIUnwrappedPlayerFeedbackOnProgressUpdated_fn;
+    type->interface5.fp_Clear = (void(*)(uObject*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingClear_fn;
+    type->interface5.fp_Contains = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingContains_fn;
+    type->interface0.fp_RemoveAt = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsIListFuseBindingRemoveAt_fn;
+    type->interface6.fp_GetEnumerator = (void(*)(uObject*, uObject**))::g::Fuse::Node__UnoCollectionsIEnumerableFuseBindingGetEnumerator_fn;
+    type->interface1.fp_SetScriptObject = (void(*)(uObject*, uObject*, ::g::Fuse::Scripting::Context*))::g::Fuse::Node__FuseScriptingIScriptObjectSetScriptObject_fn;
+    type->interface5.fp_get_Count = (void(*)(uObject*, int32_t*))::g::Fuse::Node__UnoCollectionsICollectionFuseBindingget_Count_fn;
+    type->interface0.fp_get_Item = (void(*)(uObject*, int32_t*, uTRef))::g::Fuse::Node__UnoCollectionsIListFuseBindingget_Item_fn;
+    type->interface1.fp_get_ScriptObject = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptObject_fn;
+    type->interface1.fp_get_ScriptContext = (void(*)(uObject*, ::g::Fuse::Scripting::Context**))::g::Fuse::Node__FuseScriptingIScriptObjectget_ScriptContext_fn;
+    type->interface4.fp_get_SourceNearest = (void(*)(uObject*, uObject**))::g::Fuse::Node__FuseISourceLocationget_SourceNearest_fn;
+    type->interface3.fp_add_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedadd_Unrooted_fn;
+    type->interface3.fp_remove_Unrooted = (void(*)(uObject*, uDelegate*))::g::Fuse::Node__FuseINotifyUnrootedremove_Unrooted_fn;
+    type->interface0.fp_Insert = (void(*)(uObject*, int32_t*, void*))::g::Fuse::Node__Insert_fn;
+    type->interface2.fp_get_Properties = (void(*)(uObject*, ::g::Fuse::Properties**))::g::Fuse::Node__get_Properties_fn;
+    type->interface4.fp_get_SourceLineNumber = (void(*)(uObject*, int32_t*))::g::Fuse::Node__get_SourceLineNumber_fn;
+    type->interface4.fp_get_SourceFileName = (void(*)(uObject*, uString**))::g::Fuse::Node__get_SourceFileName_fn;
+    type->interface5.fp_Add = (void(*)(uObject*, void*))::g::Fuse::Node__Add_fn;
+    type->interface5.fp_Remove = (void(*)(uObject*, void*, bool*))::g::Fuse::Node__Remove_fn;
+    return type;
+}
+
+// public generated WhileNotFocused() :42
+void WhileNotFocused__ctor_6_fn(WhileNotFocused* __this)
+{
+    __this->ctor_6();
+}
+
+// public generated WhileNotFocused New() :42
+void WhileNotFocused__New2_fn(WhileNotFocused** __retval)
+{
+    *__retval = WhileNotFocused::New2();
+}
+
+// private void OnGotFocus(object sender, Uno.EventArgs args) :59
+void WhileNotFocused__OnGotFocus_fn(WhileNotFocused* __this, uObject* sender, ::g::Uno::EventArgs* args)
+{
+    __this->OnGotFocus(sender, args);
+}
+
+// private void OnLostFocus(object sender, Uno.EventArgs args) :64
+void WhileNotFocused__OnLostFocus_fn(WhileNotFocused* __this, uObject* sender, ::g::Uno::EventArgs* args)
+{
+    __this->OnLostFocus(sender, args);
+}
+
+// protected override sealed void OnRooted() :44
+void WhileNotFocused__OnRooted_fn(WhileNotFocused* __this)
+{
+    ::g::Fuse::Triggers::Trigger__OnRooted_fn(__this);
+    ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Focus::Gained()), __this->Parent(), uDelegate::New(::TYPES[38/*Fuse.Input.FocusGainedHandler*/], (void*)WhileNotFocused__OnGotFocus_fn, __this));
+    ::g::Fuse::VisualEvent__AddHandler_fn(uPtr(::g::Fuse::Input::Focus::Lost()), __this->Parent(), uDelegate::New(::TYPES[39/*Fuse.Input.FocusLostHandler*/], (void*)WhileNotFocused__OnLostFocus_fn, __this));
+    __this->SetActive(::g::Fuse::Input::Focus::FocusedVisual() != __this->Parent());
+}
+
+// protected override sealed void OnUnrooted() :52
+void WhileNotFocused__OnUnrooted_fn(WhileNotFocused* __this)
+{
+    ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Focus::Gained()), __this->Parent(), uDelegate::New(::TYPES[38/*Fuse.Input.FocusGainedHandler*/], (void*)WhileNotFocused__OnGotFocus_fn, __this));
+    ::g::Fuse::VisualEvent__RemoveHandler_fn(uPtr(::g::Fuse::Input::Focus::Lost()), __this->Parent(), uDelegate::New(::TYPES[39/*Fuse.Input.FocusLostHandler*/], (void*)WhileNotFocused__OnLostFocus_fn, __this));
+    ::g::Fuse::Triggers::Trigger__OnUnrooted_fn(__this);
+}
+
+// public generated WhileNotFocused() [instance] :42
+void WhileNotFocused::ctor_6()
+{
+    ctor_5();
+}
+
+// private void OnGotFocus(object sender, Uno.EventArgs args) [instance] :59
+void WhileNotFocused::OnGotFocus(uObject* sender, ::g::Uno::EventArgs* args)
+{
+    SetActive(false);
+}
+
+// private void OnLostFocus(object sender, Uno.EventArgs args) [instance] :64
+void WhileNotFocused::OnLostFocus(uObject* sender, ::g::Uno::EventArgs* args)
+{
+    SetActive(true);
+}
+
+// public generated WhileNotFocused New() [static] :42
+WhileNotFocused* WhileNotFocused::New2()
+{
+    WhileNotFocused* obj1 = (WhileNotFocused*)uNew(WhileNotFocused_typeof());
+    obj1->ctor_6();
+    return obj1;
+}
+// }
+
 // /usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/WhilePlaying.uno
 // ------------------------------------------------------------------
 
@@ -7298,9 +7212,9 @@ static void WhilePaused__cctor_2_fn(uType* __type)
 
 static void WhilePaused_build(uType* type)
 {
-    ::TYPES[33] = ::g::Uno::Bool_typeof();
-    ::TYPES[38] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhilePaused>*/, type, NULL);
-    ::TYPES[39] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhilePaused>*/, type, NULL);
+    ::TYPES[35] = ::g::Uno::Bool_typeof();
+    ::TYPES[40] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhilePaused>*/, type, NULL);
+    ::TYPES[41] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhilePaused>*/, type, NULL);
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -7381,10 +7295,10 @@ bool WhilePaused::IsPaused(::g::Fuse::Visual* n)
     WhilePaused_typeof()->Init();
     uObject* v = uPtr(uPtr(n)->Properties())->Get(WhilePaused::_whilePausedProp_);
 
-    if (!uIs(v, ::TYPES[33/*bool*/]))
+    if (!uIs(v, ::TYPES[35/*bool*/]))
         return false;
 
-    return uUnbox<bool>(::TYPES[33/*bool*/], v);
+    return uUnbox<bool>(::TYPES[35/*bool*/], v);
 }
 
 // public static void SetState(Fuse.Visual n, bool paused) [static] :62
@@ -7395,9 +7309,9 @@ void WhilePaused::SetState(::g::Fuse::Visual* n, bool paused)
 
     if (v != paused)
     {
-        uPtr(uPtr(n)->Properties())->Set(WhilePaused::_whilePausedProp_, uBox(::TYPES[33/*bool*/], paused));
+        uPtr(uPtr(n)->Properties())->Set(WhilePaused::_whilePausedProp_, uBox(::TYPES[35/*bool*/], paused));
 
-        for (WhilePaused* wl = (WhilePaused*)n->FirstChild(::TYPES[38/*Fuse.Visual.FirstChild<Fuse.Triggers.WhilePaused>*/]); wl != NULL; wl = (WhilePaused*)uPtr(wl)->NextSibling(::TYPES[39/*Fuse.Node.NextSibling<Fuse.Triggers.WhilePaused>*/]))
+        for (WhilePaused* wl = (WhilePaused*)n->FirstChild(::TYPES[40/*Fuse.Visual.FirstChild<Fuse.Triggers.WhilePaused>*/]); wl != NULL; wl = (WhilePaused*)uPtr(wl)->NextSibling(::TYPES[41/*Fuse.Node.NextSibling<Fuse.Triggers.WhilePaused>*/]))
             uPtr(wl)->SetActive(paused);
     }
 }
@@ -7417,9 +7331,9 @@ static void WhilePlaying__cctor_2_fn(uType* __type)
 
 static void WhilePlaying_build(uType* type)
 {
-    ::TYPES[33] = ::g::Uno::Bool_typeof();
-    ::TYPES[40] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhilePlaying>*/, type, NULL);
-    ::TYPES[41] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhilePlaying>*/, type, NULL);
+    ::TYPES[35] = ::g::Uno::Bool_typeof();
+    ::TYPES[42] = ::g::Fuse::Visual_typeof()->MakeMethod(2/*FirstChild<Fuse.Triggers.WhilePlaying>*/, type, NULL);
+    ::TYPES[43] = ::g::Fuse::Node_typeof()->MakeMethod(3/*NextSibling<Fuse.Triggers.WhilePlaying>*/, type, NULL);
     type->SetInterfaces(
         ::g::Uno::Collections::IList_typeof()->MakeType(::g::Fuse::Binding_typeof(), NULL), offsetof(::g::Fuse::Triggers::Trigger_type, interface0),
         ::g::Fuse::Scripting::IScriptObject_typeof(), offsetof(::g::Fuse::Triggers::Trigger_type, interface1),
@@ -7500,10 +7414,10 @@ bool WhilePlaying::IsPlaying(::g::Fuse::Visual* n)
     WhilePlaying_typeof()->Init();
     uObject* v = uPtr(uPtr(n)->Properties())->Get(WhilePlaying::_whilePlayingProp_);
 
-    if (!uIs(v, ::TYPES[33/*bool*/]))
+    if (!uIs(v, ::TYPES[35/*bool*/]))
         return false;
 
-    return uUnbox<bool>(::TYPES[33/*bool*/], v);
+    return uUnbox<bool>(::TYPES[35/*bool*/], v);
 }
 
 // public static void SetState(Fuse.Visual n, bool playing) [static] :26
@@ -7514,9 +7428,9 @@ void WhilePlaying::SetState(::g::Fuse::Visual* n, bool playing)
 
     if (v != playing)
     {
-        uPtr(uPtr(n)->Properties())->Set(WhilePlaying::_whilePlayingProp_, uBox(::TYPES[33/*bool*/], playing));
+        uPtr(uPtr(n)->Properties())->Set(WhilePlaying::_whilePlayingProp_, uBox(::TYPES[35/*bool*/], playing));
 
-        for (WhilePlaying* wl = (WhilePlaying*)n->FirstChild(::TYPES[40/*Fuse.Visual.FirstChild<Fuse.Triggers.WhilePlaying>*/]); wl != NULL; wl = (WhilePlaying*)uPtr(wl)->NextSibling(::TYPES[41/*Fuse.Node.NextSibling<Fuse.Triggers.WhilePlaying>*/]))
+        for (WhilePlaying* wl = (WhilePlaying*)n->FirstChild(::TYPES[42/*Fuse.Visual.FirstChild<Fuse.Triggers.WhilePlaying>*/]); wl != NULL; wl = (WhilePlaying*)uPtr(wl)->NextSibling(::TYPES[43/*Fuse.Node.NextSibling<Fuse.Triggers.WhilePlaying>*/]))
             uPtr(wl)->SetActive(playing);
     }
 }
@@ -7930,6 +7844,12 @@ void WhileTrigger__ctor_5_fn(WhileTrigger* __this)
     __this->ctor_5();
 }
 
+// protected void BypassSetActive(bool on) :25
+void WhileTrigger__BypassSetActive_fn(WhileTrigger* __this, bool* on)
+{
+    __this->BypassSetActive(*on);
+}
+
 // public generated bool get_Invert() :14
 void WhileTrigger__get_Invert_fn(WhileTrigger* __this, bool* __retval)
 {
@@ -7952,6 +7872,15 @@ void WhileTrigger__SetActive_fn(WhileTrigger* __this, bool* on)
 void WhileTrigger::ctor_5()
 {
     ctor_4();
+}
+
+// protected void BypassSetActive(bool on) [instance] :25
+void WhileTrigger::BypassSetActive(bool on)
+{
+    if (on != Invert())
+        BypassActivate();
+    else
+        BypassDeactivate();
 }
 
 // public generated bool get_Invert() [instance] :14
@@ -8011,6 +7940,7 @@ static void WhileTrue_build(uType* type)
     options.TypeSize = sizeof(::g::Fuse::Triggers::WhileBool_type);
     type = (::g::Fuse::Triggers::WhileBool_type*)uClassType::New("Fuse.Triggers.WhileTrue", options);
     type->fp_build_ = WhileTrue_build;
+    type->fp_ctor_ = (void*)WhileTrue__New2_fn;
     type->fp_get_IsOn = (void(*)(::g::Fuse::Triggers::WhileValue*, bool*))WhileTrue__get_IsOn_fn;
     type->interface10.fp_Toggle = (void(*)(uObject*))::g::Fuse::Triggers::WhileBool__Toggle_fn;
     type->interface9.fp_Pulse = (void(*)(uObject*))::g::Fuse::Triggers::WhileValue__Pulse1_fn;
@@ -8050,10 +7980,24 @@ void WhileTrue__get_IsOn_fn(WhileTrue* __this, bool* __retval)
     return *__retval = __this->Value1(), void();
 }
 
+// public generated WhileTrue New() :89
+void WhileTrue__New2_fn(WhileTrue** __retval)
+{
+    *__retval = WhileTrue::New2();
+}
+
 // public generated WhileTrue() [instance] :89
 void WhileTrue::ctor_8()
 {
     ctor_7();
+}
+
+// public generated WhileTrue New() [static] :89
+WhileTrue* WhileTrue::New2()
+{
+    WhileTrue* obj1 = (WhileTrue*)uNew(WhileTrue_typeof());
+    obj1->ctor_8();
+    return obj1;
 }
 // }
 
@@ -8064,11 +8008,11 @@ void WhileTrue::ctor_8()
 // {
 static void WhileValue_build(uType* type)
 {
-    ::STRINGS[32] = uString::Const("`Pulse` on a `WhileValue` will be removed, create a `Timeline` instead.");
-    ::STRINGS[33] = uString::Const("/usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/WhileValue.uno");
-    ::STRINGS[34] = uString::Const("Pulse");
-    ::TYPES[42] = ::g::Fuse::Triggers::IValue_typeof();
-    ::TYPES[43] = ::g::Uno::UX::ValueChangedHandler_typeof();
+    ::STRINGS[34] = uString::Const("`Pulse` on a `WhileValue` will be removed, create a `Timeline` instead.");
+    ::STRINGS[35] = uString::Const("/usr/local/share/uno/Packages/Fuse.Triggers/1.9.0/WhileValue.uno");
+    ::STRINGS[36] = uString::Const("Pulse");
+    ::TYPES[44] = ::g::Fuse::Triggers::IValue_typeof();
+    ::TYPES[45] = ::g::Uno::UX::ValueChangedHandler_typeof();
     type->SetPrecalc(
         ::g::Fuse::Triggers::IValue_typeof()->MakeType(type->T(0), NULL),
         ::g::Uno::UX::ValueChangedHandler_typeof()->MakeType(type->T(0), NULL));
@@ -8086,9 +8030,9 @@ static void WhileValue_build(uType* type)
     type->SetFields(39,
         type->T(0), (uintptr_t)0, uFieldFlagsConstrained,
         ::g::Uno::Bool_typeof(), offsetof(WhileValue, _hasValue), 0,
-        ::TYPES[42/*Fuse.Triggers.IValue`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, _source), 0,
-        ::TYPES[42/*Fuse.Triggers.IValue`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, _obj), 0,
-        ::TYPES[43/*Uno.UX.ValueChangedHandler`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, ValueChanged1), 0);
+        ::TYPES[44/*Fuse.Triggers.IValue`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, _source), 0,
+        ::TYPES[44/*Fuse.Triggers.IValue`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, _obj), 0,
+        ::TYPES[45/*Uno.UX.ValueChangedHandler`1*/]->MakeType(type->T(0), NULL), offsetof(WhileValue, ValueChanged1), 0);
 }
 
 WhileValue_type* WhileValue_typeof()
@@ -8269,7 +8213,7 @@ void WhileValue::Pulse1()
 {
     if (!::g::Fuse::Triggers::WhileValueStatic::_deprecatedNote_)
     {
-        ::g::Fuse::Diagnostics::Deprecated(::STRINGS[32/*"`Pulse` on ...*/], this, ::STRINGS[33/*"/usr/local/...*/], 47, ::STRINGS[34/*"Pulse"*/]);
+        ::g::Fuse::Diagnostics::Deprecated(::STRINGS[34/*"`Pulse` on ...*/], this, ::STRINGS[35/*"/usr/local/...*/], 47, ::STRINGS[36/*"Pulse"*/]);
         ::g::Fuse::Triggers::WhileValueStatic::_deprecatedNote_ = true;
     }
 

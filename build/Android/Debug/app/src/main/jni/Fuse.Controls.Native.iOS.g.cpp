@@ -2,13 +2,10 @@
 // WARNING: Changes might be lost if you edit this file directly.
 
 #include <Fuse.Controls.Native.-144a8301.h>
-#include <Fuse.Controls.Native.-5999be91.h>
 #include <Fuse.Controls.Native.-737f180b.h>
-#include <Fuse.Controls.Native.-b47aa7c0.h>
 #include <Fuse.Controls.Native.-bda9e869.h>
 #include <Fuse.Controls.Native.-c20be635.h>
 #include <Fuse.Visual.h>
-#include <Uno.Double.h>
 
 namespace g{
 namespace Fuse{
@@ -108,69 +105,6 @@ ScrollView* ScrollView::New1(uObject* host)
 {
     ScrollView* obj1 = (ScrollView*)uNew(ScrollView_typeof());
     obj1->ctor_(host);
-    return obj1;
-}
-// }
-
-// /usr/local/share/uno/Packages/Fuse.Controls.Native/1.9.0/iOS/Slider.uno
-// -----------------------------------------------------------------------
-
-// public sealed extern class Slider :8
-// {
-static void Slider_build(uType* type)
-{
-    type->SetInterfaces(
-        ::g::Fuse::Controls::Native::IRangeView_typeof(), offsetof(Slider_type, interface0));
-}
-
-Slider_type* Slider_typeof()
-{
-    static uSStrong<Slider_type*> type;
-    if (type != NULL) return type;
-
-    uTypeOptions options;
-    options.InterfaceCount = 1;
-    options.ObjectSize = sizeof(Slider);
-    options.TypeSize = sizeof(Slider_type);
-    type = (Slider_type*)uClassType::New("Fuse.Controls.Native.iOS.Slider", options);
-    type->fp_build_ = Slider_build;
-    type->interface0.fp_set_Progress = (void(*)(uObject*, double*))Slider__set_Progress_fn;
-    return type;
-}
-
-// public Slider(Fuse.Controls.Native.IRangeViewHost host, Fuse.Visual visual) :13
-void Slider__ctor__fn(Slider* __this, uObject* host, ::g::Fuse::Visual* visual)
-{
-    __this->ctor_(host, visual);
-}
-
-// public Slider New(Fuse.Controls.Native.IRangeViewHost host, Fuse.Visual visual) :13
-void Slider__New1_fn(uObject* host, ::g::Fuse::Visual* visual, Slider** __retval)
-{
-    *__retval = Slider::New1(host, visual);
-}
-
-// public void set_Progress(double value) :10
-void Slider__set_Progress_fn(Slider* __this, double* value)
-{
-    __this->Progress(*value);
-}
-
-// public Slider(Fuse.Controls.Native.IRangeViewHost host, Fuse.Visual visual) [instance] :13
-void Slider::ctor_(uObject* host, ::g::Fuse::Visual* visual)
-{
-}
-
-// public void set_Progress(double value) [instance] :10
-void Slider::Progress(double value)
-{
-}
-
-// public Slider New(Fuse.Controls.Native.IRangeViewHost host, Fuse.Visual visual) [static] :13
-Slider* Slider::New1(uObject* host, ::g::Fuse::Visual* visual)
-{
-    Slider* obj1 = (Slider*)uNew(Slider_typeof());
-    obj1->ctor_(host, visual);
     return obj1;
 }
 // }

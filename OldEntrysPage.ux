@@ -3,7 +3,15 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="OldEntrysPage.js" />
 
-	<Image Layer="Background" File="Assets/vuoristomaisema.jpg" StretchMode="PixelPrecise" Background="#FFF" />
+	<!--
+		Run this on start to get the lastest list 
+		when user enter to this page
+	-->
+	<Activated>
+		<Callback Handler="{readEntrys}" />
+	</Activated>
+
+	<bgImage />
 
 	<FlyingDock title="{Page Title}" router="router"/>
 
@@ -18,79 +26,82 @@
 			<StackPanel>
 				<Grid ColumnCount="2">
 					<Each Items="{listoofoldentrys}">	
-						<basicBtn.Button FontSize="14" Clicked="{openEntry}" Text="{key}" />
+						<basicBtn.Button BgColor="#125F63" FontSize="14" Clicked="{openEntry}" Text="{text}" DataKey="{key}" />
 					</Each>
 				</Grid>
 			</StackPanel>
 
-			<Each Items="{listing}">
+			<StackPanel Opacity="{listingOpacity}">
+				<Each Items="{listing}">
 
-				<Text Value="Mitä tapahtui?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15" />
-				<ListItem TheValue="{mita_kiusaus}" RealLabel="{mita_kiusaus_label}" />
-				<ListItem TheValue="{mita_varkaus}" RealLabel="{mita_varkaus_label}" />
-				<ListItem TheValue="{mita_inho}" RealLabel="{mita_inho_label}" />
-				<ListItem TheValue="{mita_teinvaarin}" RealLabel="{mita_teinvaarin_label}" />
-				<ListItem TheValue="{mita_riitely}" RealLabel="{mita_riitely_label}" />
-				<ListItem TheValue="{mita_muuta}" RealLabel="{mita_muuta_label}" />
+					<Text Value="Mitä tapahtui?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15" />
+					<ListItem TheValue="{mita_kiusaus}" RealLabel="{mita_kiusaus_label}" />
+					<ListItem TheValue="{mita_varkaus}" RealLabel="{mita_varkaus_label}" />
+					<ListItem TheValue="{mita_inho}" RealLabel="{mita_inho_label}" />
+					<ListItem TheValue="{mita_teinvaarin}" RealLabel="{mita_teinvaarin_label}" />
+					<ListItem TheValue="{mita_riitely}" RealLabel="{mita_riitely_label}" />
+					<ListItem TheValue="{mita_muuta}" RealLabel="{mita_muuta_label}" />
 
-				<Text Value="Milloin?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{milloin_aamu}" RealLabel="{milloin_aamu_label}" />
-				<ListItem TheValue="{milloin_iltapaiva}" RealLabel="{milloin_iltapaiva_label}" />
-				<ListItem TheValue="{milloin_ilta}" RealLabel="{milloin_ilta_label}" />
+					<Text Value="Milloin?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{milloin_aamu}" RealLabel="{milloin_aamu_label}" />
+					<ListItem TheValue="{milloin_iltapaiva}" RealLabel="{milloin_iltapaiva_label}" />
+					<ListItem TheValue="{milloin_ilta}" RealLabel="{milloin_ilta_label}" />
 
-				<Text Value="Missä olit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15" />
-				<ListItem TheValue="{missa_koulu}" RealLabel="{missa_koulu_label}" />
-				<ListItem TheValue="{missa_asuntola}" RealLabel="{missa_asuntola_label}" />
-				<ListItem TheValue="{missa_liikuntasali}" RealLabel="{missa_liikuntasali_label}" />
-				<ListItem TheValue="{missa_oleskelutila}" RealLabel="{missa_oleskelutila_label}" />
-				<ListItem TheValue="{missa_wc}" RealLabel="{missa_wc_label}" />
-				<ListItem TheValue="{missa_kanslia}" RealLabel="{missa_kanslia_label}" />
-				<ListItem TheValue="{missa_ruokala}" RealLabel="{missa_ruokala_label}" />
-				<ListItem TheValue="{missa_ulkona}" RealLabel="{missa_ulkona_label}" />
-				<ListItem TheValue="{missa_kadulla}" RealLabel="{missa_kadulla_label}" />
-				<ListItem TheValue="{missa_kaytavalla}" RealLabel="{missa_kaytavalla_label}" />
-				<ListItem TheValue="{missa_toissa}" RealLabel="{missa_toissa_label}" />
-				<ListItem TheValue="{missa_muualla}" RealLabel="{missa_muualla_label}" />
+					<Text Value="Missä olit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15" />
+					<ListItem TheValue="{missa_koulu}" RealLabel="{missa_koulu_label}" />
+					<ListItem TheValue="{missa_asuntola}" RealLabel="{missa_asuntola_label}" />
+					<ListItem TheValue="{missa_liikuntasali}" RealLabel="{missa_liikuntasali_label}" />
+					<ListItem TheValue="{missa_oleskelutila}" RealLabel="{missa_oleskelutila_label}" />
+					<ListItem TheValue="{missa_wc}" RealLabel="{missa_wc_label}" />
+					<ListItem TheValue="{missa_kanslia}" RealLabel="{missa_kanslia_label}" />
+					<ListItem TheValue="{missa_ruokala}" RealLabel="{missa_ruokala_label}" />
+					<ListItem TheValue="{missa_ulkona}" RealLabel="{missa_ulkona_label}" />
+					<ListItem TheValue="{missa_kadulla}" RealLabel="{missa_kadulla_label}" />
+					<ListItem TheValue="{missa_kaytavalla}" RealLabel="{missa_kaytavalla_label}" />
+					<ListItem TheValue="{missa_toissa}" RealLabel="{missa_toissa_label}" />
+					<ListItem TheValue="{missa_muualla}" RealLabel="{missa_muualla_label}" />
 
-				<Text Value="Kuka tuo toinen henkilö oli?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{kuka_toinen}" RealLabel="{kuka_toinen_label}" />
-				<ListItem TheValue="{kuka_vanhempihoitaja}" RealLabel="{kuka_vanhempihoitaja_label}" />
-				<ListItem TheValue="{kuka_opettaja}" RealLabel="{kuka_opettaja_label}" />
-				<ListItem TheValue="{kuka_koulukuraattori}" RealLabel="{kuka_koulukuraattori_label}" />
-				<ListItem TheValue="{kuka_jokumuu}" RealLabel="{kuka_jokumuu_label}" />
+					<Text Value="Kuka tuo toinen henkilö oli?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{kuka_toinen}" RealLabel="{kuka_toinen_label}" />
+					<ListItem TheValue="{kuka_vanhempihoitaja}" RealLabel="{kuka_vanhempihoitaja_label}" />
+					<ListItem TheValue="{kuka_opettaja}" RealLabel="{kuka_opettaja_label}" />
+					<ListItem TheValue="{kuka_koulukuraattori}" RealLabel="{kuka_koulukuraattori_label}" />
+					<ListItem TheValue="{kuka_jokumuu}" RealLabel="{kuka_jokumuu_label}" />
 
-				<Text Value="Mitä teit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{mitateit_loin}" RealLabel="{mitateit_loin_label}" />
-				<ListItem TheValue="{mitateit_juoksin}" RealLabel="{mitateit_juoksin_label}" />
-				<ListItem TheValue="{mitateit_huusin}" RealLabel="{mitateit_huusin_label}" />
-				<ListItem TheValue="{mitateit_itkin}" RealLabel="{mitateit_itkin_label}" />
-				<ListItem TheValue="{mitateit_kavelinpois}" RealLabel="{mitateit_kavelinpois_label}" />
-				<ListItem TheValue="{mitateit_rikoinjotain}" RealLabel="{mitateit_rikoinjotain_label}" />
-				<ListItem TheValue="{mitateit_kerroinaiku}" RealLabel="{mitateit_kerroinaiku_label}" />
-				<ListItem TheValue="{mitateit_kerroinkave}" RealLabel="{mitateit_kerroinkave_label}" />
-				<ListItem TheValue="{mitateit_envalittanut}" RealLabel="{mitateit_envalittanut_label}" />
-				<ListItem TheValue="{mitateit_hoidinasianpuhumalla}" RealLabel="{mitateit_hoidinasianpuhumalla_label}" />
-				<ListItem TheValue="{mitateit_vihanhallinanmenetelma}" RealLabel="{mitateit_vihanhallinanmenetelma_label}" />
-				<ListItem TheValue="{mitateit_sosiaalinentaito}" RealLabel="{mitateit_sosiaalinentaito_label}" />
-				<ListItem TheValue="{mitateit_jotainmuuta}" RealLabel="{mitateit_jotainmuuta_label}" Margin="0, 5, 0, 15"  />
+					<Text Value="Mitä teit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{mitateit_loin}" RealLabel="{mitateit_loin_label}" />
+					<ListItem TheValue="{mitateit_juoksin}" RealLabel="{mitateit_juoksin_label}" />
+					<ListItem TheValue="{mitateit_huusin}" RealLabel="{mitateit_huusin_label}" />
+					<ListItem TheValue="{mitateit_itkin}" RealLabel="{mitateit_itkin_label}" />
+					<ListItem TheValue="{mitateit_kavelinpois}" RealLabel="{mitateit_kavelinpois_label}" />
+					<ListItem TheValue="{mitateit_rikoinjotain}" RealLabel="{mitateit_rikoinjotain_label}" />
+					<ListItem TheValue="{mitateit_kerroinaiku}" RealLabel="{mitateit_kerroinaiku_label}" />
+					<ListItem TheValue="{mitateit_kerroinkave}" RealLabel="{mitateit_kerroinkave_label}" />
+					<ListItem TheValue="{mitateit_envalittanut}" RealLabel="{mitateit_envalittanut_label}" />
+					<ListItem TheValue="{mitateit_hoidinasianpuhumalla}" RealLabel="{mitateit_hoidinasianpuhumalla_label}" />
+					<ListItem TheValue="{mitateit_vihanhallinanmenetelma}" RealLabel="{mitateit_vihanhallinanmenetelma_label}" />
+					<ListItem TheValue="{mitateit_sosiaalinentaito}" RealLabel="{mitateit_sosiaalinentaito_label}" />
+					<ListItem TheValue="{mitateit_jotainmuuta}" RealLabel="{mitateit_jotainmuuta_label}" Margin="0, 5, 0, 15"  />
 
-				<Text Value="Kuinka vihainen olit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{viha_kihisinraivosta}" RealLabel="{viha_kihisinraivosta_label}" />
-				<ListItem TheValue="{viha_todellavihainen}" RealLabel="{viha_todellavihainen_label}" />
-				<ListItem TheValue="{viha_melkovihainen}" RealLabel="{viha_melkovihainen_label}" />
-				<ListItem TheValue="{viha_lievaviha}" RealLabel="{viha_lievaviha_label}" />
-				<ListItem TheValue="{viha_enlainkaan}" RealLabel="{viha_enlainkaan_label}" />
+					<Text Value="Kuinka vihainen olit?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{viha_kihisinraivosta}" RealLabel="{viha_kihisinraivosta_label}" />
+					<ListItem TheValue="{viha_todellavihainen}" RealLabel="{viha_todellavihainen_label}" />
+					<ListItem TheValue="{viha_melkovihainen}" RealLabel="{viha_melkovihainen_label}" />
+					<ListItem TheValue="{viha_lievaviha}" RealLabel="{viha_lievaviha_label}" />
+					<ListItem TheValue="{viha_enlainkaan}" RealLabel="{viha_enlainkaan_label}" />
 
-				<Text Value="Kuinka hyvin hallitsit itsesi?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{hallinta_1}" RealLabel="{hallinta_1_label}" />
-				<ListItem TheValue="{hallinta_2}" RealLabel="{hallinta_2_label}" />
-				<ListItem TheValue="{hallinta_3}" RealLabel="{hallinta_3_label}" />
-				<ListItem TheValue="{hallinta_4}" RealLabel="{hallinta_4_label}" />
-				<ListItem TheValue="{hallinta_5}" RealLabel="{hallinta_5_label}" />
+					<Text Value="Kuinka hyvin hallitsit itsesi?" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{hallinta_1}" RealLabel="{hallinta_1_label}" />
+					<ListItem TheValue="{hallinta_2}" RealLabel="{hallinta_2_label}" />
+					<ListItem TheValue="{hallinta_3}" RealLabel="{hallinta_3_label}" />
+					<ListItem TheValue="{hallinta_4}" RealLabel="{hallinta_4_label}" />
+					<ListItem TheValue="{hallinta_5}" RealLabel="{hallinta_5_label}" />
 
-				<Text Value="---------" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
-				<ListItem TheValue="{lastModified}" RealLabel="Viimeksi päivitetty" />
-			</Each>
+					<Text Value="---------" Alignment="Center" Color="#000a" Margin="0, 5, 0, 15"  />
+					<ListItem TheValue="{lastModified}" RealLabel="Viimeksi päivitetty" />
+				</Each>
+
+			</StackPanel>
 
 		</StackPanel><!--End of main holder-->
 	

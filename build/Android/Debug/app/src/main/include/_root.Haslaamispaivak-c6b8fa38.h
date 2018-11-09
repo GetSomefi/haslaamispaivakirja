@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive :11
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive :1
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive_typeof();
 void Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggle_IsActive* __this);

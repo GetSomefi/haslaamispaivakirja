@@ -23,9 +23,12 @@ struct OldEntrysPage__Template : ::g::Uno::UX::Template
     uWeak< ::g::OldEntrysPage*> __parent1;
     uWeak< ::g::OldEntrysPage*> __parentInstance1;
     uStrong< ::g::Uno::UX::Property1*> __self_Text_inst1;
-    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb9;
+    uStrong< ::g::Uno::UX::Property1*> __self_DataKey_inst1;
+    uStrong< ::g::Fuse::Reactive::EventBinding*> temp_eb2;
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return OldEntrysPage__Template_typeof()->Init(), __selector0_; }
+    static ::g::Uno::UX::Selector __selector1_;
+    static ::g::Uno::UX::Selector& __selector1() { return OldEntrysPage__Template_typeof()->Init(), __selector1_; }
 
     void ctor_1(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance);
     static OldEntrysPage__Template* New2(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance);

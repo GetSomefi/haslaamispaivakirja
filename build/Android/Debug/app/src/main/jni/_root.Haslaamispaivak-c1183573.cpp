@@ -11,7 +11,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_basicBtnButton_Text_Property :146
+// internal sealed class Haslaamispaivakirja_basicBtnButton_Text_Property :412
 // {
 static void Haslaamispaivakirja_basicBtnButton_Text_Property_build(uType* type)
 {
@@ -40,50 +40,50 @@ static void Haslaamispaivakirja_basicBtnButton_Text_Property_build(uType* type)
     return type;
 }
 
-// public Haslaamispaivakirja_basicBtnButton_Text_Property(basicBtn.Button obj, Uno.UX.Selector name) :149
+// public Haslaamispaivakirja_basicBtnButton_Text_Property(basicBtn.Button obj, Uno.UX.Selector name) :415
 void Haslaamispaivakirja_basicBtnButton_Text_Property__ctor_3_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, ::g::basicBtn::Button* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed string Get(Uno.UX.PropertyObject obj) :151
+// public override sealed string Get(Uno.UX.PropertyObject obj) :417
 void Haslaamispaivakirja_basicBtnButton_Text_Property__Get1_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, ::g::Uno::UX::PropertyObject* obj, uString** __retval)
 {
     return *__retval = uPtr(uCast< ::g::basicBtn::Button*>(obj, ::TYPES[0/*basicBtn.Button*/]))->Text(), void();
 }
 
-// public Haslaamispaivakirja_basicBtnButton_Text_Property New(basicBtn.Button obj, Uno.UX.Selector name) :149
+// public Haslaamispaivakirja_basicBtnButton_Text_Property New(basicBtn.Button obj, Uno.UX.Selector name) :415
 void Haslaamispaivakirja_basicBtnButton_Text_Property__New1_fn(::g::basicBtn::Button* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_basicBtnButton_Text_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_basicBtnButton_Text_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :150
+// public override sealed Uno.UX.PropertyObject get_Object() :416
 void Haslaamispaivakirja_basicBtnButton_Text_Property__get_Object_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, string v, Uno.UX.IPropertyListener origin) :152
+// public override sealed void Set(Uno.UX.PropertyObject obj, string v, Uno.UX.IPropertyListener origin) :418
 void Haslaamispaivakirja_basicBtnButton_Text_Property__Set1_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, ::g::Uno::UX::PropertyObject* obj, uString* v, uObject* origin)
 {
     uPtr(uCast< ::g::basicBtn::Button*>(obj, ::TYPES[0/*basicBtn.Button*/]))->SetText(v, origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :153
+// public override sealed bool get_SupportsOriginSetter() :419
 void Haslaamispaivakirja_basicBtnButton_Text_Property__get_SupportsOriginSetter_fn(Haslaamispaivakirja_basicBtnButton_Text_Property* __this, bool* __retval)
 {
     return *__retval = true, void();
 }
 
-// public Haslaamispaivakirja_basicBtnButton_Text_Property(basicBtn.Button obj, Uno.UX.Selector name) [instance] :149
+// public Haslaamispaivakirja_basicBtnButton_Text_Property(basicBtn.Button obj, Uno.UX.Selector name) [instance] :415
 void Haslaamispaivakirja_basicBtnButton_Text_Property::ctor_3(::g::basicBtn::Button* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_basicBtnButton_Text_Property New(basicBtn.Button obj, Uno.UX.Selector name) [static] :149
+// public Haslaamispaivakirja_basicBtnButton_Text_Property New(basicBtn.Button obj, Uno.UX.Selector name) [static] :415
 Haslaamispaivakirja_basicBtnButton_Text_Property* Haslaamispaivakirja_basicBtnButton_Text_Property::New1(::g::basicBtn::Button* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_basicBtnButton_Text_Property* obj1 = (Haslaamispaivakirja_basicBtnButton_Text_Property*)uNew(Haslaamispaivakirja_basicBtnButton_Text_Property_typeof());

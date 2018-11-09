@@ -14,8 +14,6 @@ namespace Motion{
 // public sealed class SpringFunction :8
 // {
 ::g::Fuse::Reactive::Expression_type* SpringFunction_typeof();
-void SpringFunction__ctor_1_fn(SpringFunction* __this, ::g::Fuse::Reactive::Expression* value);
-void SpringFunction__New1_fn(::g::Fuse::Reactive::Expression* value, SpringFunction** __retval);
 void SpringFunction__Subscribe_fn(SpringFunction* __this, uObject* context, uObject* listener, uObject** __retval);
 void SpringFunction__get_Value_fn(SpringFunction* __this, ::g::Fuse::Reactive::Expression** __retval);
 void SpringFunction__set_Value_fn(SpringFunction* __this, ::g::Fuse::Reactive::Expression* value);
@@ -24,10 +22,8 @@ struct SpringFunction : ::g::Fuse::Reactive::Expression
 {
     uStrong< ::g::Fuse::Reactive::Expression*> _Value;
 
-    void ctor_1(::g::Fuse::Reactive::Expression* value);
     ::g::Fuse::Reactive::Expression* Value();
     void Value(::g::Fuse::Reactive::Expression* value);
-    static SpringFunction* New1(::g::Fuse::Reactive::Expression* value);
 };
 // }
 

@@ -11,7 +11,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_Value_Property :121
+// internal sealed class Haslaamispaivakirja_FuseControlsTextControl_Value_Property :395
 // {
 static void Haslaamispaivakirja_FuseControlsTextControl_Value_Property_build(uType* type)
 {
@@ -40,50 +40,50 @@ static void Haslaamispaivakirja_FuseControlsTextControl_Value_Property_build(uTy
     return type;
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :124
+// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :398
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, ::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed string Get(Uno.UX.PropertyObject obj) :126
+// public override sealed string Get(Uno.UX.PropertyObject obj) :400
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__Get1_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, uString** __retval)
 {
     return *__retval = uPtr(uCast< ::g::Fuse::Controls::TextControl*>(obj, ::TYPES[0/*Fuse.Controls.TextControl*/]))->Value(), void();
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :124
+// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) :398
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__New1_fn(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseControlsTextControl_Value_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseControlsTextControl_Value_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :125
+// public override sealed Uno.UX.PropertyObject get_Object() :399
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__get_Object_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, string v, Uno.UX.IPropertyListener origin) :127
+// public override sealed void Set(Uno.UX.PropertyObject obj, string v, Uno.UX.IPropertyListener origin) :401
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__Set1_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, uString* v, uObject* origin)
 {
     uPtr(uCast< ::g::Fuse::Controls::TextControl*>(obj, ::TYPES[0/*Fuse.Controls.TextControl*/]))->SetValue(v, origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :128
+// public override sealed bool get_SupportsOriginSetter() :402
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property__get_SupportsOriginSetter_fn(Haslaamispaivakirja_FuseControlsTextControl_Value_Property* __this, bool* __retval)
 {
     return *__retval = true, void();
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [instance] :124
+// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [instance] :398
 void Haslaamispaivakirja_FuseControlsTextControl_Value_Property::ctor_3(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [static] :124
+// public Haslaamispaivakirja_FuseControlsTextControl_Value_Property New(Fuse.Controls.TextControl obj, Uno.UX.Selector name) [static] :398
 Haslaamispaivakirja_FuseControlsTextControl_Value_Property* Haslaamispaivakirja_FuseControlsTextControl_Value_Property::New1(::g::Fuse::Controls::TextControl* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseControlsTextControl_Value_Property* obj1 = (Haslaamispaivakirja_FuseControlsTextControl_Value_Property*)uNew(Haslaamispaivakirja_FuseControlsTextControl_Value_Property_typeof());

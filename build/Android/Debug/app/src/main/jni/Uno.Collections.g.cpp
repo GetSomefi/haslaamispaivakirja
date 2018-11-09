@@ -4250,6 +4250,22 @@ void RootableList__RemoveAt_fn(RootableList* __this, int32_t* index)
     __this->RemoveAt(*index);
 }
 
+// public void ReplaceAt(int index, T item) :109
+void RootableList__ReplaceAt_fn(RootableList* __this, int32_t* index, void* item)
+{
+    uT ret10(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    uT old(__this->__type->T(0), U_ALLOCA(__this->__type->T(0)->ValueSize));
+    int32_t index_ = *index;
+
+    if (__this->_items == NULL)
+        U_THROW(::g::Uno::IndexOutOfRangeException::New4());
+
+    old = (::g::Uno::Collections::List__get_Item_fn(uPtr(__this->_items), uCRef<int32_t>(index_), &ret10), ret10);
+    ::g::Uno::Collections::List__set_Item_fn(uPtr(__this->_items), uCRef<int32_t>(index_), item);
+    RootableList__OnRemoved_fn(__this, old);
+    RootableList__OnAdded_fn(__this, item);
+}
+
 // public void RootSubscribe(Uno.Action<T> added, Uno.Action<T> removed) :32
 void RootableList__RootSubscribe_fn(RootableList* __this, uDelegate* added, uDelegate* removed)
 {

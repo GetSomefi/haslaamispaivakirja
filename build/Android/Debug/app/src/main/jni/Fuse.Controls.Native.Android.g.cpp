@@ -1899,22 +1899,10 @@ void LeafView__ctor_7_fn(LeafView* __this, ::g::Java::Object* handle)
     __this->ctor_7(handle);
 }
 
-// protected LeafView(Java.Object handle, bool handlesInput) :11
-void LeafView__ctor_8_fn(LeafView* __this, ::g::Java::Object* handle, bool* handlesInput)
-{
-    __this->ctor_8(handle, *handlesInput);
-}
-
 // protected LeafView(Java.Object handle) [instance] :9
 void LeafView::ctor_7(::g::Java::Object* handle)
 {
     ctor_5(handle, true);
-}
-
-// protected LeafView(Java.Object handle, bool handlesInput) [instance] :11
-void LeafView::ctor_8(::g::Java::Object* handle, bool handlesInput)
-{
-    ctor_6(handle, true, handlesInput);
 }
 // }
 
@@ -2659,49 +2647,29 @@ static void Slider_build(uType* type)
     type->SetDependencies(
         ::g::Uno::Math_typeof());
     type->SetInterfaces(
-        ::g::Uno::IDisposable_typeof(), offsetof(Slider_type, interface0),
-        ::g::Fuse::Controls::Native::IView_typeof(), offsetof(Slider_type, interface1),
-        ::g::Fuse::Controls::Native::IRangeView_typeof(), offsetof(Slider_type, interface2));
+        ::g::Uno::IDisposable_typeof(), offsetof(::g::Fuse::Controls::Native::Android::View_type, interface0),
+        ::g::Fuse::Controls::Native::IView_typeof(), offsetof(::g::Fuse::Controls::Native::Android::View_type, interface1));
     type->SetFields(6,
         ::TYPES[20/*Fuse.Controls.Native.IRangeViewHost*/], offsetof(Slider, _host), 0);
 }
 
-Slider_type* Slider_typeof()
+::g::Fuse::Controls::Native::Android::View_type* Slider_typeof()
 {
-    static uSStrong<Slider_type*> type;
+    static uSStrong< ::g::Fuse::Controls::Native::Android::View_type*> type;
     if (type != NULL) return type;
 
     uTypeOptions options;
     options.BaseDefinition = ::g::Fuse::Controls::Native::Android::LeafView_typeof();
     options.FieldCount = 7;
-    options.InterfaceCount = 3;
+    options.InterfaceCount = 2;
     options.DependencyCount = 1;
     options.ObjectSize = sizeof(Slider);
-    options.TypeSize = sizeof(Slider_type);
-    type = (Slider_type*)uClassType::New("Fuse.Controls.Native.Android.Slider", options);
+    options.TypeSize = sizeof(::g::Fuse::Controls::Native::Android::View_type);
+    type = (::g::Fuse::Controls::Native::Android::View_type*)uClassType::New("Fuse.Controls.Native.Android.Slider", options);
     type->fp_build_ = Slider_build;
     type->fp_Dispose = (void(*)(::g::Fuse::Controls::Native::ViewHandle*))Slider__Dispose_fn;
-    type->interface2.fp_set_Progress = (void(*)(uObject*, double*))Slider__set_Progress_fn;
     type->interface0.fp_Dispose = (void(*)(uObject*))Slider__Dispose_fn;
     return type;
-}
-
-// public Slider(Fuse.Controls.Native.IRangeViewHost host) :26
-void Slider__ctor_9_fn(Slider* __this, uObject* host)
-{
-    __this->ctor_9(host);
-}
-
-// private void AddChangedCallback(Java.Object handle) :47
-void Slider__AddChangedCallback_fn(Slider* __this, ::g::Java::Object* handle)
-{
-    __this->AddChangedCallback(handle);
-}
-
-// private static Java.Object Create() :33
-void Slider__Create_fn(::g::Java::Object** __retval)
-{
-    *__retval = Slider::Create();
 }
 
 // public override sealed void Dispose() :72
@@ -2711,57 +2679,16 @@ void Slider__Dispose_fn(Slider* __this)
     ::g::Fuse::Controls::Native::ViewHandle__Dispose_fn(__this);
 }
 
-// public Slider New(Fuse.Controls.Native.IRangeViewHost host) :26
-void Slider__New5_fn(uObject* host, Slider** __retval)
-{
-    *__retval = Slider::New5(host);
-}
-
 // private void OnSeekBarChanged(double rel, bool fromUser) :58
 void Slider__OnSeekBarChanged_fn(Slider* __this, double* rel, bool* fromUser)
 {
     __this->OnSeekBarChanged(*rel, *fromUser);
 }
 
-// public void set_Progress(double value) :20
-void Slider__set_Progress_fn(Slider* __this, double* value)
-{
-    __this->Progress(*value);
-}
-
 // private static void SetProgress(Java.Object handle, double progress) :41
 void Slider__SetProgress_fn(::g::Java::Object* handle, double* progress)
 {
     Slider::SetProgress(handle, *progress);
-}
-
-// public Slider(Fuse.Controls.Native.IRangeViewHost host) [instance] :26
-void Slider::ctor_9(uObject* host)
-{
-    ctor_8(Slider::Create(), true);
-    _host = host;
-    AddChangedCallback(Handle());
-}
-
-// private void AddChangedCallback(Java.Object handle) [instance] :47
-void Slider::AddChangedCallback(::g::Java::Object* handle)
-{
-    {
-        INIT_JNI;
-        jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "AddChangedCallback172", "(Lcom/uno/UnoObject;Ljava/lang/Object;)V");
-        uObject* _uthis=this;
-        jobject _this_ = ::g::Uno::Compiler::ExportTargetInterop::Foreign::Android::JavaUnoObject::Box6(_uthis);
-        ::g::Java::Object* _uhandle=handle;
-        jobject _handle = (_uhandle==NULL ? NULL : U_JNIVAR->NewLocalRef(::g::Android::Base::Wrappers::IJWrapper::_GetJavaObject(uInterface((uObject*)_uhandle, ::g::Android::Base::Wrappers::IJWrapper_typeof()))));
-        U_JNIVAR->CallStaticVoidMethod(__cls,__mtd,_this_,_handle);
-        
-        if (_this_!=NULL) { U_JNIVAR->DeleteLocalRef(_this_); }
-        if (_handle!=NULL) { U_JNIVAR->DeleteLocalRef(_handle); }
-        ::g::Android::Base::JNI::CheckException();
-        
-    }
-    
 }
 
 // private void OnSeekBarChanged(double rel, bool fromUser) [instance] :58
@@ -2779,35 +2706,6 @@ void Slider::OnSeekBarChanged(double rel, bool fromUser)
     }
 
     ::g::Fuse::Controls::Native::IRangeViewHost::OnProgressChanged(uInterface(uPtr(_host), ::TYPES[20/*Fuse.Controls.Native.IRangeViewHost*/]), rel);
-}
-
-// public void set_Progress(double value) [instance] :20
-void Slider::Progress(double value)
-{
-    Slider::SetProgress(Handle(), value);
-}
-
-// private static Java.Object Create() [static] :33
-::g::Java::Object* Slider::Create()
-{
-    {
-        INIT_JNI;
-        jclass __cls = JniHelper::GetNativeExternClass();
-        WITH_STATIC_JAVA_METHOD(__mtd, __cls, "Create174", "()Ljava/lang/Object;");
-        jobject __jresult = U_JNIVAR->CallStaticObjectMethod(__cls,__mtd);
-        ::g::Java::Object* __result = (::g::Java::Object*)::g::Android::Base::Wrappers::JavaObjectHelper::JObjectToJWrapper(__jresult, false);
-        ::g::Android::Base::JNI::CheckException();
-        return __result;
-    }
-    
-}
-
-// public Slider New(Fuse.Controls.Native.IRangeViewHost host) [static] :26
-Slider* Slider::New5(uObject* host)
-{
-    Slider* obj1 = (Slider*)uNew(Slider_typeof());
-    obj1->ctor_9(host);
-    return obj1;
 }
 
 // private static void SetProgress(Java.Object handle, double progress) [static] :41

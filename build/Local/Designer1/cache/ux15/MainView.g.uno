@@ -70,6 +70,29 @@ public partial class MainView: Fuse.App
         }
         static global::Uno.UX.Selector __selector0 = "oldentrys";
     }
+    [Uno.Compiler.UxGenerated]
+    public partial class Template3: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template3(MainView parent, MainView parentInstance): base("settings", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template3()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::SettingsPage(__parent.router);
+            __self.Name = __selector0;
+            __self.SourceLineNumber = 16;
+            __self.SourceFileName = "MainView.ux";
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "settings";
+    }
     [global::Uno.UX.UXGlobalResource("fa")] public static readonly Fuse.Font fa;
     internal global::Fuse.Navigation.Router router;
     internal global::Fuse.Controls.Navigator mainNav;
@@ -237,6 +260,7 @@ public partial class MainView: Fuse.App
         var splash = new Template(this, this);
         var first = new Template1(this, this);
         var oldentrys = new Template2(this, this);
+        var settings = new Template3(this, this);
         this.Background = float4(0.007843138f, 0.1372549f, 0.1568628f, 1f);
         temp.Style = Fuse.Platform.StatusBarStyle.Light;
         temp.SourceLineNumber = 2;
@@ -260,6 +284,7 @@ public partial class MainView: Fuse.App
         mainNav.Templates.Add(splash);
         mainNav.Templates.Add(first);
         mainNav.Templates.Add(oldentrys);
+        mainNav.Templates.Add(settings);
         this.Children.Add(temp);
         this.Children.Add(temp1);
         this.Children.Add(temp2);

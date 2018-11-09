@@ -1,0 +1,98 @@
+<Panel ux:Class="textDropDown">
+	<object ux:Property="dropDownList" />
+	<string ux:Property="Send" />
+	<string ux:Property="SendName" />
+	<string ux:Property="Value" />
+	<string ux:Property="Name" />
+
+	<JavaScript>
+		var property_Value = this.Value.value;
+		var property_Name = this.Name.value;
+
+		this.SendName.value = property_Name;
+
+		var Observable = require("FuseJS/Observable");
+		var DropDownVisible = Observable(false);
+		var selectThisOption = Observable();
+		var dropDownSelVal = Observable(property_Value);
+		var dropDownSelKey = Observable();
+
+		function dropDownTrigger(){
+			if(DropDownVisible.value){
+				DropDownVisible.value = false;
+			}else{
+				DropDownVisible.value = true;
+			}
+		}
+
+		function selectedFunc(a){
+			console.dir('s',a.data);
+			dropDownSelKey.value = a.data.key;
+			dropDownSelVal.value = a.data.name;
+
+			entrystr = a.data.name;
+			entrystrSendName = property_Name;
+			
+			setTimeout(function(){
+				DropDownVisible.value = false;
+			},1000);
+		}
+
+		function closeDropDown(){
+			DropDownVisible.value = false;
+		}
+
+		module.exports = {
+			DropDownVisible:DropDownVisible,
+			dropDownTrigger:dropDownTrigger,
+			dropDownSelVal:dropDownSelVal,
+			dropDownSelKey:dropDownSelKey,
+
+			selectedFunc:selectedFunc,
+			selectThisOption:selectThisOption, //tämä ei oikeastaan ole tarpeellinen
+			closeDropDown:closeDropDown
+		};
+	</JavaScript>
+	
+	<StackPanel>
+		<!--<basic.TextBoxAction IsReadOnly="true" Value="{dropDownSelVal}" DataKey="{dropDownSelKey}" Clicked="{dropDownTrigger}" ux:Name="mitateit_vihanhallinanmenetelma" PlaceholderText="Käytin vihanhallinan menetelmää (mitä)" PlaceholderColor="#FFFFFFB2" Margin="5, 0, 5, 0" />-->
+		<basic.TextBoxFakeDropDown Value="{dropDownSelVal}" DataKey="{dropDownSelKey}" Clicked="{dropDownTrigger}" Margin="5, 0, 5, 0" TextAlignment="Left" Alignment="Default" Padding="0, 0, 0, 0" />
+
+		<!-- tää meni rikki !!!! -->
+
+		<StackPanel ux:Name="DropDownShow" Visibility="Collapsed" Opacity="0.1">
+
+			<Rectangle Color="#FFFFFF33" Height="1" Margin="5, 0, 5, 0">
+			</Rectangle>
+
+			<StackPanel ux:Name="DropDownTheList" Color="#00000019" Padding="10, 5, 10, 10" Opacity="1" Margin="5, 0, 5, 0">
+				<Rectangle>
+					<fa_times ux:Name="closeDropDown" HitTestMode="LocalBounds" Clicked="{closeDropDown}" Margin="0, 5, 0, 5" TextAlignment="Center" Color="White" FontSize="18" Alignment="TopRight" Opacity="1" Padding="5, 5, 5, 5" />
+					<Text Margin="0, 5, 0, 5" Color="White" TextAlignment="Center">
+						Valitse
+					</Text>
+				</Rectangle>
+				
+				<Each Items="{Property this.dropDownList}">
+					<!--If multiple choice needed just remove MaxCount-->
+					<Selection MaxCount="1" />
+					<listBtn.Button Name="FakeBtn" Send="{selectThisOption}" FontSize="14" Text="{name}" DataKey="{key}">
+						<Clicked>
+							<Set this.Send="{Property FakeBtn.Text}" />
+							<Callback Handler="{selectedFunc}" />
+							<Callback Handler="{isOnInputDropDown}" />
+						</Clicked>
+					</listBtn.Button>
+				</Each>
+			</StackPanel>
+
+			<WhileTrue Value="{DropDownVisible}">
+				<Change DropDownShow.Visibility="Visible" Delay="0" DelayBack="0.26" />
+				<Change DropDownShow.Opacity="1" Duration="0.36" />
+			</WhileTrue>
+		</StackPanel>		
+	</StackPanel>
+
+
+
+</Panel>

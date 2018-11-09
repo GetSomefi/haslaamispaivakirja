@@ -27,9 +27,9 @@ static uType* TYPES[1];
 
 namespace g{
 
-// public partial sealed class OldEntrysPage.Template16 :562
+// public partial sealed class OldEntrysPage.Template16 :571
 // {
-// static Template16() :573
+// static Template16() :582
 static void OldEntrysPage__Template16__cctor__fn(uType* __type)
 {
     OldEntrysPage__Template16::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[0/*"TheValue"*/]);
@@ -70,13 +70,13 @@ static void OldEntrysPage__Template16_build(uType* type)
     return type;
 }
 
-// public Template16(OldEntrysPage parent, OldEntrysPage parentInstance) :566
+// public Template16(OldEntrysPage parent, OldEntrysPage parentInstance) :575
 void OldEntrysPage__Template16__ctor_1_fn(OldEntrysPage__Template16* __this, ::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     __this->ctor_1(parent, parentInstance);
 }
 
-// public override sealed object New() :576
+// public override sealed object New() :585
 void OldEntrysPage__Template16__New1_fn(OldEntrysPage__Template16* __this, uObject** __retval)
 {
     ::g::ListItem* __self1 = ::g::ListItem::New4();
@@ -86,18 +86,18 @@ void OldEntrysPage__Template16__New1_fn(OldEntrysPage__Template16* __this, uObje
     ::g::Fuse::Reactive::Data* temp1 = ::g::Fuse::Reactive::Data::New1(::STRINGS[3/*"missa_olesk...*/]);
     ::g::Fuse::Reactive::DataBinding* temp2 = ::g::Fuse::Reactive::DataBinding::New1(__this->__self_TheValue_inst1, (uObject*)temp, 3);
     ::g::Fuse::Reactive::DataBinding* temp3 = ::g::Fuse::Reactive::DataBinding::New1(__this->__self_RealLabel_inst1, (uObject*)temp1, 3);
-    __self1->SourceLineNumber(66);
+    __self1->SourceLineNumber(54);
     __self1->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
-    temp->SourceLineNumber(66);
+    temp->SourceLineNumber(54);
     temp->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
-    temp1->SourceLineNumber(66);
+    temp1->SourceLineNumber(54);
     temp1->SourceFileName(::STRINGS[4/*"OldEntrysPa...*/]);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(__self1->Bindings()), ::TYPES[0/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp2);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(__self1->Bindings()), ::TYPES[0/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp3);
     return *__retval = __self1, void();
 }
 
-// public Template16 New(OldEntrysPage parent, OldEntrysPage parentInstance) :566
+// public Template16 New(OldEntrysPage parent, OldEntrysPage parentInstance) :575
 void OldEntrysPage__Template16__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance, OldEntrysPage__Template16** __retval)
 {
     *__retval = OldEntrysPage__Template16::New2(parent, parentInstance);
@@ -106,7 +106,7 @@ void OldEntrysPage__Template16__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntr
 ::g::Uno::UX::Selector OldEntrysPage__Template16::__selector0_;
 ::g::Uno::UX::Selector OldEntrysPage__Template16::__selector1_;
 
-// public Template16(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :566
+// public Template16(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :575
 void OldEntrysPage__Template16::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     ctor_(NULL, false);
@@ -114,7 +114,7 @@ void OldEntrysPage__Template16::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntry
     __parentInstance1 = parentInstance;
 }
 
-// public Template16 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :566
+// public Template16 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :575
 OldEntrysPage__Template16* OldEntrysPage__Template16::New2(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     OldEntrysPage__Template16* obj1 = (OldEntrysPage__Template16*)uNew(OldEntrysPage__Template16_typeof());

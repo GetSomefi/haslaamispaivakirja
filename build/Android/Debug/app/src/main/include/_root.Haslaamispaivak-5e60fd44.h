@@ -9,7 +9,7 @@ namespace g{struct Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive :41
+// internal sealed class Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive :31
 // {
 ::g::Uno::UX::PropertyAccessor_type* Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive_typeof();
 void Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive__ctor_1_fn(Haslaamispaivakirja_accessor_BasicSwipeToggleBig_IsActive* __this);

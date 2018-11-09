@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property :191
+// internal sealed class Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property :483
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_typeof();
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* __this, ::g::Fuse::Animations::Change* obj, ::g::Uno::UX::Selector* name);

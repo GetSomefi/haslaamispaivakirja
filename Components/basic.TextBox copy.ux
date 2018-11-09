@@ -1,3 +1,0 @@
-<TextInput ux:Class="basic.TextBoxAction" TextColor="White" CaretColor="White" Padding="10,10,0,10" ActionStyle="Go">
-	<SolidColor Color="#00000019" />
-</TextInput>

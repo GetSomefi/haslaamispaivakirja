@@ -30,6 +30,7 @@ struct Selection_type : ::g::Fuse::Node_type
 };
 
 Selection_type* Selection_typeof();
+void Selection__ctor_3_fn(Selection* __this);
 void Selection__add_fn(Selection* s, uArray* args);
 void Selection__Add1_fn(Selection* __this, ::g::Fuse::Selection::Selectable* b);
 void Selection__Add2_fn(Selection* __this, uString* value);
@@ -55,6 +56,7 @@ void Selection__set_MaxCount_fn(Selection* __this, int32_t* value);
 void Selection__get_MinCount_fn(Selection* __this, int32_t* __retval);
 void Selection__set_MinCount_fn(Selection* __this, int32_t* value);
 void Selection__ModifyValue_fn(Selection* __this, uString* old, uString* nw);
+void Selection__New2_fn(Selection** __retval);
 void Selection__OnNewAll_fn(Selection* __this, uObject* values);
 void Selection__OnObservableValuesChanged_fn(Selection* __this);
 void Selection__OnRooted_fn(Selection* __this);
@@ -86,6 +88,7 @@ struct Selection : ::g::Fuse::Behavior
     uStrong<uObject*> _subscription;
     uStrong<uDelegate*> SelectionChanged1;
 
+    void ctor_3();
     void Add1(::g::Fuse::Selection::Selectable* b);
     void Add2(uString* value);
     void Clear();
@@ -114,6 +117,7 @@ struct Selection : ::g::Fuse::Behavior
     static void clear(Selection* s);
     static void forceAdd(Selection* s, uArray* args);
     static void forceRemove(Selection* s, uArray* args);
+    static Selection* New2();
     static void remove(Selection* s, uArray* args);
     static void toggle(Selection* s, uArray* args);
     static bool TryFindSelectable(::g::Fuse::Node* n, ::g::Fuse::Selection::Selectable** selectable, Selection** selection);

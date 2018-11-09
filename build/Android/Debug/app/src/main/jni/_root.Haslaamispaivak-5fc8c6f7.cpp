@@ -10,7 +10,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property :191
+// internal sealed class Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property :483
 // {
 static void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_build(uType* type)
 {
@@ -38,46 +38,46 @@ static void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_build(
     return type;
 }
 
-// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) :194
+// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) :486
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__ctor_3_fn(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* __this, ::g::Fuse::Animations::Change* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed float4 Get(Uno.UX.PropertyObject obj) :196
+// public override sealed float4 Get(Uno.UX.PropertyObject obj) :488
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__Get1_fn(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::Float4* __retval)
 {
     ::g::Uno::Float4 ret2;
     return *__retval = (::g::Fuse::Animations::Change__get_Value_fn(uPtr(uCast< ::g::Fuse::Animations::Change*>(obj, ::TYPES[0/*Fuse.Animations.Change<float4>*/])), &ret2), ret2), void();
 }
 
-// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property New(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) :194
+// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property New(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) :486
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__New1_fn(::g::Fuse::Animations::Change* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :195
+// public override sealed Uno.UX.PropertyObject get_Object() :487
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__get_Object_fn(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, float4 v, Uno.UX.IPropertyListener origin) :197
+// public override sealed void Set(Uno.UX.PropertyObject obj, float4 v, Uno.UX.IPropertyListener origin) :489
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property__Set1_fn(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* __this, ::g::Uno::UX::PropertyObject* obj, ::g::Uno::Float4* v, uObject* origin)
 {
     ::g::Uno::Float4 v_ = *v;
     ::g::Fuse::Animations::Change__set_Value_fn(uPtr(uCast< ::g::Fuse::Animations::Change*>(obj, ::TYPES[0/*Fuse.Animations.Change<float4>*/])), uCRef(v_));
 }
 
-// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) [instance] :194
+// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) [instance] :486
 void Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property::ctor_3(::g::Fuse::Animations::Change* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property New(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) [static] :194
+// public Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property New(Fuse.Animations.Change<float4> obj, Uno.UX.Selector name) [static] :486
 Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property::New1(::g::Fuse::Animations::Change* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property* obj1 = (Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property*)uNew(Haslaamispaivakirja_FuseAnimationsChangefloat4_Value_Property_typeof());

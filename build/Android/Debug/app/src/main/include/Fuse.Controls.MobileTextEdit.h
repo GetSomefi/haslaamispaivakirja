@@ -4,6 +4,7 @@
 #pragma once
 #include <Fuse.Animations.IResize.h>
 #include <Fuse.Binding.h>
+#include <Fuse.Controls.ITextEditControl.h>
 #include <Fuse.Controls.Native.-ae84b26e.h>
 #include <Fuse.Controls.TextEdit.h>
 #include <Fuse.IActualPlacement.h>
@@ -35,8 +36,8 @@ namespace Controls{
 // {
 struct MobileTextEdit_type : ::g::Fuse::Controls::TextEdit_type
 {
-    ::g::Fuse::Controls::Native::ITextEditHost interface19;
-    ::g::Fuse::Input::INotifyFocus interface20;
+    ::g::Fuse::Controls::Native::ITextEditHost interface20;
+    ::g::Fuse::Input::INotifyFocus interface21;
 };
 
 MobileTextEdit_type* MobileTextEdit_typeof();

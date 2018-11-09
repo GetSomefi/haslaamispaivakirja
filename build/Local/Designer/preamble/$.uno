@@ -13,7 +13,7 @@ namespace Outracks.Simulator
 		public GeneratedApplication()
 			: base(
 				new [] 
-				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("192.168.1.108"), 12124)},"/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/Häsläämispäiväkirja.unoproj",new string[] 
+				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("10.103.1.131"), 12124)},"/Users/petervirtanen/OneDrive/Fuse projektit/Häsläämispäiväkirja/Häsläämispäiväkirja.unoproj",new string[] 
 				{ })
 		{
 			Runtime.Bundle.Initialize("Häsläämispäiväkirja");

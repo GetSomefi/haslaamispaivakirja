@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property;}
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property :207
+// internal sealed class Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property :499
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property_typeof();
 void Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property__ctor_3_fn(Haslaamispaivakirja_BasicSwipeToggleBig_Sendable_Property* __this, ::g::BasicSwipeToggleBig* obj, ::g::Uno::UX::Selector* name);

@@ -1,0 +1,22 @@
+<Panel ux:Class="LongPressButton" Padding="15">
+	<float4 ux:Property="BackgroundColor"/>
+
+	<Text Name="Label" Color="#FFF" Value="Tyhjennä" TextAlignment="Center" FontSize="16"/>
+	<!--Color="#DA4245"-->
+	<Rectangle Name="Rect" Color="{Property this.BackgroundColor}" Layer="Background" />
+
+	<DropShadow Angle="90" Distance="1" Spread="0.2" Size="2" Color="#00000060" />
+	<WhilePressed>
+		<Change Target="Rect.Color" Value="#000" />
+		<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+
+		<Set Deleted.Value="true" Delay="3"/>
+		<Callback Handler="{eraseData}" Delay="3"/>
+	</WhilePressed>
+
+	<WhileTrue ux:Name="Deleted">
+		<Change Target="Label.Value" Value="Tiedot poistettu" />
+		<Change Target="Label.Color" Value="#FFF" />
+	</WhileTrue>
+
+</Panel>

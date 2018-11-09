@@ -2421,24 +2421,6 @@ void Double__GetHashCode_fn(double* __this, uType* __type, int32_t* __retval)
     return *__retval = hash, void();
 }
 
-// public static bool IsInfinity(double d) :198
-void Double__IsInfinity_fn(double* d, bool* __retval)
-{
-    *__retval = Double::IsInfinity(*d);
-}
-
-// public static bool IsNegativeInfinity(double d) :188
-void Double__IsNegativeInfinity_fn(double* d, bool* __retval)
-{
-    *__retval = Double::IsNegativeInfinity(*d);
-}
-
-// public static bool IsPositiveInfinity(double d) :193
-void Double__IsPositiveInfinity_fn(double* d, bool* __retval)
-{
-    *__retval = Double::IsPositiveInfinity(*d);
-}
-
 // public static double Parse(string str) :84
 void Double__Parse_fn(uString* str, double* __retval)
 {
@@ -2481,24 +2463,6 @@ void Double__ToString_fn(double* __this, uType* __type, uString** __retval)
 void Double__TryParse_fn(uString* str, double* result, bool* __retval)
 {
     *__retval = Double::TryParse(str, result);
-}
-
-// public static bool IsInfinity(double d) [static] :198
-bool Double::IsInfinity(double d)
-{
-    return Double::IsNegativeInfinity(d) || Double::IsPositiveInfinity(d);
-}
-
-// public static bool IsNegativeInfinity(double d) [static] :188
-bool Double::IsNegativeInfinity(double d)
-{
-    return d == -DBL_INF;
-}
-
-// public static bool IsPositiveInfinity(double d) [static] :193
-bool Double::IsPositiveInfinity(double d)
-{
-    return d == DBL_INF;
 }
 
 // public static double Parse(string str) [static] :84
@@ -2895,6 +2859,7 @@ Exception* Exception::New3(uString* message, Exception* inner)
 // {
 static void Float_build(uType* type)
 {
+    ::STRINGS[29] = uString::Const("str");
     ::TYPES[2] = uObject_typeof();
     ::TYPES[7] = ::g::Uno::Double_typeof();
 }
@@ -2958,6 +2923,12 @@ void Float__IsPositiveInfinity_fn(float* f, bool* __retval)
     *__retval = Float::IsPositiveInfinity(*f);
 }
 
+// public static float Parse(string str) :58
+void Float__Parse_fn(uString* str, float* __retval)
+{
+    *__retval = Float::Parse(str);
+}
+
 // public override sealed string ToString() :46
 void Float__ToString_fn(float* __this, uType* __type, uString** __retval)
 {
@@ -2992,6 +2963,31 @@ bool Float::IsNegativeInfinity(float f)
 bool Float::IsPositiveInfinity(float f)
 {
     return f == FLT_INF;
+}
+
+// public static float Parse(string str) [static] :58
+float Float::Parse(uString* str)
+{
+    if (::g::Uno::String::op_Equality(str, NULL))
+        U_THROW(::g::Uno::ArgumentNullException::New6(::STRINGS[29/*"str"*/]));
+
+    errno = 0;
+    uCString cstr(str);
+    const char* trimmed = cstr.Ptr;
+    while (*trimmed && isspace(*trimmed))
+        trimmed++;
+    char* end;
+    double retval = strtod(trimmed, &end);
+    while (*end && isspace(*end))
+        end++;
+    
+    if (errno == ERANGE || retval > 3.402823e+38f || retval < -3.402823e+38f)
+        U_THROW(::g::Uno::OverflowException::New4(uString::Const("Value was either too large or too small for float")));
+    
+    if (!strlen(trimmed) || strlen(end))
+        U_THROW(::g::Uno::FormatException::New4(uString::Const("Unable to convert string to float")));
+    
+    return (float)retval;
 }
 
 // public static bool TryParse(string str, float& result) [static] :93

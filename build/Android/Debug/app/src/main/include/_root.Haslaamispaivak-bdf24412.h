@@ -11,7 +11,7 @@ namespace g{struct Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Propert
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property :173
+// internal sealed class Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property :465
 // {
 ::g::Uno::UX::Property1_type* Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_typeof();
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__ctor_3_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, ::g::Fuse::Gestures::SwipeGesture* obj, ::g::Uno::UX::Selector* name);

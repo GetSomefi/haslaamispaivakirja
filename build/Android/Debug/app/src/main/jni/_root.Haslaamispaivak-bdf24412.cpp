@@ -10,7 +10,7 @@ static uType* TYPES[1];
 
 namespace g{
 
-// internal sealed class Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property :173
+// internal sealed class Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property :465
 // {
 static void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_build(uType* type)
 {
@@ -39,51 +39,51 @@ static void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_build
     return type;
 }
 
-// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) :176
+// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) :468
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__ctor_3_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, ::g::Fuse::Gestures::SwipeGesture* obj, ::g::Uno::UX::Selector* name)
 {
     __this->ctor_3(obj, *name);
 }
 
-// public override sealed bool Get(Uno.UX.PropertyObject obj) :178
+// public override sealed bool Get(Uno.UX.PropertyObject obj) :470
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__Get1_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* __retval)
 {
     return *__retval = uPtr(uCast< ::g::Fuse::Gestures::SwipeGesture*>(obj, ::TYPES[0/*Fuse.Gestures.SwipeGesture*/]))->IsActive(), void();
 }
 
-// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property New(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) :176
+// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property New(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) :468
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__New1_fn(::g::Fuse::Gestures::SwipeGesture* obj, ::g::Uno::UX::Selector* name, Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property** __retval)
 {
     *__retval = Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property::New1(obj, *name);
 }
 
-// public override sealed Uno.UX.PropertyObject get_Object() :177
+// public override sealed Uno.UX.PropertyObject get_Object() :469
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__get_Object_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, ::g::Uno::UX::PropertyObject** __retval)
 {
     return *__retval = __this->_obj, void();
 }
 
-// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :179
+// public override sealed void Set(Uno.UX.PropertyObject obj, bool v, Uno.UX.IPropertyListener origin) :471
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__Set1_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, ::g::Uno::UX::PropertyObject* obj, bool* v, uObject* origin)
 {
     bool v_ = *v;
     uPtr(uCast< ::g::Fuse::Gestures::SwipeGesture*>(obj, ::TYPES[0/*Fuse.Gestures.SwipeGesture*/]))->SetIsActive(v_, origin);
 }
 
-// public override sealed bool get_SupportsOriginSetter() :180
+// public override sealed bool get_SupportsOriginSetter() :472
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property__get_SupportsOriginSetter_fn(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* __this, bool* __retval)
 {
     return *__retval = true, void();
 }
 
-// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) [instance] :176
+// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) [instance] :468
 void Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property::ctor_3(::g::Fuse::Gestures::SwipeGesture* obj, ::g::Uno::UX::Selector name)
 {
     ctor_2(name);
     _obj = obj;
 }
 
-// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property New(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) [static] :176
+// public Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property New(Fuse.Gestures.SwipeGesture obj, Uno.UX.Selector name) [static] :468
 Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property::New1(::g::Fuse::Gestures::SwipeGesture* obj, ::g::Uno::UX::Selector name)
 {
     Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property* obj1 = (Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property*)uNew(Haslaamispaivakirja_FuseGesturesSwipeGesture_IsActive_Property_typeof());

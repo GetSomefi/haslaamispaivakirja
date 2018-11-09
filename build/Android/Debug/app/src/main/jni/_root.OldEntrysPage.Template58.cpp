@@ -26,9 +26,9 @@ static uType* TYPES[1];
 
 namespace g{
 
-// public partial sealed class OldEntrysPage.Template58 :2057
+// public partial sealed class OldEntrysPage.Template58 :2066
 // {
-// static Template58() :2067
+// static Template58() :2076
 static void OldEntrysPage__Template58__cctor__fn(uType* __type)
 {
     OldEntrysPage__Template58::__selector0_ = ::g::Uno::UX::Selector__op_Implicit1(::STRINGS[0/*"TheValue"*/]);
@@ -65,13 +65,13 @@ static void OldEntrysPage__Template58_build(uType* type)
     return type;
 }
 
-// public Template58(OldEntrysPage parent, OldEntrysPage parentInstance) :2061
+// public Template58(OldEntrysPage parent, OldEntrysPage parentInstance) :2070
 void OldEntrysPage__Template58__ctor_1_fn(OldEntrysPage__Template58* __this, ::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     __this->ctor_1(parent, parentInstance);
 }
 
-// public override sealed object New() :2070
+// public override sealed object New() :2079
 void OldEntrysPage__Template58__New1_fn(OldEntrysPage__Template58* __this, uObject** __retval)
 {
     ::g::ListItem* __self1 = ::g::ListItem::New4();
@@ -79,15 +79,15 @@ void OldEntrysPage__Template58__New1_fn(OldEntrysPage__Template58* __this, uObje
     ::g::Fuse::Reactive::Data* temp = ::g::Fuse::Reactive::Data::New1(::STRINGS[1/*"lastModified"*/]);
     ::g::Fuse::Reactive::DataBinding* temp1 = ::g::Fuse::Reactive::DataBinding::New1(__this->__self_TheValue_inst1, (uObject*)temp, 3);
     __self1->RealLabel(::STRINGS[2/*"Viimeksi pä...*/]);
-    __self1->SourceLineNumber(113);
+    __self1->SourceLineNumber(101);
     __self1->SourceFileName(::STRINGS[3/*"OldEntrysPa...*/]);
-    temp->SourceLineNumber(113);
+    temp->SourceLineNumber(101);
     temp->SourceFileName(::STRINGS[3/*"OldEntrysPa...*/]);
     ::g::Uno::Collections::ICollection::Add_ex(uInterface(uPtr(__self1->Bindings()), ::TYPES[0/*Uno.Collections.ICollection<Fuse.Binding>*/]), temp1);
     return *__retval = __self1, void();
 }
 
-// public Template58 New(OldEntrysPage parent, OldEntrysPage parentInstance) :2061
+// public Template58 New(OldEntrysPage parent, OldEntrysPage parentInstance) :2070
 void OldEntrysPage__Template58__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance, OldEntrysPage__Template58** __retval)
 {
     *__retval = OldEntrysPage__Template58::New2(parent, parentInstance);
@@ -95,7 +95,7 @@ void OldEntrysPage__Template58__New2_fn(::g::OldEntrysPage* parent, ::g::OldEntr
 
 ::g::Uno::UX::Selector OldEntrysPage__Template58::__selector0_;
 
-// public Template58(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :2061
+// public Template58(OldEntrysPage parent, OldEntrysPage parentInstance) [instance] :2070
 void OldEntrysPage__Template58::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     ctor_(NULL, false);
@@ -103,7 +103,7 @@ void OldEntrysPage__Template58::ctor_1(::g::OldEntrysPage* parent, ::g::OldEntry
     __parentInstance1 = parentInstance;
 }
 
-// public Template58 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :2061
+// public Template58 New(OldEntrysPage parent, OldEntrysPage parentInstance) [static] :2070
 OldEntrysPage__Template58* OldEntrysPage__Template58::New2(::g::OldEntrysPage* parent, ::g::OldEntrysPage* parentInstance)
 {
     OldEntrysPage__Template58* obj1 = (OldEntrysPage__Template58*)uNew(OldEntrysPage__Template58_typeof());

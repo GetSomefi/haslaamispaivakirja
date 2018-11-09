@@ -4,6 +4,7 @@
 #pragma once
 #include <Fuse.App.h>
 #include <Fuse.IProperties.h>
+namespace g{namespace Fuse{namespace Controls{struct Navigator;}}}
 namespace g{namespace Fuse{namespace Drawing{struct BrushConverter;}}}
 namespace g{namespace Fuse{namespace FileSystem{struct FileSystemModule;}}}
 namespace g{namespace Fuse{namespace Navigation{struct Router;}}}
@@ -40,6 +41,7 @@ struct MainView : ::g::Fuse::App
     static uSStrong< ::g::Fuse::Font*> fa_;
     static uSStrong< ::g::Fuse::Font*>& fa() { return MainView_typeof()->Init(), fa_; }
     uStrong< ::g::Fuse::Navigation::Router*> router;
+    uStrong< ::g::Fuse::Controls::Navigator*> mainNav;
     uStrong< ::g::Fuse::Reactive::FuseJS::DiagnosticsImplModule*> FuseReactiveFuseJSDiagnosticsImplModule;
     uStrong< ::g::Fuse::Reactive::FuseJS::Http*> FuseReactiveFuseJSHttp;
     uStrong< ::g::Fuse::Reactive::FuseJS::TimerModule*> FuseReactiveFuseJSTimerModule;
@@ -59,6 +61,8 @@ struct MainView : ::g::Fuse::App
     uStrong< ::g::FuseJS::UserEvents*> FuseJSUserEvents;
     static ::g::Uno::UX::Selector __selector0_;
     static ::g::Uno::UX::Selector& __selector0() { return MainView_typeof()->Init(), __selector0_; }
+    static ::g::Uno::UX::Selector __selector1_;
+    static ::g::Uno::UX::Selector& __selector1() { return MainView_typeof()->Init(), __selector1_; }
 
     void ctor_4();
     void InitializeUX();

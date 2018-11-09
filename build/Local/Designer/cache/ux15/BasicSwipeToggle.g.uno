@@ -69,7 +69,7 @@ public partial class BasicSwipeToggle: Fuse.Controls.Panel
     global::Uno.UX.Property<bool> TheClick_IsActive_inst;
     internal global::Fuse.Gestures.SwipeGesture swipe;
     internal global::Fuse.Triggers.Actions.Callback TheClick;
-    internal global::Fuse.Reactive.EventBinding temp_eb13;
+    internal global::Fuse.Reactive.EventBinding temp_eb8;
     internal global::Fuse.Controls.Rectangle handle;
     internal global::Fuse.Controls.Rectangle background;
     static BasicSwipeToggle()
@@ -114,7 +114,7 @@ public partial class BasicSwipeToggle: Fuse.Controls.Panel
         var temp19 = new global::Fuse.Reactive.DataBinding(temp1_Value_inst, temp7, Fuse.Reactive.BindingMode.Read);
         var temp20 = new global::Fuse.Gestures.Clicked();
         var temp21 = new global::Fuse.Gestures.ToggleSwipeActive();
-        temp_eb13 = new global::Fuse.Reactive.EventBinding(temp9);
+        temp_eb8 = new global::Fuse.Reactive.EventBinding(temp9);
         var temp22 = new global::Fuse.Reactive.DataBinding(TheClick_IsActive_inst, temp10, Fuse.Reactive.BindingMode.Default);
         var temp23 = new global::Fuse.Controls.Shadow();
         var temp24 = new global::fa_times();
@@ -159,14 +159,14 @@ public partial class BasicSwipeToggle: Fuse.Controls.Panel
         temp20.SourceFileName = "Components/BasicSwipeToggle.ux";
         temp20.Actions.Add(temp21);
         temp20.Actions.Add(TheClick);
-        temp20.Bindings.Add(temp_eb13);
+        temp20.Bindings.Add(temp_eb8);
         temp20.Bindings.Add(temp22);
         temp21.SourceLineNumber = 15;
         temp21.SourceFileName = "Components/BasicSwipeToggle.ux";
         temp21.Target = swipe;
         TheClick.SourceLineNumber = 16;
         TheClick.SourceFileName = "Components/BasicSwipeToggle.ux";
-        TheClick.Handler += temp_eb13.OnEvent;
+        TheClick.Handler += temp_eb8.OnEvent;
         temp9.SourceLineNumber = 16;
         temp9.SourceFileName = "Components/BasicSwipeToggle.ux";
         temp10.SourceLineNumber = 16;

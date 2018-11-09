@@ -1,0 +1,18 @@
+<Rectangle ux:Class="basic.TextBoxFakeDropDown" PlaceHolderColor="#FFFFFFB2" Send="{entrystr}" Color="#00000019" Margin="5, 0, 5, 0">
+	<!--<SolidColor Color="#00000019" />-->
+	<string ux:Property="Send" />
+	<string ux:Property="DataKey" />
+	<string ux:Property="Value" />
+	<string ux:Property="TextAlignment" />
+	<string ux:Property="PlaceHolderColor" />
+	<string ux:Property="Name" />
+
+	<Text ux:Name="TextBoxFakeField" TextColor="White" Value="{Property this.Value}" TextAlignment="{Property this.TextAlignment}" Color="{Property this.PlaceHolderColor}" Padding="0, 0, 0, 0" Margin="10, 10, 10, 10">
+		<Clicked>
+			<!--<DebugAction Message="Drop choosed!" />-->
+			<Set this.Send="{Property this.Value}" />
+			<Set TextBoxFakeField.Color="#FFF" />
+			<!--<Callback ux:Name="TheEnter" Handler="{isOnInputDropDown}" />-->
+		</Clicked>
+	</Text>
+</Rectangle>

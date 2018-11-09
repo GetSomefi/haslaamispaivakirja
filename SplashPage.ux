@@ -7,7 +7,12 @@
 
 		<Video Opacity="0.7" Layer="Background" IsLooping="true" File="Assets/retkelleoma.mp4" AutoPlay="true" StretchMode="UniformToFill">
 			<Blur Radius="3.75" />
+			<ProgressAnimation>
+            	<Change progressBar.Width="100" />
+        	</ProgressAnimation>
 		</Video>
+
+		<Rectangle ux:Name="progressBar" Dock="Top" Fill="#FFF" Width="0%" Height="1" Opacity="0.2" />
 
 		<generaltext.Text Opacity=".5" TextAlignment="Center" FontSize="12" Margin="15" Dock="Bottom">original video by Peter Virtanen</generaltext.Text>
 

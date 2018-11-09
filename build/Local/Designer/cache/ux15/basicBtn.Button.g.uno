@@ -18,6 +18,21 @@ namespace basicBtn
                 OnPropertyChanged("Text", origin);
             }
         }
+        string _field_DataKey;
+        [global::Uno.UX.UXOriginSetter("SetDataKey")]
+        public string DataKey
+        {
+            get { return _field_DataKey; }
+            set { SetDataKey(value, null); }
+        }
+        public void SetDataKey(string value, global::Uno.UX.IPropertyListener origin)
+        {
+            if (value != _field_DataKey)
+            {
+                _field_DataKey = value;
+                OnPropertyChanged("DataKey", origin);
+            }
+        }
         string _field_BgColor;
         [global::Uno.UX.UXOriginSetter("SetBgColor")]
         public string BgColor
@@ -86,7 +101,7 @@ namespace basicBtn
             this.SourceFileName = "Components/basicBtn.ux";
             temp.CornerRadius = float4(0f, 0f, 0f, 0f);
             temp.Layer = Fuse.Layer.Background;
-            temp.SourceLineNumber = 6;
+            temp.SourceLineNumber = 7;
             temp.SourceFileName = "Components/basicBtn.ux";
             temp.Children.Add(temp8);
             temp.Bindings.Add(temp9);
@@ -95,26 +110,26 @@ namespace basicBtn
             temp8.Distance = 1f;
             temp8.Spread = 0.2f;
             temp8.Color = float4(0f, 0f, 0f, 0.3764706f);
-            temp8.SourceLineNumber = 7;
+            temp8.SourceLineNumber = 8;
             temp8.SourceFileName = "Components/basicBtn.ux";
-            temp3.SourceLineNumber = 6;
+            temp3.SourceLineNumber = 7;
             temp3.SourceFileName = "Components/basicBtn.ux";
-            temp2.SourceLineNumber = 6;
+            temp2.SourceLineNumber = 7;
             temp2.SourceFileName = "Components/basicBtn.ux";
             temp1.TextAlignment = Fuse.Controls.TextAlignment.Center;
-            temp1.SourceLineNumber = 10;
+            temp1.SourceLineNumber = 11;
             temp1.SourceFileName = "Components/basicBtn.ux";
             temp1.Bindings.Add(temp10);
             temp1.Bindings.Add(temp11);
-            temp5.SourceLineNumber = 10;
+            temp5.SourceLineNumber = 11;
             temp5.SourceFileName = "Components/basicBtn.ux";
-            temp4.SourceLineNumber = 10;
+            temp4.SourceLineNumber = 11;
             temp4.SourceFileName = "Components/basicBtn.ux";
-            temp7.SourceLineNumber = 10;
+            temp7.SourceLineNumber = 11;
             temp7.SourceFileName = "Components/basicBtn.ux";
-            temp6.SourceLineNumber = 10;
+            temp6.SourceLineNumber = 11;
             temp6.SourceFileName = "Components/basicBtn.ux";
-            temp12.SourceLineNumber = 12;
+            temp12.SourceLineNumber = 13;
             temp12.SourceFileName = "Components/basicBtn.ux";
             temp12.Animators.Add(temp13);
             temp13.Factor = 0.95f;
